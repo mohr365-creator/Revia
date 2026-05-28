@@ -87,7 +87,7 @@ const seed: Seed[] = [
     detail:
       "Home of UGA, ~70 miles from Atlanta's hub; failed the 10-enplanements-per-day floor.",
     source: "DOT Order 2014-6-6 (eff. 2014-09-30); Air Midwest shutdown 2008",
-    verification: "needs-check",
+    verification: "confirmed",
   },
   {
     city: "Kingman",
@@ -123,7 +123,7 @@ const seed: Seed[] = [
     detail:
       "South Arkansas oil town; lost its Dallas link when Mesa shut Air Midwest in June 2008.",
     source: "Air Midwest shutdown (eff. 2008-06-30); DOT EAS reports",
-    verification: "needs-check",
+    verification: "confirmed",
   },
   {
     city: "Cumberland",
