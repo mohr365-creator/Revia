@@ -1,0 +1,70 @@
+/* Self-hosted fonts (woff2 via @fontsource — no Google Fonts @import). */
+@import "@fontsource/antonio/400.css";
+@import "@fontsource/antonio/500.css";
+@import "@fontsource/antonio/600.css";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dawn palette — single source of truth for the design tokens. */
+  --navy: #0f1b3c;
+  --amber: #e89556;
+  --ember: #d86f3c;
+  --saffron: #f2c97d;
+  --cream: #fff4e1;
+
+  /* Font stacks. Wordmark locked to Antonio (the project's matched geometric face). */
+  --font-wordmark: "Antonio", sans-serif;
+  --font-serif: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--navy);
+    color: var(--cream);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--amber);
+    color: var(--navy);
+  }
+
+  /* Visible, on-brand focus ring for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
