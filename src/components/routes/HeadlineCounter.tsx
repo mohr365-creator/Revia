@@ -1,9 +1,9 @@
 import { DataFlag } from "@/components/ui/DataFlag";
 
 /**
- * Live count of what the current filters actually show. This is where the
- * "840+" headline is meant to eventually earn itself from the dataset rather
- * than being asserted. Today it reports the SAMPLE totals and says so.
+ * Live count of what the current filters actually show. The dataset is now
+ * sourced (DOT / GAO / EAS), so this reports real documented figures; the flag
+ * notes that some rows are still `needs-check` rather than `confirmed`.
  */
 export function HeadlineCounter({
   communities,
@@ -25,11 +25,11 @@ export function HeadlineCounter({
       <div>
         <div className="font-serif text-4xl text-amber sm:text-5xl">{routes}</div>
         <p className="text-xs uppercase tracking-eyebrow text-cream/50">
-          routes shown
+          hub links shown
         </p>
       </div>
-      <DataFlag title="Counts reflect the sample dataset, not the final sourced figures.">
-        Sample dataset
+      <DataFlag title="Documented from DOT orders / GAO / EAS records. Some rows are still 'needs-check' rather than 'confirmed' — open a community to see its source.">
+        Sourced · some need check
       </DataFlag>
     </div>
   );

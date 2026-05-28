@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Container } from "@/components/ui/Container";
-import { communitiesLost, routesLostHeadline } from "@/data/stats";
-import { DataFlag } from "@/components/ui/DataFlag";
+import { communitiesLost, communitiesDocumented } from "@/data/stats";
 
 export function Hero() {
   return (
@@ -38,19 +37,15 @@ export function Hero() {
         <div className="max-w-3xl">
           <Wordmark size="text-3xl" beacon />
           <h1 className="mt-10 text-balance font-serif text-4xl leading-tight text-cream sm:text-6xl">
-            <span className="italic">{routesLostHeadline.value} routes</span> went
-            dark.
+            <span className="italic">{communitiesLost.value} communities</span>{" "}
+            lost their way to the map.
             <br />
             We&apos;re turning them back on.
           </h1>
-          <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-cream/60">
-            <span>
-              {communitiesLost.value} U.S. communities lost their last flight
-              (1995–2020).
-            </span>
-            <DataFlag title={routesLostHeadline.source}>
-              “{routesLostHeadline.value}” unsourced
-            </DataFlag>
+          <p className="mt-6 max-w-xl text-sm text-cream/60">
+            {communitiesLost.label} ({communitiesLost.source}).{" "}
+            {communitiesDocumented} are documented here, route by route, with
+            their sources.
           </p>
           <p className="mt-8 font-serif text-2xl italic text-amber">
             The way, revived.

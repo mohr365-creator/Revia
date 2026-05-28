@@ -31,7 +31,8 @@ const variantColor: Record<ReviaVariant, string> = {
 function matches(c: Community, f: MapFilterState): boolean {
   if (f.status !== "all" && c.status !== f.status) return false;
   if (f.restorableBy !== "all" && c.restorableBy !== f.restorableBy) return false;
-  if (c.lastYearServed < f.sinceYear) return false;
+  // EAS-only towns (no "ended" year) are ongoing — never filtered out by year.
+  if (c.lastYearServed != null && c.lastYearServed < f.sinceYear) return false;
   if (f.region !== "all" && regionOf(c.coordinates[0], c.coordinates[1]) !== f.region)
     return false;
   return true;
