@@ -38,9 +38,10 @@ src/
     routes/            RouteMap (the signature feature) + filters/panel/counter
     aircraft/          VariantCard, AircraftSilhouette
     contact/           ContactForm
-  data/                site, communities, routes, stats, aircraft (the content/data layer)
+  data/                site, communities, hubs, routes, overcapable, stats, aircraft
   lib/                 types, geo helpers
 public/geo/            us-states-10m.json (self-hosted)
+data-sources/          route-analysis pipeline + seed CSVs/GeoJSON (data provenance)
 ```
 
 ## ⚠️ What I need from you (placeholders to resolve before launch)
@@ -48,15 +49,22 @@ public/geo/            us-states-10m.json (self-hosted)
 Every placeholder is marked in the UI with a `⚠` **DataFlag** so nothing
 unsourced ships disguised as fact.
 
-1. **The "840+ routes" number.** Currently shown alongside the verified
-   "~150 communities (1995–2020)" and flagged unsourced. Must be *computed from
-   the dataset* — see below.
-2. **The routes dataset.** `src/data/communities.ts` and `src/data/routes.ts`
-   are a **sample** (real coordinates, placeholder service details) built from the
-   named example communities. Replace with sourced data:
-   DOT T-100, EAS terminated-communities, GAO small-community reports, RAA, Ailevon
-   Pacific. Schema is in `src/lib/types.ts`. Say the word and I'll build the real
-   CSV/GeoJSON.
+1. ~~**The "840+ routes" number.**~~ **Resolved.** Per the route-analysis
+   methodology, that figure was never cleanly sourceable at the record level, so
+   the site now leads with the defensible **"150+ communities since 1995"**
+   (RAA cumulative) and reports the documented dataset honestly. A true national
+   *route* count is computed by the pipeline against BTS T-100 (see
+   `data-sources/route-analysis/`); until that's run, the slot reads
+   "Pending T-100", not asserted.
+2. ~~**The routes dataset.**~~ **Resolved (seed).** `src/data/communities.ts`
+   now carries the **15 documented lost / EAS-dependent communities** (real
+   coordinates, US Census 2020 population, DOT/GAO/EAS sources, per-row
+   `confirmed`/`needs-check`). `src/data/routes.ts` builds real hub arcs from
+   each community's `formerHubs`. `src/data/overcapable.ts` adds the **25 real
+   over-capable short routes** (the "wrong aircraft" pool, split Phase-1 vs
+   Phase-2). Raw artifacts + the pipeline that enumerates the full national
+   dataset live in `data-sources/route-analysis/`. Rows still marked
+   `needs-check` (operator / last-year confirmations) are surfaced in the UI.
 3. **Aircraft specs.** `src/data/aircraft.ts` — R-100 MTOW, R-50 runway, and
    R-50 range are flagged unverified. Phase 2 narrowbody names + specs are
    placeholders.

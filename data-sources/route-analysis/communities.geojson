@@ -1,0 +1,395 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.258,
+     42.1534
+    ]
+   },
+   "properties": {
+    "city": "Jamestown",
+    "state": "NY",
+    "iata": "JHW",
+    "population": 28712,
+    "population_source": "US Census 2020",
+    "status": "lost-all-service",
+    "last_year_served": 2018,
+    "last_carrier": "Southern Airways Express",
+    "routes_lost": 1,
+    "former_hubs": "PIT",
+    "revia_variant": "R-50",
+    "human_detail": "Per-passenger subsidy hit $460 \u2014 more than double the $200 federal cap \u2014 and DOT pulled it.",
+    "source": "DOT Order 2017-12-2 (eff. 2018-01-16); GAO-20-74; Post-Journal 2024",
+    "verification": "confirmed"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.8604,
+     41.3779
+    ]
+   },
+   "properties": {
+    "city": "Franklin/Oil City",
+    "state": "PA",
+    "iata": "FKL",
+    "population": 6097,
+    "population_source": "US Census 2020",
+    "status": "lost-all-service",
+    "last_year_served": 2019,
+    "last_carrier": "Southern Airways Express",
+    "routes_lost": 1,
+    "former_hubs": "PIT",
+    "revia_variant": "R-50",
+    "human_detail": "Last service was a 19x-weekly 9-seat Cessna Caravan to Pittsburgh before EAS was withdrawn.",
+    "source": "DOT Order 2019-8-17 (eff. 2019-10-18); ch-aviation 2019",
+    "verification": "confirmed"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.7295,
+     39.7079
+    ]
+   },
+   "properties": {
+    "city": "Hagerstown",
+    "state": "MD",
+    "iata": "HGR",
+    "population": 43527,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": 2019,
+    "last_carrier": "Southern Airways Express (EAS); Allegiant retains leisure",
+    "routes_lost": 2,
+    "former_hubs": "BWI, PIT",
+    "revia_variant": "R-50",
+    "human_detail": "Sits within 70nm of Dulles, BWI and National \u2014 that proximity is exactly why DOT cut the subsidy; only a 2x-weekly Allegiant flight to Orlando remains.",
+    "source": "DOT Order 2019-10-10; ch-aviation 2019",
+    "verification": "confirmed"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.3263,
+     33.9486
+    ]
+   },
+   "properties": {
+    "city": "Athens",
+    "state": "GA",
+    "iata": "AHN",
+    "population": 127315,
+    "population_source": "US Census 2020",
+    "status": "lost-all-service",
+    "last_year_served": 2014,
+    "last_carrier": "(EAS, pre-2014) \u2014 confirm operator",
+    "routes_lost": 1,
+    "former_hubs": "ATL",
+    "revia_variant": "R-50",
+    "human_detail": "Home of UGA, ~70 miles from Atlanta's hub; failed the 10-enplanements-per-day floor.",
+    "source": "DOT Order 2014-6-6 (eff. 2014-09-30); Air Midwest shutdown 2008",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -113.938,
+     35.2595
+    ]
+   },
+   "properties": {
+    "city": "Kingman",
+    "state": "AZ",
+    "iata": "IGM",
+    "population": 32689,
+    "population_source": "US Census 2020",
+    "status": "lost-all-service",
+    "last_year_served": 2015,
+    "last_carrier": "Great Lakes Aviation",
+    "routes_lost": 1,
+    "former_hubs": "LAS",
+    "revia_variant": "R-50",
+    "human_detail": "Served by Air Midwest Beech 1900Ds to 2008, restored, then lost EAS for good in 2015.",
+    "source": "DOT Order 2015-3-6 (eff. 2015-05-01); Air Midwest 2008",
+    "verification": "confirmed"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.8133,
+     33.221
+    ]
+   },
+   "properties": {
+    "city": "El Dorado",
+    "state": "AR",
+    "iata": "ELD",
+    "population": 17756,
+    "population_source": "US Census 2020",
+    "status": "lost-all-service",
+    "last_year_served": 2008,
+    "last_carrier": "Air Midwest (Beech 1900D)",
+    "routes_lost": 1,
+    "former_hubs": "DFW",
+    "revia_variant": "R-50",
+    "human_detail": "South Arkansas oil town; lost its Dallas link when Mesa shut Air Midwest in June 2008.",
+    "source": "Air Midwest shutdown (eff. 2008-06-30); DOT EAS reports",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.761,
+     39.6153
+    ]
+   },
+   "properties": {
+    "city": "Cumberland",
+    "state": "MD",
+    "iata": "CBE",
+    "population": 19076,
+    "population_source": "US Census 2020",
+    "status": "lost-all-service",
+    "last_year_served": "",
+    "last_carrier": "(confirm \u2014 likely US Airways Express/Colgan era)",
+    "routes_lost": 1,
+    "former_hubs": "(confirm)",
+    "revia_variant": "R-50",
+    "human_detail": "Allegany County seat, the \"Queen City,\" walled off by ridge-and-valley terrain from the rest of Maryland.",
+    "source": "Revia deck; US Census 2020 \u2014 confirm last service via DOT EAS list",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -112.42,
+     34.6545
+    ]
+   },
+   "properties": {
+    "city": "Prescott",
+    "state": "AZ",
+    "iata": "PRC",
+    "population": 45827,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": 2008,
+    "last_carrier": "Air Midwest (2008); SkyWest/United Express restored service",
+    "routes_lost": 1,
+    "former_hubs": "PHX (lost), now DEN/LAX",
+    "revia_variant": "R-50",
+    "human_detail": "Lost Air Midwest in 2008 but is now one of the rare restorations \u2014 SkyWest flies United Express to Denver and LA.",
+    "source": "Air Midwest 2008; DOT waiver 2016; confirm current SkyWest schedule",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -108.23,
+     36.7412
+    ]
+   },
+   "properties": {
+    "city": "Farmington",
+    "state": "NM",
+    "iata": "FMN",
+    "population": 46624,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": 2008,
+    "last_carrier": "Air Midwest (2008); subsidized service later restored",
+    "routes_lost": 1,
+    "former_hubs": "DEN",
+    "revia_variant": "R-50",
+    "human_detail": "Four Corners hub city; lost Air Midwest in 2008, later reconnected to Denver under EAS.",
+    "source": "Air Midwest 2008; confirm current EAS carrier",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -106.615,
+     48.2125
+    ]
+   },
+   "properties": {
+    "city": "Glasgow",
+    "state": "MT",
+    "iata": "GGW",
+    "population": 3353,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": "",
+    "last_carrier": "(current EAS carrier \u2014 confirm)",
+    "routes_lost": 0,
+    "former_hubs": "BIL/MSP (EAS)",
+    "revia_variant": "R-50",
+    "human_detail": "Routinely ranked the most isolated town in the lower 48 \u2014 the definition of an EAS lifeline.",
+    "source": "Revia deck; DOT EAS subsidized report",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -98.9088,
+     48.1142
+    ]
+   },
+   "properties": {
+    "city": "Devils Lake",
+    "state": "ND",
+    "iata": "DVL",
+    "population": 7192,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": "",
+    "last_carrier": "(current EAS carrier \u2014 confirm)",
+    "routes_lost": 0,
+    "former_hubs": "MSP (EAS)",
+    "revia_variant": "R-50",
+    "human_detail": "Connected to Minneapolis only through federal subsidy after mainline regional service withdrew.",
+    "source": "Revia deck; DOT EAS subsidized report",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.8169,
+     44.3047
+    ]
+   },
+   "properties": {
+    "city": "Brookings",
+    "state": "SD",
+    "iata": "BKX",
+    "population": 23377,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": "",
+    "last_carrier": "(current EAS carrier \u2014 confirm)",
+    "routes_lost": 0,
+    "former_hubs": "MSP (EAS)",
+    "revia_variant": "R-50",
+    "human_detail": "SDSU college town kept on the network only by EAS despite a 23k population.",
+    "source": "Revia deck; DOT EAS subsidized report",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -105.575,
+     48.0945
+    ]
+   },
+   "properties": {
+    "city": "Wolf Point",
+    "state": "MT",
+    "iata": "OLF",
+    "population": 2585,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": "",
+    "last_carrier": "(current EAS carrier \u2014 confirm)",
+    "routes_lost": 0,
+    "former_hubs": "BIL (EAS)",
+    "revia_variant": "R-50",
+    "human_detail": "On the Fort Peck Reservation; air service is a genuine medical-access lifeline.",
+    "source": "Revia deck; DOT EAS subsidized report",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.6401,
+     41.8031
+    ]
+   },
+   "properties": {
+    "city": "Bradford",
+    "state": "PA",
+    "iata": "BFD",
+    "population": 7849,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": "",
+    "last_carrier": "(current EAS carrier \u2014 confirm)",
+    "routes_lost": 0,
+    "former_hubs": "PIT (EAS)",
+    "revia_variant": "R-50",
+    "human_detail": "Held a subsidy-cap waiver to stay in the program when others were cut.",
+    "source": "Revia deck; ch-aviation 2018 waiver list",
+    "verification": "needs-check"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -109.467,
+     47.0493
+    ]
+   },
+   "properties": {
+    "city": "Lewistown",
+    "state": "MT",
+    "iata": "LWT",
+    "population": 5924,
+    "population_source": "US Census 2020",
+    "status": "diminished",
+    "last_year_served": "",
+    "last_carrier": "(current EAS carrier \u2014 confirm)",
+    "routes_lost": 0,
+    "former_hubs": "BIL (EAS)",
+    "revia_variant": "R-50",
+    "human_detail": "Geographic center of Montana; reachable by scheduled air only through EAS.",
+    "source": "Revia deck; DOT EAS subsidized report",
+    "verification": "needs-check"
+   }
+  }
+ ]
+}
