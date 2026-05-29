@@ -17,6 +17,8 @@ export const regionalFamily: AircraftVariant[] = [
     tagline: "The thin-route restorer.",
     seats: "~50 seats",
     range: "~1,200 nm",
+    image: "/aircraft/r-50.jpg",
+    imageAlt: "Revia R-50 regional jet in flight.",
     specs: [
       { label: "Seats", value: "50 (single class)", verified: true },
       { label: "Range", value: "~1,200 nm", verified: false },
