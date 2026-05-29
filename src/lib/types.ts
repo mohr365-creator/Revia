@@ -64,13 +64,6 @@ export interface LostRoute {
 }
 
 /**
- * Where a community-level link maps to a Revia variant, the over-capability
- * pool also tags routes that sit *above* the regional family — the Phase-2
- * narrowbody / right-sizing story. Kept separate per the methodology.
- */
-export type OverCapableMatch = ReviaVariant | "phase-2";
-
-/**
  * A short route (<1,000 nm) flown today by an aircraft whose range far
  * exceeds the mission. Sourced from
  * `data-sources/route-analysis/overcapable_seed.csv`.
@@ -87,9 +80,9 @@ export interface OverCapableRoute {
   /** aircraftRangeNm / distanceNm. ≥2.5 flags; ≥5.0 is "severe". */
   capabilityRatio: number;
   severe: boolean;
-  /** Right-sized Revia variant, or "phase-2" if above the regional family. */
-  match: OverCapableMatch;
-  /** Human label for `match` (e.g. "R-75", "Phase-2 narrowbody"). */
+  /** Right-sized Revia regional variant. */
+  match: ReviaVariant;
+  /** Human label for `match` (e.g. "R-75"). */
   matchLabel: string;
 }
 

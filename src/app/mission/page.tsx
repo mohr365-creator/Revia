@@ -112,7 +112,7 @@ export default function MissionPage() {
 
           <Chapter n="04 · Revia's answer" title="Start where the need is sharpest">
             <p>
-              Revia begins with a Phase 1 regional family — the{" "}
+              Revia begins with a regional family — the{" "}
               <strong className="text-cream">R-50, R-75, and R-100</strong> —
               sharing one wing, one cross-section, and one engine family.
               Sequenced defense-and-cargo-first, where the certification path is
@@ -120,21 +120,12 @@ export default function MissionPage() {
             </p>
             <p>
               <Link href="/aircraft" className="text-amber hover:text-saffron">
-                See the aircraft families →
+                See the aircraft family →
               </Link>
             </p>
           </Chapter>
 
-          <Chapter n="05 · The deployment" title="Then the larger bet">
-            <p>
-              Phase 2 is a 6-abreast narrowbody family, developed concurrently —
-              positioned as the third manufacturer airline CEOs have publicly
-              asked for, against a single-aisle market measured in tens of
-              thousands of aircraft.
-            </p>
-          </Chapter>
-
-          <Chapter n="06 · Why now" title="The demand is already on the record">
+          <Chapter n="05 · Why now" title="The demand is already on the record">
             <p>
               The 50-seat fleet is retiring with no replacement. Airlines need a
               C-130-class option. And airline CEOs have said out loud that the

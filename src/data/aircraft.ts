@@ -1,10 +1,14 @@
 import type { AircraftVariant, Quote } from "@/lib/types";
 
 /**
- * Regional family (Phase 1). Marketing names are public-facing; internal variant
+ * Regional family. Marketing names are public-facing; internal variant
  * codes (1A/1B/1C) are kept here for reference only and must NOT appear in public
  * copy. Several figures are flagged by the brief as needing verification
  * (R-100 MTOW, R-50 runway, R-50 range) and are marked `verified: false`.
+ *
+ * NOTE: the Phase-2 narrowbody family (the 6-abreast A320neo/737 MAX competitor)
+ * has been stripped from the public site for now and lives on the
+ * `feature/phase-ii-narrowbody` branch for later incorporation.
  */
 export const regionalFamily: AircraftVariant[] = [
   {
@@ -47,39 +51,6 @@ export const regionalFamily: AircraftVariant[] = [
       { label: "MTOW", value: "~40,000 kg", verified: false },
       { label: "Engine", value: "PW1500G", verified: true },
       { label: "Runway (MTOW)", value: "~1,800 m", verified: true },
-    ],
-  },
-];
-
-/**
- * Narrowbody family (Phase 2). 6-abreast. Variant names are UNRESOLVED in the
- * brief (2A/2B/2C vs −700/−800) — left as placeholders.
- */
-export const narrowbodyFamily: AircraftVariant[] = [
-  {
-    name: "N-150 (placeholder)",
-    internalCode: "2A",
-    tagline: "Entry narrowbody — variant name TBD.",
-    seats: "~150 seats",
-    range: "~3,000 nm",
-    specs: [
-      { label: "Seats", value: "~150", verified: false },
-      { label: "Range", value: "~3,000 nm", verified: false },
-      { label: "Configuration", value: "6-abreast single aisle", verified: false },
-      { label: "Engine", value: "TBD", verified: false },
-    ],
-  },
-  {
-    name: "N-180 (placeholder)",
-    internalCode: "2B",
-    tagline: "Stretch narrowbody — variant name TBD.",
-    seats: "~180 seats",
-    range: "~3,200 nm",
-    specs: [
-      { label: "Seats", value: "~180", verified: false },
-      { label: "Range", value: "~3,200 nm", verified: false },
-      { label: "Configuration", value: "6-abreast single aisle", verified: false },
-      { label: "Engine", value: "TBD", verified: false },
     ],
   },
 ];

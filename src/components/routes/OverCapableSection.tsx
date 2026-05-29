@@ -2,7 +2,7 @@ import { clsx } from "clsx";
 import type { OverCapableRoute } from "@/lib/types";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { DataFlag } from "@/components/ui/DataFlag";
-import { phase1Routes, phase2Routes } from "@/data/overcapable";
+import { regionalRoutes } from "@/data/overcapable";
 import { overCapableCount } from "@/data/stats";
 
 function RouteTable({ routes }: { routes: OverCapableRoute[] }) {
@@ -56,14 +56,7 @@ function RouteTable({ routes }: { routes: OverCapableRoute[] }) {
                 </span>
               </td>
               <td className="whitespace-nowrap px-4 py-3">
-                <span
-                  className={clsx(
-                    "rounded-full border px-2.5 py-0.5 text-xs font-medium",
-                    r.match === "phase-2"
-                      ? "border-cream/20 text-cream/60"
-                      : "border-amber/40 bg-amber/10 text-amber",
-                  )}
-                >
+                <span className="rounded-full border border-amber/40 bg-amber/10 px-2.5 py-0.5 text-xs font-medium text-amber">
                   {r.matchLabel}
                 </span>
               </td>
@@ -99,30 +92,15 @@ export function OverCapableSection() {
 
         <div className="mt-12">
           <h3 className="font-serif text-xl text-amber">
-            Phase 1 — right-sizes onto the regional family
+            Right-sizes onto the regional family
           </h3>
           <p className="mt-2 max-w-2xl text-sm text-cream/60">
             Regional jets (E175, CRJ-900, E190) over-ranged for the mission.
             Same seats, a fraction of the trip fuel — these map cleanly onto
-            R-75 / R-100 and size the Phase-1 commercial story.
+            R-75 / R-100 and size the regional commercial story.
           </p>
           <div className="mt-5">
-            <RouteTable routes={phase1Routes} />
-          </div>
-        </div>
-
-        <div className="mt-14">
-          <h3 className="font-serif text-xl text-cream/80">
-            Phase 2 — above the regional family
-          </h3>
-          <p className="mt-2 max-w-2xl text-sm text-cream/60">
-            Mainline narrowbodies (A320, 737, A321) on 90–350 nm sectors. They
-            score the highest ratios but sit above R-100 — the right-sizing /
-            &ldquo;third manufacturer&rdquo; argument, not a regional swap. Kept
-            separate so they don&apos;t inflate the regional TAM.
-          </p>
-          <div className="mt-5">
-            <RouteTable routes={phase2Routes} />
+            <RouteTable routes={regionalRoutes} />
           </div>
         </div>
       </div>
