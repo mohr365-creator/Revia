@@ -233,7 +233,7 @@ export function RouteMap({
               <span className="h-2.5 w-2.5 rounded-full bg-ember" /> Lost all service
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-saffron/60" /> Diminished
+              <span className="h-2.5 w-2.5 rounded-full bg-saffron opacity-60" /> Diminished
             </span>
             <span className="inline-flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
