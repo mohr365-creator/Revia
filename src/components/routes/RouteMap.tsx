@@ -9,7 +9,7 @@ import {
   Marker,
 } from "react-simple-maps";
 import { clsx } from "clsx";
-import type { Community, LostRoute, ReviaVariant } from "@/lib/types";
+import type { Community, LngLat, LostRoute, ReviaVariant } from "@/lib/types";
 import { greatCircle } from "@/lib/geo";
 import { CommunityPanel } from "./CommunityPanel";
 import { MapFilters } from "./MapFilters";
@@ -78,6 +78,16 @@ export function RouteMap({
     [routes, visibleIds],
   );
 
+  // The integrated hubs that surviving routes merge into — one white dot per
+  // distinct destination, deduped by hub IATA.
+  const visibleHubs = useMemo(() => {
+    const seen = new Map<string, LngLat>();
+    for (const r of visibleRoutes) {
+      if (!seen.has(r.toId)) seen.set(r.toId, r.to);
+    }
+    return Array.from(seen, ([toId, coordinates]) => ({ toId, coordinates }));
+  }, [visibleRoutes]);
+
   const selected = selectedId
     ? communities.find((c) => c.id === selectedId) ?? null
     : null;
@@ -135,6 +145,18 @@ export function RouteMap({
           />
         );
       })}
+
+      {visibleHubs.map((h) => (
+        <Marker key={h.toId} coordinates={h.coordinates}>
+          <circle
+            r={3.2}
+            fill="#FFF4E1"
+            fillOpacity={0.95}
+            stroke="var(--navy)"
+            strokeWidth={0.8}
+          />
+        </Marker>
+      ))}
 
       {visibleCommunities.map((c) => {
         const isFocused = focusedId === c.id;
@@ -212,6 +234,9 @@ export function RouteMap({
             </span>
             <span className="inline-flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-saffron/60" /> Diminished
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
             </span>
             <span className="inline-flex items-center gap-1.5">
               <span className="h-0.5 w-5 bg-amber" /> Restorable by Revia
