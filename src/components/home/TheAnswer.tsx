@@ -5,18 +5,22 @@ import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
 
 const families = [
   {
-    name: "The regional family",
-    variants: "R-50 · R-75 · R-100",
+    name: "The R-50",
+    variants: "~50 seats · ~1,200 nm",
     blurb:
-      "A 5-abreast family that shares one wing, one cross-section, and one engine family — built to restore the thin routes first.",
-    phase: "Phase 1",
+      "The thin-route restorer — sized for the 50-seat missions the market abandoned when the small jets retired.",
   },
   {
-    name: "The narrowbody family",
-    variants: "6-abreast · variants TBD",
+    name: "The R-75",
+    variants: "~75 seats · ~1,500 nm",
     blurb:
-      "The third manufacturer airline CEOs have asked for — concurrent development, positioned against the single-aisle duopoly.",
-    phase: "Phase 2",
+      "The workhorse of the family, right where the over-capable regional jets are flying today.",
+  },
+  {
+    name: "The R-100",
+    variants: "~100 seats · ~1,800 nm",
+    blurb:
+      "Regional capacity with mainline economics — the top of a 5-abreast family sharing one wing, one cross-section, one engine.",
   },
 ];
 
@@ -26,19 +30,16 @@ export function TheAnswer() {
       <Container>
         <Eyebrow>The answer</Eyebrow>
         <h2 className="mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-cream sm:text-4xl">
-          Two families. One clean-sheet bet on the routes everyone abandoned.
+          One regional family. A clean-sheet bet on the routes everyone abandoned.
         </h2>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {families.map((f) => (
             <div
               key={f.name}
               className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8"
             >
-              <span className="text-xs uppercase tracking-eyebrow text-amber">
-                {f.phase}
-              </span>
-              <AircraftSilhouette className="my-8 text-saffron" label={f.name} />
+              <AircraftSilhouette className="mb-8 text-saffron" label={f.name} />
               <h3 className="font-serif text-2xl text-cream">{f.name}</h3>
               <p className="mt-1 text-sm uppercase tracking-eyebrow text-cream/50">
                 {f.variants}

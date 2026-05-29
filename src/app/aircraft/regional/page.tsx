@@ -15,7 +15,7 @@ export default function RegionalPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Phase 1 · Regional family"
+        eyebrow="Regional family"
         title="R-50 · R-75 · R-100"
         intro="A 5-abreast regional family built on shared architecture, designed to make thin routes economic again."
       />
