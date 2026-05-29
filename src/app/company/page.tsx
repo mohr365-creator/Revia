@@ -30,9 +30,9 @@ export default function CompanyPage() {
           </div>
 
           <div className="mx-auto mt-16 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
-            <Eyebrow>Phase 3</Eyebrow>
+            <Eyebrow>Under Construction</Eyebrow>
             <p className="mt-3 text-cream/60">
-              Team grid, advisors, and careers grow here.
+              This section is coming soon. Check back later.
             </p>
             <div className="mt-6">
               <ButtonLink href="/contact?type=careers" variant="secondary">
