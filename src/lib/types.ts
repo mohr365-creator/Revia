@@ -100,6 +100,10 @@ export interface AircraftVariant {
   seats: string;
   range: string;
   specs: AircraftSpec[];
+  /** Public-facing photo. When set, replaces the placeholder silhouette. */
+  image?: string;
+  /** Alt text for `image`. */
+  imageAlt?: string;
 }
 
 export interface Stat {
