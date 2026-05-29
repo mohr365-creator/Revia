@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Company",
@@ -33,6 +34,11 @@ export default function CompanyPage() {
             <p className="mt-3 text-cream/60">
               This section is coming soon. Check back later.
             </p>
+            <div className="mt-6">
+              <ButtonLink href="/contact?type=careers" variant="secondary">
+                Careers →
+              </ButtonLink>
+            </div>
           </div>
         </Container>
       </section>
