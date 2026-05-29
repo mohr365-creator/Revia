@@ -47,6 +47,8 @@ export const regionalFamily: AircraftVariant[] = [
     tagline: "Regional capacity, mainline economics.",
     seats: "~100 seats",
     range: "~1,800 nm",
+    image: "/aircraft/r-100.png",
+    imageAlt: "Revia R-100 regional jet side profile.",
     specs: [
       { label: "Seats", value: "100 (single class)", verified: true },
       { label: "Range", value: "~1,800 nm", verified: true },
