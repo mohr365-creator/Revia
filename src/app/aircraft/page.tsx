@@ -18,6 +18,8 @@ const families = [
     variants: "R-50 · R-75 · R-100 · R-75F · R-75 SM",
     blurb:
       "A 5-abreast family sharing one wing, one cross-section, and one engine family — passenger, freighter, and special-missions variants. Built to restore the thin routes first.",
+    image: "/aircraft/regional-family.png",
+    imageAlt: "The Revia regional family in formation flight.",
   },
 ];
 
@@ -38,7 +40,18 @@ export default function AircraftOverviewPage() {
                 key={f.href}
                 className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8"
               >
-                <AircraftSilhouette className="mb-8 text-saffron" label={f.name} />
+                {f.image ? (
+                  <div className="mb-8 overflow-hidden rounded-xl border border-cream/10">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={f.image}
+                      alt={f.imageAlt ?? f.name}
+                      className="aspect-[16/9] w-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <AircraftSilhouette className="mb-8 text-saffron" label={f.name} />
+                )}
                 <h2 className="font-serif text-2xl text-cream">{f.name}</h2>
                 <p className="mt-1 text-sm uppercase tracking-eyebrow text-cream/50">
                   {f.variants}
