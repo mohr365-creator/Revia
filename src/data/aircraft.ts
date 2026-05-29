@@ -56,6 +56,44 @@ export const regionalFamily: AircraftVariant[] = [
 ];
 
 /**
+ * Mission variants built on the same shared architecture as the passenger
+ * family. The strategy sequences defense and cargo first, so these derivatives
+ * are core to the program rather than afterthoughts. All figures here are
+ * derivative estimates off the R-75 baseline and are flagged for verification
+ * until the freighter and special-missions configurations are defined.
+ */
+export const missionVariants: AircraftVariant[] = [
+  {
+    name: "R-75F",
+    internalCode: "1B-F",
+    tagline: "Cargo-first, by design.",
+    seats: "Main-deck freighter",
+    range: "~1,400 nm",
+    specs: [
+      { label: "Payload", value: "~9,000 kg", verified: false },
+      { label: "Range (max payload)", value: "~1,400 nm", verified: false },
+      { label: "Main-deck door", value: "Forward port cargo door", verified: false },
+      { label: "Containers", value: "Bulk + ULD-capable", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "R-75 SM",
+    internalCode: "1B-SM",
+    tagline: "ISR, maritime patrol, medevac, and connector.",
+    seats: "Mission-configurable",
+    range: "~1,800 nm",
+    specs: [
+      { label: "Roles", value: "ISR · maritime patrol · medevac", verified: false },
+      { label: "Endurance", value: "~6 hrs", verified: false },
+      { label: "Cabin", value: "Reconfigurable mission deck", verified: false },
+      { label: "Provisions", value: "Sensor / palletized systems", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+];
+
+/**
  * Demand-side CEO quotes. ALL must be verified to source and dated before
  * publishing (brief §7). Marked `verified: false` until then.
  */
