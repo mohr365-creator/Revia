@@ -31,6 +31,8 @@ export const regionalFamily: AircraftVariant[] = [
     tagline: "The workhorse of the family.",
     seats: "~75 seats",
     range: "~1,500 nm",
+    image: "/aircraft/r-75.png",
+    imageAlt: "Revia R-75 regional jet on the apron.",
     specs: [
       { label: "Seats", value: "75 (single class)", verified: true },
       { label: "Range", value: "~1,500 nm", verified: true },

@@ -11,7 +11,18 @@ export function VariantCard({ variant }: { variant: AircraftVariant }) {
       </div>
       <p className="mt-2 text-pretty text-cream/70">{variant.tagline}</p>
 
-      <AircraftSilhouette className="my-8 text-saffron" label={String(variant.name)} />
+      {variant.image ? (
+        <div className="my-8 overflow-hidden rounded-xl border border-cream/10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={variant.image}
+            alt={variant.imageAlt ?? String(variant.name)}
+            className="aspect-[16/9] w-full object-cover"
+          />
+        </div>
+      ) : (
+        <AircraftSilhouette className="my-8 text-saffron" label={String(variant.name)} />
+      )}
 
       <dl className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
         {variant.specs.map((spec) => (
