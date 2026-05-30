@@ -20,9 +20,9 @@ const families = [
     href: "/aircraft/freighter",
     phase: "Cargo-first",
     name: "Freighter",
-    variants: "Regional airframe · designation TBD",
+    variants: "R-100F · R-100 airframe",
     blurb:
-      "The first aircraft out the door. A regional freighter on the shared Phase 1 airframe — proving the architecture in cargo and defense before commercial.",
+      "The first aircraft out the door. The R-100F, a regional freighter on the shared Phase 1 R-100 airframe — proving the architecture in cargo and defense before commercial.",
     image: freighterImage,
   },
   {

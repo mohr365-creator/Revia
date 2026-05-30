@@ -52,31 +52,31 @@ export const regionalFamily: AircraftVariant[] = [
 ];
 
 /**
- * Freighter (cargo-first sequence). Shares the regional airframe. Designation
- * and payload/range figures are NOT confirmed by the brief — placeholders,
- * flagged unverified until product definition is locked. The render is a
- * concept image, not an engineering drawing.
+ * Freighter (cargo-first sequence). The R-100F shares the R-100 regional
+ * airframe. Payload/range figures are NOT confirmed by the brief —
+ * placeholders, flagged unverified until product definition is locked. The
+ * render is a concept image, not an engineering drawing.
  */
 export const freighterFamily: AircraftVariant[] = [
   {
-    name: "R-75F (designation TBD)",
-    internalCode: "1B-F",
+    name: "R-100F",
+    internalCode: "1C-F",
     tagline: "Regional cargo — the first airframe out the door.",
     seats: "Main-deck freighter",
-    range: "~1,400 nm",
+    range: "~1,800 nm",
     image: {
       src: "/aircraft/freighter.png",
-      alt: "Revia regional freighter concept render in flight over countryside",
+      alt: "Revia R-100F regional freighter concept render in flight over countryside",
       width: 1382,
       height: 602,
     },
     specs: [
       { label: "Configuration", value: "Main-deck cargo", verified: false },
-      { label: "Payload", value: "~9,000 kg", verified: false },
-      { label: "Range", value: "~1,400 nm", verified: false },
-      { label: "MTOW", value: "~31,000 kg", verified: false },
+      { label: "Payload", value: "~12,000 kg", verified: false },
+      { label: "Range", value: "~1,800 nm", verified: false },
+      { label: "MTOW", value: "~40,000 kg", verified: false },
       { label: "Engine", value: "PW1500G", verified: false },
-      { label: "Runway (MTOW)", value: "~1,600 m", verified: false },
+      { label: "Runway (MTOW)", value: "~1,800 m", verified: false },
     ],
   },
 ];

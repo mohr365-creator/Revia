@@ -19,9 +19,9 @@ export default function FreighterPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Cargo-first · Freighter"
+        eyebrow="Cargo-first · R-100F"
         title="Cargo first, by design."
-        intro="The freighter shares the Phase 1 regional airframe — the first aircraft out the door, built to prove the architecture in defense and cargo service before commercial."
+        intro="The R-100F shares the Phase 1 R-100 airframe — the first aircraft out the door, built to prove the architecture in defense and cargo service before commercial."
       />
 
       <section className="bg-navy py-16">
@@ -39,9 +39,9 @@ export default function FreighterPage() {
           </p>
 
           <div className="mb-8 mt-12 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
-            <DataFlag>Designation + specs TBD</DataFlag>
+            <DataFlag>Specs TBD</DataFlag>
             <p>
-              The freighter designation and every figure below are placeholders,
+              Every payload and performance figure below is a placeholder,
               flagged for verification. Treat this page as a structural stub
               until product definition is locked.
             </p>
