@@ -49,13 +49,24 @@ export interface AircraftSpec {
   verified: boolean;
 }
 
+/** A photographic render to show in place of the stylized silhouette. */
+export interface AircraftImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface AircraftVariant {
   name: ReviaVariant | string;
   internalCode?: string;
   tagline: string;
+  /** Capacity descriptor — seat count for pax, payload/config for freighters. */
   seats: string;
   range: string;
   specs: AircraftSpec[];
+  /** When set, the card/page renders this image instead of the placeholder silhouette. */
+  image?: AircraftImage;
 }
 
 export interface Stat {

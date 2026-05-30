@@ -52,6 +52,36 @@ export const regionalFamily: AircraftVariant[] = [
 ];
 
 /**
+ * Freighter (cargo-first sequence). Shares the regional airframe. Designation
+ * and payload/range figures are NOT confirmed by the brief — placeholders,
+ * flagged unverified until product definition is locked. The render is a
+ * concept image, not an engineering drawing.
+ */
+export const freighterFamily: AircraftVariant[] = [
+  {
+    name: "R-75F (designation TBD)",
+    internalCode: "1B-F",
+    tagline: "Regional cargo — the first airframe out the door.",
+    seats: "Main-deck freighter",
+    range: "~1,400 nm",
+    image: {
+      src: "/aircraft/freighter.png",
+      alt: "Revia regional freighter concept render in flight over countryside",
+      width: 1382,
+      height: 602,
+    },
+    specs: [
+      { label: "Configuration", value: "Main-deck cargo", verified: false },
+      { label: "Payload", value: "~9,000 kg", verified: false },
+      { label: "Range", value: "~1,400 nm", verified: false },
+      { label: "MTOW", value: "~31,000 kg", verified: false },
+      { label: "Engine", value: "PW1500G", verified: false },
+      { label: "Runway (MTOW)", value: "~1,600 m", verified: false },
+    ],
+  },
+];
+
+/**
  * Narrowbody family (Phase 2). 6-abreast. Variant names are UNRESOLVED in the
  * brief (2A/2B/2C vs −700/−800) — left as placeholders.
  */

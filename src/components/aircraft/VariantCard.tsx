@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { AircraftVariant } from "@/lib/types";
 import { AircraftSilhouette } from "./AircraftSilhouette";
 import { DataFlag } from "@/components/ui/DataFlag";
@@ -11,7 +12,17 @@ export function VariantCard({ variant }: { variant: AircraftVariant }) {
       </div>
       <p className="mt-2 text-pretty text-cream/70">{variant.tagline}</p>
 
-      <AircraftSilhouette className="my-8 text-saffron" label={String(variant.name)} />
+      {variant.image ? (
+        <Image
+          src={variant.image.src}
+          alt={variant.image.alt}
+          width={variant.image.width}
+          height={variant.image.height}
+          className="my-8 h-auto w-full rounded-xl"
+        />
+      ) : (
+        <AircraftSilhouette className="my-8 text-saffron" label={String(variant.name)} />
+      )}
 
       <dl className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
         {variant.specs.map((spec) => (

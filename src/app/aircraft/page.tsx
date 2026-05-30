@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
 import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
+import { freighterFamily } from "@/data/aircraft";
 
 export const metadata: Metadata = {
   title: "Aircraft",
@@ -11,7 +13,18 @@ export const metadata: Metadata = {
     "Two aircraft families built on shared architecture — defense and cargo first, then commercial.",
 };
 
+const freighterImage = freighterFamily[0].image;
+
 const families = [
+  {
+    href: "/aircraft/freighter",
+    phase: "Cargo-first",
+    name: "Freighter",
+    variants: "Regional airframe · designation TBD",
+    blurb:
+      "The first aircraft out the door. A regional freighter on the shared Phase 1 airframe — proving the architecture in cargo and defense before commercial.",
+    image: freighterImage,
+  },
   {
     href: "/aircraft/regional",
     phase: "Phase 1",
@@ -19,6 +32,7 @@ const families = [
     variants: "R-50 · R-75 · R-100",
     blurb:
       "A 5-abreast family sharing one wing, one cross-section, and one engine family within the phase. Built to restore the thin routes first.",
+    image: undefined,
   },
   {
     href: "/aircraft/narrowbody",
@@ -27,6 +41,7 @@ const families = [
     variants: "6-abreast · variants TBD",
     blurb:
       "The third manufacturer airline CEOs have demanded — developed concurrently, aimed at the single-aisle market.",
+    image: undefined,
   },
 ];
 
@@ -41,7 +56,7 @@ export default function AircraftOverviewPage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {families.map((f) => (
               <article
                 key={f.href}
@@ -50,7 +65,17 @@ export default function AircraftOverviewPage() {
                 <span className="text-xs uppercase tracking-eyebrow text-amber">
                   {f.phase}
                 </span>
-                <AircraftSilhouette className="my-8 text-saffron" label={f.name} />
+                {f.image ? (
+                  <Image
+                    src={f.image.src}
+                    alt={f.image.alt}
+                    width={f.image.width}
+                    height={f.image.height}
+                    className="my-8 h-auto w-full rounded-xl"
+                  />
+                ) : (
+                  <AircraftSilhouette className="my-8 text-saffron" label={f.name} />
+                )}
                 <h2 className="font-serif text-2xl text-cream">{f.name}</h2>
                 <p className="mt-1 text-sm uppercase tracking-eyebrow text-cream/50">
                   {f.variants}
