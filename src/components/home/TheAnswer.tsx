@@ -2,25 +2,25 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
-import { regionalFamily } from "@/data/aircraft";
 
-/**
- * The fleet, listed with its mission intent. Regional variants are pulled from
- * the shared aircraft data (name + tagline) so copy stays in sync; the
- * narrowbody family is summarized at the family level while variant names
- * remain TBD per the brief.
- */
-const fleet = [
-  ...regionalFamily.map((a) => ({
-    name: a.name,
-    detail: a.seats,
-    intent: a.tagline,
-  })),
+const families = [
   {
-    name: "Narrowbody family",
-    detail: "6-abreast · variants TBD",
-    intent:
-      "The third manufacturer airline CEOs have asked for — positioned against the single-aisle duopoly.",
+    name: "The R-50",
+    variants: "~50 seats · ~1,200 nm",
+    blurb:
+      "The thin-route restorer — sized for the 50-seat missions the market abandoned when the small jets retired.",
+  },
+  {
+    name: "The R-75",
+    variants: "~75 seats · ~1,500 nm",
+    blurb:
+      "The workhorse of the family, right where the over-capable regional jets are flying today.",
+  },
+  {
+    name: "The R-100",
+    variants: "~100 seats · ~1,800 nm",
+    blurb:
+      "Regional capacity with mainline economics — the top of a 5-abreast family sharing one wing, one cross-section, one engine.",
   },
 ];
 
@@ -30,7 +30,7 @@ export function TheAnswer() {
       <Container>
         <Eyebrow>The answer</Eyebrow>
         <h2 className="mt-5 max-w-2xl text-balance font-serif text-3xl leading-tight text-cream sm:text-4xl">
-          Two families. One clean-sheet bet on the routes everyone abandoned.
+          One regional family. A clean-sheet bet on the routes everyone abandoned.
         </h2>
 
         {/* Family picture of the aircraft. */}
@@ -48,19 +48,19 @@ export function TheAnswer() {
 
         {/* The aircraft and their mission intent. */}
         <ul className="mt-12 border-y border-cream/10">
-          {fleet.map((a) => (
+          {families.map((f) => (
             <li
-              key={a.name}
+              key={f.name}
               className="flex flex-col gap-2 border-t border-cream/10 py-6 first:border-t-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-10"
             >
               <div className="flex items-baseline gap-4">
-                <span className="font-serif text-2xl text-cream">{a.name}</span>
+                <span className="font-serif text-2xl text-cream">{f.name}</span>
                 <span className="text-xs uppercase tracking-eyebrow text-cream/50">
-                  {a.detail}
+                  {f.variants}
                 </span>
               </div>
               <p className="text-pretty text-cream/70 sm:max-w-md sm:text-right">
-                {a.intent}
+                {f.blurb}
               </p>
             </li>
           ))}
