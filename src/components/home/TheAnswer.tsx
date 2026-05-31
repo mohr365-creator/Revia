@@ -1,22 +1,26 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
-import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
+import { regionalFamily } from "@/data/aircraft";
 
-const families = [
+/**
+ * The fleet, listed with its mission intent. Regional variants are pulled from
+ * the shared aircraft data (name + tagline) so copy stays in sync; the
+ * narrowbody family is summarized at the family level while variant names
+ * remain TBD per the brief.
+ */
+const fleet = [
+  ...regionalFamily.map((a) => ({
+    name: a.name,
+    detail: a.seats,
+    intent: a.tagline,
+  })),
   {
-    name: "The regional family",
-    variants: "R-50 · R-75 · R-100",
-    blurb:
-      "A 5-abreast family that shares one wing, one cross-section, and one engine family — built to restore the thin routes first.",
-    phase: "Phase 1",
-  },
-  {
-    name: "The narrowbody family",
-    variants: "6-abreast · variants TBD",
-    blurb:
-      "The third manufacturer airline CEOs have asked for — concurrent development, positioned against the single-aisle duopoly.",
-    phase: "Phase 2",
+    name: "Narrowbody family",
+    detail: "6-abreast · variants TBD",
+    intent:
+      "The third manufacturer airline CEOs have asked for — positioned against the single-aisle duopoly.",
   },
 ];
 
@@ -29,24 +33,50 @@ export function TheAnswer() {
           Two families. One clean-sheet bet on the routes everyone abandoned.
         </h2>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {families.map((f) => (
-            <div
-              key={f.name}
-              className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8"
+        {/* Family picture of the aircraft. */}
+        <figure className="mt-12 overflow-hidden rounded-2xl border border-cream/10">
+          <Image
+            src="/images/aircraft-family.png"
+            alt="The Revia regional family in formation flight"
+            width={1654}
+            height={951}
+            className="h-auto w-full"
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            priority
+          />
+        </figure>
+
+        {/* The aircraft and their mission intent. */}
+        <ul className="mt-12 border-y border-cream/10">
+          {fleet.map((a) => (
+            <li
+              key={a.name}
+              className="flex flex-col gap-2 border-t border-cream/10 py-6 first:border-t-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-10"
             >
-              <span className="text-xs uppercase tracking-eyebrow text-amber">
-                {f.phase}
-              </span>
-              <AircraftSilhouette className="my-8 text-saffron" label={f.name} />
-              <h3 className="font-serif text-2xl text-cream">{f.name}</h3>
-              <p className="mt-1 text-sm uppercase tracking-eyebrow text-cream/50">
-                {f.variants}
+              <div className="flex items-baseline gap-4">
+                <span className="font-serif text-2xl text-cream">{a.name}</span>
+                <span className="text-xs uppercase tracking-eyebrow text-cream/50">
+                  {a.detail}
+                </span>
+              </div>
+              <p className="text-pretty text-cream/70 sm:max-w-md sm:text-right">
+                {a.intent}
               </p>
-              <p className="mt-4 text-pretty text-cream/70">{f.blurb}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {/* Boarding from the ground. */}
+        <figure className="mt-12 overflow-hidden rounded-2xl border border-cream/10">
+          <Image
+            src="/images/boarding.png"
+            alt="A passenger approaching a Revia aircraft from the ramp to board"
+            width={1651}
+            height={953}
+            className="h-auto w-full"
+            sizes="(min-width: 1024px) 1024px, 100vw"
+          />
+        </figure>
 
         <div className="mt-10">
           <ButtonLink href="/aircraft" variant="secondary">
