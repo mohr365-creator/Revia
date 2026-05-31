@@ -19,8 +19,8 @@ const pillars = [
   },
   {
     eyebrow: "Autonomy",
-    title: "Reduced-crew, cargo-first — framed honestly.",
-    body: "Single-pilot and reduced-crew operations are real, but the regulatory state is sober: EASA paused single-pilot research, and passenger single-pilot is off the table near-term. The credible path runs through cargo first, where the certification case is tractable. We build toward it without overstating it.",
+    title: "Reduced-crew, defense and cargo first — framed honestly.",
+    body: "Single-pilot and reduced-crew operations are real, but the regulatory state is sober: EASA paused single-pilot research, and passenger single-pilot is off the table near-term. The credible path runs through defense and cargo first, where the certification case is tractable. We build toward it without overstating it.",
     flag: "Regulatory state as of 2026 — keep this copy current.",
   },
   {

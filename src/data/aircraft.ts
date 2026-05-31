@@ -62,14 +62,12 @@ export const regionalFamily: AircraftVariant[] = [
 ];
 
 /**
- * Mission variants built on the same shared architecture as the passenger
- * family. The strategy sequences defense and cargo first, so these derivatives
- * are core to the program rather than afterthoughts. Figures here are
- * derivative estimates — the R-100F off the R-100 baseline, the R-75 SM off the
- * R-75 — and are flagged for verification until the freighter and
- * special-missions configurations are defined.
+ * Cargo variant — the freighter side of the commercial offering. Built on the
+ * same shared architecture as the passenger family (R-100F off the R-100
+ * baseline). Figures are derivative estimates, flagged for verification until
+ * the freighter configuration is defined.
  */
-export const missionVariants: AircraftVariant[] = [
+export const cargoVariants: AircraftVariant[] = [
   {
     name: "R-100F",
     internalCode: "1C-F",
@@ -86,6 +84,17 @@ export const missionVariants: AircraftVariant[] = [
       { label: "Engine", value: "PW1500G", verified: true },
     ],
   },
+];
+
+/**
+ * Special-missions (defense) variants. Built on the same shared architecture,
+ * but kept separate from the commercial offering. We say "Special Missions"
+ * rather than name a single airframe because, in theory, any airframe in the
+ * family can be adapted to the mission. Figures here are derivative estimates,
+ * flagged for verification until the special-missions configurations are
+ * defined.
+ */
+export const specialMissions: AircraftVariant[] = [
   {
     name: "R-75 SM",
     internalCode: "1B-SM",
