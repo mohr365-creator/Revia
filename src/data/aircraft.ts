@@ -64,20 +64,23 @@ export const regionalFamily: AircraftVariant[] = [
 /**
  * Mission variants built on the same shared architecture as the passenger
  * family. The strategy sequences defense and cargo first, so these derivatives
- * are core to the program rather than afterthoughts. All figures here are
- * derivative estimates off the R-75 baseline and are flagged for verification
- * until the freighter and special-missions configurations are defined.
+ * are core to the program rather than afterthoughts. Figures here are
+ * derivative estimates — the R-100F off the R-100 baseline, the R-75 SM off the
+ * R-75 — and are flagged for verification until the freighter and
+ * special-missions configurations are defined.
  */
 export const missionVariants: AircraftVariant[] = [
   {
-    name: "R-75F",
-    internalCode: "1B-F",
+    name: "R-100F",
+    internalCode: "1C-F",
     tagline: "Cargo-first, by design.",
     seats: "Main-deck freighter",
-    range: "~1,400 nm",
+    range: "~1,800 nm",
+    image: "/aircraft/freighter.png",
+    imageAlt: "Revia R-100F regional freighter in flight over countryside.",
     specs: [
-      { label: "Payload", value: "~9,000 kg", verified: false },
-      { label: "Range (max payload)", value: "~1,400 nm", verified: false },
+      { label: "Payload", value: "~12,000 kg", verified: false },
+      { label: "Range (max payload)", value: "~1,800 nm", verified: false },
       { label: "Main-deck door", value: "Forward port cargo door", verified: false },
       { label: "Containers", value: "Bulk + ULD-capable", verified: false },
       { label: "Engine", value: "PW1500G", verified: true },

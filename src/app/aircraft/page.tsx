@@ -15,7 +15,7 @@ const families = [
   {
     href: "/aircraft/regional",
     name: "Regional family",
-    variants: "R-50 · R-75 · R-100 · R-75F · R-75 SM",
+    variants: "R-50 · R-75 · R-100 · R-100F · R-75 SM",
     blurb:
       "A 5-abreast family sharing one wing, one cross-section, and one engine family — passenger, freighter, and special-missions variants. Built to restore the thin routes first.",
     image: "/aircraft/regional-family.png",
