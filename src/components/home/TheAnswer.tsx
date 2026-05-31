@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
-import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
 
 const families = [
   {
@@ -33,21 +33,50 @@ export function TheAnswer() {
           One regional family. A clean-sheet bet on the routes everyone abandoned.
         </h2>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {/* Family picture of the aircraft. */}
+        <figure className="mt-12 overflow-hidden rounded-2xl border border-cream/10">
+          <Image
+            src="/images/aircraft-family.png"
+            alt="The Revia regional family in formation flight"
+            width={1654}
+            height={951}
+            className="h-auto w-full"
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            priority
+          />
+        </figure>
+
+        {/* The aircraft and their mission intent. */}
+        <ul className="mt-12 border-y border-cream/10">
           {families.map((f) => (
-            <div
+            <li
               key={f.name}
-              className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8"
+              className="flex flex-col gap-2 border-t border-cream/10 py-6 first:border-t-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-10"
             >
-              <AircraftSilhouette className="mb-8 text-saffron" label={f.name} />
-              <h3 className="font-serif text-2xl text-cream">{f.name}</h3>
-              <p className="mt-1 text-sm uppercase tracking-eyebrow text-cream/50">
-                {f.variants}
+              <div className="flex items-baseline gap-4">
+                <span className="font-serif text-2xl text-cream">{f.name}</span>
+                <span className="text-xs uppercase tracking-eyebrow text-cream/50">
+                  {f.variants}
+                </span>
+              </div>
+              <p className="text-pretty text-cream/70 sm:max-w-md sm:text-right">
+                {f.blurb}
               </p>
-              <p className="mt-4 text-pretty text-cream/70">{f.blurb}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {/* Boarding from the ground. */}
+        <figure className="mt-12 overflow-hidden rounded-2xl border border-cream/10">
+          <Image
+            src="/images/boarding.png"
+            alt="A passenger approaching a Revia aircraft from the ramp to board"
+            width={1651}
+            height={953}
+            className="h-auto w-full"
+            sizes="(min-width: 1024px) 1024px, 100vw"
+          />
+        </figure>
 
         <div className="mt-10">
           <ButtonLink href="/aircraft" variant="secondary">
