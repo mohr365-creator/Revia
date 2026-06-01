@@ -87,25 +87,116 @@ export const cargoVariants: AircraftVariant[] = [
 ];
 
 /**
- * Special-missions (defense) variants. Built on the same shared architecture,
- * but kept separate from the commercial offering. We say "Special Missions"
- * rather than name a single airframe because, in theory, any airframe in the
- * family can be adapted to the mission. Figures here are derivative estimates,
- * flagged for verification until the special-missions configurations are
+ * Commercial special-missions variants. Built on the same shared architecture
+ * as the passenger and cargo family, but configured for civil public-service
+ * and industrial roles — distinct from the defense variants below. Figures are
+ * derivative concepts, flagged for verification until configurations are
  * defined.
  */
 export const specialMissions: AircraftVariant[] = [
   {
-    name: "R-75 SM",
-    internalCode: "1B-SM",
-    tagline: "ISR, maritime patrol, medevac, and connector.",
-    seats: "Mission-configurable",
+    name: "Air Ambulance",
+    tagline: "ICU-grade aeromedical transport into short fields.",
+    seats: "R-50 · R-75 based",
+    range: "~1,500 nm",
+    specs: [
+      { label: "Configuration", value: "Litters + critical-care team", verified: false },
+      { label: "Cabin", value: "Reconfigurable medical deck", verified: false },
+      { label: "Field", value: "Short / unimproved", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "Aerial Firefighting",
+    tagline: "Retardant and water delivery with regional reach.",
+    seats: "R-100 based",
+    range: "Ferry ~1,800 nm",
+    specs: [
+      { label: "Tank", value: "Roll-on/roll-off (concept)", verified: false },
+      { label: "Drop", value: "Constant-flow system (concept)", verified: false },
+      { label: "Reload", value: "Ground / scoop — TBD", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "Oil Spill Response",
+    tagline: "Dispersant spray and surveillance for marine response.",
+    seats: "R-75 based",
+    range: "~1,500 nm",
+    specs: [
+      { label: "Spray", value: "Wing / belly boom (concept)", verified: false },
+      { label: "Sensors", value: "Slick mapping suite", verified: false },
+      { label: "Endurance", value: "~6 hrs", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "Survey & SAR",
+    tagline: "Civil search-and-rescue, survey, and aerial mapping.",
+    seats: "R-50 based",
+    range: "~1,500 nm",
+    specs: [
+      { label: "Sensors", value: "EO/IR · radar (concept)", verified: false },
+      { label: "Endurance", value: "~6 hrs", verified: false },
+      { label: "Provisions", value: "Drop hatch / observer stations", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+];
+
+/**
+ * Defense variants. Same shared architecture, configured for military roles and
+ * kept distinct from the commercial special-missions line above. We sequence
+ * defense and cargo first, so these are core to the program. Figures are
+ * derivative concepts, flagged for verification until defined.
+ */
+export const defenseVariants: AircraftVariant[] = [
+  {
+    name: "ISR",
+    tagline: "Intelligence, surveillance, and reconnaissance with long loiter.",
+    seats: "R-75 based",
     range: "~1,800 nm",
     specs: [
-      { label: "Roles", value: "ISR · maritime patrol · medevac", verified: false },
+      { label: "Roles", value: "ISR · signals (provisions)", verified: false },
       { label: "Endurance", value: "~6 hrs", verified: false },
-      { label: "Cabin", value: "Reconfigurable mission deck", verified: false },
-      { label: "Provisions", value: "Sensor / palletized systems", verified: false },
+      { label: "Sensors", value: "EO/IR · radar provisions", verified: false },
+      { label: "Cabin", value: "Operator mission deck", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "Maritime Patrol",
+    tagline: "Wide-area surface search and maritime patrol.",
+    seats: "R-100 based",
+    range: "~1,800 nm",
+    specs: [
+      { label: "Roles", value: "Maritime patrol · ASW provisions", verified: false },
+      { label: "Sensors", value: "Surface-search radar", verified: false },
+      { label: "Endurance", value: "~6–7 hrs", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "Tactical Airlift",
+    tagline: "Connector airlift between austere nodes.",
+    seats: "R-75 based",
+    range: "~1,500 nm",
+    specs: [
+      { label: "Floor", value: "Flat cargo floor", verified: false },
+      { label: "Field", value: "Short / unimproved", verified: false },
+      { label: "Payload", value: "Palletized (concept)", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
+    ],
+  },
+  {
+    name: "Aeromedical Evacuation",
+    tagline: "Military patient movement from forward areas.",
+    seats: "R-75 based",
+    range: "~1,500 nm",
+    specs: [
+      { label: "Configuration", value: "Litters + care team", verified: false },
+      { label: "Cabin", value: "Reconfigurable medical deck", verified: false },
+      { label: "Field", value: "Short / unimproved", verified: false },
       { label: "Engine", value: "PW1500G", verified: true },
     ],
   },

@@ -2,42 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { DataFlag } from "@/components/ui/DataFlag";
 import { ButtonLink } from "@/components/ui/Button";
+import { VariantCard } from "@/components/aircraft/VariantCard";
 import { DefenseLogo } from "@/components/brand/DefenseLogo";
+import { defenseVariants } from "@/data/aircraft";
 
 export const metadata: Metadata = {
   title: "Defense",
   description:
-    "Revia Defense — the same common architecture, sequenced for special missions and government programs first.",
+    "Revia Defense — military variants on the shared architecture: ISR, maritime patrol, tactical airlift, and aeromedical evacuation. Defense and cargo first.",
 };
-
-const missions = [
-  {
-    name: "ISR & special missions",
-    blurb:
-      "A roomy, efficient regional airframe is a natural sensor and mission-systems platform: long loiter, generous payload and power, and a cabin that reconfigures for operators and racks.",
-  },
-  {
-    name: "Tactical & logistics airlift",
-    blurb:
-      "Short, unimproved-field performance and a flat cabin floor make the family a candidate for connector airlift between austere nodes the majors no longer serve.",
-  },
-  {
-    name: "Medevac & humanitarian",
-    blurb:
-      "The same thin-route reach that revives civilian connections moves patients and relief into places without long runways or fixed infrastructure.",
-  },
-  {
-    name: "Personnel & VIP transport",
-    blurb:
-      "Quiet, modern, and economic to operate — a fit for routine government and personnel movement that today rides on aging, fuel-hungry types.",
-  },
-];
 
 const opportunities = [
   {
     heading: "Why defense first",
-    body: "Government and special-mission demand pulls the program forward: it tolerates lower initial rate, values commonality, and underwrites the certification path that the commercial family inherits.",
+    body: "Government demand pulls the program forward: it tolerates lower initial rate, values commonality, and underwrites the certification path the commercial family inherits.",
   },
   {
     heading: "Built on commonality",
@@ -62,15 +42,16 @@ export default function DefensePage() {
           </h1>
           <p className="mt-6 max-w-2xl text-pretty text-lg text-cream/70">
             Revia Defense applies the regional family — shared wing,
-            cross-section, and engine — to special missions and government
-            programs. Defense and cargo lead; commercial follows.
+            cross-section, and engine — to military roles. Defense and cargo
+            lead; commercial follows. These variants are distinct from our
+            civil special-mission line.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/aircraft/special-missions" variant="primary">
-              Special missions →
-            </ButtonLink>
-            <ButtonLink href="/contact" variant="secondary">
+            <ButtonLink href="/contact" variant="primary">
               Partner with us
+            </ButtonLink>
+            <ButtonLink href="/aircraft/special-missions" variant="secondary">
+              Commercial special missions →
             </ButtonLink>
           </div>
         </Container>
@@ -78,19 +59,23 @@ export default function DefensePage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <Eyebrow>Mission set</Eyebrow>
+          <Eyebrow>Defense variants</Eyebrow>
           <h2 className="mt-4 max-w-3xl text-balance font-serif text-3xl text-cream">
             Where a common regional platform earns its keep.
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {missions.map((m) => (
-              <article
-                key={m.name}
-                className="rounded-2xl border border-cream/10 bg-cream/[0.03] p-8"
-              >
-                <h3 className="font-serif text-xl text-cream">{m.name}</h3>
-                <p className="mt-3 text-pretty text-cream/70">{m.blurb}</p>
-              </article>
+
+          <div className="my-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
+            <DataFlag>Concept · specs unverified</DataFlag>
+            <p>
+              The configurations below are derivative concepts. Roles, endurance,
+              and mission systems are illustrative and must be confirmed against a
+              defined program before publishing.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            {defenseVariants.map((v) => (
+              <VariantCard key={String(v.name)} variant={v} />
             ))}
           </div>
         </Container>
@@ -118,11 +103,12 @@ export default function DefensePage() {
             </p>
             <p className="mt-3 max-w-2xl text-pretty text-cream/70">
               We work with primes, integrators, and government stakeholders on
-              payload definition and timelines. See the platform on the{" "}
+              payload definition and timelines. For civil roles — air ambulance,
+              firefighting, oil-spill response, and survey/SAR — see{" "}
               <Link href="/aircraft/special-missions" className="text-amber hover:text-saffron">
-                Special missions
-              </Link>{" "}
-              page, or reach out directly.
+                Special Missions
+              </Link>
+              .
             </p>
             <div className="mt-6">
               <ButtonLink href="/contact" variant="primary">
