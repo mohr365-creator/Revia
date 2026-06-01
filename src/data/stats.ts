@@ -19,7 +19,7 @@ export const communitiesLost: Stat = {
 export const routesLostHeadline: Stat = {
   value: "840+",
   label: "routes went dark",
-  source: "PLACEHOLDER — not yet sourced; must be computed from the dataset",
+  source: "PLACEHOLDER: not yet sourced; must be computed from the dataset",
   verified: false,
 };
 
@@ -51,7 +51,7 @@ export const supportingStats: Stat[] = [
   {
     value: "8,000–10,000",
     label: "aircraft total addressable market in the 50–100 seat gap",
-    source: "Internal estimate — PROJECT_BRIEF",
+    source: "Internal estimate: PROJECT_BRIEF",
     verified: false,
   },
 ];

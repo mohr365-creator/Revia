@@ -13,7 +13,7 @@ const followUp: Record<InquiryId, string> = {
   investor: "We'll route this to the founder and follow up with a data-room link.",
   partner: "We'll connect you with the program team on specs and route economics.",
   press: "We'll send the media kit and arrange any interviews.",
-  careers: "We'll be in touch as roles open — tell us how you want to contribute.",
+  careers: "We'll be in touch as roles open. Tell us how you want to contribute.",
   general: "We'll get your message to the right person.",
 };
 
@@ -33,7 +33,7 @@ export function ContactForm() {
           {followUp[type]}
         </p>
         <p className="mt-6 text-xs text-cream/40">
-          (Demo only — no message was sent. Wire this form to an inbox before
+          (Demo only: no message was sent. Wire this form to an inbox before
           launch.)
         </p>
       </div>

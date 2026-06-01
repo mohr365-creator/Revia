@@ -86,7 +86,7 @@ export function CommunityPanel({
         <div className="rounded-xl border border-amber/40 bg-amber/10 p-4">
           <p className="text-sm text-cream">
             <span className="font-medium text-amber">{community.restorableBy}</span>{" "}
-            closes this gap — {community.routesLost} route
+            closes this gap: {community.routesLost} route
             {community.routesLost === 1 ? "" : "s"} back on.
           </p>
         </div>

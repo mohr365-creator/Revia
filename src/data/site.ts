@@ -5,7 +5,7 @@ export const site = {
     "America and the world lost the small-aircraft routes that connected ordinary places. Revia is building the aircraft to bring them back.",
   // Domain unresolved — revia.com is taken. Placeholder until confirmed.
   domain: "revia.aero",
-  disclaimer: "Confidential — pre–Series A.",
+  disclaimer: "Confidential: pre-Series A.",
 } as const;
 
 export const primaryNav = [

@@ -18,7 +18,7 @@ export function MapTeaser() {
               this sample alone.
             </h2>
             <p className="mt-5 max-w-md text-pretty text-cream/70">
-              Every faded line is a connection that used to exist — a city-pair
+              Every faded line is a connection that used to exist: a city-pair
               that quietly disappeared from the map. Explore it community by
               community.
             </p>

@@ -59,7 +59,7 @@ export const narrowbodyFamily: AircraftVariant[] = [
   {
     name: "N-150 (placeholder)",
     internalCode: "2A",
-    tagline: "Entry narrowbody — variant name TBD.",
+    tagline: "Entry narrowbody, variant name TBD.",
     seats: "~150 seats",
     range: "~3,000 nm",
     specs: [
@@ -72,7 +72,7 @@ export const narrowbodyFamily: AircraftVariant[] = [
   {
     name: "N-180 (placeholder)",
     internalCode: "2B",
-    tagline: "Stretch narrowbody — variant name TBD.",
+    tagline: "Stretch narrowbody, variant name TBD.",
     seats: "~180 seats",
     range: "~3,200 nm",
     specs: [
@@ -92,13 +92,13 @@ export const ceoQuotes: Quote[] = [
   {
     text: "We need more competition in the aerospace business.",
     attribution: "Scott Kirby, CEO, United Airlines",
-    context: "Attributed — IATA Dubai 2024. VERIFY exact wording, venue, and date.",
+    context: "Attributed: IATA Dubai 2024. VERIFY exact wording, venue, and date.",
     verified: false,
   },
   {
     text: "We'd consider a third manufacturer if they came in 10–20% below Airbus.",
     attribution: "Michael O'Leary, CEO, Ryanair",
-    context: "Paraphrased — VERIFY exact wording, source, and date before publishing.",
+    context: "Paraphrased: VERIFY exact wording, source, and date before publishing.",
     verified: false,
   },
 ];

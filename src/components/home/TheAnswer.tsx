@@ -8,14 +8,14 @@ const families = [
     name: "The regional family",
     variants: "R-50 · R-75 · R-100",
     blurb:
-      "A 5-abreast family that shares one wing, one cross-section, and one engine family — built to restore the thin routes first.",
+      "A 5-abreast family that shares one wing, one cross-section, and one engine family, built to restore the thin routes first.",
     phase: "Phase 1",
   },
   {
     name: "The narrowbody family",
     variants: "6-abreast · variants TBD",
     blurb:
-      "The third manufacturer airline CEOs have asked for — concurrent development, positioned against the single-aisle duopoly.",
+      "The third manufacturer airline CEOs have asked for, with concurrent development positioned against the single-aisle duopoly.",
     phase: "Phase 2",
   },
 ];

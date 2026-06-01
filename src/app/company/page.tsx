@@ -34,7 +34,7 @@ export default function CompanyPage() {
             <Eyebrow>Founder</Eyebrow>
             <div className="mt-4 flex items-center gap-3">
               <h2 className="font-serif text-2xl text-cream">Michael</h2>
-              <DataFlag title="Founder is currently employed elsewhere — confirm what is public before publishing.">
+              <DataFlag title="Founder is currently employed elsewhere: confirm what is public before publishing.">
                 Confirm public bio
               </DataFlag>
             </div>
