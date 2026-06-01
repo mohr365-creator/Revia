@@ -8,7 +8,7 @@ import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
 export const metadata: Metadata = {
   title: "Aircraft",
   description:
-    "One architecture, two markets — a commercial family (passenger + cargo) and special-missions derivatives, built on shared structure. Defense and cargo first, then commercial.",
+    "One architecture — a commercial family (passenger + cargo) and civil special-mission derivatives, built on shared structure. Defense variants live in the Defense section.",
 };
 
 type FamilyCard = {
@@ -37,13 +37,13 @@ const families: FamilyCard[] = [
     cta: "Explore the commercial family →",
   },
   {
-    id: "defense",
+    id: "special-missions",
     href: "/aircraft/special-missions",
-    eyebrow: "Defense",
+    eyebrow: "Special Missions",
     name: "Special Missions",
-    variants: "R-75 SM · mission-configurable",
+    variants: "Air ambulance · firefighting · oil-spill · SAR",
     blurb:
-      "Defense derivatives on the same shared architecture — ISR, maritime patrol, medevac, and connector roles. We say Special Missions because any airframe in the family can be adapted to the mission.",
+      "Commercial special-mission derivatives on the same shared architecture — civil public-service and industrial roles. We say Special Missions because any airframe in the family can be adapted to the mission.",
     cta: "Explore Special Missions →",
   },
 ];
@@ -93,6 +93,25 @@ export default function AircraftOverviewPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="mt-6 flex flex-col gap-6 rounded-2xl border border-cream/10 bg-cream/[0.03] p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <span className="text-xs uppercase tracking-eyebrow text-amber">
+                Defense
+              </span>
+              <h2 className="mt-2 font-serif text-2xl text-cream">
+                Military variants are a separate line.
+              </h2>
+              <p className="mt-3 text-pretty text-cream/70">
+                ISR, maritime patrol, tactical airlift, and aeromedical
+                evacuation — built on the same architecture, kept distinct from
+                the civil special-mission roles above.
+              </p>
+            </div>
+            <ButtonLink href="/defense" variant="secondary" className="shrink-0">
+              Revia Defense →
+            </ButtonLink>
           </div>
 
           <div className="mt-12 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8">
