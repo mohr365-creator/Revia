@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Lost routes",
   description:
-    "An interactive map of the severed regional network — communities and city-pairs that lost service — plus the short routes flown today by over-capable aircraft.",
+    "An interactive map of the severed regional network: communities and city-pairs that lost service, plus the short routes flown today by over-capable aircraft.",
 };
 
 export default function RoutesPage() {
@@ -24,7 +24,7 @@ export default function RoutesPage() {
       <PageHeader
         eyebrow="The severed network"
         title="Every place that lost its way to the rest of the map."
-        intro={`${communitiesLost.value} U.S. communities lost all commercial service since 1995. ${communitiesDocumented} are documented here, route by route. Filter, toggle before and after, and click any community to see what it lost — its source — and which Revia aircraft brings it back.`}
+        intro={`${communitiesLost.value} U.S. communities lost all commercial service since 1995. ${communitiesDocumented} are documented here, route by route. Filter, toggle before and after, and click any community to see what it lost, its source, and which Revia aircraft brings it back.`}
       />
 
       <section className="bg-navy py-16">
@@ -35,9 +35,9 @@ export default function RoutesPage() {
               This map runs on documented communities from DOT orders, GAO
               reports and the EAS program ({communitiesConfirmed} of{" "}
               {communitiesDocumented} confirmed; the rest are{" "}
-              <em>needs-check</em> — open any community to see its source). The
-              full national dataset — every flagged city-pair with frequencies
-              and passengers — is enumerated by the pipeline in{" "}
+              <em>needs-check</em>; open any community to see its source). The
+              full national dataset (every flagged city-pair with frequencies
+              and passengers) is enumerated by the pipeline in{" "}
               <code className="text-cream/80">
                 data-sources/route-analysis
               </code>{" "}

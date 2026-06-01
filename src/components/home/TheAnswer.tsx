@@ -8,7 +8,7 @@ const families = [
     name: "The R-50",
     variants: "~50 seats · ~1,200 nm",
     blurb:
-      "The thin-route restorer — sized for the 50-seat missions the market abandoned when the small jets retired.",
+      "The thin-route restorer, sized for the 50-seat missions the market abandoned when the small jets retired.",
   },
   {
     name: "The R-75",
@@ -20,7 +20,7 @@ const families = [
     name: "The R-100",
     variants: "~100 seats · ~1,800 nm",
     blurb:
-      "Regional capacity with mainline economics — the top of a 5-abreast family sharing one wing, one cross-section, one engine.",
+      "Regional capacity with mainline economics, at the top of a 5-abreast family sharing one wing, one cross-section, one engine.",
   },
 ];
 

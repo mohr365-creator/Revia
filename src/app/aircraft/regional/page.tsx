@@ -10,7 +10,7 @@ import { regionalFamily, cargoVariants } from "@/data/aircraft";
 export const metadata: Metadata = {
   title: "Commercial",
   description:
-    "The commercial family — passenger (R-50, R-75, R-100) and cargo (R-100F) on one shared 5-abreast architecture.",
+    "The commercial family: passenger (R-50, R-75, R-100) and cargo (R-100F) on one shared 5-abreast architecture.",
 };
 
 export default function CommercialPage() {
@@ -19,7 +19,7 @@ export default function CommercialPage() {
       <PageHeader
         eyebrow="Commercial"
         title="R-50 · R-75 · R-100 · R-100F"
-        intro="A 5-abreast commercial family built on shared architecture — passenger and cargo on one wing, one cross-section, and one engine family — designed to make thin routes economic again."
+        intro="A 5-abreast commercial family built on shared architecture, with passenger and cargo on one wing, one cross-section, and one engine family, designed to make thin routes economic again."
       />
 
       <section className="bg-navy py-16">
@@ -27,8 +27,8 @@ export default function CommercialPage() {
           <div className="mb-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
             <DataFlag>Specs unverified</DataFlag>
             <p>
-              Several figures below — notably R-100 MTOW, R-50 runway, and R-50
-              range — are flagged for verification and must not ship as fact
+              Several figures below (notably R-100 MTOW, R-50 runway, and R-50
+              range) are flagged for verification and must not ship as fact
               until confirmed.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function CommercialPage() {
               The regional family
             </h2>
             <p className="mt-3 max-w-3xl text-pretty text-cream/70">
-              Three passenger aircraft, one architecture — sized to restore the
+              Three passenger aircraft, one architecture, sized to restore the
               thin routes the majors abandoned.
             </p>
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
@@ -52,12 +52,12 @@ export default function CommercialPage() {
           <div id="cargo" className="mt-16 scroll-mt-24">
             <Eyebrow>Cargo</Eyebrow>
             <h2 className="mt-4 font-serif text-2xl text-cream">
-              Beyond passenger — the freighter
+              Beyond passenger: the freighter
             </h2>
             <p className="mt-3 max-w-3xl text-pretty text-cream/70">
               The same wing, cross-section, and engine family carry into cargo.
               We sequence defense and cargo first, so the freighter is core to
-              the program — not an afterthought.
+              the program, not an afterthought.
             </p>
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               {cargoVariants.map((v) => (
@@ -70,7 +70,7 @@ export default function CommercialPage() {
             <Eyebrow>Special Missions</Eyebrow>
             <p className="mt-4 max-w-3xl text-pretty text-lg text-cream/75">
               The same architecture also underpins our defense work. Special
-              Missions derivatives — ISR, maritime patrol, medevac — live on
+              Missions derivatives (ISR, maritime patrol, medevac) live on
               their own page.
             </p>
             <div className="mt-6">
@@ -84,7 +84,7 @@ export default function CommercialPage() {
           </div>
 
           <div className="mt-12 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8">
-            <Eyebrow>Commonality footer</Eyebrow>
+            <Eyebrow>Commonality</Eyebrow>
             <p className="mt-4 max-w-3xl text-pretty text-lg text-cream/75">
               Shared wing · shared fuselage cross-section · shared engine family
               (derated PW1500G). One development program across the family.

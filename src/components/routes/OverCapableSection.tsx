@@ -79,13 +79,13 @@ export function OverCapableSection() {
         <p className="mt-5 max-w-2xl text-pretty text-cream/70">
           The flip side of the severed map: short hops flown today by aircraft
           built for missions five, ten, even forty times longer. Capability
-          ratio is range ÷ stage length — every route below is{" "}
+          ratio is range ÷ stage length; every route below is{" "}
           <span className="text-cream">severe</span> (≥ 5×), carrying structural
           weight and trip fuel the mission never needed. These {overCapableCount}{" "}
           are real, illustrative anchors.
         </p>
         <p className="mt-3 flex flex-wrap items-center gap-2 text-sm text-cream/50">
-          <DataFlag title="Aircraft ranges are nominal manufacturer/industry figures; the route + equipment pairings are real. Frequencies and passenger counts come from running the pipeline against BTS T-100 — see data-sources/route-analysis/METHODOLOGY.md.">
+          <DataFlag title="Aircraft ranges are nominal manufacturer/industry figures; the route + equipment pairings are real. Frequencies and passenger counts come from running the pipeline against BTS T-100; see data-sources/route-analysis/METHODOLOGY.md.">
             Ratios confirmed · traffic pending T-100
           </DataFlag>
         </p>
@@ -96,7 +96,7 @@ export function OverCapableSection() {
           </h3>
           <p className="mt-2 max-w-2xl text-sm text-cream/60">
             Regional jets (E175, CRJ-900, E190) over-ranged for the mission.
-            Same seats, a fraction of the trip fuel — these map cleanly onto
+            Same seats, a fraction of the trip fuel; these map cleanly onto
             R-75 / R-100 and size the regional commercial story.
           </p>
           <div className="mt-5">

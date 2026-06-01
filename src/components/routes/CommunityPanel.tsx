@@ -91,7 +91,7 @@ export function CommunityPanel({
           <dd className="text-cream">
             {community.formerHubs.length > 0
               ? hubNames(community.formerHubs)
-              : "—"}
+              : "N/A"}
           </dd>
         </div>
         <div>
@@ -109,10 +109,10 @@ export function CommunityPanel({
               {community.restorableBy}
             </span>{" "}
             {easOnly ? (
-              <>flies this link without the subsidy — service that pays its own way.</>
+              <>flies this link without the subsidy: service that pays its own way.</>
             ) : (
               <>
-                closes this gap — {community.routesLost} hub link
+                closes this gap: {community.routesLost} hub link
                 {community.routesLost === 1 ? "" : "s"} back on.
               </>
             )}

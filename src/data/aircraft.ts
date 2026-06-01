@@ -114,7 +114,7 @@ export const specialMissions: AircraftVariant[] = [
     specs: [
       { label: "Tank", value: "Roll-on/roll-off (concept)", verified: false },
       { label: "Drop", value: "Constant-flow system (concept)", verified: false },
-      { label: "Reload", value: "Ground / scoop — TBD", verified: false },
+      { label: "Reload", value: "Ground / scoop (TBD)", verified: false },
       { label: "Engine", value: "PW1500G", verified: true },
     ],
   },
@@ -210,13 +210,13 @@ export const ceoQuotes: Quote[] = [
   {
     text: "We need more competition in the aerospace business.",
     attribution: "Scott Kirby, CEO, United Airlines",
-    context: "Attributed — IATA Dubai 2024. VERIFY exact wording, venue, and date.",
+    context: "Attributed: IATA Dubai 2024. VERIFY exact wording, venue, and date.",
     verified: false,
   },
   {
     text: "We'd consider a third manufacturer if they came in 10–20% below Airbus.",
     attribution: "Michael O'Leary, CEO, Ryanair",
-    context: "Paraphrased — VERIFY exact wording, source, and date before publishing.",
+    context: "Paraphrased: VERIFY exact wording, source, and date before publishing.",
     verified: false,
   },
 ];

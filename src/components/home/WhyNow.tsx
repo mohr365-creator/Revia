@@ -23,7 +23,7 @@ export function WhyNow() {
                 “{q.text}”
               </blockquote>
               <figcaption className="mt-5 flex flex-wrap items-center gap-3 text-sm text-cream/60">
-                <span>— {q.attribution}</span>
+                <span>{q.attribution}</span>
                 {!q.verified && <DataFlag title={q.context}>Verify quote</DataFlag>}
               </figcaption>
             </figure>

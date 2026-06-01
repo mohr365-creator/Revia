@@ -11,7 +11,7 @@ import { defenseVariants } from "@/data/aircraft";
 export const metadata: Metadata = {
   title: "Defense",
   description:
-    "Revia Defense — military variants on the shared architecture: ISR, maritime patrol, tactical airlift, and aeromedical evacuation. Defense and cargo first.",
+    "Revia Defense: military variants on the shared architecture. ISR, maritime patrol, tactical airlift, and aeromedical evacuation. Defense and cargo first.",
 };
 
 const opportunities = [
@@ -41,8 +41,8 @@ export default function DefensePage() {
             The same architecture, sequenced for the mission.
           </h1>
           <p className="mt-6 max-w-2xl text-pretty text-lg text-cream/70">
-            Revia Defense applies the regional family — shared wing,
-            cross-section, and engine — to military roles. Defense and cargo
+            Revia Defense applies the regional family (shared wing,
+            cross-section, and engine) to military roles. Defense and cargo
             lead; commercial follows. These variants are distinct from our
             civil special-mission line.
           </p>
@@ -103,8 +103,8 @@ export default function DefensePage() {
             </p>
             <p className="mt-3 max-w-2xl text-pretty text-cream/70">
               We work with primes, integrators, and government stakeholders on
-              payload definition and timelines. For civil roles — air ambulance,
-              firefighting, oil-spill response, and survey/SAR — see{" "}
+              payload definition and timelines. For civil roles (air ambulance,
+              firefighting, oil-spill response, and survey/SAR), see{" "}
               <Link href="/aircraft/special-missions" className="text-amber hover:text-saffron">
                 Special Missions
               </Link>

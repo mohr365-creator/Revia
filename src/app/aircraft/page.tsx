@@ -8,7 +8,7 @@ import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
 export const metadata: Metadata = {
   title: "Aircraft",
   description:
-    "One architecture — a commercial family (passenger + cargo) and civil special-mission derivatives, built on shared structure. Defense variants live in the Defense section.",
+    "One architecture: a commercial family (passenger + cargo) and civil special-mission derivatives, built on shared structure. Defense variants live in the Defense section.",
 };
 
 type FamilyCard = {
@@ -31,7 +31,7 @@ const families: FamilyCard[] = [
     name: "Commercial family",
     variants: "Passenger: R-50 · R-75 · R-100 · Cargo: R-100F",
     blurb:
-      "A 5-abreast family sharing one wing, one cross-section, and one engine family — passenger and cargo variants. Built to restore the thin routes first.",
+      "A 5-abreast family sharing one wing, one cross-section, and one engine family, with passenger and cargo variants. Built to restore the thin routes first.",
     image: "/aircraft/regional-family.png",
     imageAlt: "The Revia regional family in formation flight.",
     cta: "Explore the commercial family →",
@@ -43,7 +43,7 @@ const families: FamilyCard[] = [
     name: "Special Missions",
     variants: "Air ambulance · firefighting · oil-spill · SAR",
     blurb:
-      "Commercial special-mission derivatives on the same shared architecture — civil public-service and industrial roles. We say Special Missions because any airframe in the family can be adapted to the mission.",
+      "Commercial special-mission derivatives on the same shared architecture: civil public-service and industrial roles. We say Special Missions because any airframe in the family can be adapted to the mission.",
     cta: "Explore Special Missions →",
   },
 ];
@@ -105,7 +105,7 @@ export default function AircraftOverviewPage() {
               </h2>
               <p className="mt-3 text-pretty text-cream/70">
                 ISR, maritime patrol, tactical airlift, and aeromedical
-                evacuation — built on the same architecture, kept distinct from
+                evacuation, built on the same architecture, kept distinct from
                 the civil special-mission roles above.
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function AircraftOverviewPage() {
             <Eyebrow>Commonality</Eyebrow>
             <p className="mt-4 max-w-3xl text-pretty text-lg text-cream/75">
               The R-50, R-75, and R-100 share a wing, a fuselage cross-section,
-              and an engine family — and the cargo and special-missions
+              and an engine family, and the cargo and special-missions
               derivatives inherit it. One type rating, one supply chain, one
               development program amortized across the family.
             </p>

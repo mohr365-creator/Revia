@@ -18,7 +18,7 @@ export function MapTeaser() {
               {communitiesDocumented} mapped here with their sources.
             </h2>
             <p className="mt-5 max-w-md text-pretty text-cream/70">
-              Every faded line is a connection that used to exist — a hub link
+              Every faded line is a connection that used to exist: a hub link
               that quietly disappeared from the map. Explore it community by
               community.
             </p>
