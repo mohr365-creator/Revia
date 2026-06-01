@@ -1,93 +1,69 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { DataFlag } from "@/components/ui/DataFlag";
-import { ButtonLink } from "@/components/ui/Button";
-import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
+import { VariantCard } from "@/components/aircraft/VariantCard";
+import { specialMissions } from "@/data/aircraft";
 
 export const metadata: Metadata = {
-  title: "Special missions",
+  title: "Special Missions",
   description:
-    "Special-mission and defense variants of the Revia regional family — ISR, airlift, medevac, and personnel transport on shared architecture.",
+    "Defense and special-missions derivatives on the same shared architecture — ISR, maritime patrol, medevac, and connector roles.",
 };
-
-const roles = [
-  {
-    role: "ISR / sensor platform",
-    base: "R-75 · R-100",
-    note: "Long loiter, cabin volume for mission systems and operators, and electrical headroom for sensors.",
-  },
-  {
-    role: "Tactical / connector airlift",
-    base: "R-50 · R-75",
-    note: "Short-field performance into austere strips with a flat cabin floor for palletized loads.",
-  },
-  {
-    role: "Medevac / humanitarian",
-    base: "R-75",
-    note: "Reconfigurable cabin for litters and care teams; reach into fields without long runways.",
-  },
-  {
-    role: "Personnel / VIP transport",
-    base: "R-100",
-    note: "Quiet, modern, economic-to-operate alternative to aging in-service types.",
-  },
-];
 
 export default function SpecialMissionsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Aircraft · Special missions"
-        title="Mission variants on a common airframe."
-        intro="Defense and special-mission roles built on the Phase 1 regional family — the same wing, cross-section, and engine, reconfigured for the mission."
+        eyebrow="Defense · Special Missions"
+        title="One architecture, adapted to the mission."
+        intro="Special-missions derivatives built on the same shared family. We sequence defense and cargo first — so these are core to the program, not afterthoughts. We say 'Special Missions' because, in theory, any airframe in the family can be adapted to the role."
       />
 
       <section className="bg-navy py-16">
         <Container>
           <div className="mb-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
-            <DataFlag>Concept · not yet specced</DataFlag>
+            <DataFlag>Concept · specs unverified</DataFlag>
             <p>
-              Mission roles below are illustrative of the platform&apos;s
-              potential. Payloads, performance, and variant definitions are
-              pre-program and must not be treated as committed specifications.
+              The special-missions configurations below are derivative concepts.
+              Roles, endurance, and mission systems are illustrative and must be
+              confirmed against a defined program before publishing.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {roles.map((r) => (
-              <article
-                key={r.role}
-                className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8"
-              >
-                <AircraftSilhouette className="mb-6 text-saffron" label={r.role} />
-                <h2 className="font-serif text-xl text-cream">{r.role}</h2>
-                <p className="mt-1 text-sm uppercase tracking-eyebrow text-cream/50">
-                  Base: {r.base}
-                </p>
-                <p className="mt-4 text-pretty text-cream/70">{r.note}</p>
-              </article>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {specialMissions.map((v) => (
+              <VariantCard key={String(v.name)} variant={v} />
             ))}
+          </div>
+
+          <div className="mt-16 rounded-2xl border border-cream/10 bg-cream/[0.03] p-8">
+            <Eyebrow>Commercial</Eyebrow>
+            <p className="mt-4 max-w-3xl text-pretty text-lg text-cream/75">
+              Looking for the passenger and cargo aircraft? The commercial family
+              — R-50, R-75, R-100, and the R-100F freighter — lives on its own
+              page.
+            </p>
+            <div className="mt-6">
+              <Link
+                href="/aircraft/regional"
+                className="text-sm text-amber hover:text-saffron"
+              >
+                Explore the commercial family →
+              </Link>
+            </div>
           </div>
 
           <div className="mt-12 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8">
             <Eyebrow>Why it works</Eyebrow>
             <p className="mt-4 max-w-3xl text-pretty text-lg text-cream/75">
-              Commonality is the advantage on the government side too: shared
-              tooling, supply chain, and type rating mean a special-mission
-              variant inherits the regional program rather than starting a new
-              one. See the wider program on the{" "}
-              <span className="text-cream">Defense</span> section.
+              Special-missions variants inherit the commonality of the family —
+              the same wing, cross-section, and engine family. Defense programs
+              share the commercial supply chain, type rating, and development
+              base, keeping mission derivatives capital-efficient.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href="/defense" variant="primary">
-                Revia Defense →
-              </ButtonLink>
-              <ButtonLink href="/aircraft" variant="secondary">
-                All aircraft
-              </ButtonLink>
-            </div>
           </div>
         </Container>
       </section>

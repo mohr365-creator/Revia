@@ -1,0 +1,62 @@
+aircraft_code,aircraft_name,typical_seats,max_range_nm,category,notes
+1900,Beechcraft 1900D,19,400,turboprop_19,Below Revia floor; SkyCourier/Caravan class
+C208,Cessna 208 Caravan,9,900,turboprop_sub19,Below Revia floor
+C408,Cessna 408 SkyCourier,19,400,turboprop_19,Below Revia floor
+SF34,Saab 340,34,935,turboprop_30s,Aging EAS workhorse
+SF3,Saab 340,34,935,turboprop_30s,Aging EAS workhorse
+AT43,ATR 42,48,700,turboprop_50,Right-sized class; thin-route incumbent
+AT45,ATR 42-500,48,840,turboprop_50,Right-sized class
+AT72,ATR 72,70,825,turboprop_70,Right-sized class
+AT75,ATR 72-500,70,825,turboprop_70,Right-sized class
+AT76,ATR 72-600,70,900,turboprop_70,Right-sized class
+DH8A,Dash 8-100,37,795,turboprop_40,Right-sized class
+DH8B,Dash 8-200,37,930,turboprop_40,Right-sized class
+DH8C,Dash 8-300,50,935,turboprop_50,Right-sized class
+DH8D,Dash 8-400 (Q400),78,1100,turboprop_70,Right-sized class
+CRJ1,CRJ-100,50,1500,regional_jet_50,Aging; range >> typical mission
+CRJ2,CRJ-200,50,1700,regional_jet_50,Aging; range >> typical mission
+CR2,CRJ-200,50,1700,regional_jet_50,Aging; range >> typical mission
+CRJ5,CRJ-550,50,1400,regional_jet_50,50-seat derate of CRJ-700; very over-ranged for mission
+CRJ7,CRJ-700,70,1400,regional_jet_70,Range >> typical mission
+CR7,CRJ-700,70,1400,regional_jet_70,Range >> typical mission
+CRJ9,CRJ-900,76,1550,regional_jet_76,Range >> typical mission
+CR9,CRJ-900,76,1550,regional_jet_76,Range >> typical mission
+CRJX,CRJ-1000,100,1620,regional_jet_100,Range >> typical mission
+E135,ERJ-135,37,1750,regional_jet_40,Range >> typical mission
+E145,ERJ-145,50,1550,regional_jet_50,Aging; range >> typical mission
+ER4,ERJ-145,50,1550,regional_jet_50,Aging; range >> typical mission
+ERD,ERJ-140,44,1650,regional_jet_40,Range >> typical mission
+E170,Embraer 170,72,2150,regional_jet_70,Range far exceeds typical mission
+E70,Embraer 170,72,2150,regional_jet_70,Range far exceeds typical mission
+E175,Embraer 175,76,2200,regional_jet_76,Dominant 76-seater; range ~3x typical mission
+E7W,Embraer 175,76,2200,regional_jet_76,Dominant 76-seater; range ~3x typical mission
+E75L,Embraer 175 (long wing),76,2200,regional_jet_76,Range ~3x typical mission
+E75S,Embraer 175 (short wing),76,2000,regional_jet_76,Range ~3x typical mission
+E190,Embraer 190,100,2800,regional_jet_100,Range far exceeds typical mission
+E90,Embraer 190,100,2800,regional_jet_100,Range far exceeds typical mission
+E195,Embraer 195,120,2300,narrowbody_small,Above Revia regional ceiling
+B712,Boeing 717-200,110,2060,narrowbody_small,Out of production; restored short routes
+B461,BAe 146-100,82,1600,regional_jet_80,Legacy
+A221,Airbus A220-100,110,3400,narrowbody,Range ~10x a 350nm mission
+BCS1,Airbus A220-100,110,3400,narrowbody,Range ~10x a 350nm mission
+A223,Airbus A220-300,140,3350,narrowbody,Above Revia regional ceiling
+BCS3,Airbus A220-300,140,3350,narrowbody,Above Revia regional ceiling
+A318,Airbus A318,107,3800,narrowbody,Massively over-ranged on short hops
+A319,Airbus A319,128,3700,narrowbody,Massively over-ranged on short hops
+319,Airbus A319,128,3700,narrowbody,Massively over-ranged on short hops
+A320,Airbus A320,150,3300,narrowbody,Mainline jet on regional-length hops
+320,Airbus A320,150,3300,narrowbody,Mainline jet on regional-length hops
+A20N,Airbus A320neo,160,3500,narrowbody,Mainline jet on regional-length hops
+A321,Airbus A321,190,3200,narrowbody,Large narrowbody on short hops
+321,Airbus A321,190,3200,narrowbody,Large narrowbody on short hops
+A21N,Airbus A321neo,200,4000,narrowbody,Large narrowbody on short hops
+B733,Boeing 737-300,140,2255,narrowbody,Legacy
+B735,Boeing 737-500,110,2400,narrowbody,Legacy
+B736,Boeing 737-600,110,3225,narrowbody,Over-ranged on short hops
+B737,Boeing 737-700,140,3010,narrowbody,Mainline jet on regional-length hops
+737,Boeing 737-700,140,3010,narrowbody,Mainline jet on regional-length hops
+B738,Boeing 737-800,160,2935,narrowbody,Mainline jet on regional-length hops
+738,Boeing 737-800,160,2935,narrowbody,Mainline jet on regional-length hops
+B739,Boeing 737-900,178,2950,narrowbody,Large narrowbody on short hops
+B38M,Boeing 737 MAX 8,162,3550,narrowbody,Mainline jet on regional-length hops
+B39M,Boeing 737 MAX 9,178,3300,narrowbody,Large narrowbody on short hops

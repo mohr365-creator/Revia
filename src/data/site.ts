@@ -11,7 +11,14 @@ export const site = {
 export const primaryNav = [
   { href: "/mission", label: "Mission" },
   { href: "/routes", label: "Routes" },
-  { href: "/aircraft", label: "Aircraft" },
+  {
+    href: "/aircraft",
+    label: "Aircraft",
+    children: [
+      { href: "/aircraft/regional", label: "Commercial" },
+      { href: "/aircraft/special-missions", label: "Special Missions" },
+    ],
+  },
   { href: "/defense", label: "Defense" },
   { href: "/technology", label: "Technology" },
   { href: "/company", label: "Company" },
@@ -24,7 +31,7 @@ export const footerNav = [
       { href: "/mission", label: "Mission" },
       { href: "/routes", label: "Lost routes" },
       { href: "/aircraft", label: "Aircraft" },
-      { href: "/aircraft/special-missions", label: "Special missions" },
+      { href: "/aircraft/special-missions", label: "Special Missions" },
       { href: "/defense", label: "Defense" },
       { href: "/technology", label: "Technology" },
     ],

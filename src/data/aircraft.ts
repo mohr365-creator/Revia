@@ -1,10 +1,14 @@
 import type { AircraftVariant, Quote } from "@/lib/types";
 
 /**
- * Regional family (Phase 1). Marketing names are public-facing; internal variant
+ * Regional family. Marketing names are public-facing; internal variant
  * codes (1A/1B/1C) are kept here for reference only and must NOT appear in public
  * copy. Several figures are flagged by the brief as needing verification
  * (R-100 MTOW, R-50 runway, R-50 range) and are marked `verified: false`.
+ *
+ * NOTE: the Phase-2 narrowbody family (the 6-abreast A320neo/737 MAX competitor)
+ * has been stripped from the public site for now and lives on the
+ * `feature/phase-ii-narrowbody` branch for later incorporation.
  */
 export const regionalFamily: AircraftVariant[] = [
   {
@@ -12,10 +16,12 @@ export const regionalFamily: AircraftVariant[] = [
     internalCode: "1A",
     tagline: "The thin-route restorer.",
     seats: "~50 seats",
-    range: "~1,200 nm",
+    range: "~1,800 nm",
+    image: "/aircraft/r-50.jpg",
+    imageAlt: "Revia R-50 regional jet in flight.",
     specs: [
       { label: "Seats", value: "50 (single class)", verified: true },
-      { label: "Range", value: "~1,200 nm", verified: false },
+      { label: "Range", value: "~1,800 nm", verified: false },
       { label: "MTOW", value: "~24,000 kg", verified: true },
       { label: "Engine", value: "Derated PW1500G", verified: true },
       { label: "Runway (MTOW)", value: "~1,400 m", verified: false },
@@ -27,6 +33,8 @@ export const regionalFamily: AircraftVariant[] = [
     tagline: "The workhorse of the family.",
     seats: "~75 seats",
     range: "~1,500 nm",
+    image: "/aircraft/r-75.png",
+    imageAlt: "Revia R-75 regional jet on the apron.",
     specs: [
       { label: "Seats", value: "75 (single class)", verified: true },
       { label: "Range", value: "~1,500 nm", verified: true },
@@ -40,10 +48,12 @@ export const regionalFamily: AircraftVariant[] = [
     internalCode: "1C",
     tagline: "Regional capacity, mainline economics.",
     seats: "~100 seats",
-    range: "~1,800 nm",
+    range: "~1,200 nm",
+    image: "/aircraft/r-100.png",
+    imageAlt: "Revia R-100 regional jet side profile.",
     specs: [
       { label: "Seats", value: "100 (single class)", verified: true },
-      { label: "Range", value: "~1,800 nm", verified: true },
+      { label: "Range", value: "~1,200 nm", verified: true },
       { label: "MTOW", value: "~40,000 kg", verified: false },
       { label: "Engine", value: "PW1500G", verified: true },
       { label: "Runway (MTOW)", value: "~1,800 m", verified: true },
@@ -52,34 +62,51 @@ export const regionalFamily: AircraftVariant[] = [
 ];
 
 /**
- * Narrowbody family (Phase 2). 6-abreast. Variant names are UNRESOLVED in the
- * brief (2A/2B/2C vs −700/−800) — left as placeholders.
+ * Cargo variant — the freighter side of the commercial offering. Built on the
+ * same shared architecture as the passenger family (R-100F off the R-100
+ * baseline). Figures are derivative estimates, flagged for verification until
+ * the freighter configuration is defined.
  */
-export const narrowbodyFamily: AircraftVariant[] = [
+export const cargoVariants: AircraftVariant[] = [
   {
-    name: "N-150 (placeholder)",
-    internalCode: "2A",
-    tagline: "Entry narrowbody — variant name TBD.",
-    seats: "~150 seats",
-    range: "~3,000 nm",
+    name: "R-100F",
+    internalCode: "1C-F",
+    tagline: "Cargo-first, by design.",
+    seats: "Main-deck freighter",
+    range: "~1,200 nm",
+    image: "/aircraft/freighter.png",
+    imageAlt: "Revia R-100F regional freighter in flight over countryside.",
     specs: [
-      { label: "Seats", value: "~150", verified: false },
-      { label: "Range", value: "~3,000 nm", verified: false },
-      { label: "Configuration", value: "6-abreast single aisle", verified: false },
-      { label: "Engine", value: "TBD", verified: false },
+      { label: "Payload", value: "~12,000 kg", verified: false },
+      { label: "Range (max payload)", value: "~1,200 nm", verified: false },
+      { label: "Main-deck door", value: "Forward port cargo door", verified: false },
+      { label: "Containers", value: "Bulk + ULD-capable", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
     ],
   },
+];
+
+/**
+ * Special-missions (defense) variants. Built on the same shared architecture,
+ * but kept separate from the commercial offering. We say "Special Missions"
+ * rather than name a single airframe because, in theory, any airframe in the
+ * family can be adapted to the mission. Figures here are derivative estimates,
+ * flagged for verification until the special-missions configurations are
+ * defined.
+ */
+export const specialMissions: AircraftVariant[] = [
   {
-    name: "N-180 (placeholder)",
-    internalCode: "2B",
-    tagline: "Stretch narrowbody — variant name TBD.",
-    seats: "~180 seats",
-    range: "~3,200 nm",
+    name: "R-75 SM",
+    internalCode: "1B-SM",
+    tagline: "ISR, maritime patrol, medevac, and connector.",
+    seats: "Mission-configurable",
+    range: "~1,800 nm",
     specs: [
-      { label: "Seats", value: "~180", verified: false },
-      { label: "Range", value: "~3,200 nm", verified: false },
-      { label: "Configuration", value: "6-abreast single aisle", verified: false },
-      { label: "Engine", value: "TBD", verified: false },
+      { label: "Roles", value: "ISR · maritime patrol · medevac", verified: false },
+      { label: "Endurance", value: "~6 hrs", verified: false },
+      { label: "Cabin", value: "Reconfigurable mission deck", verified: false },
+      { label: "Provisions", value: "Sensor / palletized systems", verified: false },
+      { label: "Engine", value: "PW1500G", verified: true },
     ],
   },
 ];

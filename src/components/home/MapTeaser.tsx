@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { RouteMap } from "@/components/routes/RouteMap";
 import { communities } from "@/data/communities";
 import { lostRoutes } from "@/data/routes";
-import { communitiesLost, routesLostSample } from "@/data/stats";
+import { communitiesLost, communitiesDocumented } from "@/data/stats";
 
 export function MapTeaser() {
   return (
@@ -14,11 +14,11 @@ export function MapTeaser() {
           <div>
             <Eyebrow>The severed network</Eyebrow>
             <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-cream sm:text-4xl">
-              {communitiesLost.value} communities. {routesLostSample}+ routes in
-              this sample alone.
+              {communitiesLost.value} communities since 1995.{" "}
+              {communitiesDocumented} mapped here with their sources.
             </h2>
             <p className="mt-5 max-w-md text-pretty text-cream/70">
-              Every faded line is a connection that used to exist — a city-pair
+              Every faded line is a connection that used to exist — a hub link
               that quietly disappeared from the map. Explore it community by
               community.
             </p>

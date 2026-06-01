@@ -9,7 +9,7 @@ import {
   Marker,
 } from "react-simple-maps";
 import { clsx } from "clsx";
-import type { Community, LostRoute, ReviaVariant } from "@/lib/types";
+import type { Community, LngLat, LostRoute, ReviaVariant } from "@/lib/types";
 import { greatCircle } from "@/lib/geo";
 import { CommunityPanel } from "./CommunityPanel";
 import { MapFilters } from "./MapFilters";
@@ -31,7 +31,8 @@ const variantColor: Record<ReviaVariant, string> = {
 function matches(c: Community, f: MapFilterState): boolean {
   if (f.status !== "all" && c.status !== f.status) return false;
   if (f.restorableBy !== "all" && c.restorableBy !== f.restorableBy) return false;
-  if (c.lastYearServed < f.sinceYear) return false;
+  // EAS-only towns (no "ended" year) are ongoing — never filtered out by year.
+  if (c.lastYearServed != null && c.lastYearServed < f.sinceYear) return false;
   if (f.region !== "all" && regionOf(c.coordinates[0], c.coordinates[1]) !== f.region)
     return false;
   return true;
@@ -76,6 +77,16 @@ export function RouteMap({
     () => routes.filter((r) => visibleIds.has(r.fromId)),
     [routes, visibleIds],
   );
+
+  // The integrated hubs that surviving routes merge into — one white dot per
+  // distinct destination, deduped by hub IATA.
+  const visibleHubs = useMemo(() => {
+    const seen = new Map<string, LngLat>();
+    for (const r of visibleRoutes) {
+      if (!seen.has(r.toId)) seen.set(r.toId, r.to);
+    }
+    return Array.from(seen, ([toId, coordinates]) => ({ toId, coordinates }));
+  }, [visibleRoutes]);
 
   const selected = selectedId
     ? communities.find((c) => c.id === selectedId) ?? null
@@ -134,6 +145,18 @@ export function RouteMap({
           />
         );
       })}
+
+      {visibleHubs.map((h) => (
+        <Marker key={h.toId} coordinates={h.coordinates}>
+          <circle
+            r={3.2}
+            fill="#FFF4E1"
+            fillOpacity={0.95}
+            stroke="var(--navy)"
+            strokeWidth={0.8}
+          />
+        </Marker>
+      ))}
 
       {visibleCommunities.map((c) => {
         const isFocused = focusedId === c.id;
@@ -210,7 +233,10 @@ export function RouteMap({
               <span className="h-2.5 w-2.5 rounded-full bg-ember" /> Lost all service
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-saffron/60" /> Diminished
+              <span className="h-2.5 w-2.5 rounded-full bg-saffron opacity-60" /> Diminished
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
             </span>
             <span className="inline-flex items-center gap-1.5">
               <span className="h-0.5 w-5 bg-amber" /> Restorable by Revia
