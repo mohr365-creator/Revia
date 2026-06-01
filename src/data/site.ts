@@ -16,9 +16,10 @@ export const primaryNav = [
     label: "Aircraft",
     children: [
       { href: "/aircraft/regional", label: "Commercial" },
-      { href: "/aircraft/special-missions", label: "Defense" },
+      { href: "/aircraft/special-missions", label: "Special Missions" },
     ],
   },
+  { href: "/defense", label: "Defense" },
   { href: "/technology", label: "Technology" },
   { href: "/company", label: "Company" },
 ] as const;
@@ -31,6 +32,7 @@ export const footerNav = [
       { href: "/routes", label: "Lost routes" },
       { href: "/aircraft", label: "Aircraft" },
       { href: "/aircraft/special-missions", label: "Special Missions" },
+      { href: "/defense", label: "Defense" },
       { href: "/technology", label: "Technology" },
     ],
   },
