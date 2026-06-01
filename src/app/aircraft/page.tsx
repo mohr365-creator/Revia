@@ -65,6 +65,26 @@ export default function AircraftOverviewPage() {
             ))}
           </div>
 
+          <div className="mt-6 flex flex-col gap-6 rounded-2xl border border-cream/10 bg-cream/[0.03] p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <span className="text-xs uppercase tracking-eyebrow text-amber">
+                Defense &amp; cargo first
+              </span>
+              <h2 className="mt-2 font-serif text-2xl text-cream">
+                Special missions
+              </h2>
+              <p className="mt-3 text-pretty text-cream/70">
+                The regional family doubles as a special-mission platform — ISR,
+                airlift, medevac, and personnel transport on shared
+                architecture. It&apos;s the demand that pulls the program
+                forward.
+              </p>
+            </div>
+            <ButtonLink href="/aircraft/special-missions" variant="secondary" className="shrink-0">
+              Special missions →
+            </ButtonLink>
+          </div>
+
           <div className="mt-12 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8">
             <Eyebrow>Commonality</Eyebrow>
             <p className="mt-4 max-w-3xl text-pretty text-lg text-cream/75">
