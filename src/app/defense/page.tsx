@@ -17,15 +17,27 @@ export const metadata: Metadata = {
 const opportunities = [
   {
     heading: "Why defense first",
-    body: "Government demand pulls the program forward: it tolerates lower initial rate, values commonality, and underwrites the certification path the commercial family inherits.",
+    bullets: [
+      "Government demand tolerates lower initial production rate",
+      "Values commonality across platforms and supply chains",
+      "Underwrites the certification path the commercial family inherits",
+    ],
   },
   {
     heading: "Built on commonality",
-    body: "Defense variants share the wing, cross-section, and engine family of the regional aircraft. One supply chain and one type rating keep development capital efficient across civil and government lines.",
+    bullets: [
+      "Shared wing, cross-section, and engine family with the regional aircraft",
+      "One supply chain across civil and government lines",
+      "One type rating reduces training and logistics costs",
+    ],
   },
   {
     heading: "Partner with us",
-    body: "We are talking with primes, integrators, and government stakeholders about mission profiles, payload definition, and program timelines ahead of Series A.",
+    bullets: [
+      "Engaging primes, integrators, and government stakeholders now",
+      "Mission profiles and payload definition in progress",
+      "Program timelines aligned to Series A ahead",
+    ],
   },
 ];
 
@@ -75,7 +87,7 @@ export default function DefensePage() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             {defenseVariants.map((v) => (
-              <VariantCard key={String(v.name)} variant={v} />
+              <VariantCard key={String(v.name)} variant={v} specStyle="list" />
             ))}
           </div>
         </Container>
@@ -90,9 +102,14 @@ export default function DefensePage() {
                 className="rounded-2xl border border-cream/10 bg-cream/[0.02] p-8"
               >
                 <h3 className="font-serif text-lg text-cream">{o.heading}</h3>
-                <p className="mt-3 text-pretty text-sm text-cream/70">
-                  {o.body}
-                </p>
+                <ul className="mt-3 space-y-2">
+                  {o.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-sm text-cream/70">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-amber" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
