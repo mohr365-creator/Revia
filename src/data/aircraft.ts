@@ -99,6 +99,8 @@ export const specialMissions: AircraftVariant[] = [
     tagline: "ICU-grade aeromedical transport into short fields.",
     seats: "R-50 · R-75 based",
     range: "~1,500 nm",
+    image: "/missions/air-ambulance.png",
+    imageAlt: "Air ambulance variant of the Revia R-family.",
     specs: [
       { label: "Configuration", value: "Litters + critical-care team", verified: false },
       { label: "Cabin", value: "Reconfigurable medical deck", verified: false },
@@ -111,6 +113,8 @@ export const specialMissions: AircraftVariant[] = [
     tagline: "Retardant and water delivery with regional reach.",
     seats: "R-100 based",
     range: "Ferry ~1,800 nm",
+    image: "/missions/fire-tanker.png",
+    imageAlt: "Aerial fire tanker variant of the Revia R-family.",
     specs: [
       { label: "Tank", value: "Roll-on/roll-off (concept)", verified: false },
       { label: "Drop", value: "Constant-flow system (concept)", verified: false },
@@ -181,6 +185,8 @@ export const defenseVariants: AircraftVariant[] = [
     tagline: "Connector airlift between austere nodes.",
     seats: "R-75 based",
     range: "~1,500 nm",
+    image: "/missions/afsoc.png",
+    imageAlt: "AFSOC tactical airlift variant of the Revia R-family.",
     specs: [
       { label: "Floor", value: "Flat cargo floor", verified: false },
       { label: "Field", value: "Short / unimproved", verified: false },
