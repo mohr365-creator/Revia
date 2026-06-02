@@ -85,6 +85,53 @@ export const narrowbodyFamily: AircraftVariant[] = [
 ];
 
 /**
+ * Special missions variants — government, emergency services, and public-safety
+ * applications of the R-family airframe. Specs are illustrative placeholders
+ * pending customer-specific configuration data.
+ */
+export const specialMissionsFamily: AircraftVariant[] = [
+  {
+    name: "Defense / AFSOC",
+    tagline: "Special operations and government transport.",
+    seats: "Configurable",
+    range: "~1,500 nm",
+    imageSrc: "/missions/afsoc.png",
+    specs: [
+      { label: "Role", value: "Special operations support", verified: false },
+      { label: "Base airframe", value: "R-75 / R-100", verified: false },
+      { label: "Range", value: "~1,500 nm", verified: false },
+      { label: "Operator", value: "Government / DoD", verified: false },
+    ],
+  },
+  {
+    name: "Aerial Fire Tanker",
+    tagline: "Rapid aerial firefighting on short mountain strips.",
+    seats: "Crew only",
+    range: "~1,200 nm",
+    imageSrc: "/missions/fire-tanker.png",
+    specs: [
+      { label: "Role", value: "Aerial fire tanker", verified: false },
+      { label: "Base airframe", value: "R-75", verified: false },
+      { label: "Range", value: "~1,200 nm", verified: false },
+      { label: "Runway", value: "~1,400 m (STOL-capable)", verified: false },
+    ],
+  },
+  {
+    name: "Air Ambulance",
+    tagline: "Medical transport to communities with no hospital service.",
+    seats: "Medical crew + patients",
+    range: "~1,500 nm",
+    imageSrc: "/missions/air-ambulance.png",
+    specs: [
+      { label: "Role", value: "Aeromedical evacuation", verified: false },
+      { label: "Base airframe", value: "R-75", verified: false },
+      { label: "Range", value: "~1,500 nm", verified: false },
+      { label: "Configuration", value: "ICU-capable interior", verified: false },
+    ],
+  },
+];
+
+/**
  * Demand-side CEO quotes. ALL must be verified to source and dated before
  * publishing (brief §7). Marked `verified: false` until then.
  */

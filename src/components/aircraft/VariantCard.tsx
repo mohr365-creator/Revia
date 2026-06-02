@@ -11,7 +11,7 @@ export function VariantCard({ variant }: { variant: AircraftVariant }) {
       </div>
       <p className="mt-2 text-pretty text-cream/70">{variant.tagline}</p>
 
-      <AircraftSilhouette className="my-8 text-saffron" label={String(variant.name)} />
+      <AircraftSilhouette className="my-8 text-saffron" label={String(variant.name)} src={variant.imageSrc} />
 
       <dl className="grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
         {variant.specs.map((spec) => (

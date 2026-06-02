@@ -28,6 +28,14 @@ const families = [
     blurb:
       "The third manufacturer airline CEOs have demanded — developed concurrently, aimed at the single-aisle market.",
   },
+  {
+    href: "/aircraft/special-missions",
+    phase: "Special Missions",
+    name: "Special Missions",
+    variants: "Defense · Fire Tanker · Air Ambulance",
+    blurb:
+      "Government, emergency services, and public-safety variants built on the shared R-family airframe — short-field performance where it matters most.",
+  },
 ];
 
 export default function AircraftOverviewPage() {

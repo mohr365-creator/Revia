@@ -56,6 +56,8 @@ export interface AircraftVariant {
   seats: string;
   range: string;
   specs: AircraftSpec[];
+  /** Path to a real side-profile image (relative to /public). Overrides the SVG placeholder. */
+  imageSrc?: string;
 }
 
 export interface Stat {
