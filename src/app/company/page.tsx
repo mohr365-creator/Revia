@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "Revia's vision, founder, and the team to come.",
+  description: "Revia's vision and the team to come.",
 };
 
 export default function CompanyPage() {
@@ -29,22 +29,10 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-16 max-w-prose rounded-2xl border border-cream/10 bg-cream/[0.03] p-8">
-            <Eyebrow>Founder</Eyebrow>
-            <div className="mt-4">
-              <h2 className="font-serif text-2xl text-cream">Michael</h2>
-            </div>
-            <p className="mt-4 text-pretty leading-relaxed text-cream/75">
-              Program management and systems engineering at Boeing (Mukilteo).
-              M.S. Systems Engineering, Johns Hopkins; B.S. Aerospace
-              Engineering, Iowa State; prior Textron Aviation.
-            </p>
-          </div>
-
-          <div className="mx-auto mt-10 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
-            <Eyebrow>Phase 3</Eyebrow>
+          <div className="mx-auto mt-16 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
+            <Eyebrow>Under Construction</Eyebrow>
             <p className="mt-3 text-cream/60">
-              Team grid, advisors, and careers grow here.
+              This section is coming soon. Check back later.
             </p>
             <div className="mt-6">
               <ButtonLink href="/contact?type=careers" variant="secondary">

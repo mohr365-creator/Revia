@@ -1,11 +1,16 @@
 import { clsx } from "clsx";
 import type { Community } from "@/lib/types";
 import { DataFlag } from "@/components/ui/DataFlag";
+import { hubs } from "@/data/hubs";
 
 const statusLabel: Record<Community["status"], string> = {
   "lost-all-service": "Lost all service",
   diminished: "Service diminished",
 };
+
+function hubNames(codes: string[]): string {
+  return codes.map((c) => hubs[c]?.name ?? c).join(", ");
+}
 
 export function CommunityPanel({
   community,
@@ -27,6 +32,8 @@ export function CommunityPanel({
     );
   }
 
+  const easOnly = community.routesLost === 0;
+
   return (
     <div className="flex h-full flex-col rounded-2xl border border-amber/30 bg-navy/60 p-6">
       <div className="flex items-start justify-between gap-4">
@@ -34,15 +41,18 @@ export function CommunityPanel({
           <h3 className="font-serif text-2xl text-cream">
             {community.city}, {community.state}
           </h3>
-          <span
-            className={clsx(
-              "mt-1 inline-block text-xs font-medium uppercase tracking-eyebrow",
-              community.status === "lost-all-service"
-                ? "text-ember"
-                : "text-saffron",
-            )}
-          >
-            {statusLabel[community.status]}
+          <span className="mt-1 flex items-center gap-2">
+            <span
+              className={clsx(
+                "text-xs font-medium uppercase tracking-eyebrow",
+                community.status === "lost-all-service"
+                  ? "text-ember"
+                  : "text-saffron",
+              )}
+            >
+              {statusLabel[community.status]}
+            </span>
+            <span className="text-xs text-cream/40">· {community.iata}</span>
           </span>
         </div>
         <button
@@ -68,11 +78,21 @@ export function CommunityPanel({
         </div>
         <div>
           <dt className="text-cream/50">Service ended</dt>
-          <dd className="text-cream">~{community.lastYearServed}</dd>
+          <dd className="text-cream">
+            {community.lastYearServed == null
+              ? "EAS-served (ongoing)"
+              : community.lastYearServed}
+          </dd>
         </div>
         <div>
-          <dt className="text-cream/50">Routes lost</dt>
-          <dd className="text-cream">{community.routesLost}</dd>
+          <dt className="text-cream/50">
+            {easOnly ? "Hub link" : "Hub links lost"}
+          </dt>
+          <dd className="text-cream">
+            {community.formerHubs.length > 0
+              ? hubNames(community.formerHubs)
+              : "N/A"}
+          </dd>
         </div>
         <div>
           <dt className="text-cream/50">Population</dt>
@@ -85,17 +105,30 @@ export function CommunityPanel({
       <div className="mt-auto pt-6">
         <div className="rounded-xl border border-amber/40 bg-amber/10 p-4">
           <p className="text-sm text-cream">
-            <span className="font-medium text-amber">{community.restorableBy}</span>{" "}
-            closes this gap — {community.routesLost} route
-            {community.routesLost === 1 ? "" : "s"} back on.
+            <span className="font-medium text-amber">
+              {community.restorableBy}
+            </span>{" "}
+            {easOnly ? (
+              <>flies this link without the subsidy: service that pays its own way.</>
+            ) : (
+              <>
+                closes this gap: {community.routesLost} hub link
+                {community.routesLost === 1 ? "" : "s"} back on.
+              </>
+            )}
           </p>
         </div>
-        {!community.verified && (
-          <p className="mt-3 flex items-center gap-2 text-xs text-cream/50">
-            <DataFlag>Sample</DataFlag>
-            Service details are placeholder data.
-          </p>
-        )}
+
+        <div className="mt-3 flex items-start gap-2 text-xs text-cream/45">
+          {community.verified ? (
+            <span className="inline-flex items-center gap-1 rounded-full border border-amber/40 bg-amber/10 px-2 py-0.5 font-medium uppercase tracking-wide text-amber">
+              ✓ Confirmed
+            </span>
+          ) : (
+            <DataFlag title={community.source}>Needs check</DataFlag>
+          )}
+          <span className="leading-relaxed">{community.source}</span>
+        </div>
       </div>
     </div>
   );

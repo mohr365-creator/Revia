@@ -8,9 +8,11 @@ interface WordmarkProps {
 }
 
 /**
- * REVIA wordmark + arc lockup. Antonio (geometric) is the locked wordmark face,
- * all caps with generous tracking and the amber arc beneath; endpoint dots
- * extend past the wordmark each side.
+ * REVIA wordmark + arc lockup. The wordmark is the custom REVIA logo art
+ * (cream on transparent, blends on the navy ground); the amber arc sits
+ * beneath with endpoint dots extending past the wordmark each side. The
+ * `size` text class drives the overall scale — the logo height tracks the
+ * font size so the lockup keeps its proportions everywhere it's used.
  */
 export function Wordmark({
   className,
@@ -18,15 +20,15 @@ export function Wordmark({
   beacon = false,
 }: WordmarkProps) {
   return (
-    <span className={clsx("inline-flex flex-col items-stretch", className)}>
-      <span
-        className={clsx(
-          "font-wordmark font-medium uppercase leading-none tracking-wordmark text-cream",
-          size,
-        )}
-      >
-        Revia
-      </span>
+    <span className={clsx("inline-flex flex-col items-stretch leading-none", size, className)}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/revia-wordmark.png"
+        alt="Revia"
+        width={1029}
+        height={253}
+        className="h-[1.15em] w-auto self-center"
+      />
       <svg
         viewBox="0 0 100 12"
         preserveAspectRatio="none"

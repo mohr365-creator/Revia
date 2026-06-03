@@ -7,12 +7,12 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}`),
   title: {
-    default: "Revia — The way, revived.",
-    template: "%s — Revia",
+    default: "Revia | The way, revived.",
+    template: "%s | Revia",
   },
   description: site.thesis,
   openGraph: {
-    title: "Revia — The way, revived.",
+    title: "Revia | The way, revived.",
     description: site.thesis,
     type: "website",
   },
