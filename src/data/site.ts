@@ -21,7 +21,14 @@ export const primaryNav = [
   },
   { href: "/defense", label: "Defense" },
   { href: "/technology", label: "Technology" },
-  { href: "/company", label: "Company" },
+  {
+    href: "/company",
+    label: "Company",
+    children: [
+      { href: "/company", label: "About" },
+      { href: "/company/roadmap", label: "Program Roadmap" },
+    ],
+  },
 ] as const;
 
 export const footerNav = [
@@ -40,6 +47,7 @@ export const footerNav = [
     heading: "Company",
     links: [
       { href: "/company", label: "About" },
+      { href: "/company/roadmap", label: "Program Roadmap" },
       { href: "/newsroom", label: "Newsroom" },
       { href: "/contact", label: "Contact" },
     ],

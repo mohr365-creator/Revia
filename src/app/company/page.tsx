@@ -3,7 +3,6 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
-import { DevelopmentTimeline } from "@/components/company/DevelopmentTimeline";
 
 export const metadata: Metadata = {
   title: "Company",
@@ -30,14 +29,10 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="mt-16">
-            <DevelopmentTimeline />
-          </div>
-
           <div className="mx-auto mt-16 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
-            <Eyebrow>Team</Eyebrow>
+            <Eyebrow>Under Construction</Eyebrow>
             <p className="mt-3 text-cream/60">
-              Leadership, advisors, and open roles coming soon.
+              This section is coming soon. Check back later.
             </p>
             <div className="mt-6">
               <ButtonLink href="/contact?type=careers" variant="secondary">
