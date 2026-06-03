@@ -15,7 +15,7 @@ const families = [
     name: "The narrowbody family",
     variants: "6-abreast · variants TBD",
     blurb:
-      "The third manufacturer airline CEOs have asked for — concurrent development, positioned against the single-aisle duopoly.",
+      "The third manufacturer airline CEOs have publicly asked for — concurrent development, positioned against the single-aisle duopoly.",
     phase: "Phase 2",
   },
 ];
