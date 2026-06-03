@@ -11,6 +11,25 @@ export const metadata: Metadata = {
     "The Revia regional family: R-50, R-75, and R-100, built on shared architecture to restore the routes the market left behind.",
 };
 
+const families = [
+  {
+    href: "/aircraft/regional",
+    phase: "Phase 1",
+    name: "Regional family",
+    variants: "R-50 · R-75 · R-100",
+    blurb:
+      "A 5-abreast family sharing one wing, one cross-section, and one engine family within the phase. Built to restore the thin routes first.",
+  },
+  {
+    href: "/aircraft/narrowbody",
+    phase: "Phase 2",
+    name: "Narrowbody family",
+    variants: "6-abreast · variants TBD",
+    blurb:
+      "The third manufacturer airline CEOs have publicly asked for — developed concurrently, aimed at the single-aisle market.",
+  },
+];
+
 export default function AircraftOverviewPage() {
   return (
     <>
