@@ -68,4 +68,19 @@ export const developmentPhases: Phase[] = [
       "R-100F cargo variant entry into service",
     ],
   },
+  {
+    id: "commercial-phase-2",
+    horizon: "Years 8+",
+    status: "future",
+    title: "Commercial Phase 2 · Narrowbody expansion",
+    description:
+      "With the regional family in service and the certification infrastructure in place, Revia develops the 6-abreast narrowbody family — positioned as the third manufacturer in a segment dominated by two incumbents.",
+    milestones: [
+      "Narrowbody family program launch",
+      "6-abreast single-aisle design definition",
+      "Airline customer LOIs and launch commitments",
+      "FAA / EASA type certification",
+      "Entry into service",
+    ],
+  },
 ];
