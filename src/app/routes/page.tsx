@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { RouteMap } from "@/components/routes/RouteMap";
-import { DataFlag } from "@/components/ui/DataFlag";
 import { communities } from "@/data/communities";
 import { lostRoutes } from "@/data/routes";
 import { communitiesLost } from "@/data/stats";
@@ -24,16 +23,6 @@ export default function RoutesPage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <div className="mb-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
-            <DataFlag>Sample data</DataFlag>
-            <p>
-              This map runs on a placeholder dataset built from named example
-              communities (real coordinates, plausible service details). The
-              headline figures and per-community details must be replaced with
-              sourced T-100 / EAS / GAO data before launch.
-            </p>
-          </div>
-
           <RouteMap communities={communities} routes={lostRoutes} />
         </Container>
       </section>
