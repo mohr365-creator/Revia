@@ -9,7 +9,7 @@ import { DataFlag } from "@/components/ui/DataFlag";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Why Revia exists: the full story of the lost connections and the bet to bring them back.",
+    "Why Revia exists — the full story of the lost connections and the bet to bring them back.",
 };
 
 function Pull({ children }: { children: React.ReactNode }) {
@@ -60,13 +60,13 @@ export default function MissionPage() {
               city was unremarkable. Then, quietly, it stopped being possible.
               Between 1995 and 2020, roughly{" "}
               <strong className="text-cream">150 U.S. communities</strong> lost
-              their last scheduled commercial flight. Not
+              their last scheduled commercial flight. <DataFlag>—</DataFlag> Not
               in a single dramatic collapse, but seat by seat, route by route,
               until the airport was just a building by an empty runway.
             </p>
             <p>
-              In 1990, you could fly out of Cheyenne. By 2019, half the seats
-              were gone. Ninety years of air service, taken for granted, then
+              In 1990, you could fly out of Cheyenne. By 2019, the last carrier
+              was gone — ninety years of air service, taken for granted, then
               removed. The same story repeated in Paducah, Wausau, Dubuque, and
               dozens of places that never made the news.
             </p>
@@ -81,13 +81,16 @@ export default function MissionPage() {
               This is not only an American story. Across Africa, Southeast Asia
               and India, Latin America, and the Pacific Islands, the same{" "}
               <strong className="text-cream">50–100 seat segment</strong> is
-              missing: the aircraft size that connects secondary cities to the
+              missing — the aircraft size that connects secondary cities to the
               network economically.
             </p>
             <p>
               We estimate a total addressable market of{" "}
               <strong className="text-cream">8,000–10,000 aircraft</strong>{" "}
-              in that gap, with no clean-sheet product to meet it.
+              <DataFlag title="Internal estimate — PROJECT_BRIEF">
+                estimate
+              </DataFlag>{" "}
+              in that gap — demand with no clean-sheet product to meet it.
             </p>
           </Chapter>
 
@@ -109,21 +112,30 @@ export default function MissionPage() {
 
           <Chapter n="04 · Revia's answer" title="Start where the need is sharpest">
             <p>
-              Revia begins with a regional family: the{" "}
-              <strong className="text-cream">R-50, R-75, and R-100</strong>, a
+              Revia begins with a Phase 1 regional family — the{" "}
+              <strong className="text-cream">R-50, R-75, and R-100</strong> — a
               5-abreast trio sharing one wing, one cross-section, and one engine
               family.
-              Sequenced defense and cargo first, where the certification path is
+              Sequenced defense-and-cargo-first, where the certification path is
               cleaner and the demand is immediate.
             </p>
             <p>
               <Link href="/aircraft" className="text-amber hover:text-saffron">
-                See the aircraft family →
+                See the aircraft families →
               </Link>
             </p>
           </Chapter>
 
-          <Chapter n="05 · Why now" title="The demand is already on the record">
+          <Chapter n="05 · The deployment" title="Then the larger bet">
+            <p>
+              Phase 2 is a 6-abreast narrowbody family, developed concurrently —
+              positioned as the third manufacturer airline CEOs have publicly
+              asked for, against a single-aisle market measured in tens of
+              thousands of aircraft.
+            </p>
+          </Chapter>
+
+          <Chapter n="06 · Why now" title="The demand is already on the record">
             <p>
               The 50-seat fleet is retiring with no replacement. Airlines need a
               C-130-class option. And airline CEOs have said out loud that the
