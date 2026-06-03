@@ -4,7 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { DataFlag } from "@/components/ui/DataFlag";
 import { ButtonLink } from "@/components/ui/Button";
-import { VariantCard } from "@/components/aircraft/VariantCard";
 import { DefenseLogo } from "@/components/brand/DefenseLogo";
 import { defenseVariants } from "@/data/aircraft";
 
@@ -85,10 +84,24 @@ export default function DefensePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
-            {defenseVariants.map((v) => (
-              <VariantCard key={String(v.name)} variant={v} specStyle="list" />
-            ))}
+          <div className="rounded-2xl border border-cream/10 bg-cream/[0.03] overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/missions/afsoc.png"
+              alt="Revia R-family in AFSOC special missions configuration"
+              className="aspect-[16/7] w-full object-cover"
+            />
+            <ul className="divide-y divide-cream/10">
+              {defenseVariants.map((v) => (
+                <li key={String(v.name)} className="flex flex-col gap-1 px-8 py-6 sm:flex-row sm:items-baseline sm:gap-6">
+                  <div className="min-w-[11rem]">
+                    <span className="font-serif text-xl text-cream">{v.name}</span>
+                    <span className="ml-3 text-xs text-cream/40">{v.seats}</span>
+                  </div>
+                  <p className="text-sm text-cream/70">{v.tagline}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>
