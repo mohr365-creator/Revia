@@ -65,8 +65,8 @@ export default function MissionPage() {
               until the airport was just a building by an empty runway.
             </p>
             <p>
-              In 1990, you could fly out of Cheyenne. By 2019, half the seats
-              were gone. Ninety years of air service, taken for granted, then
+              In 1990, you could fly out of Cheyenne. By 2019, the last carrier
+              was gone — ninety years of air service, taken for granted, then
               removed. The same story repeated in Paducah, Wausau, Dubuque, and
               dozens of places that never made the news.
             </p>
@@ -113,8 +113,9 @@ export default function MissionPage() {
           <Chapter n="04 · Revia's answer" title="Start where the need is sharpest">
             <p>
               Revia begins with a Phase 1 regional family — the{" "}
-              <strong className="text-cream">R-50, R-75, and R-100</strong> —
-              sharing one wing, one cross-section, and one engine family.
+              <strong className="text-cream">R-50, R-75, and R-100</strong> — a
+              5-abreast trio sharing one wing, one cross-section, and one engine
+              family.
               Sequenced defense-and-cargo-first, where the certification path is
               cleaner and the demand is immediate.
             </p>

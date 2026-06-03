@@ -50,7 +50,7 @@ export default function CompanyPage() {
           </div>
 
           <div className="mx-auto mt-10 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
-            <Eyebrow>Phase 3</Eyebrow>
+            <Eyebrow>Coming soon</Eyebrow>
             <p className="mt-3 text-cream/60">
               Team grid, advisors, and careers grow here.
             </p>

@@ -148,7 +148,7 @@ export const communities: Community[] = [
     lastYearServed: 2020,
     lastCarrier: "Multiple regionals",
     routesLost: 4,
-    detail: "A metro of 600k left with a handful of daily departures.",
+    detail: "A major metro left with a handful of daily departures.",
     restorableBy: "R-75",
     verified: false,
   },

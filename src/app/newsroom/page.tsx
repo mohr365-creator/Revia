@@ -34,7 +34,8 @@ export default function NewsroomPage() {
               <div className="mt-6 rounded-2xl border border-dashed border-cream/15 p-8 text-cream/60">
                 <DataFlag>None yet</DataFlag>
                 <p className="mt-3">
-                  No releases published. This list is CMS-managed in Phase 3.
+                  No releases published. This list is CMS-managed and goes live
+                  post-launch.
                 </p>
               </div>
             </div>
