@@ -38,7 +38,14 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 rounded-xl border border-amber/20 bg-amber/5 px-6 py-4 text-sm text-cream/60">
+          <p>
+            <span className="font-medium text-amber/80">Conceptual &amp; preliminary.</span>{" "}
+            This work represents an early-stage exploration. Specifications, plans, and all content are subject to change based on input from stakeholders as we explore development opportunities. Nothing here constitutes a commitment or final product definition.
+          </p>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. {site.disclaimer}
           </p>

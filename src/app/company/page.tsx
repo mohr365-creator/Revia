@@ -40,6 +40,18 @@ export default function CompanyPage() {
               </ButtonLink>
             </div>
           </div>
+
+          <div className="mx-auto mt-10 max-w-prose rounded-2xl border border-amber/20 bg-amber/5 p-8">
+            <Eyebrow>A note on this work</Eyebrow>
+            <p className="mt-4 text-pretty leading-relaxed text-cream/70">
+              Everything on this site is conceptual and preliminary. The
+              company, its aircraft programs, route plans, and team are all
+              early-stage — actively being shaped through conversations with
+              airlines, investors, and other stakeholders. All details are
+              subject to change as we explore development opportunities and
+              refine the plan.
+            </p>
+          </div>
         </Container>
       </section>
     </>

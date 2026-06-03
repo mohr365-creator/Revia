@@ -3,7 +3,6 @@ import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { DataFlag } from "@/components/ui/DataFlag";
 import { VariantCard } from "@/components/aircraft/VariantCard";
 import { regionalFamily, cargoVariants } from "@/data/aircraft";
 
@@ -24,15 +23,6 @@ export default function CommercialPage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <div className="mb-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
-            <DataFlag>Specs unverified</DataFlag>
-            <p>
-              Several figures below (notably R-100 MTOW, R-50 runway, and R-50
-              range) are flagged for verification and must not ship as fact
-              until confirmed.
-            </p>
-          </div>
-
           <div id="passenger" className="scroll-mt-24">
             <Eyebrow>Passenger</Eyebrow>
             <h2 className="mt-4 font-serif text-2xl text-cream">
