@@ -208,6 +208,22 @@ export const defenseVariants: AircraftVariant[] = [
   },
 ];
 
+export const remoteAutonomousVariant: AircraftVariant = {
+  name: "Remote & Autonomous Operations",
+  tagline: "Optionally piloted and remotely operated missions across contested and denied environments.",
+  seats: "R-75 based",
+  range: "~1,800 nm",
+  image: "/missions/remote-autonomous.png",
+  imageAlt: "Revia R-family in remote and autonomous operations configuration over desert terrain.",
+  specs: [
+    { label: "Operation", value: "Optionally piloted / RPA-capable", verified: false },
+    { label: "Roles", value: "ISR · logistics · persistent surveillance", verified: false },
+    { label: "Environment", value: "Contested / denied airspace", verified: false },
+    { label: "Endurance", value: "Extended (TBD)", verified: false },
+    { label: "Engine", value: "PW1500G", verified: true },
+  ],
+};
+
 /**
  * Demand-side CEO quotes. ALL must be verified to source and dated before
  * publishing (brief §7). Marked `verified: false` until then.

@@ -5,7 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { DataFlag } from "@/components/ui/DataFlag";
 import { ButtonLink } from "@/components/ui/Button";
 import { DefenseLogo } from "@/components/brand/DefenseLogo";
-import { defenseVariants } from "@/data/aircraft";
+import { defenseVariants, remoteAutonomousVariant } from "@/data/aircraft";
 
 export const metadata: Metadata = {
   title: "Defense",
@@ -84,7 +84,7 @@ export default function DefensePage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-cream/10 bg-cream/[0.03] overflow-hidden">
+          <div className="rounded-2xl border border-cream/10 bg-cream/[0.03] overflow-hidden mb-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/missions/afsoc.png"
@@ -102,6 +102,28 @@ export default function DefensePage() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Remote & Autonomous Operations — separate card */}
+          <div className="rounded-2xl border border-cream/10 bg-cream/[0.03] overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={remoteAutonomousVariant.image}
+              alt={remoteAutonomousVariant.imageAlt}
+              className="aspect-[16/7] w-full object-cover"
+            />
+            <div className="px-8 py-6">
+              <h3 className="font-serif text-2xl text-cream">{remoteAutonomousVariant.name}</h3>
+              <p className="mt-2 text-cream/70">{remoteAutonomousVariant.tagline}</p>
+              <ul className="mt-4 space-y-2">
+                {remoteAutonomousVariant.specs.map((s) => (
+                  <li key={s.label} className="flex items-baseline gap-2 text-sm">
+                    <span className="shrink-0 text-cream/50">{s.label}:</span>
+                    <span className="text-cream">{s.value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </section>
