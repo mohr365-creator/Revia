@@ -127,6 +127,8 @@ export const specialMissions: AircraftVariant[] = [
     tagline: "Dispersant spray and surveillance for marine response.",
     seats: "R-75 based",
     range: "~1,500 nm",
+    image: "/aircraft/oil-spill-response.png",
+    imageAlt: "Oil Spill Response variant — blue and white livery with dispersant markings.",
     specs: [
       { label: "Spray", value: "Wing / belly boom (concept)", verified: false },
       { label: "Sensors", value: "Slick mapping suite", verified: false },
@@ -139,6 +141,8 @@ export const specialMissions: AircraftVariant[] = [
     tagline: "Civil search-and-rescue, survey, and aerial mapping.",
     seats: "R-50 based",
     range: "~1,500 nm",
+    image: "/aircraft/sar.png",
+    imageAlt: "Search and Rescue variant — orange and white livery with SAR markings.",
     specs: [
       { label: "Sensors", value: "EO/IR · radar (concept)", verified: false },
       { label: "Endurance", value: "~6 hrs", verified: false },
