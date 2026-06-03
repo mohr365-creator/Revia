@@ -8,7 +8,7 @@ import { narrowbodyFamily } from "@/data/aircraft";
 export const metadata: Metadata = {
   title: "Narrowbody family",
   description:
-    "A 6-abreast narrowbody family — the third manufacturer the market has asked for.",
+    "A 6-abreast narrowbody family — the third manufacturer airline CEOs have publicly asked for.",
 };
 
 export default function NarrowbodyPage() {

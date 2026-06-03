@@ -26,7 +26,7 @@ const families = [
     name: "Narrowbody family",
     variants: "6-abreast · variants TBD",
     blurb:
-      "The third manufacturer airline CEOs have demanded — developed concurrently, aimed at the single-aisle market.",
+      "The third manufacturer airline CEOs have publicly asked for — developed concurrently, aimed at the single-aisle market.",
   },
 ];
 
