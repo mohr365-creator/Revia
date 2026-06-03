@@ -113,8 +113,9 @@ export default function MissionPage() {
           <Chapter n="04 · Revia's answer" title="Start where the need is sharpest">
             <p>
               Revia begins with a regional family: the{" "}
-              <strong className="text-cream">R-50, R-75, and R-100</strong>,
-              sharing one wing, one cross-section, and one engine family.
+              <strong className="text-cream">R-50, R-75, and R-100</strong>, a
+              5-abreast trio sharing one wing, one cross-section, and one engine
+              family.
               Sequenced defense and cargo first, where the certification path is
               cleaner and the demand is immediate.
             </p>
