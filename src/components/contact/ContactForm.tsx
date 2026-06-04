@@ -5,6 +5,7 @@ import { useState } from "react";
 import { clsx } from "clsx";
 import { ButtonLink } from "@/components/ui/Button";
 import { DataFlag } from "@/components/ui/DataFlag";
+import { useTrackEvent } from "@/components/analytics/AnalyticsProvider";
 import { inquiryTypes } from "@/data/site";
 
 type InquiryId = (typeof inquiryTypes)[number]["id"];
@@ -24,6 +25,7 @@ export function ContactForm() {
 
   const [type, setType] = useState<InquiryId>(valid ? initial : "investor");
   const [sent, setSent] = useState(false);
+  const track = useTrackEvent();
 
   if (sent) {
     return (
@@ -44,6 +46,7 @@ export function ContactForm() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        track("contact_form_submit", { inquiry_type: type });
         setSent(true);
       }}
       className="space-y-8"
