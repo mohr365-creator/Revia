@@ -34,7 +34,7 @@ export default function CommercialPage() {
             </p>
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
               {regionalFamily.map((v) => (
-                <VariantCard key={String(v.name)} variant={v} />
+                <VariantCard key={String(v.name)} variant={v} showDataFlags={false} />
               ))}
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function CommercialPage() {
             </p>
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               {cargoVariants.map((v) => (
-                <VariantCard key={String(v.name)} variant={v} />
+                <VariantCard key={String(v.name)} variant={v} showDataFlags={false} />
               ))}
             </div>
           </div>
