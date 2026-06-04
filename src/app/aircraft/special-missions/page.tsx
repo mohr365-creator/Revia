@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { DataFlag } from "@/components/ui/DataFlag";
+import { ConceptBanner } from "@/components/aircraft/ConceptBanner";
 import { VariantCard } from "@/components/aircraft/VariantCard";
 import { specialMissions } from "@/data/aircraft";
 
@@ -24,14 +24,7 @@ export default function SpecialMissionsPage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <div className="mb-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
-            <DataFlag>Concept · specs unverified</DataFlag>
-            <p>
-              The configurations below are derivative concepts. Roles, endurance,
-              and mission systems are illustrative and must be confirmed against a
-              defined program before publishing.
-            </p>
-          </div>
+          <ConceptBanner />
 
           <div className="grid gap-6 lg:grid-cols-2">
             {specialMissions.map((v) => (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { DataFlag } from "@/components/ui/DataFlag";
+import { ConceptBanner } from "@/components/aircraft/ConceptBanner";
 import { ButtonLink } from "@/components/ui/Button";
 import { DefenseLogo } from "@/components/brand/DefenseLogo";
 import { defenseVariants, remoteAutonomousVariant } from "@/data/aircraft";
@@ -75,14 +75,7 @@ export default function DefensePage() {
             Where a common regional platform earns its keep.
           </h2>
 
-          <div className="my-8 flex items-start gap-3 rounded-xl border border-ember/30 bg-ember/5 p-4 text-sm text-cream/70">
-            <DataFlag>Concept · specs unverified</DataFlag>
-            <p>
-              The configurations below are derivative concepts. Roles, endurance,
-              and mission systems are illustrative and must be confirmed against a
-              defined program before publishing.
-            </p>
-          </div>
+          <ConceptBanner />
 
           <div className="rounded-2xl border border-cream/10 bg-cream/[0.03] overflow-hidden mb-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}

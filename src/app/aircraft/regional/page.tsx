@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { VariantCard } from "@/components/aircraft/VariantCard";
+import { ConceptBanner } from "@/components/aircraft/ConceptBanner";
 import { regionalFamily, cargoVariants } from "@/data/aircraft";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function CommercialPage() {
 
       <section className="bg-navy py-16">
         <Container>
+          <ConceptBanner message="Several specifications are flagged for verification and must not ship as confirmed fact until sourced." />
           <div id="passenger" className="scroll-mt-24">
             <Eyebrow>Passenger</Eyebrow>
             <h2 className="mt-4 font-serif text-2xl text-cream">
