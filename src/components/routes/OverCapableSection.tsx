@@ -84,12 +84,6 @@ export function OverCapableSection() {
           weight and trip fuel the mission never needed. These {overCapableCount}{" "}
           are real, illustrative anchors.
         </p>
-        <p className="mt-3 flex flex-wrap items-center gap-2 text-sm text-cream/50">
-          <DataFlag title="Aircraft ranges are nominal manufacturer/industry figures; the route + equipment pairings are real. Frequencies and passenger counts come from running the pipeline against BTS T-100; see data-sources/route-analysis/METHODOLOGY.md.">
-            Ratios confirmed · traffic pending T-100
-          </DataFlag>
-        </p>
-
         <div className="mt-12">
           <h3 className="font-serif text-xl text-amber">
             Right-sizes onto the regional family

@@ -60,7 +60,7 @@ export default function MissionPage() {
               city was unremarkable. Then, quietly, it stopped being possible.
               Between 1995 and 2020, roughly{" "}
               <strong className="text-cream">150 U.S. communities</strong> lost
-              their last scheduled commercial flight. <DataFlag>Source</DataFlag> Not
+              their last scheduled commercial flight. Not
               in a single dramatic collapse, but seat by seat, route by route,
               until the airport was just a building by an empty runway.
             </p>
@@ -87,9 +87,6 @@ export default function MissionPage() {
             <p>
               We estimate a total addressable market of{" "}
               <strong className="text-cream">8,000–10,000 aircraft</strong>{" "}
-              <DataFlag title="Internal estimate: PROJECT_BRIEF">
-                estimate
-              </DataFlag>{" "}
               in that gap, with no clean-sheet product to meet it.
             </p>
           </Chapter>

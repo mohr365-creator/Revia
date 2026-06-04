@@ -120,12 +120,10 @@ export function CommunityPanel({
         </div>
 
         <div className="mt-3 flex items-start gap-2 text-xs text-cream/45">
-          {community.verified ? (
+          {community.verified && (
             <span className="inline-flex items-center gap-1 rounded-full border border-amber/40 bg-amber/10 px-2 py-0.5 font-medium uppercase tracking-wide text-amber">
               ✓ Confirmed
             </span>
-          ) : (
-            <DataFlag title={community.source}>Needs check</DataFlag>
           )}
           <span className="leading-relaxed">{community.source}</span>
         </div>
