@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { ConceptBanner } from "@/components/aircraft/ConceptBanner";
 import { VariantCard } from "@/components/aircraft/VariantCard";
 import { specialMissions } from "@/data/aircraft";
 
@@ -23,21 +24,7 @@ export default function SpecialMissionsPage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <div className="mb-8 rounded-xl border border-ember/30 bg-ember/5 overflow-hidden">
-            <div className="border-b border-ember/30 px-5 py-3">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-saffron">
-                Concept · Specs Unverified
-              </h2>
-            </div>
-            <div className="flex items-start gap-4 px-5 py-4">
-              <span className="text-2xl leading-none text-saffron" aria-label="Caution">⚠</span>
-              <p className="text-sm text-cream/70">
-                The configurations below are derivative concepts. Roles, endurance,
-                and mission systems are illustrative and must be confirmed against a
-                defined program before publishing.
-              </p>
-            </div>
-          </div>
+          <ConceptBanner />
 
           <div className="grid gap-6 lg:grid-cols-2">
             {specialMissions.map((v) => (
