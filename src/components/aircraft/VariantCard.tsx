@@ -5,15 +5,17 @@ import { DataFlag } from "@/components/ui/DataFlag";
 export function VariantCard({
   variant,
   specStyle = "grid",
+  showDataFlags = true,
 }: {
   variant: AircraftVariant;
   specStyle?: "grid" | "list";
+  showDataFlags?: boolean;
 }) {
   return (
     <article className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8">
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="font-serif text-3xl text-cream">{variant.name}</h3>
-        <span className="text-sm text-cream/50">{variant.seats}</span>
+        {variant.seats && <span className="text-sm text-cream/50">{variant.seats}</span>}
       </div>
       <p className="mt-2 text-pretty text-cream/70">{variant.tagline}</p>
 
@@ -37,7 +39,7 @@ export function VariantCard({
               <span className="shrink-0 text-cream/50">{spec.label}:</span>
               <span className="flex items-center gap-2 text-cream">
                 {spec.value}
-                {!spec.verified && <DataFlag title="Flagged for verification">unverified</DataFlag>}
+                {showDataFlags && !spec.verified && <DataFlag title="Flagged for verification">unverified</DataFlag>}
               </span>
             </li>
           ))}
@@ -49,7 +51,7 @@ export function VariantCard({
               <dt className="text-cream/50">{spec.label}</dt>
               <dd className="mt-0.5 flex items-center gap-2 text-cream">
                 {spec.value}
-                {!spec.verified && <DataFlag title="Flagged for verification">unverified</DataFlag>}
+                {showDataFlags && !spec.verified && <DataFlag title="Flagged for verification">unverified</DataFlag>}
               </dd>
             </div>
           ))}
