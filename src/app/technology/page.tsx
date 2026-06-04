@@ -56,12 +56,6 @@ export default function TechnologyPage() {
                   <p className="mt-4 max-w-2xl text-pretty text-lg leading-relaxed text-cream/75">
                     {p.body}
                   </p>
-                  {p.flag && (
-                    <p className="mt-4 flex items-center gap-2 text-xs text-cream/50">
-                      <DataFlag>Time-sensitive</DataFlag>
-                      {p.flag}
-                    </p>
-                  )}
                 </div>
               </div>
             ))}

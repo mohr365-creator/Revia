@@ -28,9 +28,6 @@ export function HeadlineCounter({
           hub links shown
         </p>
       </div>
-      <DataFlag title="Documented from DOT orders / GAO / EAS records. Some rows are still 'needs-check' rather than 'confirmed'; open a community to see its source.">
-        Sourced · some need check
-      </DataFlag>
     </div>
   );
 }

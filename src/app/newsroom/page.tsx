@@ -32,8 +32,7 @@ export default function NewsroomPage() {
             <div>
               <Eyebrow>Press releases</Eyebrow>
               <div className="mt-6 rounded-2xl border border-dashed border-cream/15 p-8 text-cream/60">
-                <DataFlag>None yet</DataFlag>
-                <p className="mt-3">
+                <p>
                   No releases published. This list is CMS-managed and goes live
                   post-launch.
                 </p>
@@ -49,9 +48,6 @@ export default function NewsroomPage() {
                     className="flex items-center justify-between rounded-xl border border-cream/10 bg-cream/[0.03] px-5 py-4 text-cream/80"
                   >
                     <span>{item}</span>
-                    <DataFlag title="Asset not yet attached to the build.">
-                      Pending asset
-                    </DataFlag>
                   </li>
                 ))}
               </ul>
@@ -61,8 +57,7 @@ export default function NewsroomPage() {
           <div className="mt-12 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8">
             <Eyebrow>Press contact</Eyebrow>
             <p className="mt-3 text-cream/70">
-              press@{/* domain placeholder */}revia.aero{" "}
-              <DataFlag>Confirm domain</DataFlag>
+              press@revia.aero
             </p>
           </div>
         </Container>

@@ -97,7 +97,7 @@ export const specialMissions: AircraftVariant[] = [
   {
     name: "Air Ambulance",
     tagline: "ICU-grade aeromedical transport into short fields.",
-    seats: "R-50 · R-75 based",
+    seats: "",
     range: "~1,500 nm",
     image: "/missions/air-ambulance.png",
     imageAlt: "Air ambulance variant of the Revia R-family.",
@@ -111,7 +111,7 @@ export const specialMissions: AircraftVariant[] = [
   {
     name: "Aerial Firefighting",
     tagline: "Retardant and water delivery with regional reach.",
-    seats: "R-100 based",
+    seats: "",
     range: "Ferry ~1,800 nm",
     image: "/missions/fire-tanker.png",
     imageAlt: "Aerial fire tanker variant of the Revia R-family.",
@@ -125,7 +125,7 @@ export const specialMissions: AircraftVariant[] = [
   {
     name: "Oil Spill Response",
     tagline: "Dispersant spray and surveillance for marine response.",
-    seats: "R-75 based",
+    seats: "",
     range: "~1,500 nm",
     image: "/aircraft/oil-spill-response.png",
     imageAlt: "Oil Spill Response variant — blue and white livery with dispersant markings.",
@@ -139,7 +139,7 @@ export const specialMissions: AircraftVariant[] = [
   {
     name: "Survey & SAR",
     tagline: "Civil search-and-rescue, survey, and aerial mapping.",
-    seats: "R-50 based",
+    seats: "",
     range: "~1,500 nm",
     image: "/aircraft/sar.png",
     imageAlt: "Search and Rescue variant — orange and white livery with SAR markings.",
@@ -162,7 +162,7 @@ export const defenseVariants: AircraftVariant[] = [
   {
     name: "ISR",
     tagline: "Intelligence, surveillance, and reconnaissance with long loiter.",
-    seats: "R-75 based",
+    seats: "",
     range: "~1,800 nm",
     specs: [
       { label: "Roles", value: "ISR · signals (provisions)", verified: false },
@@ -175,7 +175,7 @@ export const defenseVariants: AircraftVariant[] = [
   {
     name: "Maritime Patrol",
     tagline: "Wide-area surface search and maritime patrol.",
-    seats: "R-100 based",
+    seats: "",
     range: "~1,800 nm",
     specs: [
       { label: "Roles", value: "Maritime patrol · ASW provisions", verified: false },
@@ -187,7 +187,7 @@ export const defenseVariants: AircraftVariant[] = [
   {
     name: "Tactical Airlift",
     tagline: "Connector airlift between austere nodes.",
-    seats: "R-75 based",
+    seats: "",
     range: "~1,500 nm",
     image: "/missions/afsoc.png",
     imageAlt: "AFSOC tactical airlift variant of the Revia R-family.",
@@ -201,7 +201,7 @@ export const defenseVariants: AircraftVariant[] = [
   {
     name: "Aeromedical Evacuation",
     tagline: "Military patient movement from forward areas.",
-    seats: "R-75 based",
+    seats: "",
     range: "~1,500 nm",
     specs: [
       { label: "Configuration", value: "Litters + care team", verified: false },

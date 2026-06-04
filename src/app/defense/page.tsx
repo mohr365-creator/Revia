@@ -96,7 +96,6 @@ export default function DefensePage() {
                 <li key={String(v.name)} className="flex flex-col gap-1 px-8 py-6 sm:flex-row sm:items-baseline sm:gap-6">
                   <div className="min-w-[11rem]">
                     <span className="font-serif text-xl text-cream">{v.name}</span>
-                    <span className="ml-3 text-xs text-cream/40">{v.seats}</span>
                   </div>
                   <p className="text-sm text-cream/70">{v.tagline}</p>
                 </li>

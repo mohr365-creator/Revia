@@ -35,7 +35,7 @@ export default function SpecialMissionsPage() {
 
           <div className="grid gap-6 lg:grid-cols-2">
             {specialMissions.map((v) => (
-              <VariantCard key={String(v.name)} variant={v} />
+              <VariantCard key={String(v.name)} variant={v} showDataFlags={false} />
             ))}
           </div>
 
