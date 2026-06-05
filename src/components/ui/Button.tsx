@@ -17,6 +17,7 @@ interface ButtonLinkProps {
   href: string;
   variant?: Variant;
   className?: string;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
@@ -24,19 +25,20 @@ export function ButtonLink({
   href,
   variant = "primary",
   className,
+  onClick,
   children,
 }: ButtonLinkProps) {
   const cls = clsx(base, variants[variant], className);
   const isInternal = href.startsWith("/");
   if (isInternal) {
     return (
-      <Link href={href} className={cls}>
+      <Link href={href} className={cls} onClick={onClick}>
         {children}
       </Link>
     );
   }
   return (
-    <a href={href} className={cls}>
+    <a href={href} className={cls} onClick={onClick}>
       {children}
     </a>
   );

@@ -3,10 +3,11 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonLink } from "@/components/ui/Button";
+import { DataFlag } from "@/components/ui/DataFlag";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "Revia's vision and the team to come.",
+  description: "Revia's vision, founder, and the team to come.",
 };
 
 export default function CompanyPage() {
@@ -29,28 +30,35 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-16 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
-            <Eyebrow>Under Construction</Eyebrow>
+          <div className="mx-auto mt-16 max-w-prose rounded-2xl border border-cream/10 bg-cream/[0.03] p-8">
+            <Eyebrow>Founder</Eyebrow>
+            <div className="mt-4 flex items-center gap-3">
+              <h2 className="font-serif text-2xl text-cream">Michael</h2>
+              <DataFlag title="Founder is currently employed elsewhere — confirm what is public before publishing.">
+                Confirm public bio
+              </DataFlag>
+            </div>
+            <p className="mt-4 text-pretty leading-relaxed text-cream/75">
+              Program management and systems engineering at Boeing (Mukilteo).
+              M.S. Systems Engineering, Johns Hopkins; B.S. Aerospace
+              Engineering, Iowa State; prior Textron Aviation.
+            </p>
+            <p className="mt-3 text-sm text-cream/50">
+              Note: the founder is currently employed elsewhere. Confirm exactly
+              what is public before this bio ships.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-prose rounded-2xl border border-dashed border-cream/15 p-8 text-center">
+            <Eyebrow>Coming soon</Eyebrow>
             <p className="mt-3 text-cream/60">
-              This section is coming soon. Check back later.
+              Team grid, advisors, and careers grow here.
             </p>
             <div className="mt-6">
               <ButtonLink href="/contact?type=careers" variant="secondary">
                 Careers →
               </ButtonLink>
             </div>
-          </div>
-
-          <div className="mx-auto mt-10 max-w-prose rounded-2xl border border-amber/20 bg-amber/5 p-8">
-            <Eyebrow>A note on this work</Eyebrow>
-            <p className="mt-4 text-pretty leading-relaxed text-cream/70">
-              Everything on this site is conceptual and preliminary. The
-              company, its aircraft programs, route plans, and team are all
-              early-stage — actively being shaped through conversations with
-              airlines, investors, and other stakeholders. All details are
-              subject to change as we explore development opportunities and
-              refine the plan.
-            </p>
           </div>
         </Container>
       </section>
