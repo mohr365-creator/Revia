@@ -58,7 +58,7 @@ export const inquiryTypes = [
   {
     id: "investor",
     label: "Investor",
-    blurb: "Series A. Credibility, scale of opportunity, and team.",
+    blurb: "Series A. Credibility and scale of opportunity.",
   },
   {
     id: "partner",
