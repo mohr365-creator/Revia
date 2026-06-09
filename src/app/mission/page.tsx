@@ -129,9 +129,11 @@ export default function MissionPage() {
           <Chapter n="05 · The deployment" title="Then the larger bet">
             <p>
               Phase 2 is a 6-abreast narrowbody family, developed concurrently —
-              positioned as the third manufacturer airline CEOs have publicly
-              asked for, against a single-aisle market measured in tens of
-              thousands of aircraft.
+              entering a single-aisle market measured in tens of thousands of
+              aircraft. Not as another legacy manufacturer, but as the agile,
+              digitally native alternative: a company that has already proven it
+              can design, certify, and scale complex aerospace programs faster
+              than incumbents built for a different era.
             </p>
           </Chapter>
 
