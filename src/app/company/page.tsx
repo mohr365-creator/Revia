@@ -7,7 +7,7 @@ import { DataFlag } from "@/components/ui/DataFlag";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "Revia's vision and mission.",
+  description: "A digitally native aerospace startup — building airplanes the way great software companies build products.",
 };
 
 export default function CompanyPage() {
@@ -15,18 +15,28 @@ export default function CompanyPage() {
     <>
       <PageHeader
         eyebrow="Company"
-        title="Building the third major commercial aerospace OEM."
-        intro="A clear mission and a sequenced plan."
+        title="A software company that builds airplanes."
+        intro="Digitally native, deliberately lean, and built to move faster than incumbents structured around hardware-era processes."
       />
 
       <section className="bg-navy py-16">
         <Container>
           <div className="mx-auto max-w-prose space-y-6 text-pretty text-lg leading-relaxed text-cream/75">
             <p>
-              Revia&apos;s positioning is singular: the third major commercial
-              aerospace OEM, entering through the segment the incumbents
-              abandoned. We start where the need is sharpest and the
-              certification path is cleanest, then expand.
+              Revia is the scrappy startup changing how large, complex aerospace
+              systems are designed, tested, developed, and certified. Where
+              legacy OEMs carry decades of process debt, we move with the speed
+              and discipline of a modern software organization — treating the
+              aircraft as a software-defined platform from day one.
+            </p>
+            <p>
+              We enter through the segment the incumbents abandoned: the 50–100
+              seat gap where demand is sharpest and the certification path is
+              cleanest. The advantage isn&apos;t just the aircraft — it&apos;s
+              the method. Agile development cycles, model-based systems
+              engineering, and a digital thread from design to certification
+              let a small, focused team outmaneuver organizations built for a
+              different era.
             </p>
           </div>
 
