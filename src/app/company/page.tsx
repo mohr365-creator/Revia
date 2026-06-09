@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "A digitally native aerospace startup — building airplanes the way great software companies build products.",
+  description: "A digitally native aerospace startup, building airplanes the way great software companies build products.",
 };
 
 export default function CompanyPage() {
@@ -25,13 +25,13 @@ export default function CompanyPage() {
               Revia is the scrappy startup changing how large, complex aerospace
               systems are designed, tested, developed, and certified. Where
               legacy OEMs carry decades of process debt, we move with the speed
-              and discipline of a modern software organization — treating the
+              and discipline of a modern software organization, treating the
               aircraft as a software-defined platform from day one.
             </p>
             <p>
               We enter through the segment the incumbents abandoned: the 50–100
               seat gap where demand is sharpest and the certification path is
-              cleanest. The advantage isn&apos;t just the aircraft — it&apos;s
+              cleanest. The advantage is not just the aircraft. It&apos;s
               the method. Agile development cycles, model-based systems
               engineering, and a digital thread from design to certification
               let a small, focused team outmaneuver organizations built for a

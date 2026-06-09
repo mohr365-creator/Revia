@@ -8,7 +8,7 @@ import { AircraftSilhouette } from "@/components/aircraft/AircraftSilhouette";
 export const metadata: Metadata = {
   title: "Aircraft",
   description:
-    "Two aircraft families built on shared architecture — defense and cargo first, then commercial.",
+    "Two aircraft families built on shared architecture: defense and cargo first, then commercial.",
 };
 
 const families = [
@@ -26,7 +26,7 @@ const families = [
     name: "Narrowbody family",
     variants: "6-abreast · variants TBD",
     blurb:
-      "The third manufacturer airline CEOs have publicly asked for — developed concurrently, aimed at the single-aisle market.",
+      "The third manufacturer airline CEOs have publicly asked for, developed concurrently and aimed at the single-aisle market.",
   },
 ];
 

@@ -31,7 +31,7 @@ export function DevelopmentTimeline() {
         A sequenced path to the third OEM.
       </h2>
       <p className="mt-4 max-w-2xl text-pretty text-cream/60">
-        The program is structured deliberately — defense and cargo first, then
+        The program is structured deliberately: defense and cargo first, then
         commercial. Each phase builds the certification basis and demand signal
         the next one requires.
       </p>

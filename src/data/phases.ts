@@ -16,7 +16,7 @@ export const developmentPhases: Phase[] = [
     status: "active",
     title: "Concept development & stakeholder engagement",
     description:
-      "Revia is in active concept development — building the business case, engaging airlines, government stakeholders, and potential investors, and refining the program architecture ahead of Series A.",
+      "Revia is in active concept development: building the business case, engaging airlines, government stakeholders, and potential investors, and refining the program architecture ahead of Series A.",
     milestones: [
       "Aircraft family concept definition (R-50, R-75, R-100, R-100F)",
       "Defense and special-missions variant scoping",
@@ -64,7 +64,7 @@ export const developmentPhases: Phase[] = [
       "R-75 lead variant first flight",
       "FAA / EASA type certification (R-50, R-75, R-100)",
       "Launch airline customer agreements",
-      "Entry into service — domestic thin routes",
+      "Entry into service on domestic thin routes",
       "R-100F cargo variant entry into service",
     ],
   },

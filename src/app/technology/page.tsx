@@ -26,7 +26,7 @@ const pillars = [
   {
     eyebrow: "Software",
     title: "A software-first aerospace company.",
-    body: "The aircraft is a software-defined platform — from model-based design and digital certification tooling to in-service data loops. This is the organizational thesis: a digitally native team running agile development cycles can design, test, and certify complex aerospace systems faster than incumbents built around hardware-era processes. The method is the competitive advantage.",
+    body: "The aircraft is a software-defined platform, from model-based design and digital certification tooling to in-service data loops. This is the organizational thesis: a digitally native team running agile development cycles can design, test, and certify complex aerospace systems faster than incumbents built around hardware-era processes. The method is the competitive advantage.",
     flag: null,
   },
 ];
