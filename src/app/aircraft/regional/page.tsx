@@ -24,7 +24,7 @@ export default function CommercialPage() {
 
       <section className="bg-navy py-16">
         <Container>
-          <ConceptBanner message="Several specifications are flagged for verification and must not ship as confirmed fact until sourced." />
+          <ConceptBanner message="Conceptual Development & Initial Vehicle Configuration In-work" />
           <div id="passenger" className="scroll-mt-24">
             <Eyebrow>Passenger</Eyebrow>
             <h2 className="mt-4 font-serif text-2xl text-cream">

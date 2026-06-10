@@ -9,7 +9,7 @@ export function ConceptBanner({ message }: { message?: string }) {
       <div className="flex items-start gap-4 px-5 py-4">
         <span className="text-2xl leading-none text-saffron" aria-label="Caution">⚠</span>
         <p className="text-sm text-cream/70">
-          {message ?? "The configurations below are derivative concepts. Roles, endurance, and mission systems are illustrative and must be confirmed against a defined program before publishing."}
+          {message ?? "Conceptual Development & Initial Vehicle Configuration In-work"}
         </p>
       </div>
     </div>
