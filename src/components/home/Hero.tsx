@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Container } from "@/components/ui/Container";
-import { communitiesLost, routesLostHeadline } from "@/data/stats";
+import { communitiesLost } from "@/data/stats";
 import { site } from "@/data/site";
 
 export function Hero() {
@@ -40,7 +40,7 @@ export function Hero() {
 
           {/* Lead number — the scale of what was lost */}
           <p className="mt-10 font-serif italic leading-none text-amber text-[clamp(5rem,13vw,9rem)]">
-            {routesLostHeadline.value}
+            840+
           </p>
           <p className="mt-3 text-sm uppercase tracking-[0.15em] text-cream/50">
             routes went dark
@@ -57,7 +57,7 @@ export function Hero() {
           </p>
 
           <p className="mt-4 text-sm text-cream/40">
-            {communitiesLost.value} U.S. communities lost their last commercial flight, 1995&ndash;2020.
+            {communitiesLost.value} {communitiesLost.label} ({communitiesLost.source}).
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-8">

@@ -5,15 +5,30 @@ export const site = {
     "America and the world lost the small-aircraft routes that connected ordinary places. Revia is building the aircraft to bring them back.",
   // Domain unresolved — revia.com is taken. Placeholder until confirmed.
   domain: "revia.aero",
-  disclaimer: "Confidential — pre–Series A.",
+  disclaimer: "Confidential: pre-Series A.",
 } as const;
 
 export const primaryNav = [
   { href: "/mission", label: "Mission" },
   { href: "/routes", label: "Routes" },
-  { href: "/aircraft", label: "Aircraft" },
+  {
+    href: "/aircraft",
+    label: "Aircraft",
+    children: [
+      { href: "/aircraft/regional", label: "Commercial" },
+      { href: "/aircraft/special-missions", label: "Special Missions" },
+    ],
+  },
+  { href: "/defense", label: "Defense" },
   { href: "/technology", label: "Technology" },
-  { href: "/company", label: "Company" },
+  {
+    href: "/company",
+    label: "Company",
+    children: [
+      { href: "/company", label: "About" },
+      { href: "/company/roadmap", label: "Program Roadmap" },
+    ],
+  },
 ] as const;
 
 export const footerNav = [
@@ -23,6 +38,8 @@ export const footerNav = [
       { href: "/mission", label: "Mission" },
       { href: "/routes", label: "Lost routes" },
       { href: "/aircraft", label: "Aircraft" },
+      { href: "/aircraft/special-missions", label: "Special Missions" },
+      { href: "/defense", label: "Defense" },
       { href: "/technology", label: "Technology" },
     ],
   },
@@ -30,6 +47,7 @@ export const footerNav = [
     heading: "Company",
     links: [
       { href: "/company", label: "About" },
+      { href: "/company/roadmap", label: "Program Roadmap" },
       { href: "/newsroom", label: "Newsroom" },
       { href: "/contact", label: "Contact" },
     ],
@@ -40,7 +58,7 @@ export const inquiryTypes = [
   {
     id: "investor",
     label: "Investor",
-    blurb: "Series A. Credibility, scale of opportunity, and team.",
+    blurb: "Series A. Credibility and scale of opportunity.",
   },
   {
     id: "partner",

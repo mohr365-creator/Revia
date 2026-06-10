@@ -23,8 +23,7 @@ export function WhyNow() {
                 “{q.text}”
               </blockquote>
               <figcaption className="mt-5 flex flex-wrap items-center gap-3 text-sm text-cream/60">
-                <span>— {q.attribution}</span>
-                {!q.verified && <DataFlag title={q.context}>Verify quote</DataFlag>}
+                <span>{q.attribution}</span>
               </figcaption>
             </figure>
           ))}
@@ -35,7 +34,6 @@ export function WhyNow() {
             <div key={s.label}>
               <dt className="flex items-center gap-2 font-serif text-4xl text-amber">
                 {s.value}
-                {!s.verified && <DataFlag title={s.source}>?</DataFlag>}
               </dt>
               <dd className="mt-2 text-sm text-cream/60">{s.label}</dd>
             </div>
