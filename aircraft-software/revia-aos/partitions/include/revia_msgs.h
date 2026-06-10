@@ -77,4 +77,21 @@ typedef struct
     char    text[48];
 } msg_eicas_t;
 
+/* Flight-control monitor status (MON -> DISP).
+ * The monitor is the dissimilar lane of the COM/MON pair: it checks
+ * safety invariants of the COM output against independently routed
+ * sensor data and latches a trip on persistent violation. */
+#define MON_FLAG_AUTHORITY  (1u << 0)  /* surface beyond authority     */
+#define MON_FLAG_SLEW       (1u << 1)  /* surface rate beyond limit    */
+#define MON_FLAG_REVERSION  (1u << 2)  /* normal law on invalid data   */
+#define MON_FLAG_ALPHA      (1u << 3)  /* no nose-down beyond max alpha */
+#define MON_FLAG_NO_DATA    (1u << 4)  /* COM output channel silent    */
+
+typedef struct
+{
+    uint8_t  trip;            /* 1 once latched (persists)              */
+    uint8_t  flags;           /* MON_FLAG_* of the current frame        */
+    uint32_t violation_count; /* total violating frames observed        */
+} msg_mon_t;
+
 #endif /* REVIA_MSGS_H */

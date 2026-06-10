@@ -33,3 +33,8 @@ jobs:
         run: |
           python3 tools/trace/gen_trace.py
           git diff --exit-code docs/requirements/trace-matrix.md
+
+      - name: Compliance export current (certification dashboard feed)
+        run: |
+          python3 tools/compliance/export_compliance.py
+          git diff --exit-code docs/compliance/compliance-export.json

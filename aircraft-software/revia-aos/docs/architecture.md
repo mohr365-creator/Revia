@@ -24,8 +24,15 @@ Data flow (all via statically routed kernel channels):
 ```
 IOM ──ADC──────▶ FCS ──SURF──────▶ DISP ──EICAS(Q)──▶ MAINT
 IOM ──PILOT────▶ FCS ──SURF_MODEL▶ IOM   (host model loop-closure)
+IOM ──ADC_MON──▶ MON ◀──SURF_MON── FCS   (dissimilar monitor lane)
+MON ──STATUS───▶ DISP                    (trip annunciation)
 FMS ──NAV──────▶ DISP
 ```
+
+The COM/MON pair (FCS/MON) implements design rule REV-DIS-001: the
+monitor checks envelope invariants on independently routed inputs and
+shares no design or code with the COM lane. Aircraft-level
+dissimilarity strategy: REV-SYS-ARCH-001 (`../../ARCHITECTURE.md`).
 
 ## 2. Timing
 

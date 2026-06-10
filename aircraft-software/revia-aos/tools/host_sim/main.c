@@ -11,33 +11,15 @@
 
 #include "aos_kernel.h"
 #include "module_config.h"
+#include "iom_part.h"
 #include "maint_part.h"
 #include "hal_host.h"
 #include "revia_msgs.h"
 
-/* Scenario hooks poke the IOM region directly (host-only: stands in
- * for pilot inceptors and sensor failures). Field offsets match
- * iom_state_t; the IOM exposes them at fixed offsets per REV-ICD-001
- * appendix S (simulation). To stay honest we re-declare the prefix. */
-typedef struct
-{
-    float         pitch_deg;
-    float         pitch_rate_dps;
-    float         alpha_deg;
-    float         elev_deg;
-    aos_time_us_t t_prev_us;
-    bool          have_prev;
-    aos_port_id_t p_adc_out;
-    aos_port_id_t p_pilot_out;
-    aos_port_id_t p_surf_in;
-    float         cmd_pitch_dps;
-    bool          fail_adc;
-} iom_region_view_t;
-
 int main(void)
 {
     const aos_module_config_t *cfg = revia_module_config();
-    iom_region_view_t *iom;
+    iom_state_t *iom;
     uint32_t frame;
     int rc = 0;
 
@@ -53,7 +35,7 @@ int main(void)
         aos_port_id_t p_surf = 0u;
 
         (void)aos_port_lookup("DISP_SURF_IN", &p_surf);
-        iom = (iom_region_view_t *)cfg->parts[REVIA_PART_IOM].region_base;
+        iom = (iom_state_t *)cfg->parts[REVIA_PART_IOM].region_base;
 
         (void)printf("Revia AOS host simulation — R-100 baseline, "
                      "major frame %u us\n", (unsigned)cfg->major_frame_us);

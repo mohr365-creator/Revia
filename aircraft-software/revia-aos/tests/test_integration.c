@@ -15,25 +15,10 @@
 #include "ut.h"
 #include "aos_internal.h"
 #include "module_config.h"
+#include "iom_part.h"
 #include "maint_part.h"
 #include "revia_msgs.h"
 #include "hal_host.h"
-
-/* Host-only view of the IOM region (prefix of iom_state_t). */
-typedef struct
-{
-    float         pitch_deg;
-    float         pitch_rate_dps;
-    float         alpha_deg;
-    float         elev_deg;
-    aos_time_us_t t_prev_us;
-    bool          have_prev;
-    aos_port_id_t p_adc_out;
-    aos_port_id_t p_pilot_out;
-    aos_port_id_t p_surf_in;
-    float         cmd_pitch_dps;
-    bool          fail_adc;
-} iom_view_t;
 
 static msg_surf_t read_surf(void)
 {
@@ -52,7 +37,7 @@ static msg_surf_t read_surf(void)
 void suite_integration(void)
 {
     const aos_module_config_t *cfg = revia_module_config();
-    iom_view_t *iom;
+    iom_state_t *iom;
     uint32_t frame;
 
     (void)printf("suite: R-100 module integration\n");
@@ -62,7 +47,7 @@ void suite_integration(void)
     aos_kernel_reset_for_test();
     hal_host_reset();
     UT_CHECK(aos_kernel_init(cfg) == AOS_OK);
-    iom = (iom_view_t *)cfg->parts[REVIA_PART_IOM].region_base;
+    iom = (iom_state_t *)cfg->parts[REVIA_PART_IOM].region_base;
 
     UT_CASE("all partitions reach NORMAL within two frames",
             "AOS-SRS-150");

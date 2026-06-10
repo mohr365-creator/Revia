@@ -10,11 +10,12 @@
 enum
 {
     REVIA_PART_IOM   = 0,
-    REVIA_PART_FCS   = 1,
+    REVIA_PART_FCS   = 1,   /* flight-control COM lane                */
     REVIA_PART_DISP  = 2,
     REVIA_PART_FMS   = 3,
     REVIA_PART_MAINT = 4,
-    REVIA_PART_COUNT = 5
+    REVIA_PART_MON   = 5,   /* flight-control MON lane (dissimilar)   */
+    REVIA_PART_COUNT = 6
 };
 
 /* The complete static configuration for this module. */

@@ -6,9 +6,11 @@ aircraft type-certificated under 14 CFR Part 25.
 
 ## Contents
 
-| Directory | Description |
+| Item | Description |
 |---|---|
-| [`revia-aos/`](revia-aos/) | Revia Aircraft Operating System — ARINC 653-style partitioned real-time operating system, developed to DO-178C Design Assurance Level A objectives |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Whole-aircraft solution note: one-OS/many-LRU deployment, COM/MON dissimilarity strategy, AFDX backbone, make/buy and COTS integration, means of compliance, certification-dashboard export |
+| [`revia-aos/`](revia-aos/) | Revia Aircraft Operating System — ARINC 653-style partitioned real-time operating system, developed to DO-178C Design Assurance Level A objectives; includes the flight-control COM/MON pair |
+| [`systems/`](systems/) | Aircraft system domains by ATA chapter (ECS, electrical power, fuel, gear, navigation/surveillance…) with make/buy, DAL, and compliance anchors; placeholders for supplier/COTS articles |
 
 ## ⚠️ Certification status
 

@@ -34,6 +34,7 @@ void suite_health(void);
 void suite_sched(void);
 void suite_fcs_law(void);
 void suite_apps(void);
+void suite_mon(void);
 void suite_integration(void);
 
 #endif /* UT_H */

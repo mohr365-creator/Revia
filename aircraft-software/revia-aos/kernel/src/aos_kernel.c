@@ -3,6 +3,7 @@
  *
  * @satisfies AOS-HLR-040 (exhaustive configuration validation)
  * @satisfies AOS-HLR-041 (deterministic cold start)
+ * @satisfies AOS-HLR-042 (module instance identity required)
  * @satisfies AOS-HLR-011 (partition operating modes)
  */
 #include <string.h>
@@ -170,6 +171,11 @@ aos_ret_t aos_kernel_init(const aos_module_config_t *cfg)
             (cfg->maint_part >= cfg->part_count))
         {
             ret = AOS_E_CONFIG;
+        }
+        if ((ret == AOS_OK) &&
+            ((cfg->module_id == NULL) || (cfg->module_id[0] == '\0')))
+        {
+            ret = AOS_E_CONFIG;  /* every LRU instance must identify */
         }
 
         if (ret == AOS_OK)

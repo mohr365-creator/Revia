@@ -22,11 +22,17 @@ AC 25.1309-1B; IMA roles and responsibilities per DO-297.
 | CSCI | DAL | Basis |
 |---|---|---|
 | AOS kernel (partitioning, scheduling, ports, HM) | A | Supports DAL A functions; failure could prevent continued safe flight |
-| FCS partition (pitch control law) | A | Catastrophic failure condition (loss of control) |
-| IOM partition (sensor/bus I/O) | A | Feeds FCS |
+| FCS partition (pitch control law, COM lane) | A | Catastrophic failure condition (loss of control) |
+| MON partition (flight-control monitor, dissimilar lane) | A | Architectural mitigation of residual COM development error (REV-DIS-001; developed with managed independence from FCS) |
+| IOM partition (sensor/bus I/O) | A | Feeds FCS/MON |
 | DISP partition (EICAS/displays) | B | Hazardous (misleading primary flight information) |
 | FMS partition | C | Major |
 | MAINT partition | D | Minor |
+
+Kernel reuse strategy: the AOS kernel and its verification data are
+packaged as a reusable software component per AC 20-148, certified
+once and integrated on every LRU instance (see REV-SYS-ARCH-001 §1-2)
+and across the aircraft family.
 
 DAL assignment derives from the functional hazard assessment
 REV-FHA-001 (system level, outside this repository).

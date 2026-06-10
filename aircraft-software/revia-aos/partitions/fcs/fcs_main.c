@@ -25,6 +25,7 @@ typedef struct
     aos_port_id_t   p_pilot_in;
     aos_port_id_t   p_surf_out;
     aos_port_id_t   p_surf_model_out;
+    aos_port_id_t   p_surf_mon_out;
     aos_time_us_t   t_prev_us;
     bool            have_prev;
 } fcs_state_t;
@@ -59,6 +60,10 @@ aos_ret_t fcs_part_init(aos_part_mode_t start_mode)
     if (ret == AOS_OK)
     {
         ret = aos_port_lookup("FCS_SURF_MODEL_OUT", &st->p_surf_model_out);
+    }
+    if (ret == AOS_OK)
+    {
+        ret = aos_port_lookup("FCS_SURF_MON_OUT", &st->p_surf_mon_out);
     }
     return ret;
 }
@@ -131,7 +136,10 @@ aos_ret_t fcs_part_step(aos_time_us_t window_start_us)
                                           &surf, sizeof(surf));
         aos_ret_t r2 = aos_sampling_write(st->p_surf_model_out,
                                           &surf, sizeof(surf));
+        aos_ret_t r3 = aos_sampling_write(st->p_surf_mon_out,
+                                          &surf, sizeof(surf));
 
-        return ((r1 == AOS_OK) && (r2 == AOS_OK)) ? AOS_OK : AOS_E_STATE;
+        return ((r1 == AOS_OK) && (r2 == AOS_OK) && (r3 == AOS_OK))
+                   ? AOS_OK : AOS_E_STATE;
     }
 }

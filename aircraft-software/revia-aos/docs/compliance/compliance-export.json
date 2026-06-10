@@ -1,0 +1,829 @@
+{
+  "schema": "revia-compliance-export/1",
+  "program": "Revia R-100",
+  "component": "Revia AOS (REV-AOS)",
+  "source_documents": {
+    "requirements": "docs/requirements/AOS-SRS.md",
+    "means_of_compliance": "docs/compliance/means-of-compliance.md"
+  },
+  "summary": {
+    "requirements": 38,
+    "fully_traced": 38,
+    "trace_gaps": [],
+    "test_cases": 73
+  },
+  "requirements": [
+    {
+      "id": "AOS-HLR-001",
+      "text": "All kernel interfaces shall use fixed-width integer types; no interface shall depend on platform-defined type widths.",
+      "satisfied_by": [
+        "kernel/include/aos_types.h"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "interface types have the specified widths"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-002",
+      "text": "Every kernel service shall return an explicit status code enumerating all failure modes of that service.",
+      "satisfied_by": [
+        "kernel/include/aos_types.h"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "status codes are distinct and explicit"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-003",
+      "text": "The kernel shall perform no dynamic memory allocation; all storage shall be statically sized from configured limits (`aos_limits.h`).",
+      "satisfied_by": [
+        "kernel/include/aos_limits.h"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "configured limits bound every kernel table"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-010",
+      "text": "The kernel shall confine each partition's writes to its statically configured memory region (hardware-enforced on flight targets via `aos_hal_protect_select`).",
+      "satisfied_by": [
+        "kernel/include/aos_partition.h"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "protection context selected per executed window"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-011",
+      "text": "Each partition shall be in exactly one mode of {IDLE, COLD_START, WARM_START, NORMAL}; a partition shall be able to change only its own mode, and only via the legal transitions (COLD/WARM_START\u2192NORMAL, NORMAL\u2192IDLE); the health monitor may command any transition.",
+      "satisfied_by": [
+        "kernel/include/aos_partition.h",
+        "kernel/src/aos_kernel.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_sched.c",
+          "case": "first frame initializes partitions into NORMAL"
+        },
+        {
+          "file": "tests/test_sched.c",
+          "case": "idle partitions are not dispatched"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-012",
+      "text": "Sampling ports shall deliver the most recent message with an explicit freshness indication derived from the configured refresh period; reads before any write shall be distinguishable from valid data.",
+      "satisfied_by": [
+        "kernel/include/aos_port.h",
+        "kernel/src/aos_port.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_ports.c",
+          "case": "sampling read before any write -> EMPTY"
+        },
+        {
+          "file": "tests/test_ports.c",
+          "case": "sampling delivers latest value, fresh"
+        },
+        {
+          "file": "tests/test_ports.c",
+          "case": "sampling data goes stale after refresh period"
+        },
+        {
+          "file": "tests/test_ports.c",
+          "case": "oversize sampling write rejected"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-013",
+      "text": "Queuing ports shall deliver messages in FIFO order from bounded storage; when full, new messages shall be rejected with an error and queued data shall never be overwritten.",
+      "satisfied_by": [
+        "kernel/include/aos_port.h",
+        "kernel/src/aos_port.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_ports.c",
+          "case": "queuing is FIFO"
+        },
+        {
+          "file": "tests/test_ports.c",
+          "case": "full queue rejects send, preserves contents"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-014",
+      "text": "The kernel shall reject any port operation by a partition that does not own the port, and any operation inconsistent with the port's configured kind or direction.",
+      "satisfied_by": [
+        "kernel/include/aos_port.h",
+        "kernel/src/aos_port.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_ports.c",
+          "case": "partition cannot use another partition's port"
+        },
+        {
+          "file": "tests/test_ports.c",
+          "case": "direction enforced (read on a source port)"
+        },
+        {
+          "file": "tests/test_ports.c",
+          "case": "port lookup by name"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-015",
+      "text": "The kernel shall schedule partitions per a fixed cyclic table of windows within a fixed major frame, configured before start and immutable at runtime; every window shall execute in order every frame.",
+      "satisfied_by": [
+        "kernel/include/aos_sched.h",
+        "kernel/src/aos_sched.c",
+        "config/module_config.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_config.c",
+          "case": "overlapping windows rejected"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "window beyond major frame rejected"
+        },
+        {
+          "file": "tests/test_sched.c",
+          "case": "subsequent frames step each partition once"
+        },
+        {
+          "file": "tests/test_sched.c",
+          "case": "frame time advances by exactly one major frame"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-016",
+      "text": "The kernel shall detect any partition exceeding its window budget and any major-frame overrun, and shall report each to the health monitor (partition-level and module-level respectively).",
+      "satisfied_by": [
+        "kernel/include/aos_sched.h",
+        "kernel/src/aos_sched.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_sched.c",
+          "case": "window overrun raises DEADLINE with configured action"
+        },
+        {
+          "file": "tests/test_sched.c",
+          "case": "frame overrun reported as module-level timing fault"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-020",
+      "text": "The kernel shall access hardware exclusively through the HAL interface (`aos_hal.h`).",
+      "satisfied_by": [
+        "kernel/include/aos_hal.h"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "kernel timing driven entirely by HAL clock"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-021",
+      "text": "The HAL time base shall be monotonic non-decreasing for the duration of module operation.",
+      "satisfied_by": [
+        "tools/host_sim/hal_host.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "HAL time base is monotonic non-decreasing"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-022",
+      "text": "Every partition window shall execute under an armed watchdog whose budget equals the window duration.",
+      "satisfied_by": [
+        "kernel/src/aos_sched.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_sched.c",
+          "case": "watchdog armed for every executed window"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-030",
+      "text": "The kernel shall apply the statically configured recovery action (LOG, IDLE, WARM_RESTART, COLD_RESTART, SAFE_STATE) for each (partition, error) pair; a partition shall not be able to raise errors against another partition.",
+      "satisfied_by": [
+        "kernel/include/aos_health.h",
+        "kernel/src/aos_health.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_health.c",
+          "case": "LOG action records without mode change"
+        },
+        {
+          "file": "tests/test_health.c",
+          "case": "IDLE action idles the partition"
+        },
+        {
+          "file": "tests/test_health.c",
+          "case": "WARM_RESTART action re-initializes partition"
+        },
+        {
+          "file": "tests/test_health.c",
+          "case": "partition cannot raise against another partition"
+        },
+        {
+          "file": "tests/test_sched.c",
+          "case": "application step error routed to HM as APP error"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-031",
+      "text": "On SAFE_STATE the kernel shall command the module safe state via the HAL; a module with an invalid or absent configuration shall never enter NORMAL operation.",
+      "satisfied_by": [
+        "kernel/include/aos_health.h",
+        "kernel/src/aos_health.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_config.c",
+          "case": "config fault triggers configured safe state"
+        },
+        {
+          "file": "tests/test_health.c",
+          "case": "SAFE_STATE action enters module safe state"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-032",
+      "text": "The kernel shall timestamp and record every health-monitor event in a bounded log that preserves the earliest events on saturation and counts losses; the log shall be readable only by the configured maintenance partition.",
+      "satisfied_by": [
+        "kernel/include/aos_health.h",
+        "kernel/src/aos_health.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_health.c",
+          "case": "log saturation preserves first faults"
+        },
+        {
+          "file": "tests/test_health.c",
+          "case": "HM log restricted to maintenance partition"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-040",
+      "text": "Before scheduling any partition, the kernel shall validate the entire module configuration (limits, name uniqueness, window ordering/fit, channel routing and message-size consistency, entry points, region definitions) and shall reject operation on any inconsistency.",
+      "satisfied_by": [
+        "kernel/include/aos_kernel.h",
+        "kernel/src/aos_kernel.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_config.c",
+          "case": "valid configuration accepted"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "window for unknown partition rejected"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "duplicate partition name rejected"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "duplicate port name rejected"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "non-mutual channel peers rejected"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "mismatched channel message size rejected"
+        },
+        {
+          "file": "tests/test_config.c",
+          "case": "null entry point rejected"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-041",
+      "text": "Cold start shall zeroize all partition regions and kernel state so module behaviour after restart is independent of prior history.",
+      "satisfied_by": [
+        "kernel/include/aos_kernel.h",
+        "kernel/src/aos_kernel.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_foundations.c",
+          "case": "cold restart zeroizes the partition region"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-HLR-042",
+      "text": "Every module instance shall carry a non-empty configured identity (LRU and lane, e.g. \"R100-FCC1-COM\"); the kernel shall reject a configuration without one. (The same AOS executable is deployed to many LRUs; only the configuration differs.)",
+      "satisfied_by": [
+        "kernel/src/aos_kernel.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_mon.c",
+          "case": "module instance identity required and exposed"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-100",
+      "text": "The IOM shall publish validated air data and inceptor commands each frame.",
+      "satisfied_by": [
+        "partitions/iom/iom_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_integration.c",
+          "case": "IOM publishes fresh, fully valid air data"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-101",
+      "text": "Inter-partition messages shall be fixed-size typed structures defined by the ICD (REV-ICD-001).",
+      "satisfied_by": [
+        "partitions/include/revia_msgs.h"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_apps.c",
+          "case": "ICD messages all fit configured port sizes"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-102",
+      "text": "The IOM shall mark source data invalid whenever the underlying acquisition has failed.",
+      "satisfied_by": [
+        "partitions/iom/iom_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_integration.c",
+          "case": "air-data fault clears validity bits at the source"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-110",
+      "text": "In normal law the FCS shall command the elevator to track the commanded pitch rate (positive command \u2192 trailing-edge-up).",
+      "satisfied_by": [
+        "partitions/fcs/fcs_law.c",
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "nose-up command drives elevator trailing-edge up"
+        },
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "zero error holds surface near neutral"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-111",
+      "text": "The FCS shall limit elevator commands to \u00b125\u00b0 under all input conditions.",
+      "satisfied_by": [
+        "partitions/fcs/fcs_law.c",
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "surface never exceeds authority limit"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-112",
+      "text": "The FCS shall limit elevator rate of motion to 40\u00b0/s under all input conditions.",
+      "satisfied_by": [
+        "partitions/fcs/fcs_law.c",
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "surface motion respects slew limit"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-113",
+      "text": "Above 12\u00b0 angle of attack the FCS shall command nose-down proportional to the excursion, overriding nose-up demands, while preserving pilot nose-down authority.",
+      "satisfied_by": [
+        "partitions/fcs/fcs_law.c",
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "alpha protection overrides nose-up demand"
+        },
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "protection inactive below onset"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-114",
+      "text": "On loss or staleness of required air data the FCS shall revert to direct law within one frame, transient-free, and recover to normal law when valid data returns.",
+      "satisfied_by": [
+        "partitions/fcs/fcs_law.c",
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "invalid data reverts to direct law"
+        },
+        {
+          "file": "tests/test_integration.c",
+          "case": "air-data loss reverts FCS to direct law end-to-end"
+        },
+        {
+          "file": "tests/test_integration.c",
+          "case": "recovery returns to normal law"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-115",
+      "text": "The FCS integrator shall be clamped (anti-windup) and shall not integrate against active alpha protection.",
+      "satisfied_by": [
+        "partitions/fcs/fcs_law.c",
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_fcs_law.c",
+          "case": "integrator clamps under sustained error"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-116",
+      "text": "On loss of the pilot command path the FCS shall command surfaces to neutral (failsafe) within one frame.",
+      "satisfied_by": [
+        "partitions/fcs/fcs_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_apps.c",
+          "case": "FCS commands neutral surfaces when pilot path is lost"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-120",
+      "text": "The DISP shall annunciate every flight-control law change (caution for DIRECT, warning for FAILSAFE, advisory for NORMAL recovery) and forward annunciations to the maintenance recorder.",
+      "satisfied_by": [
+        "partitions/disp/disp_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_integration.c",
+          "case": "law changes annunciated and recorded by maintenance"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-121",
+      "text": "The DISP shall annunciate stale flight-control data exactly once per staleness episode.",
+      "satisfied_by": [
+        "partitions/disp/disp_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_apps.c",
+          "case": "stale flight-control data annunciated exactly once"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-130",
+      "text": "The FMS shall publish a navigation solution (position, groundspeed, track, active waypoint) each frame.",
+      "satisfied_by": [
+        "partitions/fms/fms_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_integration.c",
+          "case": "FMS publishes an advancing navigation solution"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-140",
+      "text": "The MAINT partition shall collect EICAS messages and health-monitor events with bounded per-window processing, for Part 121 continuing-airworthiness reporting (\u00a7121.373).",
+      "satisfied_by": [
+        "partitions/maint/maint_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_integration.c",
+          "case": "no health-monitor events in nominal operation"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-150",
+      "text": "The R-100 baseline module shall host IOM, FCS, DISP, FMS, MAINT, and MON in a 50 ms major frame per the configured schedule, with all partitions reaching NORMAL mode within two frames of cold start.",
+      "satisfied_by": [
+        "config/module_config.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_integration.c",
+          "case": "baseline configuration accepted and started"
+        },
+        {
+          "file": "tests/test_integration.c",
+          "case": "all partitions reach NORMAL within two frames"
+        },
+        {
+          "file": "tests/test_integration.c",
+          "case": "closed loop: doublet produces bounded, damped response"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-160",
+      "text": "The MON partition shall check, every frame, that the COM surface command respects the certified envelope invariants: authority within \u00b125\u00b0 (+monitor tolerance), slew within 40\u00b0/s (+monitor tolerance), and nose-down command whenever angle of attack exceeds the never-exceed value, using air data received on its own independently routed channel.",
+      "satisfied_by": [
+        "partitions/mon/mon_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_mon.c",
+          "case": "closed loop runs with no nuisance trip"
+        },
+        {
+          "file": "tests/test_mon.c",
+          "case": "slew violation detected"
+        },
+        {
+          "file": "tests/test_mon.c",
+          "case": "missed alpha protection detected"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-161",
+      "text": "The MON partition shall latch a trip after three consecutive violating frames, shall publish its status (trip, flags, violation count) every frame, and shall preserve a latched trip across warm restart (cold start clears it).",
+      "satisfied_by": [
+        "partitions/mon/mon_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_mon.c",
+          "case": "authority violation detected and latched after 3 frames"
+        },
+        {
+          "file": "tests/test_mon.c",
+          "case": "latched trip persists after data returns to normal"
+        },
+        {
+          "file": "tests/test_mon.c",
+          "case": "warm restart preserves the trip; cold start clears it"
+        },
+        {
+          "file": "tests/test_mon.c",
+          "case": "transient violation (< 3 frames) does not trip"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-162",
+      "text": "The MON partition shall flag a reversion inconsistency whenever the COM lane claims normal law while required air data is invalid, and shall flag loss of the COM output channel.",
+      "satisfied_by": [
+        "partitions/mon/mon_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_mon.c",
+          "case": "normal law on invalid air data flagged"
+        },
+        {
+          "file": "tests/test_mon.c",
+          "case": "silent COM output channel flagged"
+        }
+      ],
+      "fully_traced": true
+    },
+    {
+      "id": "AOS-SRS-163",
+      "text": "The DISP partition shall annunciate a latched monitor trip as a warning exactly once per trip episode.",
+      "satisfied_by": [
+        "partitions/disp/disp_main.c"
+      ],
+      "verified_by": [
+        {
+          "file": "tests/test_mon.c",
+          "case": "trip annunciated as warning exactly once per episode"
+        }
+      ],
+      "fully_traced": true
+    }
+  ],
+  "means_of_compliance": [
+    {
+      "regulation": "14 CFR 25.1309",
+      "subject": "Equipment, systems, installations safety",
+      "means": "AC 25.1309-1B safety assessment; FHA/PSSA/SSA",
+      "standards": "ARP4761A, ARP4754B"
+    },
+    {
+      "regulation": "14 CFR 25.1301",
+      "subject": "Function and installation",
+      "means": "Qualification + intended-function verification",
+      "standards": "DO-160G"
+    },
+    {
+      "regulation": "14 CFR 21.20 / 21.97",
+      "subject": "Type design data, changes",
+      "means": "Configuration management of life-cycle data",
+      "standards": "SCMP (REV-AOS-SCMP-001)"
+    },
+    {
+      "regulation": "Software (all DALs)",
+      "subject": "Airborne software assurance",
+      "means": "AC 20-115D",
+      "standards": "DO-178C, DO-330, DO-331, DO-332, DO-333"
+    },
+    {
+      "regulation": "AOS kernel reuse",
+      "subject": "Reusable software component",
+      "means": "AC 20-148 RSC package: kernel + verification data certified once, reused per LRU and across the R-50/R-100 family",
+      "standards": "DO-178C"
+    },
+    {
+      "regulation": "IMA platform",
+      "subject": "Modules, partitioning, roles",
+      "means": "AC 20-170; partitioning analysis; module acceptance",
+      "standards": "DO-297"
+    },
+    {
+      "regulation": "Development assurance",
+      "subject": "System/aircraft level processes",
+      "means": "AC 20-174",
+      "standards": "ARP4754A (program practices per ARP4754B)"
+    },
+    {
+      "regulation": "Airborne electronic hardware",
+      "subject": "FCC/IOM/RDC custom hardware",
+      "means": "AC 20-152A",
+      "standards": "DO-254"
+    },
+    {
+      "regulation": "14 CFR 25.1319",
+      "subject": "Equipment, systems, network information security",
+      "means": "Security risk assessment, protection, continuing airworthiness",
+      "standards": "DO-326A, DO-356A, DO-355"
+    },
+    {
+      "regulation": "Aeronautical databases",
+      "subject": "FMS navigation data",
+      "means": "AC 20-153B",
+      "standards": "DO-200B"
+    },
+    {
+      "regulation": "14 CFR 25.1322",
+      "subject": "Flight crew alerting (EICAS)",
+      "means": "AC 25.1322-1",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "Displays",
+      "subject": "Electronic flight displays",
+      "means": "AC 25-11B",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "14 CFR 25.1329",
+      "subject": "Flight guidance system",
+      "means": "AC 25.1329-1C",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "14 CFR 25.1316/1317",
+      "subject": "Lightning / HIRF",
+      "means": "Qualification + system-level assessment",
+      "standards": "DO-160G sections 22/20"
+    },
+    {
+      "regulation": "COTS: weather radar",
+      "subject": "ATA 34 surveillance",
+      "means": "TSO-C63e article + installation approval",
+      "standards": "DO-178C/DO-254 (supplier data)"
+    },
+    {
+      "regulation": "COTS: TCAS II",
+      "subject": "ATA 34 surveillance",
+      "means": "TSO-C119e",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "COTS: ATC transponder",
+      "subject": "ATA 34 surveillance",
+      "means": "TSO-C112e",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "COTS: radio altimeter",
+      "subject": "ATA 34 navigation",
+      "means": "TSO-C87a",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "COTS: GNSS",
+      "subject": "ATA 34 navigation",
+      "means": "TSO-C145e / TSO-C146e",
+      "standards": "\u2014"
+    },
+    {
+      "regulation": "Part 121 ops data",
+      "subject": "Continuing airworthiness reporting",
+      "means": "\u00a7121.373 program fed by CMC/MAINT fault data",
+      "standards": "\u2014"
+    }
+  ]
+}

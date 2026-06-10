@@ -23,22 +23,6 @@
 #define MODEL_M_ALPHA  (-0.5f)  /* static stability             [1/s^2] */
 #define MODEL_TRIM_ALPHA  3.0f  /* trim angle of attack         [deg]   */
 
-typedef struct
-{
-    float         pitch_deg;
-    float         pitch_rate_dps;
-    float         alpha_deg;
-    float         elev_deg;        /* last surface command received   */
-    aos_time_us_t t_prev_us;
-    bool          have_prev;
-    aos_port_id_t p_adc_out;
-    aos_port_id_t p_pilot_out;
-    aos_port_id_t p_surf_in;
-    /* Test/scenario injection (set by host scenarios via region). */
-    float         cmd_pitch_dps;   /* simulated pilot demand          */
-    bool          fail_adc;        /* simulate air-data loss          */
-} iom_state_t;
-
 static iom_state_t *iom_state(void)
 {
     const aos_module_config_t *cfg = aos_kernel_config();
@@ -56,6 +40,10 @@ aos_ret_t iom_part_init(aos_part_mode_t start_mode)
     st->have_prev = false;
 
     ret = aos_port_lookup("IOM_ADC_OUT", &st->p_adc_out);
+    if (ret == AOS_OK)
+    {
+        ret = aos_port_lookup("IOM_ADC_MON_OUT", &st->p_adc_mon_out);
+    }
     if (ret == AOS_OK)
     {
         ret = aos_port_lookup("IOM_PILOT_OUT", &st->p_pilot_out);
@@ -124,8 +112,15 @@ aos_ret_t iom_part_step(aos_time_us_t window_start_us)
     pilot.pitch_cmd_dps = st->cmd_pitch_dps;
     pilot.ap_engaged    = false;
 
+    /* The monitor lane receives air data on its own channel so a COM
+     * routing fault cannot blind the monitor (REV-DIS-001). */
     r1 = aos_sampling_write(st->p_adc_out, &adc, sizeof(adc));
     r2 = aos_sampling_write(st->p_pilot_out, &pilot, sizeof(pilot));
+    if (aos_sampling_write(st->p_adc_mon_out, &adc, sizeof(adc))
+        != AOS_OK)
+    {
+        r1 = AOS_E_STATE;
+    }
 
     return ((r1 == AOS_OK) && (r2 == AOS_OK)) ? AOS_OK : AOS_E_STATE;
 }

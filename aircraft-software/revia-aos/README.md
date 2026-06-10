@@ -36,7 +36,8 @@ aircraft-software/revia-aos/
   config/              static module configuration (schedule, ports, HM tables)
   partitions/          hosted applications (one directory per partition)
     iom/               I/O manager — sensor/bus acquisition (DAL A)
-    fcs/               flight control system — pitch control law (DAL A)
+    fcs/               flight control COM lane — pitch law (DAL A)
+    mon/               flight control MON lane — dissimilar monitor (DAL A)
     disp/              display/EICAS data concentrator (DAL B)
     fms/               flight management system stub (DAL C)
     maint/             central maintenance computer (DAL D)
@@ -53,11 +54,17 @@ Major frame: **50 ms** (20 Hz). All windows statically allocated
 | Window | Partition | Offset | Duration | DAL |
 |---|---|---|---|---|
 | 0 | IOM (I/O manager) | 0 ms | 5 ms | A |
-| 1 | FCS (flight control) | 5 ms | 10 ms | A |
-| 2 | DISP (display/EICAS) | 15 ms | 10 ms | B |
-| 3 | FMS (flight mgmt) | 25 ms | 15 ms | C |
-| 4 | MAINT (maintenance) | 40 ms | 5 ms | D |
-| 5 | *kernel slack / HM* | 45 ms | 5 ms | — |
+| 1 | FCS (flight control, COM lane) | 5 ms | 10 ms | A |
+| 2 | MON (flight control monitor, dissimilar lane) | 15 ms | 5 ms | A |
+| 3 | DISP (display/EICAS) | 20 ms | 10 ms | B |
+| 4 | FMS (flight mgmt) | 30 ms | 10 ms | C |
+| 5 | MAINT (maintenance) | 40 ms | 5 ms | D |
+| 6 | *kernel slack / HM* | 45 ms | 5 ms | — |
+
+The MON window directly follows the COM window so every surface
+command is checked against the envelope invariants in the frame it is
+produced (COM/MON dissimilarity — see
+[`../ARCHITECTURE.md`](../ARCHITECTURE.md) §1).
 
 ## Build & test (host simulation)
 

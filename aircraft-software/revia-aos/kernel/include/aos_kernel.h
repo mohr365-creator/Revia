@@ -27,6 +27,11 @@ typedef struct
     const aos_hm_policy_t *hm_partition;   /* one per partition          */
     aos_hm_policy_t        hm_module;      /* module-level policy        */
     aos_part_id_t          maint_part;     /* partition allowed HM reads */
+    /* Module identity: the same AOS binary is instantiated on many
+     * LRUs; each instance is identified by its configuration (e.g.
+     * "R100-FCC1-COM"). Used to tag maintenance/HM data and network
+     * traffic with the originating LRU and lane. (AOS-HLR-042) */
+    const char            *module_id;
 } aos_module_config_t;
 
 /* Validate the configuration exhaustively (limits, window overlap and

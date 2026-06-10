@@ -80,6 +80,10 @@ immutable ID. Source tags `@satisfies <ID>` and test tags
 - **AOS-HLR-041** — Cold start shall zeroize all partition regions and
   kernel state so module behaviour after restart is independent of
   prior history.
+- **AOS-HLR-042** — Every module instance shall carry a non-empty
+  configured identity (LRU and lane, e.g. "R100-FCC1-COM"); the kernel
+  shall reject a configuration without one. (The same AOS executable
+  is deployed to many LRUs; only the configuration differs.)
 
 ## 2. Hosted-application requirements (AOS-SRS, R-100 baseline)
 
@@ -117,6 +121,30 @@ immutable ID. Source tags `@satisfies <ID>` and test tags
   and health-monitor events with bounded per-window processing, for
   Part 121 continuing-airworthiness reporting (§121.373).
 - **AOS-SRS-150** — The R-100 baseline module shall host IOM, FCS,
-  DISP, FMS, and MAINT in a 50 ms major frame per the configured
+  DISP, FMS, MAINT, and MON in a 50 ms major frame per the configured
   schedule, with all partitions reaching NORMAL mode within two frames
   of cold start.
+
+### Flight-control monitor lane (COM/MON dissimilarity)
+
+Design rule REV-DIS-001: the MON partition is developed independently
+of the COM lane (separate implementation, no shared design data or
+code, checks instead of computation, independently routed inputs).
+Independence is verified by review and configuration audit; the
+behavioural requirements below are verified by test.
+
+- **AOS-SRS-160** — The MON partition shall check, every frame, that
+  the COM surface command respects the certified envelope invariants:
+  authority within ±25° (+monitor tolerance), slew within 40°/s
+  (+monitor tolerance), and nose-down command whenever angle of attack
+  exceeds the never-exceed value, using air data received on its own
+  independently routed channel.
+- **AOS-SRS-161** — The MON partition shall latch a trip after three
+  consecutive violating frames, shall publish its status (trip, flags,
+  violation count) every frame, and shall preserve a latched trip
+  across warm restart (cold start clears it).
+- **AOS-SRS-162** — The MON partition shall flag a reversion
+  inconsistency whenever the COM lane claims normal law while required
+  air data is invalid, and shall flag loss of the COM output channel.
+- **AOS-SRS-163** — The DISP partition shall annunciate a latched
+  monitor trip as a warning exactly once per trip episode.

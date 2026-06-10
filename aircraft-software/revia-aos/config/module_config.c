@@ -16,6 +16,7 @@
 #include "disp_part.h"
 #include "fms_part.h"
 #include "maint_part.h"
+#include "mon_part.h"
 #include "revia_msgs.h"
 
 /* Compile-time checks (C99-compatible static assertion). */
@@ -27,6 +28,7 @@ CFG_STATIC_ASSERT(pilot_fits, sizeof(msg_pilot_t) <= AOS_MAX_MSG_BYTES);
 CFG_STATIC_ASSERT(surf_fits,  sizeof(msg_surf_t)  <= AOS_MAX_MSG_BYTES);
 CFG_STATIC_ASSERT(nav_fits,   sizeof(msg_nav_t)   <= AOS_MAX_MSG_BYTES);
 CFG_STATIC_ASSERT(eicas_fits, sizeof(msg_eicas_t) <= AOS_MAX_MSG_BYTES);
+CFG_STATIC_ASSERT(mon_fits,   sizeof(msg_mon_t)   <= AOS_MAX_MSG_BYTES);
 
 /* --- partition memory regions (statically allocated, 8-aligned) ----- */
 
@@ -37,6 +39,7 @@ static uint64_t s_region_fcs[REGION_WORDS];
 static uint64_t s_region_disp[REGION_WORDS];
 static uint64_t s_region_fms[REGION_WORDS];
 static uint64_t s_region_maint[REGION_WORDS];
+static uint64_t s_region_mon[REGION_WORDS];
 
 /* --- partition table ------------------------------------------------- */
 
@@ -51,19 +54,24 @@ static const aos_part_desc_t s_parts[REVIA_PART_COUNT] =
     { "FMS",   AOS_DAL_C, fms_part_init,   fms_part_step,
       s_region_fms,   sizeof(s_region_fms)   },
     { "MAINT", AOS_DAL_D, maint_part_init, maint_part_step,
-      s_region_maint, sizeof(s_region_maint) }
+      s_region_maint, sizeof(s_region_maint) },
+    { "MON",   AOS_DAL_A, mon_part_init,   mon_part_step,
+      s_region_mon,   sizeof(s_region_mon)   }
 };
 
 /* --- major frame: 50 ms / 20 Hz -------------------------------------- */
 
 #define MS(x) ((aos_dur_us_t)((x) * 1000u))
 
+/* The MON window directly follows the COM (FCS) window so every COM
+ * output is checked in the same frame it is produced. */
 static const aos_window_t s_windows[] =
 {
     { REVIA_PART_IOM,   MS(0),  MS(5)  },
     { REVIA_PART_FCS,   MS(5),  MS(10) },
-    { REVIA_PART_DISP,  MS(15), MS(10) },
-    { REVIA_PART_FMS,   MS(25), MS(15) },
+    { REVIA_PART_MON,   MS(15), MS(5)  },
+    { REVIA_PART_DISP,  MS(20), MS(10) },
+    { REVIA_PART_FMS,   MS(30), MS(10) },
     { REVIA_PART_MAINT, MS(40), MS(5)  },
     { AOS_PART_ID_NONE, MS(45), MS(5)  }   /* kernel slack / HM window */
 };
@@ -100,7 +108,21 @@ static const aos_port_desc_t s_ports[] =
     /*10 */ { "DISP_EICAS_OUT",     AOS_PORT_QUEUING,  AOS_PORT_SOURCE,
               REVIA_PART_DISP,  (uint16_t)sizeof(msg_eicas_t), 8u, 0u, 11u },
     /*11 */ { "MAINT_EICAS_IN",     AOS_PORT_QUEUING,  AOS_PORT_DESTINATION,
-              REVIA_PART_MAINT, (uint16_t)sizeof(msg_eicas_t), 8u, 0u, 10u }
+              REVIA_PART_MAINT, (uint16_t)sizeof(msg_eicas_t), 8u, 0u, 10u },
+    /* COM/MON pair channels: monitor inputs routed independently of
+     * the COM lane's inputs (REV-DIS-001). */
+    /*12 */ { "IOM_ADC_MON_OUT",    AOS_PORT_SAMPLING, AOS_PORT_SOURCE,
+              REVIA_PART_IOM,   (uint16_t)sizeof(msg_adc_t),   0u, 0u, 13u },
+    /*13 */ { "MON_ADC_IN",         AOS_PORT_SAMPLING, AOS_PORT_DESTINATION,
+              REVIA_PART_MON,   (uint16_t)sizeof(msg_adc_t),   0u, REFRESH_2F, 12u },
+    /*14 */ { "FCS_SURF_MON_OUT",   AOS_PORT_SAMPLING, AOS_PORT_SOURCE,
+              REVIA_PART_FCS,   (uint16_t)sizeof(msg_surf_t),  0u, 0u, 15u },
+    /*15 */ { "MON_SURF_IN",        AOS_PORT_SAMPLING, AOS_PORT_DESTINATION,
+              REVIA_PART_MON,   (uint16_t)sizeof(msg_surf_t),  0u, REFRESH_2F, 14u },
+    /*16 */ { "MON_STATUS_OUT",     AOS_PORT_SAMPLING, AOS_PORT_SOURCE,
+              REVIA_PART_MON,   (uint16_t)sizeof(msg_mon_t),   0u, 0u, 17u },
+    /*17 */ { "DISP_MON_IN",        AOS_PORT_SAMPLING, AOS_PORT_DESTINATION,
+              REVIA_PART_DISP,  (uint16_t)sizeof(msg_mon_t),   0u, REFRESH_2F, 16u }
 };
 
 /* --- health-monitor policy -------------------------------------------- */
@@ -129,7 +151,12 @@ static const aos_hm_policy_t s_hm_part[REVIA_PART_COUNT] =
     /* MAINT: idle on any fault — it must never disturb the module. */
     { { AOS_HM_IDLE, AOS_HM_IDLE, AOS_HM_IDLE,
         AOS_HM_IDLE, AOS_HM_IDLE, AOS_HM_IDLE,
-        AOS_HM_LOG } }
+        AOS_HM_LOG } },
+    /* MON: flight-critical — same policy as FCS/IOM. Warm restart
+     * preserves a latched trip by design (see mon_part_init). */
+    { { AOS_HM_WARM_RESTART, AOS_HM_WARM_RESTART, AOS_HM_COLD_RESTART,
+        AOS_HM_WARM_RESTART, AOS_HM_COLD_RESTART, AOS_HM_SAFE_STATE,
+        AOS_HM_SAFE_STATE } }
 };
 
 static const aos_module_config_t s_cfg =
@@ -149,7 +176,11 @@ static const aos_module_config_t s_cfg =
     { { AOS_HM_SAFE_STATE, AOS_HM_SAFE_STATE, AOS_HM_SAFE_STATE,
         AOS_HM_SAFE_STATE, AOS_HM_SAFE_STATE, AOS_HM_SAFE_STATE,
         AOS_HM_LOG } },
-    (aos_part_id_t)REVIA_PART_MAINT
+    (aos_part_id_t)REVIA_PART_MAINT,
+    /* LRU instance identity: flight-control computer 1, COM channel.
+     * Other LRU instances (FCC2/3, IOM cabinets, display units) ship
+     * the identical AOS binary with their own configuration. */
+    "R100-FCC1-COM"
 };
 
 const aos_module_config_t *revia_module_config(void)

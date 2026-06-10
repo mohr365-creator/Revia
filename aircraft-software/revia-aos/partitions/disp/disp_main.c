@@ -7,6 +7,7 @@
  *
  * @satisfies AOS-SRS-120 (law-mode change annunciation)
  * @satisfies AOS-SRS-121 (stale-data annunciation)
+ * @satisfies AOS-SRS-163 (monitor-trip warning annunciation)
  */
 #include <string.h>
 
@@ -19,10 +20,12 @@ typedef struct
 {
     aos_port_id_t p_surf_in;
     aos_port_id_t p_nav_in;
+    aos_port_id_t p_mon_in;
     aos_port_id_t p_eicas_out;
     uint8_t       last_law_mode;
     bool          law_mode_known;
     bool          stale_announced;
+    bool          mon_trip_announced;
 } disp_state_t;
 
 static disp_state_t *disp_state(void)
@@ -53,11 +56,16 @@ aos_ret_t disp_part_init(aos_part_mode_t start_mode)
     (void)start_mode;
     st->law_mode_known = false;
     st->stale_announced = false;
+    st->mon_trip_announced = false;
 
     ret = aos_port_lookup("DISP_SURF_IN", &st->p_surf_in);
     if (ret == AOS_OK)
     {
         ret = aos_port_lookup("DISP_NAV_IN", &st->p_nav_in);
+    }
+    if (ret == AOS_OK)
+    {
+        ret = aos_port_lookup("DISP_MON_IN", &st->p_mon_in);
     }
     if (ret == AOS_OK)
     {
@@ -109,6 +117,31 @@ aos_ret_t disp_part_step(aos_time_us_t window_start_us)
             }
             st->last_law_mode  = surf.law_mode;
             st->law_mode_known = true;
+        }
+    }
+
+    /* Monitor trip: warning-level, once per latched episode
+     * (AOS-SRS-163). */
+    {
+        msg_mon_t mon;
+
+        if ((aos_sampling_read(st->p_mon_in, &mon, sizeof(mon),
+                               &len, &fresh) == AOS_OK) &&
+            (len == sizeof(mon)) && fresh)
+        {
+            if ((mon.trip != 0u) && !st->mon_trip_announced)
+            {
+                send_eicas(st, EICAS_WARNING, "FLT CTRL MON TRIP");
+                st->mon_trip_announced = true;
+            }
+            else if (mon.trip == 0u)
+            {
+                st->mon_trip_announced = false;
+            }
+            else
+            {
+                /* trip already announced */
+            }
         }
     }
 

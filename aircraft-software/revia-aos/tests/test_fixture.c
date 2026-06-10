@@ -143,4 +143,5 @@ void fx_reset(void)
         }
     }
     fx.cfg.maint_part = 1u;
+    fx.cfg.module_id = "TEST-MODULE";
 }

@@ -20,6 +20,7 @@ int main(void)
     suite_sched();
     suite_fcs_law();
     suite_apps();
+    suite_mon();
     suite_integration();
 
     (void)printf("=======================================\n");
