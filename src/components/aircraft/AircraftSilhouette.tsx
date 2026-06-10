@@ -3,10 +3,23 @@ import { clsx } from "clsx";
 export function AircraftSilhouette({
   className,
   label,
+  src,
 }: {
   className?: string;
   label?: string;
+  src?: string;
 }) {
+  if (src) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={src}
+        alt={label ?? "Aircraft"}
+        className={clsx("h-auto w-full rounded-xl object-cover", className)}
+      />
+    );
+  }
+
   return (
     <svg
       viewBox="0 0 320 80"

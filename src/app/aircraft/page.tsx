@@ -24,7 +24,10 @@ export default function AircraftOverviewPage() {
         <Container>
           <article className="flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8 md:flex-row md:items-center md:gap-12">
             <div className="md:w-1/2">
-              <AircraftSilhouette className="text-saffron" label="Regional family" />
+              <AircraftSilhouette
+                src="/images/regional-family-photo.png"
+                label="Revia regional family in flight"
+              />
             </div>
             <div className="mt-8 md:mt-0 md:w-1/2">
               <h2 className="font-serif text-3xl text-cream">Regional family</h2>

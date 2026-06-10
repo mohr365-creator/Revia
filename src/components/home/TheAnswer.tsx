@@ -14,7 +14,10 @@ export function TheAnswer() {
 
         <div className="mt-14 flex flex-col rounded-2xl border border-cream/10 bg-cream/[0.03] p-8 md:flex-row md:items-center md:gap-12">
           <div className="md:w-1/2">
-            <AircraftSilhouette className="text-saffron" label="Regional family" />
+            <AircraftSilhouette
+              src="/images/regional-family-photo.png"
+              label="Revia regional family in flight"
+            />
           </div>
           <div className="mt-8 md:mt-0 md:w-1/2">
             <h3 className="font-serif text-2xl text-cream">The regional family</h3>
