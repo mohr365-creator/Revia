@@ -1,0 +1,35 @@
+name: aircraft-software
+
+on:
+  push:
+    paths:
+      - "aircraft-software/**"
+      - ".github/workflows/aircraft-software.yml"
+  pull_request:
+    paths:
+      - "aircraft-software/**"
+      - ".github/workflows/aircraft-software.yml"
+
+jobs:
+  verify:
+    name: Revia AOS — build, requirements tests, traceability
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: aircraft-software/revia-aos
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build (warning-clean, -Werror)
+        run: make
+
+      - name: Requirements-based test suite
+        run: make test
+
+      - name: Host simulation smoke run
+        run: make sim
+
+      - name: Traceability matrix complete (no gaps, no orphans)
+        run: |
+          python3 tools/trace/gen_trace.py
+          git diff --exit-code docs/requirements/trace-matrix.md
