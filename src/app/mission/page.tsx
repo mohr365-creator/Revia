@@ -126,22 +126,22 @@ export default function MissionPage() {
             </p>
           </Chapter>
 
-          <Chapter n="05 · The deployment" title="Then the larger bet">
+          <Chapter n="05 · The architecture" title="Built to grow">
             <p>
-              Phase 2 is a 6-abreast narrowbody family, developed concurrently,
-              entering a single-aisle market measured in tens of thousands of
-              aircraft. Not as another legacy manufacturer, but as the agile,
-              digitally native alternative: a company that has already proven it
-              can design, certify, and scale complex aerospace programs faster
-              than incumbents built for a different era.
+              The regional family is not a one-generation product. The shared
+              wing, cross-section, and engine family are chosen for a reason:
+              the same architecture that serves the 50-seat thin route today is
+              the foundation for expanding into larger markets as Revia scales.
+              The platform grows with the demand, without starting over.
             </p>
           </Chapter>
 
           <Chapter n="06 · Why now" title="The demand is already on the record">
             <p>
               The 50-seat fleet is retiring with no replacement. Airlines need a
-              C-130-class option. And airline CEOs have said out loud that the
-              industry needs a third manufacturer. The window is open now.
+              right-sized option for thin routes. The market gap is open, the
+              certification path is clear, and the incumbents have walked away.
+              The window is open now.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <ButtonLink href="/routes" variant="primary">

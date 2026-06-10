@@ -7,7 +7,7 @@ import { DevelopmentTimeline } from "@/components/company/DevelopmentTimeline";
 export const metadata: Metadata = {
   title: "Program Roadmap",
   description:
-    "Revia's sequenced development path: from concept and Series A through defense and cargo, commercial regional certification, and narrowbody expansion.",
+    "Revia's sequenced development path: from concept and Series A through defense and cargo to commercial regional certification and future growth.",
 };
 
 export default function RoadmapPage() {
@@ -15,8 +15,8 @@ export default function RoadmapPage() {
     <>
       <PageHeader
         eyebrow="Company · Program Roadmap"
-        title="A sequenced path to the third OEM."
-        intro="Defense and cargo first. Then the regional family. Then narrowbody. Each phase builds the certification basis and demand signal the next one requires."
+        title="A sequenced path to market."
+        intro="Defense and cargo first. Then commercial regional. Each phase builds the certification basis and demand signal the next one requires, on an architecture designed for future growth."
       />
 
       <section className="bg-navy py-16">

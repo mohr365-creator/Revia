@@ -28,7 +28,7 @@ export function DevelopmentTimeline() {
     <div>
       <Eyebrow>Development roadmap</Eyebrow>
       <h2 className="mt-4 font-serif text-3xl text-cream">
-        A sequenced path to the third OEM.
+        A sequenced path to market.
       </h2>
       <p className="mt-4 max-w-2xl text-pretty text-cream/60">
         The program is structured deliberately: defense and cargo first, then
