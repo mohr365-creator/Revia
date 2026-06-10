@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { Container } from "@/components/ui/Container";
-import { communitiesLost, communitiesDocumented } from "@/data/stats";
+import { communitiesLost } from "@/data/stats";
+import { site } from "@/data/site";
 
 export function Hero() {
   return (
@@ -36,29 +37,43 @@ export function Hero() {
       <Container className="relative py-32">
         <div className="max-w-3xl">
           <Wordmark size="text-3xl" beacon />
-          <h1 className="mt-10 text-balance font-serif text-4xl leading-tight text-cream sm:text-6xl">
-            <span className="italic">{communitiesLost.value} communities</span>{" "}
-            lost their way to the map.
-            <br />
-            We&apos;re turning them back on.
+
+          {/* Lead number — the scale of what was lost */}
+          <p className="mt-10 font-serif italic leading-none text-amber text-[clamp(5rem,13vw,9rem)]">
+            840+
+          </p>
+          <p className="mt-3 text-sm uppercase tracking-[0.15em] text-cream/50">
+            routes went dark
+          </p>
+
+          {/* Belief / mission */}
+          <h1 className="mt-10 text-balance font-serif text-3xl leading-snug text-cream sm:text-5xl">
+            We believe the communities that lost their connection
+            deserve it back.
           </h1>
-          <p className="mt-6 max-w-xl text-sm text-cream/60">
-            {communitiesLost.label} ({communitiesLost.source}).{" "}
-            {communitiesDocumented} are documented here, route by route, with
-            their sources.
+
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream/65">
+            {site.thesis}
           </p>
-          <p className="mt-8 font-serif text-2xl italic text-amber">
-            The way, revived.
+
+          <p className="mt-4 text-sm text-cream/40">
+            {communitiesLost.value} {communitiesLost.label} ({communitiesLost.source}).
           </p>
-          <div className="mt-10">
+
+          <div className="mt-10 flex flex-wrap items-center gap-8">
+            <Link
+              href="/mission"
+              className="group inline-flex items-center gap-2 text-sm uppercase tracking-eyebrow text-amber transition-colors hover:text-cream"
+            >
+              Our mission
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </Link>
             <Link
               href="#map-teaser"
-              className="group inline-flex items-center gap-2 text-sm uppercase tracking-eyebrow text-cream/70 transition-colors hover:text-amber"
+              className="group inline-flex items-center gap-2 text-sm uppercase tracking-eyebrow text-cream/50 transition-colors hover:text-cream/80"
             >
-              See what was lost
-              <span className="transition-transform group-hover:translate-y-1">
-                ↓
-              </span>
+              See the routes
+              <span className="transition-transform group-hover:translate-y-1">&darr;</span>
             </Link>
           </div>
         </div>
