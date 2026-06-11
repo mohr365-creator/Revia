@@ -43,9 +43,8 @@ img = Image.new("RGB", (W, H), NAVY)
 draw = ImageDraw.Draw(img)
 
 def draw_city(draw, cx, cy, r_outer, r_inner, line_color, navy):
-    """Filled outer circle + navy inner dot to make a hollow city marker."""
+    """Solid filled circle city marker."""
     draw.ellipse([cx - r_outer, cy - r_outer, cx + r_outer, cy + r_outer], fill=line_color)
-    draw.ellipse([cx - r_inner, cy - r_inner, cx + r_inner, cy + r_inner], fill=navy)
 
 
 for opacity, suffix, lw in [(0.18, "subtle", 2), (0.45, "vivid", 3)]:
