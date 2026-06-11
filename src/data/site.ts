@@ -10,7 +10,14 @@ export const site = {
 
 export const primaryNav = [
   { href: "/mission", label: "Mission" },
-  { href: "/routes", label: "Routes" },
+  {
+    href: "/routes",
+    label: "Routes",
+    children: [
+      { href: "/routes/lost-connections", label: "Lost Connections" },
+      { href: "/routes/restoration", label: "Revia Restoration" },
+    ],
+  },
   {
     href: "/aircraft",
     label: "Aircraft",
@@ -36,7 +43,8 @@ export const footerNav = [
     heading: "Explore",
     links: [
       { href: "/mission", label: "Mission" },
-      { href: "/routes", label: "Lost routes" },
+      { href: "/routes/lost-connections", label: "Lost Connections" },
+      { href: "/routes/restoration", label: "Revia Restoration" },
       { href: "/aircraft", label: "Aircraft" },
       { href: "/aircraft/special-missions", label: "Special Missions" },
       { href: "/defense", label: "Defense" },

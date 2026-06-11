@@ -144,7 +144,7 @@ export default function MissionPage() {
               The window is open now.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <ButtonLink href="/routes" variant="primary">
+              <ButtonLink href="/routes/lost-connections" variant="primary">
                 Explore the lost routes →
               </ButtonLink>
               <ButtonLink href="/contact?type=investor" variant="secondary">

@@ -14,9 +14,12 @@ function hubNames(codes: string[]): string {
 export function CommunityPanel({
   community,
   onClose,
+  showRestoration = false,
 }: {
   community: Community | null;
   onClose: () => void;
+  /** Only the restoration view names the Revia variant that brings it back. */
+  showRestoration?: boolean;
 }) {
   if (!community) {
     return (
@@ -101,18 +104,20 @@ export function CommunityPanel({
         </div>
       </dl>
 
-      <div className="mt-auto pt-6">
-        <div className="rounded-xl border border-amber/40 bg-amber/10 p-4">
-          <p className="text-sm font-medium text-amber">{community.restorableBy}</p>
-          <p className="mt-1 text-sm text-cream">
-            {easOnly ? (
-              <>Flies this link without subsidy · connecting {community.population.toLocaleString()} people</>
-            ) : (
-              <>Restores {community.routesLost} route{community.routesLost === 1 ? "" : "s"} · connecting {community.population.toLocaleString()} people</>
-            )}
-          </p>
+      {showRestoration && (
+        <div className="mt-auto pt-6">
+          <div className="rounded-xl border border-amber/40 bg-amber/10 p-4">
+            <p className="text-sm font-medium text-amber">{community.restorableBy}</p>
+            <p className="mt-1 text-sm text-cream">
+              {easOnly ? (
+                <>Flies this link without subsidy · connecting {community.population.toLocaleString()} people</>
+              ) : (
+                <>Restores {community.routesLost} route{community.routesLost === 1 ? "" : "s"} · connecting {community.population.toLocaleString()} people</>
+              )}
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

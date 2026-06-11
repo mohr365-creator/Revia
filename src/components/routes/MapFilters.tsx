@@ -65,12 +65,20 @@ function Group<T extends string>({
 export function MapFilters({
   filters,
   onChange,
+  showRestorable = true,
 }: {
   filters: MapFilterState;
   onChange: (next: MapFilterState) => void;
+  /** The lost-connections view keeps Revia out of frame: no variant filter. */
+  showRestorable?: boolean;
 }) {
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div
+      className={clsx(
+        "grid gap-5 sm:grid-cols-2",
+        showRestorable ? "lg:grid-cols-4" : "lg:grid-cols-3",
+      )}
+    >
       <Group
         label="Status"
         value={filters.status}
@@ -83,12 +91,14 @@ export function MapFilters({
         options={regionOptions}
         onChange={(region) => onChange({ ...filters, region })}
       />
-      <Group
-        label="Restorable by"
-        value={filters.restorableBy}
-        options={restorableOptions}
-        onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
-      />
+      {showRestorable && (
+        <Group
+          label="Restorable by"
+          value={filters.restorableBy}
+          options={restorableOptions}
+          onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
+        />
+      )}
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
           Cumulative losses through {filters.throughYear}

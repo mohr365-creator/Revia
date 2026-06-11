@@ -42,6 +42,12 @@ interface RouteMapProps {
   routes: LostRoute[];
   /** Non-interactive teaser used on the home page. */
   preview?: boolean;
+  /**
+   * "lost" tells the story of the severed network and keeps Revia out of
+   * the frame; "restoration" colors the same data by the variant that
+   * brings each link back.
+   */
+  view?: "lost" | "restoration";
   className?: string;
 }
 
@@ -49,8 +55,10 @@ export function RouteMap({
   communities,
   routes,
   preview = false,
+  view = "lost",
   className,
 }: RouteMapProps) {
+  const restoration = view === "restoration";
   const [filters, setFilters] = useState<MapFilterState>(defaultFilters);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -135,7 +143,12 @@ export function RouteMap({
 
       {visibleRoutes.map((r) => {
         const isFocused = focusedId === r.fromId;
-        const stroke = lit || isFocused ? variantColor[r.restorableBy] : "#FFF4E1";
+        const litStroke = restoration
+          ? variantColor[r.restorableBy]
+          : r.status === "lost-all-service"
+            ? "#D86F3C"
+            : "#F2C97D";
+        const stroke = lit || isFocused ? litStroke : "#FFF4E1";
         const opacity = lit ? 0.55 : isFocused ? 0.85 : 0.14;
         return (
           <FlightArc
@@ -167,7 +180,11 @@ export function RouteMap({
         const isFocused = focusedId === c.id;
         const isLostAll = c.status === "lost-all-service";
         const r = Math.max(2.5, Math.min(7, 2.4 + c.routesLost * 0.7));
-        const fill = isLostAll ? "#D86F3C" : "#F2C97D";
+        const fill = restoration
+          ? variantColor[c.restorableBy]
+          : isLostAll
+            ? "#D86F3C"
+            : "#F2C97D";
         return (
           <Marker key={c.id} coordinates={c.coordinates}>
             {isFocused && (
@@ -228,18 +245,38 @@ export function RouteMap({
         </div>
       </div>
 
-      <MapFilters filters={filters} onChange={setFilters} />
+      <MapFilters
+        filters={filters}
+        onChange={setFilters}
+        showRestorable={restoration}
+      />
 
       <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
         <div className="overflow-hidden rounded-2xl border border-cream/10 bg-navy/40 p-2">
           {map}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-3 pb-2 pt-1 text-xs text-cream/50">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-ember" /> Lost all service
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-saffron opacity-60" /> Diminished
-            </span>
+            {restoration ? (
+              <>
+                {(["R-50", "R-75", "R-100"] as const).map((v) => (
+                  <span key={v} className="inline-flex items-center gap-1.5">
+                    <span
+                      className="h-2.5 w-2.5 rounded-full"
+                      style={{ backgroundColor: variantColor[v] }}
+                    />{" "}
+                    Restorable by {v}
+                  </span>
+                ))}
+              </>
+            ) : (
+              <>
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-ember" /> Lost all service
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-saffron opacity-60" /> Diminished
+                </span>
+              </>
+            )}
             <span className="inline-flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
             </span>
@@ -249,11 +286,17 @@ export function RouteMap({
               {totalPopulation.toLocaleString()}
             </span>
             <span className="ml-2 text-sm text-cream/70">
-              people live in the communities shown on this map
+              {restoration
+                ? "people Revia could reconnect across the communities shown"
+                : "people live in the communities shown on this map"}
             </span>
           </div>
         </div>
-        <CommunityPanel community={selected} onClose={() => setSelectedId(null)} />
+        <CommunityPanel
+          community={selected}
+          showRestoration={restoration}
+          onClose={() => setSelectedId(null)}
+        />
       </div>
     </div>
   );
