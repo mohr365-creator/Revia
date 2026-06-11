@@ -6,15 +6,15 @@ export type RegionFilter = "all" | "west" | "midwest" | "south" | "northeast";
 export interface MapFilterState {
   status: StatusFilter;
   region: RegionFilter;
-  /** Inclusive lower bound on lastYearServed. */
-  sinceYear: number;
+  /** Inclusive upper bound on lastYearServed — show all losses up to and including this year. */
+  throughYear: number;
   restorableBy: "all" | ReviaVariant;
 }
 
 export const defaultFilters: MapFilterState = {
   status: "all",
   region: "all",
-  sinceYear: 1978,
+  throughYear: 2024,
   restorableBy: "all",
 };
 

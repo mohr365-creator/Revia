@@ -91,19 +91,19 @@ export function MapFilters({
       />
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
-          Service ended since {filters.sinceYear}
+          Losses through {filters.throughYear}
         </p>
         <input
           type="range"
           min={1978}
           max={2024}
           step={1}
-          value={filters.sinceYear}
+          value={filters.throughYear}
           onChange={(e) =>
-            onChange({ ...filters, sinceYear: Number(e.target.value) })
+            onChange({ ...filters, throughYear: Number(e.target.value) })
           }
           className="w-full accent-[var(--amber)]"
-          aria-label="Filter by year service ended"
+          aria-label="Show all losses through this year"
         />
         <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">
           <span>1978</span>
