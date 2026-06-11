@@ -66,7 +66,6 @@ export default function MissionPage() {
             </p>
             <p>
               In 1990, you could fly out of Cheyenne. By 2019, the last carrier
-<<<<<<< HEAD
               was gone — ninety years of air service, taken for granted, then
               removed. The same story repeated in Paducah, Wausau, Dubuque, and
               dozens of places that never made the news.
