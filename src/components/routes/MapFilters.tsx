@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import type { MapFilterState } from "./filters";
+import { TIMELINE_MAX, TIMELINE_MIN, type MapFilterState } from "./filters";
 
 const statusOptions: { value: MapFilterState["status"]; label: string }[] = [
   { value: "all", label: "All" },
@@ -101,12 +101,13 @@ export function MapFilters({
       )}
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
-          Cumulative losses through {filters.throughYear}
+          Cumulative losses through{" "}
+          {filters.throughYear >= TIMELINE_MAX ? "today" : filters.throughYear}
         </p>
         <input
           type="range"
-          min={1978}
-          max={2024}
+          min={TIMELINE_MIN}
+          max={TIMELINE_MAX}
           step={1}
           value={filters.throughYear}
           onChange={(e) =>

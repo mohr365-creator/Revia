@@ -39,6 +39,12 @@ export interface Community {
   routesLost: number;
   /** IATA codes of the former hub link(s) this community fed / feeds. */
   formerHubs: string[];
+  /**
+   * Year each `formerHubs` link ended, keyed by hub IATA. `null` = the link
+   * is still flown (typically under an EAS subsidy). Lets the timeline date
+   * each severed link individually instead of by one community-level year.
+   */
+  linkYears?: Record<string, number | null>;
   /** One-line human detail, where available. */
   detail?: string;
   /** Which Revia variant could plausibly restore / right-size the gap. */

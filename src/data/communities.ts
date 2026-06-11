@@ -37,6 +37,7 @@ const seed: Seed[] = [
     lastCarrier: "Alaska Airlines (EAS contract through Sep 2027, 2x weekly Boeing 737)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2000 },
     restorableBy: "R-50",
     detail:
       "Reeve Aleutian Airways served Adak from the late 1940s through 2000 with DC-3s, Electras, and 727s; after Reeve's collapse the US government subsidizes Alaska Airlines at >$2M/year (~$10K per one-way flight) to maintain the sole lifeline for ~300 residents.",
@@ -55,6 +56,7 @@ const seed: Seed[] = [
     lastCarrier: "Alaska Airlines (EAS, daily ANC service; also continues Juneau milk-run)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2020 },
     restorableBy: "R-50",
     detail:
       "Ravn/PenAir served Cordova until April 2020 bankruptcy; Alaska Airlines stepped in under EAS and now holds a contract through April 2027 worth $17.8M annually for Cordova, Yakutat, Gustavus, Petersburg, and Wrangell.",
@@ -73,6 +75,7 @@ const seed: Seed[] = [
     lastCarrier: "Alaska Airlines (stepped in 2020 after Ravn bankruptcy; current EAS provider)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2022 },
     restorableBy: "R-50",
     detail:
       "PenAir served Dillingham as its core Alaska route before being absorbed by Ravn (2019); Ravn halted all service April 2020 (Ch.11 bankruptcy), briefly restored Dillingham service in 2021, then halted it again January 2022; Alaska Airlines currently provides EAS service.",
@@ -91,6 +94,7 @@ const seed: Seed[] = [
     lastCarrier: "Alaska Airlines (EAS, seasonal summer jet service JNU; small carriers year-round)",
     routesLost: 0,
     formerHubs: ["JNU"],
+    linkYears: { "JNU": null },
     restorableBy: "R-50",
     detail:
       "Gustavus has no road connection to any hub; EAS subsidizes seasonal Alaska Airlines Boeing 737 service to Juneau (early June–late August); year-round connectivity depends on small unsubsidized regional carriers operating much smaller aircraft.",
@@ -109,6 +113,7 @@ const seed: Seed[] = [
     lastCarrier: "Aleutian Airways (current sole commercial carrier after Ravn exit)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2025 },
     restorableBy: "R-50",
     detail:
       "Ravn Alaska discontinued Homer service March 3, 2025 citing inability to reach agreement with the airport, then shut down entirely August 5, 2025; Aleutian Airways remains the only commercial operator.",
@@ -127,6 +132,7 @@ const seed: Seed[] = [
     lastCarrier: "Ravn Alaska (final scheduled ANC service Aug 2025; Aleutian Airways now serves route)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2025 },
     restorableBy: "R-50",
     detail:
       "Ravn Alaska halted Homer service March 2025 and all operations August 5, 2025 (Float Alaska parent filed Ch.11 Jan 2026); Aleutian Airways subsequently launched twice-daily ENA-ANC service June 2025.",
@@ -145,6 +151,7 @@ const seed: Seed[] = [
     lastCarrier: "Alaska Airlines (EAS; current provider after Ravn/PenAir collapse)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2020 },
     restorableBy: "R-50",
     detail:
       "PenAir served King Salmon as a core Alaska EAS route; after the 2017 PenAir Ch.11 filing the airline was sold to Ravn's owners and absorbed by 2019; all service ceased April 2020 with RavnAir Group bankruptcy; Alaska Airlines now holds the EAS contract.",
@@ -163,6 +170,7 @@ const seed: Seed[] = [
     lastCarrier: "Reeve Air Alaska (EAS contract, awarded fall 2025 after Ravn shutdown)",
     routesLost: 1,
     formerHubs: ["ANC"],
+    linkYears: { "ANC": 2025 },
     restorableBy: "R-50",
     detail:
       "Ravn Alaska's final ever flight was the VDZ-ANC leg on August 5, 2025; the city subsequently secured an EAS contract awarded to Reeve Air Alaska in fall 2025. Arctic Legacy also operates daily service.",
@@ -183,6 +191,7 @@ const seed: Seed[] = [
     lastCarrier: "Atlantic Southeast Airlines (Delta Connection)",
     routesLost: 3,
     formerHubs: ["ATL", "MEM", "BHM"],
+    linkYears: { "ATL": 1995, "MEM": 1984, "BHM": 1984 },
     restorableBy: "R-50",
     detail:
       "Southern Airways and ASA/Atlanta Express served for ~30 years; ended ~1994. General aviation only since.",
@@ -201,6 +210,7 @@ const seed: Seed[] = [
     lastCarrier: "unknown",
     routesLost: 1,
     formerHubs: [],
+    linkYears: {  },
     restorableBy: "R-75",
     detail:
       "Auburn University Regional Airport (owned by Auburn University) has no scheduled commercial airline service; historical service if any was very limited; airport primarily serves university and general aviation needs.",
@@ -219,6 +229,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways",
     routesLost: 2,
     formerHubs: ["ATL", "MEM"],
+    linkYears: { "ATL": 1984, "MEM": 1984 },
     restorableBy: "R-50",
     detail:
       "Pryor Field served by Southern Airways from ~1959; Republic Airlines (successor to Southern) likely ended Decatur service by mid-1980s as it upgraded to larger aircraft unsuitable for small markets; airport now general aviation only.",
@@ -237,6 +248,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines (operated by SkyWest)",
     routesLost: 3,
     formerHubs: ["ATL", "MEM", "ORD"],
+    linkYears: { "ATL": 2023, "MEM": 1990, "ORD": 2019 },
     restorableBy: "R-75",
     detail:
       "Dothan retains American Eagle service to Dallas/Fort Worth but lost longtime Delta Connection Atlanta flights around 2023 and multiple hub connections since the 1990s.",
@@ -255,6 +267,7 @@ const seed: Seed[] = [
     lastCarrier: "Atlantic Southeast Airlines (Delta Connection)",
     routesLost: 4,
     formerHubs: ["ATL", "MEM", "MSL", "BHM"],
+    linkYears: { "ATL": 1994, "MEM": 1984, "MSL": 1979, "BHM": 1981 },
     restorableBy: "R-50",
     detail:
       "Republic Airlines ended 1981; ASA brief return ~1990–93; no scheduled service in over 30 years.",
@@ -273,6 +286,7 @@ const seed: Seed[] = [
     lastCarrier: "multiple (Delta, American, United, Southwest)",
     routesLost: 5,
     formerHubs: ["MEM", "CIN", "IAH", "MSY", "JAN"],
+    linkYears: { "MEM": 2010, "CIN": 2008, "IAH": 2012, "MSY": 2000, "JAN": 1995 },
     restorableBy: "R-75",
     detail:
       "Montgomery lost its Northwest/Memphis connection after the Delta-Northwest merger (2008-2010), plus its Cincinnati, New Orleans, and Houston connections over the 1990s-2010s; currently retains Atlanta, Charlotte, Dallas, Houston (IAH via United), and Washington DC.",
@@ -291,6 +305,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 3,
     formerHubs: ["CLT", "ATL", "MEM", "BNA"],
+    linkYears: { "CLT": null, "ATL": 2014, "MEM": 2010, "BNA": 2015 },
     restorableBy: "R-50",
     detail:
       "Contour Airlines operates 30-seat ERJ-135 under EAS at Northwest Alabama Regional Airport.",
@@ -309,6 +324,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways",
     routesLost: 1,
     formerHubs: ["ATL"],
+    linkYears: { "ATL": 1963 },
     restorableBy: "R-50",
     detail:
       "Delta DC-3s 1951–52; Southern Airways 1960–1963. Craig Field (former USAF base) now a general aviation industrial complex.",
@@ -327,6 +343,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Air Midwest)",
     routesLost: 3,
     formerHubs: ["ATL", "BNA", "DFW"],
+    linkYears: { "ATL": 1992, "BNA": 1996, "DFW": 1997 },
     restorableBy: "R-75",
     detail:
       "Tuscaloosa voluntarily exited the Essential Air Service program; all commercial service ended April 18, 1997 after American Eagle's Nashville hub closed in 1996 and ridership collapsed.",
@@ -347,6 +364,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 0,
     formerHubs: ["CLT", "MEM", "DFW"],
+    linkYears: { "CLT": null, "MEM": null, "DFW": null },
     restorableBy: "R-50",
     detail:
       "South Arkansas oil town; lost its US Airways Express connection when Mesa shut Air Midwest in June 2008, then regained EAS service via Southern Airways Express to Memphis and Dallas.",
@@ -365,6 +383,7 @@ const seed: Seed[] = [
     lastCarrier: "US Airways Express",
     routesLost: 5,
     formerHubs: ["DFW", "BNA", "MEM", "STL", "MCI"],
+    linkYears: { "DFW": 1999, "BNA": 1999, "MEM": 1999, "STL": 1999, "MCI": 1999 },
     restorableBy: "R-75",
     detail:
       "Drake Field was the commercial airport for northwest Arkansas until Northwest Arkansas National Airport (XNA) opened in 1998; US Airways was the last carrier, moving to XNA in September 1999.",
@@ -383,6 +402,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 5,
     formerHubs: ["MEM", "ATL", "OKC", "TUL", "ORD"],
+    linkYears: { "MEM": 2012, "ATL": 2020, "OKC": 1984, "TUL": 1986, "ORD": 1979 },
     restorableBy: "R-75",
     detail:
       "Fort Smith once had multi-airline service including Braniff jets to Chicago and Frontier to Denver/OKC, reduced to single American Eagle DFW connection after Delta exited in 2020.",
@@ -401,6 +421,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 4,
     formerHubs: ["MEM", "DFW", "FYV", "OKC", "TUL", "LIT"],
+    linkYears: { "MEM": null, "DFW": null, "FYV": 1979, "OKC": 1979, "TUL": 1979, "LIT": 1998 },
     restorableBy: "R-50",
     detail:
       "Southern Airways 9-seat Cessna Caravan under EAS; contract through Feb 2027; $2.96M/yr subsidy.",
@@ -419,6 +440,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 3,
     formerHubs: ["MEM", "DFW", "LIT", "BNA", "ATL"],
+    linkYears: { "MEM": null, "DFW": null, "LIT": 1980, "BNA": 2008, "ATL": 2002 },
     restorableBy: "R-50",
     detail:
       "Southern Airways 9-seat Cessna Caravan; contract through Feb 2027; $2.79M/yr subsidy.",
@@ -437,6 +459,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 2,
     formerHubs: ["BNA", "STL", "MEM", "LIT"],
+    linkYears: { "BNA": null, "STL": null, "MEM": 2015, "LIT": 1998 },
     restorableBy: "R-50",
     detail:
       "Southern Airways Cessna Caravan; contract through Feb 2027; $2.22M/yr subsidy.",
@@ -455,6 +478,7 @@ const seed: Seed[] = [
     lastCarrier: "Atlantic Southeast Airlines",
     routesLost: 1,
     formerHubs: ["DFW"],
+    linkYears: { "DFW": 1993 },
     restorableBy: "R-50",
     detail:
       "Grider Field; scheduled service ended early 1990s.",
@@ -473,6 +497,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 3,
     formerHubs: ["MEM", "HOU", "MSY"],
+    linkYears: { "MEM": 1991, "HOU": 1985, "MSY": 1980 },
     restorableBy: "R-50",
     detail:
       "Texarkana Regional, an EAS-supported airport straddling Arkansas and Texas, retained only American Eagle DFW service after losing hub connections; 73,280 passengers in 2018 down significantly from 1980s peaks.",
@@ -493,6 +518,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 1,
     formerHubs: ["LAS"],
+    linkYears: { "LAS": 2015 },
     restorableBy: "R-50",
     detail:
       "Served by Air Midwest Beech 1900Ds to 2008, restored, then lost EAS for good in 2015.",
@@ -511,6 +537,7 @@ const seed: Seed[] = [
     lastCarrier: "Mesa Airlines (US Airways Express)",
     routesLost: 2,
     formerHubs: ["PHX", "LAS"],
+    linkYears: { "PHX": 2007, "LAS": 2007 },
     restorableBy: "R-50",
     detail:
       "Mesa Airlines operating as US Airways Express (previously America West Express) ended all service May 5 2007; Lake Havasu City had 6,082 enplanements in 2006 but the airport has had no commercial service since.",
@@ -529,6 +556,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 3,
     formerHubs: ["PHX", "SLC", "LAS"],
+    linkYears: { "PHX": 2018, "SLC": 1982, "LAS": 1982 },
     restorableBy: "R-50",
     detail:
       "Great Lakes Airlines sudden shutdown in March 2018 caused enplanements to plummet from 6,830 peak (2012) to 736; Contour Airlines resumed EAS service fall 2018.",
@@ -547,6 +575,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines (2018); SkyWest / United Express restored",
     routesLost: 3,
     formerHubs: ["PHX", "DEN", "LAX"],
+    linkYears: { "PHX": 2018, "DEN": 2018, "LAX": 2018 },
     restorableBy: "R-50",
     detail:
       "Great Lakes Airlines collapsed in March 2018; SkyWest/United Express stepped in by August 2018 and has since expanded to 2x daily Denver plus daily LA — a rare restoration success.",
@@ -565,6 +594,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express / Contour Airlines",
     routesLost: 1,
     formerHubs: ["PHX"],
+    linkYears: { "PHX": 2000 },
     restorableBy: "R-50",
     detail:
       "Show Low has been entirely EAS-dependent since 2000; Southern Airways Express currently receives $1,672,000/year federal subsidy; lost all non-subsidized service after Sunrise Airlines ceased in 2000.",
@@ -583,6 +613,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 2,
     formerHubs: ["PHX", "TUS"],
+    linkYears: { "PHX": 2007, "TUS": 2002 },
     restorableBy: "R-50",
     detail:
       "Great Lakes Airlines ended the last scheduled commercial service February 28 2007; the airport had continuous scheduled service for over 40 years from the 1960s but has had none since, operating as a joint-use civil-military field.",
@@ -601,6 +632,7 @@ const seed: Seed[] = [
     lastCarrier: "Golden Pacific Airlines",
     routesLost: 3,
     formerHubs: ["PHX", "ABQ", "LAX"],
+    linkYears: { "PHX": 1987, "ABQ": 1987, "LAX": 1981 },
     restorableBy: "R-50",
     detail:
       "Airport has had no scheduled airline service since Golden Pacific ceased in 1987; Frontier's mainline DC-3/Convair 580 service ended 1974 after which only small commuters operated briefly.",
@@ -621,6 +653,7 @@ const seed: Seed[] = [
     lastCarrier: "California Pacific Airlines",
     routesLost: 3,
     formerHubs: ["LAX", "LAS", "SJC"],
+    linkYears: { "LAX": 2015, "LAS": 2018, "SJC": 2018 },
     restorableBy: "R-75",
     detail:
       "SkyWest ended 17 years of United Express LAX service on April 6 2015; two short-lived carriers followed in 2017-2018, the last (California Pacific Airlines) ceasing all flights ~December 2018, leaving CLD without scheduled service.",
@@ -639,6 +672,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines (United Express)",
     routesLost: 1,
     formerHubs: ["SFO"],
+    linkYears: { "SFO": 2014 },
     restorableBy: "R-75",
     detail:
       "SkyWest Airlines operating as United Express ended the last scheduled service to San Francisco in late 2014, leaving Chico with no commercial air service; city and airport commission have been working to restore flights since.",
@@ -657,6 +691,7 @@ const seed: Seed[] = [
     lastCarrier: "Advanced Air (EAS)",
     routesLost: 2,
     formerHubs: ["SFO", "PDX"],
+    linkYears: { "SFO": 2015, "PDX": 2015 },
     restorableBy: "R-50",
     detail:
       "SkyWest/United Express ended service to SFO and PDX in mid-April 2015 when FAA Part 121 rule changes forced retirement of the EMB-120 fleet; Advanced Air now provides EAS Dornier 328 Jet service to Oakland (OAK).",
@@ -675,6 +710,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express (EAS)",
     routesLost: 2,
     formerHubs: ["LAX", "YUM"],
+    linkYears: { "LAX": 2013, "YUM": 1999 },
     restorableBy: "R-50",
     detail:
       "Hughes Airwest ended IPL service in 1979; SkyWest/United Express provided the sole service 1997-2013; now EAS-dependent with Southern Airways Express (9-seat Cessna Grand Caravans) flying to LAX and PHX; as of Feb 2026 county evaluating competing EAS bids.",
@@ -693,6 +729,7 @@ const seed: Seed[] = [
     lastCarrier: "Unknown commuter carrier",
     routesLost: 1,
     formerHubs: ["LAX"],
+    linkYears: { "LAX": 1983 },
     restorableBy: "R-50",
     detail:
       "Inyokern (Kern County) had scheduled service from mid-1950s with Southwest Airways DC-3s to Burbank under Navy contract; Hughes Airwest F-27 flights to LAX via Lancaster ended by ~1980; all scheduled service ceased by early 1980s with no service since.",
@@ -711,6 +748,7 @@ const seed: Seed[] = [
     lastCarrier: "Advanced Air (EAS)",
     routesLost: 1,
     formerHubs: ["LAX"],
+    linkYears: { "LAX": 2015 },
     restorableBy: "R-75",
     detail:
       "United served Merced 1946-1978; airport has been EAS-dependent since 1982; Great Lakes Airlines, Scenic Airlines, Boutique Air, and Advanced Air have provided subsidized service; Contour Airlines selected as successor EAS carrier for 2026 with ERJ-135/145 service to LAX and Las Vegas.",
@@ -729,6 +767,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines (United Express)",
     routesLost: 2,
     formerHubs: ["SFO", "LAX"],
+    linkYears: { "SFO": 2014, "LAX": 2008 },
     restorableBy: "R-100",
     detail:
       "United served Modesto from 1946 until 1979-80; SkyWest/United Express resumed service mid-2006 with flights to LAX and SFO, ending all service on June 4 2014 when SFO flights ceased.",
@@ -747,6 +786,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines (United Express)",
     routesLost: 5,
     formerHubs: ["LAX", "PHX", "SFO", "SAN", "SBA"],
+    linkYears: { "LAX": 2010, "PHX": 2010, "SFO": 1999, "SAN": 1982, "SBA": 1982 },
     restorableBy: "R-75",
     detail:
       "SkyWest/United Express ended June 8, 2010; boardings fell from 21,500 (2007) to 4,074 (2010); reclassified to general aviation.",
@@ -765,6 +805,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Trails",
     routesLost: 2,
     formerHubs: ["SFO", "OAK"],
+    linkYears: { "SFO": 1981, "OAK": 1981 },
     restorableBy: "R-75",
     detail:
       "Salinas had commercial service as early as 1933 via Pacific Seaboard Air Lines; United ended Convair service in 1962; commuter airline Air Trails was last carrier, ending service to SFO and OAK in 1981.",
@@ -783,6 +824,7 @@ const seed: Seed[] = [
     lastCarrier: "SeaPort Airlines",
     routesLost: 4,
     formerHubs: ["LAX", "BUR", "SMF", "SFO"],
+    linkYears: { "LAX": 2016, "BUR": 2016, "SMF": 2016, "SFO": 1979 },
     restorableBy: "R-75",
     detail:
       "SeaPort suspended January 15, 2016 (pilot shortage); city voted March 2016 to exit EAS and accept the flexibility-program cash grant instead.",
@@ -803,6 +845,7 @@ const seed: Seed[] = [
     lastCarrier: "Boutique Air",
     routesLost: 1,
     formerHubs: ["DEN", "ABQ"],
+    linkYears: { "DEN": null, "ABQ": 1986 },
     restorableBy: "R-50",
     detail:
       "Near-termination notice 2016 (low ridership); received DOT waiver; Boutique Air EAS to Denver.",
@@ -821,6 +864,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 4,
     formerHubs: ["DEN", "ABQ", "FMN", "GJT", "PHX"],
+    linkYears: { "DEN": null, "ABQ": 1989, "FMN": 1995, "GJT": 1991, "PHX": 2026 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection EAS contract; 9-seat Metroliner to Denver. Gateway to Mesa Verde; had Frontier Airlines prop service in 1977.",
@@ -839,6 +883,7 @@ const seed: Seed[] = [
     lastCarrier: "Rocky Mountain Airways",
     routesLost: 1,
     formerHubs: ["DEN"],
+    linkYears: { "DEN": 1979 },
     restorableBy: "R-50",
     detail:
       "Rocky Mountain Airways served Craig-DEN with DHC-6 Twin Otters in the mid-1970s; service ended by approximately 1979; airport has been general aviation only since, with ~12,000 annual operations all GA as of 2021.",
@@ -857,6 +902,7 @@ const seed: Seed[] = [
     lastCarrier: "Avelo Airlines",
     routesLost: 5,
     formerHubs: ["LAS", "DEN", "PHX", "BUR", "RFD"],
+    linkYears: { "LAS": 2022, "DEN": 1997, "PHX": 2012, "BUR": 2022, "RFD": 2016 },
     restorableBy: "R-75",
     detail:
       "Allegiant ended Oct 2012; 9-year gap; Avelo Oct 2021–June 2022 (fuel costs); no EAS designation; zero commercial service since June 2022.",
@@ -875,6 +921,7 @@ const seed: Seed[] = [
     lastCarrier: "United/American/JSX (seasonal)",
     routesLost: 4,
     formerHubs: ["ATL", "DFW", "PHL", "MSP"],
+    linkYears: { "ATL": 1999, "DFW": 1999, "PHL": 1999, "MSP": 2005 },
     restorableBy: "R-50",
     detail:
       "GUC had peak service in 1995 with mainline B757 jets from American (DFW/PHL) and Delta (ATL); both lost as ski-season demand shifted to Eagle (EGE) and Aspen (ASE); retains seasonal United DEN/IAH, American DFW, and JSX DAL service.",
@@ -893,6 +940,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines (United Express)",
     routesLost: 1,
     formerHubs: ["DEN"],
+    linkYears: { "DEN": 2001 },
     restorableBy: "R-50",
     detail:
       "Southeast Colorado agricultural hub; NPIAS reclassified as general aviation by 2015.",
@@ -911,6 +959,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 2,
     formerHubs: ["DEN", "DFW", "STL"],
+    linkYears: { "DEN": null, "DFW": 1994, "STL": 1992 },
     restorableBy: "R-50",
     detail:
       "EAS-dependent since ~2001; SkyWest intermittent EAS returns 2014–2023; Denver Air Connection current EAS carrier.",
@@ -929,6 +978,7 @@ const seed: Seed[] = [
     lastCarrier: "Key Lime Air",
     routesLost: 2,
     formerHubs: ["ABQ", "PHX"],
+    linkYears: { "ABQ": 1987, "PHX": 2019 },
     restorableBy: "R-50",
     detail:
       "Commercial service began Dec 19 1985 (Mesa Airlines); Boutique Air withdrew Oct 31 2019 citing low load factors; Key Lime Air (Denver Air Connection) now sole carrier with DEN year-round and seasonal PHX.",
@@ -949,6 +999,7 @@ const seed: Seed[] = [
     lastCarrier: "US Airways Express",
     routesLost: 4,
     formerHubs: ["PHL", "EWR", "IAD", "BOS"],
+    linkYears: { "PHL": 1999, "EWR": 1997, "IAD": 1994, "BOS": 1994 },
     restorableBy: "R-75",
     detail:
       "At its peak in the 1980s Bridgeport was served by five carriers including Business Express, Continental, Piedmont, US Air, and United Express; Continental Connection departed in 1994, Delta Connection in 1997, and US Airways Express ended the last scheduled flights in November 1999, leaving BDR without any commercial service for over 25 years.",
@@ -967,6 +1018,7 @@ const seed: Seed[] = [
     lastCarrier: "US Airways Express",
     routesLost: 4,
     formerHubs: ["PHL", "JFK", "BOS", "DCA"],
+    linkYears: { "PHL": 2004, "JFK": 1988, "BOS": 1995, "DCA": 1995 },
     restorableBy: "R-50",
     detail:
       "Pilgrim Airlines was founded in 1962 specifically to link Groton with JFK; after Pilgrim's absorption and a string of single-carrier operations (Pan Am Clipper Connection, Piedmont, Allegheny), US Airways Express operated the last scheduled route—GON–PHL—until it terminated service in 2004, and the airport has had no scheduled commercial flights since despite continuing to hold FAA commercial certification.",
@@ -987,6 +1039,7 @@ const seed: Seed[] = [
     lastCarrier: "Avelo Airlines",
     routesLost: 5,
     formerHubs: ["LGA", "ATL", "BDL", "BUF", "ORF"],
+    linkYears: { "LGA": 2007, "ATL": 2007, "BDL": 2000, "BUF": 2000, "ORF": 2000 },
     restorableBy: "R-75",
     detail:
       "Delaware was the only US state without any scheduled commercial airline service during five separate periods since 1990 (including 1993-1998, 2000-2006, April 2008-June 2013, April 2015-February 2021, and June 2022-January 2023); Avelo Airlines launched base at ILG in February 2023 and now serves 8+ leisure destinations.",
@@ -1007,6 +1060,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Air Lines / American Airlines",
     routesLost: 4,
     formerHubs: ["LGA", "RDU", "MIA", "ORD"],
+    linkYears: { "LGA": 1991, "RDU": 1994, "MIA": 1991, "ORD": 1991 },
     restorableBy: "R-75",
     detail:
       "Daytona Beach had extensive mainline jet service from Eastern (1970s-1991) and American (1989-1994 RDU hub), plus Delta and Continental; currently retains American to CLT/DFW and Delta to ATL but lost all non-hub mainline routes.",
@@ -1025,6 +1079,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Delta Air Lines",
     routesLost: 3,
     formerHubs: ["MIA", "ATL", "TPA"],
+    linkYears: { "MIA": 1991, "ATL": 1991, "TPA": 1983 },
     restorableBy: "R-75",
     detail:
       "Gainesville lost Eastern Airlines' longtime service (ATL, MIA, TPA routes) in 1991; Air Florida collapsed 1984; airport retains American and Delta to CLT/DFW/ATL hubs but no longer has nonstop service to New York or major non-hub cities it held in Eastern era.",
@@ -1043,6 +1098,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air / Continental Connection",
     routesLost: 4,
     formerHubs: ["MIA", "ATL", "RSW", "TPA"],
+    linkYears: { "MIA": 2000, "ATL": 2007, "RSW": 2009, "TPA": 1999 },
     restorableBy: "R-50",
     detail:
       "Marathon had scheduled service from 1959 (National Airlines flag stop) through 2009; American Eagle provided final code-share service until Spring 2000; Delta tried nonstop ATL service in 2007 for <7 months; Cape Air/Continental Connection was last carrier, ending April 29 2009.",
@@ -1061,6 +1117,7 @@ const seed: Seed[] = [
     lastCarrier: "Elite Airways",
     routesLost: 5,
     formerHubs: ["MIA", "TPA", "ATL", "EWR", "PWM"],
+    linkYears: { "MIA": 2001, "TPA": 2003, "ATL": 2007, "EWR": 2017, "PWM": 2017 },
     restorableBy: "R-50",
     detail:
       "Naples peaked at 195,000 passengers in 1980 before nearby Southwest Florida International (RSW) opened; American Eagle, US Airways Express, and Delta Connection all withdrew 2001-2007; Elite Airways made the final attempt Feb 2016-Mar 2017, ending all scheduled service.",
@@ -1079,6 +1136,7 @@ const seed: Seed[] = [
     lastCarrier: "Skyway of Ocala / Allegheny Commuter",
     routesLost: 3,
     formerHubs: ["MCO", "MIA", "TPA"],
+    linkYears: { "MCO": 1987, "MIA": 1986, "TPA": 1982 },
     restorableBy: "R-75",
     detail:
       "Eastern Air Lines served Ocala from 1950 to 1972 on a Jacksonville–Miami multi-stop route; five commuter carriers operated 1971–1987, the last being Skyway of Ocala/Allegheny Commuter ending June 30 1987 with only 2 passengers per Orlando flight; no scheduled service since.",
@@ -1097,6 +1155,7 @@ const seed: Seed[] = [
     lastCarrier: "Elite Airways",
     routesLost: 3,
     formerHubs: ["TRE", "CLT", "CMH"],
+    linkYears: { "TRE": 2017, "CLT": 2018, "CMH": 2008 },
     restorableBy: "R-50",
     detail:
       "St. Augustine only had sporadic service: Skybus 2007-2008, Via Air to Charlotte 2014-2018, and Frontier 2014-2017; currently served only by Elite Airways to Newark/EWR and Portland/PWM with a hiatus 2018-2021.",
@@ -1117,6 +1176,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (SkyWest/Endeavor)",
     routesLost: 2,
     formerHubs: ["ATL", "VLD", "MGM"],
+    linkYears: { "ATL": null, "VLD": 1990, "MGM": 1985 },
     restorableBy: "R-75",
     detail:
       "Albany lost Eastern Airlines in 1971 and Air South in 1972; Republic/Northwest consolidated to Atlanta-only service by late 1980s; Southwest Georgia Regional Airport now served exclusively by Delta Connection to ATL with ~40,000 annual operations.",
@@ -1135,6 +1195,7 @@ const seed: Seed[] = [
     lastCarrier: "SeaPort Airlines",
     routesLost: 3,
     formerHubs: ["BNA", "CLT", "CVG"],
+    linkYears: { "BNA": 2014, "CLT": 2008, "CVG": 1985 },
     restorableBy: "R-50",
     detail:
       "Home of UGA, ~70 miles from Atlanta's hub; final EAS route ran to Nashville and averaged only 6 passengers/day against the required 10 — DOT pulled the subsidy.",
@@ -1153,6 +1214,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (Endeavor Air)",
     routesLost: 0,
     formerHubs: ["ATL"],
+    linkYears: { "ATL": null },
     restorableBy: "R-50",
     detail:
       "Atlantic Southeast Airlines began ATL service in 1981 and code-shared as Delta Connection from 1984; prior to that Delta served nearby McKinnon St. Simons Island Airport (1940s–1960s); today only ATL via Endeavor Air remains.",
@@ -1171,6 +1233,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (Endeavor Air)",
     routesLost: 5,
     formerHubs: ["CLT", "MEM", "BNA", "DFW", "ATL"],
+    linkYears: { "CLT": 1995, "MEM": 1995, "BNA": 1995, "DFW": 1979, "ATL": 2023 },
     restorableBy: "R-100",
     detail:
       "Columbus lost mainline service from Eastern (1979) and Southern (1979) after deregulation, then American Eagle service to CLT/BNA (1995) and Northwest Airlink to MEM; American Eagle briefly returned Aug 2021-Apr 2023 before withdrawing again, leaving only Delta to ATL.",
@@ -1189,6 +1252,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines (EAS)",
     routesLost: 3,
     formerHubs: ["ATL", "CLT", "MCO"],
+    linkYears: { "ATL": 2008, "CLT": 1991, "MCO": 2014 },
     restorableBy: "R-75",
     detail:
       "Delta Connection (ASA) served Macon from 1980s to October 2007 peaking at 34,500 enplanements in 2004; airport went without commercial service 2014-2017 until EAS restored by Contour Airlines now flying to Washington Dulles (IAD) as of May 2025.",
@@ -1207,6 +1271,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection",
     routesLost: 1,
     formerHubs: ["ATL", "ABY"],
+    linkYears: { "ATL": null, "ABY": 1985 },
     restorableBy: "R-50",
     detail:
       "Valdosta lost multi-city Republic Airlines network after Southern-North Central merger (1979) and subsequent route consolidation; airport now serves only Delta Connection to Atlanta daily using CRJ-700 aircraft.",
@@ -1227,6 +1292,7 @@ const seed: Seed[] = [
     lastCarrier: "Ohana by Hawaiian",
     routesLost: 2,
     formerHubs: ["HNL", "OGG"],
+    linkYears: { "HNL": 2021, "OGG": 2021 },
     restorableBy: "R-50",
     detail:
       "Ohana by Hawaiian launched JHM service March 1, 2017 with ATR 42-500 aircraft; service was suspended March 25, 2020 for COVID and permanently terminated May 27, 2021 when Hawaiian ended the Ohana brand; only on-demand charter flights (Big Island Air, Royal Pacific Air) operate there now.",
@@ -1245,6 +1311,7 @@ const seed: Seed[] = [
     lastCarrier: "Mokulele Airlines (current scheduled service; Lanai Air charter also operates)",
     routesLost: 1,
     formerHubs: ["HNL"],
+    linkYears: { "HNL": 2021 },
     restorableBy: "R-50",
     detail:
       "Island Air ended Lanai scheduled service March 31, 2016; Ohana by Hawaiian filled the gap from 2014 but permanently ceased Lanai operations May 27, 2021; Mokulele Airlines now provides the only scheduled passenger service.",
@@ -1263,6 +1330,7 @@ const seed: Seed[] = [
     lastCarrier: "Mokulele Airlines (Southern Airways Express; small Cessna Caravan service to OGG/HNL)",
     routesLost: 1,
     formerHubs: ["HNL"],
+    linkYears: { "HNL": 2021 },
     restorableBy: "R-50",
     detail:
       "Ohana by Hawaiian suspended Molokai service January 14, 2021 and permanently ended May 27, 2021; replacement Mokulele Airlines uses 9-seat Cessna Caravans vs. the prior 48-seat ATR-72, a steep capacity cut affecting kupuna and disabled residents traveling for medical care.",
@@ -1281,6 +1349,7 @@ const seed: Seed[] = [
     lastCarrier: "Mokulele Airlines (twice-daily OGG service)",
     routesLost: 1,
     formerHubs: ["HNL"],
+    linkYears: { "HNL": 2000 },
     restorableBy: "R-50",
     detail:
       "Waimea-Kohala once received DC-9 and BAC One-Eleven jet service from Hawaiian Airlines and Aloha Airlines to Honolulu and Kahului; both majors withdrew in the early 2000s and the airport reoriented to small commuter operations; only Mokulele Airlines (twice-daily Kahului) remains as of 2016+.",
@@ -1301,6 +1370,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 2,
     formerHubs: ["MDW", "MCI"],
+    linkYears: { "MDW": 1982, "MCI": 1982 },
     restorableBy: "R-50",
     detail:
       "Ozark Air Lines was the last mainline carrier at Burlington, departing 1982; after a service gap the airport re-entered EAS; Contour Airlines began 12 weekly round trips to ORD on July 1, 2025 under EAS.",
@@ -1319,6 +1389,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 1,
     formerHubs: ["ORD"],
+    linkYears: { "ORD": 1988 },
     restorableBy: "R-50",
     detail:
       "Clinton had scheduled airline flights 1951-1988; Braniff served until 1955 then Ozark; by 1985 Great Lakes/American Central operated to ORD; scheduled service discontinued by late 1980s.",
@@ -1337,6 +1408,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle",
     routesLost: 3,
     formerHubs: ["ORD", "MSP", "MDW"],
+    linkYears: { "ORD": 2021, "MSP": 2009, "MDW": 2001 },
     restorableBy: "R-50",
     detail:
       "Lost its last scheduled commercial flight during the pandemic.",
@@ -1355,6 +1427,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 1,
     formerHubs: ["ORD", "MSP"],
+    linkYears: { "ORD": null, "MSP": 2010 },
     restorableBy: "R-50",
     detail:
       "SkyWest filed 90-day withdrawal notice 2022; DOT ordered continuation under EAS.",
@@ -1373,6 +1446,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["ORD", "MSP", "OMH"],
+    linkYears: { "ORD": null, "MSP": 2010, "OMH": 1986 },
     restorableBy: "R-50",
     detail:
       "Near Buddy Holly's crash site; SkyWest service continued under DOT mandate after 2022 withdrawal notice.",
@@ -1391,6 +1465,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 2,
     formerHubs: ["DSM", "ORD"],
+    linkYears: { "DSM": 2001, "ORD": 1983 },
     restorableBy: "R-50",
     detail:
       "Ottumwa had continuous scheduled service from 1947 (Mid-Continent, then Braniff, Ozark through 1979, Mississippi Valley Airlines 1979-1983, Great Lakes 1985-2001); no airline service since 2001.",
@@ -1409,6 +1484,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 1,
     formerHubs: ["DEN", "ORD", "MSP"],
+    linkYears: { "DEN": null, "ORD": null, "MSP": 2012 },
     restorableBy: "R-50",
     detail:
       "SkyWest contract through Dec 2026; $5.7M/yr subsidy; 12 weekly round trips to Chicago and/or Denver on CRJ-200.",
@@ -1427,6 +1503,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 2,
     formerHubs: ["DSM", "MSP"],
+    linkYears: { "DSM": 2001, "MSP": 2001 },
     restorableBy: "R-50",
     detail:
       "Great Lakes Aviation was founded in Spencer, Iowa in 1977 and launched scheduled service from SPW on October 12, 1981; when Great Lakes pulled out ~2001 Spencer lost all commercial air service.",
@@ -1445,6 +1522,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle/Air Wisconsin",
     routesLost: 4,
     formerHubs: ["MDW", "STL", "MCI", "MSP"],
+    linkYears: { "MDW": 1989, "STL": 1995, "MCI": 1989, "MSP": 2011 },
     restorableBy: "R-75",
     detail:
       "Waterloo lost mainline jet service when TWA ended DC-9 service in 1988; Delta ended MSP service late 2011 triggering EAS designation; now EAS to ORD via American Eagle/Air Wisconsin.",
@@ -1465,6 +1543,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (SkyWest)",
     routesLost: 4,
     formerHubs: ["BUR", "SEA", "BOI", "DEN"],
+    linkYears: { "BUR": 1982, "SEA": 2018, "BOI": 1982, "DEN": 2024 },
     restorableBy: "R-50",
     detail:
       "Horizon Air served Lewiston from 1983 to 2018 (35 years) first as independent then as Alaska Airlines code-share; Denver service ended December 2024 leaving only SLC and SEA connections.",
@@ -1483,6 +1562,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (SkyWest)",
     routesLost: 4,
     formerHubs: ["LAX", "SFO", "SEA", "DEN"],
+    linkYears: { "LAX": 1986, "SFO": 1986, "SEA": 1986, "DEN": 2021 },
     restorableBy: "R-50",
     detail:
       "Hughes Airwest operated a hub at Twin Falls in 1976 with eight daily DC-9 flights to 10+ cities; after Republic's exit in 1986 jet service collapsed; United Express DEN service lost in 2021 COVID aftermath.",
@@ -1503,6 +1583,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant / American / Delta / United (current)",
     routesLost: 3,
     formerHubs: ["MDW", "MKE", "DTW"],
+    linkYears: { "MDW": 2001, "MKE": 1999, "DTW": 2012 },
     restorableBy: "R-75",
     detail:
       "BMI served by 4 airlines historically operating to 10+ destinations; Northwest Airlink to Detroit and Minneapolis ended after Northwest-Delta merger; Midwest Express to Milwaukee ended ~1999; MDW connection via Midway Connection ended 2001.",
@@ -1521,6 +1602,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Express (current)",
     routesLost: 4,
     formerHubs: ["MSP", "DTW", "STL", "DEN"],
+    linkYears: { "MSP": 2001, "DTW": 2001, "STL": 1995, "DEN": 2000 },
     restorableBy: "R-75",
     detail:
       "By 1969 CMI was Illinois's second-busiest airport with Ozark DC-9 jet service connecting to New York and Washington; United Express departed 2018-2019 and will return April 2026 for ORD service; airport has lost all hub links except ORD.",
@@ -1539,6 +1621,7 @@ const seed: Seed[] = [
     lastCarrier: "Britt Airways (Allegheny Commuter)",
     routesLost: 2,
     formerHubs: ["ORD", "IND"],
+    linkYears: { "ORD": 1986, "IND": 1986 },
     restorableBy: "R-50",
     detail:
       "Britt Airways merged into Texas Air 1986. No scheduled flights in nearly 40 years.",
@@ -1557,6 +1640,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "STL", "CMI", "MKE"],
+    linkYears: { "ORD": null, "STL": 2018, "CMI": 1990, "MKE": 1986 },
     restorableBy: "R-50",
     detail:
       "SkyWest/United Express EAS to Chicago O'Hare; contract renewed through Dec 2028 at $6.12M/yr.",
@@ -1575,6 +1659,7 @@ const seed: Seed[] = [
     lastCarrier: "Britt Airways",
     routesLost: 3,
     formerHubs: ["ORD", "STL", "UIN"],
+    linkYears: { "ORD": 1990, "STL": 1980, "UIN": 1990 },
     restorableBy: "R-50",
     detail:
       "Ozark Air Lines was originally formed to serve Galesburg among other Illinois cities; Britt Airways was last carrier serving ORD; airport now general aviation only with no scheduled service.",
@@ -1593,6 +1678,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Wisconsin (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "MDW", "IND"],
+    linkYears: { "ORD": 1984, "MDW": 1990, "IND": 1985 },
     restorableBy: "R-50",
     detail:
       "Air Wisconsin provided O'Hare service from 1968; exited in the deregulation era ~mid-1980s. Now strictly general aviation.",
@@ -1611,6 +1697,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Aviation (current EAS)",
     routesLost: 2,
     formerHubs: ["STL", "ORD"],
+    linkYears: { "STL": 1982, "ORD": 2019 },
     restorableBy: "R-50",
     detail:
       "Ozark DC-3s began service 1955; DC-9 flights ended early 1982; EAS subsidized service continued through Great Lakes Airlines then Contour Aviation to ORD; annual EAS subsidy is $2,562,819 ($141/passenger).",
@@ -1629,6 +1716,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "STL", "CMI"],
+    linkYears: { "ORD": 2000, "STL": 1990, "CMI": 1990 },
     restorableBy: "R-50",
     detail:
       "Coles County Memorial Airport; home of Eastern Illinois University. No commercial service since 2000.",
@@ -1647,6 +1735,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Kentucky / US Airways Express",
     routesLost: 2,
     formerHubs: ["STL", "ORD"],
+    linkYears: { "STL": 1986, "ORD": 1999 },
     restorableBy: "R-50",
     detail:
       "Ozark Airlines began daily DC-3 service 1962 to St. Louis and Chicago; Ozark ended service after TWA acquisition 1986; EAS commuter carriers continued until subsidy ended 1999; no scheduled service since.",
@@ -1665,6 +1754,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 3,
     formerHubs: ["ORD", "STL", "DSM", "BMI", "GBG"],
+    linkYears: { "ORD": null, "STL": null, "DSM": 1990, "BMI": 1990, "GBG": 1990 },
     restorableBy: "R-50",
     detail:
       "Contour Airlines EAS to Chicago O'Hare; 4,112 enplanements in 2024.",
@@ -1683,6 +1773,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air (current)",
     routesLost: 4,
     formerHubs: ["ORD", "DTW", "DEN", "MDW"],
+    linkYears: { "ORD": 2001, "DTW": 2001, "DEN": 2008, "MDW": 1991 },
     restorableBy: "R-75",
     detail:
       "Scheduled mainline/regional service ended 2001 (Northwest Airlink last); Allegiant leisure service since 2005; Landline bus-to-ORD connection added 2024; over 310,000 passengers in 2025.",
@@ -1701,6 +1792,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle / Allegiant / Breeze (current)",
     routesLost: 3,
     formerHubs: ["ORD", "STL", "DFW"],
+    linkYears: { "ORD": 2022, "STL": 1986, "DFW": 2022 },
     restorableBy: "R-75",
     detail:
       "SPI once the hub of Ozark and Air Illinois regional service to Chicago and St. Louis; United dropped ORD in 2022; now served by American Eagle (ORD), Allegiant (leisure), and Breeze Airways.",
@@ -1721,6 +1813,7 @@ const seed: Seed[] = [
     lastCarrier: "Unknown (EAS carrier)",
     routesLost: 2,
     formerHubs: ["IND", "ORD"],
+    linkYears: { "IND": 1997, "ORD": 1995 },
     restorableBy: "R-75",
     detail:
       "Monroe County Airport received Essential Air Service federal funding until 1997 when the DOT cut subsidies because the airport is within 70 miles of Indianapolis International Airport; after losing EAS designation it was no longer economically viable for any carrier to serve, and all scheduled service ended.",
@@ -1739,6 +1832,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Delta / Allegiant / Breeze",
     routesLost: 5,
     formerHubs: ["MEM", "ORD", "DTW", "CVG", "MDW"],
+    linkYears: { "MEM": 2009, "ORD": 2021, "DTW": 2020, "CVG": 2004, "MDW": 2022 },
     restorableBy: "R-75",
     detail:
       "Evansville lost nonstop Chicago service twice: United ended ORD service November 2021 and American paused Chicago flights March 2022, leaving the airport with no direct Chicago connection for 2.5 years until American resumed ORD service September 4 2024; Detroit and Memphis hub connections are permanently gone.",
@@ -1757,6 +1851,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Airlines / Allegiant / Breeze",
     routesLost: 5,
     formerHubs: ["PIT", "PHL", "LAS", "PHX", "DAY"],
+    linkYears: { "PIT": 2002, "PHL": 2016, "LAS": 2008, "PHX": 2008, "DAY": 1991 },
     restorableBy: "R-100",
     detail:
       "Fort Wayne lost Pittsburgh hub connection circa 2002 when US Airways dehubbed PIT; Philadelphia direct service ended August 2016; the airport recovered by adding American service to CLT and DFW and United service to ORD and EWR, but remains without several legacy hub connections it once held.",
@@ -1775,6 +1870,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air",
     routesLost: 4,
     formerHubs: ["SFB", "PIE", "MYR", "GSO"],
+    linkYears: { "SFB": 2013, "PIE": 2007, "MYR": 2007, "GSO": 2007 },
     restorableBy: "R-75",
     detail:
       "Gary/Chicago International Airport has had no scheduled commercial passenger service since Allegiant Air's final flight on August 10 2013; prior carriers included Pan Am, Hooters Air, SkyValue Airlines, and Skybus Airlines; November 2025 terminal upgrades began to attract new service in 2026.",
@@ -1793,6 +1889,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest/United Express (current, since Aug 2025)",
     routesLost: 3,
     formerHubs: ["ORD", "IND", "FWA"],
+    linkYears: { "ORD": 2004, "IND": 1980, "FWA": 1985 },
     restorableBy: "R-75",
     detail:
       "Purdue University Airport lost its EAS eligibility in June 1999 due to proximity to Indianapolis; final regular scheduled service ended February 15 2004; in May 2024 Southern Airways Express relaunched ORD service (replaced by SkyWest/United Express August 2025), making LAF again 'diminished' rather than fully lost.",
@@ -1811,6 +1908,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "IND", "FWA"],
+    linkYears: { "ORD": 1998, "IND": 1983, "FWA": 1985 },
     restorableBy: "R-50",
     detail:
       "Home of Ball State University; Great Lakes Airlines ended service to Chicago circa 1998.",
@@ -1829,6 +1927,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "IND", "STL"],
+    linkYears: { "ORD": 1999, "IND": 1989, "STL": 1989 },
     restorableBy: "R-50",
     detail:
       "Great Lakes ended July 10, 1999; no commercial air service in over 25 years.",
@@ -1849,6 +1948,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "ICT", "MCI"],
+    linkYears: { "DEN": null, "ICT": 2007, "MCI": 2007 },
     restorableBy: "R-50",
     detail:
       "SkyWest contract through Apr 2027; $7.36M/yr subsidy; CRJ-200 service to Denver.",
@@ -1867,6 +1967,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (American Airlines)",
     routesLost: 3,
     formerHubs: ["DFW", "ICT", "DEN", "MCI"],
+    linkYears: { "DFW": null, "ICT": 2007, "DEN": 2012, "MCI": 2012 },
     restorableBy: "R-50",
     detail:
       "American Airlines EAS service to Dallas/Fort Worth.",
@@ -1885,6 +1986,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "MCI"],
+    linkYears: { "DEN": 2000, "MCI": 1992 },
     restorableBy: "R-50",
     detail:
       "Central Airlines served Goodland from 1961; Frontier followed 1967-1977; Air Midwest through 1992; Mesa/Great Lakes as United Express through 2000 when Great Lakes ended service and Goodland lost all scheduled flights.",
@@ -1903,6 +2005,7 @@ const seed: Seed[] = [
     lastCarrier: "Seaport Airlines",
     routesLost: 3,
     formerHubs: ["MCI", "DEN", "ICT"],
+    linkYears: { "MCI": 2016, "DEN": 2014, "ICT": 2016 },
     restorableBy: "R-50",
     detail:
       "DOT denied Seaport appeal in 2016; $1,510/pax vs. $1,000 congressional cap. Pilot shortage cited as contributing factor.",
@@ -1921,6 +2024,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "ICT", "MCI"],
+    linkYears: { "DEN": null, "ICT": 2007, "MCI": 2009 },
     restorableBy: "R-50",
     detail:
       "SkyWest contract through Apr 2027; $6.4M/yr subsidy; daily CRJ-200 to Denver. Threatened with termination during 2022 pilot shortage.",
@@ -1939,6 +2043,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Midwest",
     routesLost: 3,
     formerHubs: ["DEN", "MCI", "ICT"],
+    linkYears: { "DEN": 1990, "MCI": 1990, "ICT": 1990 },
     restorableBy: "R-50",
     detail:
       "Commercial airlines served Hutchinson from 1944 to 1990 with direct flights to Denver, Kansas City, and Wichita; proximity (~50 miles) to Wichita's larger airport has prevented any airline resumption.",
@@ -1957,6 +2062,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "ICT", "DDC"],
+    linkYears: { "DEN": null, "ICT": 1981, "DDC": 1981 },
     restorableBy: "R-50",
     detail:
       "SkyWest contract through Apr 2027; $6.98M/yr subsidy; CRJ-200 service to Denver.",
@@ -1975,6 +2081,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (SkyWest)",
     routesLost: 3,
     formerHubs: ["ICT", "MCI", "DEN"],
+    linkYears: { "ICT": 1986, "MCI": 2008, "DEN": 2010 },
     restorableBy: "R-50",
     detail:
       "Manhattan lost EAS-dependent Kansas City and Denver service when Great Lakes Airlines departed April 7, 2010, replaced by American Eagle regional jets to ORD and DFW; airport is now diminished from its broader multi-hub network.",
@@ -1993,6 +2100,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Midwest",
     routesLost: 3,
     formerHubs: ["MCI", "TUL", "ICT"],
+    linkYears: { "MCI": 1989, "TUL": 1989, "ICT": 1989 },
     restorableBy: "R-50",
     detail:
       "Air Midwest operated 17-seat Swearingen Metroliner service from 1977 to April 1989, briefly codesharing as Eastern Express (1986-1988) and Braniff Express (1988-1989); no scheduled service since.",
@@ -2011,6 +2119,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "DEN", "ICT", "STL", "MCI"],
+    linkYears: { "ORD": null, "DEN": null, "ICT": 2001, "STL": 2003, "MCI": 2007 },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS contract; connections to Chicago and Denver on CRJ-200. Threatened with termination during 2022 pilot shortage.",
@@ -2029,6 +2138,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines (United Express)",
     routesLost: 4,
     formerHubs: ["ORD", "STL", "MCI", "DEN"],
+    linkYears: { "ORD": 2014, "STL": 2003, "MCI": 2003, "DEN": 1986 },
     restorableBy: "R-75",
     detail:
       "Topeka Regional Airport (Forbes Field) had peak service of 180,000 passengers/year in the 1980s with United, TWA, and Midway; the last airline, SkyWest/United Express, ended ORD service September 2, 2014.",
@@ -2049,6 +2159,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 2,
     formerHubs: ["ATL", "DSM"],
+    linkYears: { "ATL": 2017, "DSM": 2016 },
     restorableBy: "R-75",
     detail:
       "Bowling Green lost commercial service in 1972 when Wright Airlines ended operations; Contour Airlines briefly returned service August 2016 to January 2017 (Atlanta and Destin) before again ceasing, leaving the airport with no scheduled service.",
@@ -2067,6 +2178,7 @@ const seed: Seed[] = [
     lastCarrier: "Tennessee Airways / Air Kentucky",
     routesLost: 3,
     formerHubs: ["LEX", "CVG", "CLT"],
+    linkYears: { "LEX": 1987, "CVG": 1987, "CLT": 1980 },
     restorableBy: "R-50",
     detail:
       "Piedmont Airlines served London-Corbin from 1953 to 1980 with DC-3s and then FH-227s; after Piedmont left, brief service continued under Air Kentucky and Tennessee Airways until the late 1980s when all scheduled service ended.",
@@ -2085,6 +2197,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines (ORD, EAS)",
     routesLost: 4,
     formerHubs: ["BNA", "STL", "CVG", "SDF", "EVV"],
+    linkYears: { "BNA": null, "STL": 2022, "CVG": 2007, "SDF": 1989, "EVV": 1985 },
     restorableBy: "R-50",
     detail:
       "Cape Air departed late 2022; Contour Airlines now serves ORD under EAS. Multiple service gaps documented over two decades.",
@@ -2103,6 +2216,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest / United Express",
     routesLost: 7,
     formerHubs: ["ORD", "MEM", "SDF", "EVV", "STL", "BNA", "CLT"],
+    linkYears: { "ORD": 2022, "MEM": 2009, "SDF": 1989, "EVV": 1992, "STL": 1992, "BNA": 1992, "CLT": 2026 },
     restorableBy: "R-50",
     detail:
       "SkyWest exited 29 EAS markets in 2022 citing pilot shortages; Contour Airlines briefly held the route to Charlotte before SkyWest returned in 2026 with ORD and IAH service.",
@@ -2121,6 +2235,7 @@ const seed: Seed[] = [
     lastCarrier: "Locair",
     routesLost: 2,
     formerHubs: ["CVG", "ORD"],
+    linkYears: { "CVG": 2010, "ORD": 2010 },
     restorableBy: "R-50",
     detail:
       "Locair served Somerset from late 2008 until February 2010 under an EAS federal grant; when the grant expired and was not renewed, service ended and the $3 million terminal was converted to an FBO in 2011.",
@@ -2141,6 +2256,7 @@ const seed: Seed[] = [
     lastCarrier: "American / United / Delta (regional jets)",
     routesLost: 6,
     formerHubs: ["ATL", "DFW", "MEM", "IAH", "MSY", "BHM"],
+    linkYears: { "ATL": 2010, "DFW": 2010, "MEM": 2010, "IAH": 2022, "MSY": 2000, "BHM": 2000 },
     restorableBy: "R-75",
     detail:
       "Lost Delta's Memphis route Nov 2010; had ATL, DFW, IAH, and MEM connections at peak. Commercial operations are now only 11% of airport activity.",
@@ -2159,6 +2275,7 @@ const seed: Seed[] = [
     lastCarrier: "Royale Airlines",
     routesLost: 2,
     formerHubs: ["MSY", "HOU"],
+    linkYears: { "MSY": 1985, "HOU": 1983 },
     restorableBy: "R-50",
     detail:
       "Houma-Terrebonne Airport lost all scheduled passenger service by the mid-1980s when Royale Airlines ceased commuter operations; the airport now serves offshore oil industry helicopter operations and general aviation only.",
@@ -2177,6 +2294,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air) / United Express",
     routesLost: 1,
     formerHubs: ["BNA"],
+    linkYears: { "BNA": 1998 },
     restorableBy: "R-75",
     detail:
       "Lake Charles Regional lost Eastern Air Lines and Trans-Texas multi-destination service by 1970; today retained only American Eagle to DFW and United Express to Houston as sole hub connections.",
@@ -2195,6 +2313,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Air Lines / American Airlines",
     routesLost: 5,
     formerHubs: ["IAH", "MEM", "MSY", "BHM", "AEX"],
+    linkYears: { "IAH": 2022, "MEM": 1995, "MSY": 1990, "BHM": 1998, "AEX": 1989 },
     restorableBy: "R-50",
     detail:
       "Monroe Regional, the birthplace of Delta Air Lines, lost United Airlines service (Houston) in January 2022, the last hub link beyond Atlanta and DFW, leaving Monroe with only 2 nonstop destinations.",
@@ -2213,6 +2332,7 @@ const seed: Seed[] = [
     lastCarrier: "Royale Airlines / regional commuter",
     routesLost: 2,
     formerHubs: ["MSY", "IAH"],
+    linkYears: { "MSY": 1990, "IAH": 1989 },
     restorableBy: "R-50",
     detail:
       "Acadiana Regional Airport (New Iberia) lost all scheduled commercial service around 1989-1990 when Royale Airlines, which connected it to New Orleans and Houston hubs, ceased operations; airport operates as general aviation and helicopter training facility.",
@@ -2231,6 +2351,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle / Delta Connection / United Express",
     routesLost: 6,
     formerHubs: ["MSY", "MEM", "STL", "ORD", "MCI", "IAH"],
+    linkYears: { "MSY": 1983, "MEM": 1985, "STL": 1985, "ORD": 1983, "MCI": 1983, "IAH": 2000 },
     restorableBy: "R-75",
     detail:
       "Shreveport Regional was once a mini-hub for Delta Air Lines and served by Braniff, TWA, Continental, and Northwest; now reduced to American Eagle DFW, Delta Connection ATL, and United Express IAH.",
@@ -2251,6 +2372,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air (current; Nantucket and Martha's Vineyard only)",
     routesLost: 2,
     formerHubs: ["LGA", "BOS"],
+    linkYears: { "LGA": 1989, "BOS": 2025 },
     restorableBy: "R-75",
     detail:
       "Provincetown-Boston Airlines (PBA) was the primary carrier at New Bedford from the early 1980s until 1989 when it ceased all flights, ending decades of mainline scheduled service including three daily nonstop LaGuardia flights with Embraer EMB-110 Bandeirante turboprops; Cape Air subsequently restored island-hopper service but ended its Boston route in November 2025.",
@@ -2269,6 +2391,7 @@ const seed: Seed[] = [
     lastCarrier: "Precision Airlines",
     routesLost: 2,
     formerHubs: ["LGA", "RUT"],
+    linkYears: { "LGA": 1984, "RUT": 1984 },
     restorableBy: "R-50",
     detail:
       "Mohawk DC-3s served Pittsfield 1953–1958 and Northeast DC-3s 1953–1962; commuter carriers Command Airways and Precision Airlines continued until ~1983–84, after which the airport reverted to pure general aviation with no scheduled service since.",
@@ -2287,6 +2410,7 @@ const seed: Seed[] = [
     lastCarrier: "JetBlue / American Airlines / Delta Air Lines (current)",
     routesLost: 2,
     formerHubs: ["BOS", "EWR"],
+    linkYears: { "BOS": 1998, "EWR": 1998 },
     restorableBy: "R-100",
     detail:
       "Worcester peaked at 354,000 enplanements in 1989 when Piedmont, Northwest, Continental, and USAir flew mainline jets to the airport, but by the late 1990s annual enplanements had fallen below 10,000 as all major carriers departed; Massport assumed operations in 2000, and JetBlue restored service in November 2013 after a roughly 14-year absence of meaningful scheduled flights.",
@@ -2307,6 +2431,7 @@ const seed: Seed[] = [
     lastCarrier: "Boston-Maine Airways (Pan Am Clipper Connection)",
     routesLost: 4,
     formerHubs: ["BWI", "PIT", "DCA", "LAT"],
+    linkYears: { "BWI": 2003, "PIT": 2003, "DCA": 1990, "LAT": 2001 },
     restorableBy: "R-50",
     source: "Air Midwest/US Airways Express 1991–2001; Boston-Maine Airways 2001–2003",
     verification: "needs-check",
@@ -2323,6 +2448,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express (EAS); Allegiant retains leisure",
     routesLost: 7,
     formerHubs: ["BWI", "PIT", "DCA", "PHL", "IAD", "FLL", "MYR"],
+    linkYears: { "BWI": 2019, "PIT": 2019, "DCA": 1993, "PHL": 2007, "IAD": 2013, "FLL": 2012, "MYR": 2012 },
     restorableBy: "R-50",
     detail:
       "Sits within 70nm of Dulles, BWI and National: that proximity is exactly why DOT cut the subsidy; only a 2x-weekly Allegiant flight to Orlando remains.",
@@ -2341,6 +2467,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Breeze Airways",
     routesLost: 3,
     formerHubs: ["DCA", "BWI", "PHL"],
+    linkYears: { "DCA": 2008, "BWI": 2009, "PHL": 2009 },
     restorableBy: "R-50",
     detail:
       "Henson Airways founded SBY service in 1968 under Allegheny Commuter contract; US Airways purchased Henson in 1993 and rebranded as Piedmont; airport lost DCA service by 2008 and BWI service by late 2009, now served only by American (CLT, PHL) and Breeze Airways (leisure routes).",
@@ -2361,6 +2488,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 1,
     formerHubs: ["BGR", "BOS"],
+    linkYears: { "BGR": 1995, "BOS": null },
     restorableBy: "R-50",
     detail:
       "Augusta State Airport has been EAS-dependent since deregulation; Cape Air has operated the sole BOS nonstop since December 2010 under federal subsidy.",
@@ -2379,6 +2507,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 2,
     formerHubs: ["BGR", "PWM", "BOS"],
+    linkYears: { "BGR": 1991, "PWM": 1991, "BOS": null },
     restorableBy: "R-50",
     detail:
       "Hancock County–Bar Harbor Airport is EAS-dependent; formerly served by Silver Airways and PenAir seasonally in addition to Cape Air; historically home base of Bar Harbor Airlines (founded 1943, merged 1991).",
@@ -2397,6 +2526,7 @@ const seed: Seed[] = [
     lastCarrier: "Northeast Express Regional Airlines",
     routesLost: 2,
     formerHubs: ["BOS", "BGR"],
+    linkYears: { "BOS": 1995, "BGR": 1995 },
     restorableBy: "R-50",
     detail:
       "Houlton International Airport lost all scheduled service when Northeast Express Regional Airlines liquidated in 1995; historically served by Boston & Maine Airways and Northeast Airlines dating to the 1940s.",
@@ -2415,6 +2545,7 @@ const seed: Seed[] = [
     lastCarrier: "JetBlue",
     routesLost: 1,
     formerHubs: ["BOS", "EWR"],
+    linkYears: { "BOS": null, "EWR": 2024 },
     restorableBy: "R-50",
     detail:
       "Continuously EAS-dependent since deregulation in 1978; JetBlue current EAS carrier to BOS from 2024.",
@@ -2433,6 +2564,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 1,
     formerHubs: ["BGR", "BOS"],
+    linkYears: { "BGR": 1995, "BOS": null },
     restorableBy: "R-50",
     detail:
       "Knox County Regional Airport (Rockland) is EAS-dependent; Cape Air has operated sole BOS service since 2008; historically served by Northeast Airlines, Bar Harbor Airlines, and Provincetown-Boston Airline (PBA).",
@@ -2451,6 +2583,7 @@ const seed: Seed[] = [
     lastCarrier: "Northeast Express Regional Airlines",
     routesLost: 2,
     formerHubs: ["BOS", "BGR"],
+    linkYears: { "BOS": 1995, "BGR": 1981 },
     restorableBy: "R-50",
     detail:
       "Waterville Robert LaFleur Airport lost all scheduled passenger service when Northeast Express Regional Airlines ceased operations in 1995; FedEx Feeder (Wiggins Airways) still serves cargo.",
@@ -2471,6 +2604,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 2,
     formerHubs: ["DTW", "ORD", "MSP"],
+    linkYears: { "DTW": null, "ORD": 1997, "MSP": 1998 },
     restorableBy: "R-50",
     detail:
       "SkyWest/Delta EAS; 12 round trips/week to Detroit on CRJ. Part of the Michigan UP EAS program.",
@@ -2489,6 +2623,7 @@ const seed: Seed[] = [
     lastCarrier: "Mesaba Airlines (Northwest Airlink)",
     routesLost: 1,
     formerHubs: ["DTW"],
+    linkYears: { "DTW": 2000 },
     restorableBy: "R-50",
     detail:
       "Mesaba Airlines operated five daily Northwest Airlink flights to Detroit 1995–2000, but service was discontinued because competing airports in Chicago, Kalamazoo, Grand Rapids, and South Bend siphoned passengers despite an intense local marketing campaign.",
@@ -2507,6 +2642,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 2,
     formerHubs: ["DTW", "MSP", "ORD", "MKE"],
+    linkYears: { "DTW": null, "MSP": null, "ORD": 1995, "MKE": 1990 },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS contract Jan 2026–Dec 2027 for 12 weekly round trips to Detroit and/or Minneapolis on CRJ.",
@@ -2525,6 +2661,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest/United Express (EAS, ongoing)",
     routesLost: 2,
     formerHubs: ["DTW", "MSP"],
+    linkYears: { "DTW": 2010, "MSP": 2005 },
     restorableBy: "R-50",
     detail:
       "CMX is EAS-dependent and has been served by SkyWest/United Express with two daily round trips to Chicago O'Hare since consolidation; DOT subsidizes $6.5 million annually through 2028; approximately 60,000 passengers in 2025.",
@@ -2543,6 +2680,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 1,
     formerHubs: ["MSP", "DTW", "ORD"],
+    linkYears: { "MSP": null, "DTW": null, "ORD": 2000 },
     restorableBy: "R-50",
     detail:
       "SkyWest provides 13 weekly round trips to Minneapolis and Detroit on CRJ. Part of the ~$34M/yr Michigan UP EAS program.",
@@ -2561,6 +2699,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 2,
     formerHubs: ["ORD", "MSP", "MKE", "RHI"],
+    linkYears: { "ORD": null, "MSP": null, "MKE": 2012, "RHI": 2012 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection EAS routes from Chicago O'Hare and Minneapolis/St. Paul to Gogebic-Iron County Airport on 50-seat Embraer E145.",
@@ -2579,6 +2718,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle",
     routesLost: 2,
     formerHubs: ["DTW", "ORD"],
+    linkYears: { "DTW": 1989, "ORD": 1979 },
     restorableBy: "R-50",
     detail:
       "Jackson was served by American, North Central, Republic, and finally American Eagle (Simmons) on Detroit flights until November 1989, when service ended entirely; the airport now operates as general aviation only.",
@@ -2597,6 +2737,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta/American/United (ongoing, diminished)",
     routesLost: 4,
     formerHubs: ["IAD", "EWR", "MCO", "ORD"],
+    linkYears: { "IAD": 2015, "EWR": 2012, "MCO": 2024, "ORD": 2022 },
     restorableBy: "R-75",
     detail:
       "Kalamazoo lost United service to O'Hare (January 2022), Avelo's Orlando flights (July 2024), and previously hub connections to Dulles and Newark; United returned in April 2026 with four daily ORD flights, partially restoring service.",
@@ -2615,6 +2756,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta/American/United (ongoing, diminished)",
     routesLost: 5,
     formerHubs: ["ORD", "MDW", "PIT", "CLE", "MKE"],
+    linkYears: { "ORD": 2001, "MDW": 2001, "PIT": 2003, "CLE": 2004, "MKE": 2005 },
     restorableBy: "R-75",
     detail:
       "Lansing lost United's 56-year ORD service (1987), American Eagle's five daily ORD flights (2000), US Airways Pittsburgh (2003), Continental Cleveland (2004), and Midwest Connect Milwaukee (2005), shrinking from 35 to 12 daily flights during the 2000s.",
@@ -2633,6 +2775,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air (EAS/AEAS, ongoing)",
     routesLost: 2,
     formerHubs: ["MKE", "MDW"],
+    linkYears: { "MKE": 2012, "MDW": 2019 },
     restorableBy: "R-50",
     detail:
       "Manistee was the first U.S. airport to enter the Alternate Essential Air Service program (March 2012) after Frontier ended its Milwaukee EAS contract; service has cycled through multiple small operators and now relies on Cape Air for subsidized flights to Chicago Midway.",
@@ -2651,6 +2794,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest / Delta Connection",
     routesLost: 4,
     formerHubs: ["MSP", "DTW", "ORD", "MKE"],
+    linkYears: { "MSP": 2022, "DTW": 2010, "ORD": 2014, "MKE": 2000 },
     restorableBy: "R-75",
     detail:
       "Delta Connection cut the Minneapolis route in January 2022 due to pandemic-era demand; DTW service continued uninterrupted. MSP was restored January 2025.",
@@ -2669,6 +2813,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 5,
     formerHubs: ["ORD", "DTW", "MKE", "MIA", "ATL", "MSP"],
+    linkYears: { "ORD": null, "DTW": 1989, "MKE": 1984, "MIA": 1984, "ATL": 1984, "MSP": 2022 },
     restorableBy: "R-50",
     detail:
       "DOT selected Denver Air Connection; 24 weekly flights to Chicago O'Hare on 50-seat Embraer E145, beginning Nov 2024.",
@@ -2687,6 +2832,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 2,
     formerHubs: ["DTW", "ORD", "MSP"],
+    linkYears: { "DTW": null, "ORD": 2000, "MSP": 1998 },
     restorableBy: "R-50",
     detail:
       "SkyWest/Delta EAS to Detroit. Gateway to Mackinac Island and northern Michigan.",
@@ -2705,6 +2851,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta/United (ongoing)",
     routesLost: 5,
     formerHubs: ["PIT", "CLE", "MKE", "LGA", "MSP"],
+    linkYears: { "PIT": 2002, "CLE": 2003, "MKE": 2005, "LGA": 2010, "MSP": 2015 },
     restorableBy: "R-50",
     detail:
       "MBS lost service to Pittsburgh (US Airways 2002), Cleveland (Continental 2004), Milwaukee (Midwest Connect 2005), and LaGuardia (Northwest 2008–2010), shrinking from nine-plus daily flights to two destinations (DTW and ORD) by 2020.",
@@ -2723,6 +2870,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 2,
     formerHubs: ["DTW", "ORD", "MKE", "MKG"],
+    linkYears: { "DTW": null, "ORD": null, "MKE": 1995, "MKG": 1990 },
     restorableBy: "R-50",
     detail:
       "Largest UP EAS airport; ~23,000 annual passengers; SkyWest serves Detroit and Chicago. Part of ~$34M/yr Michigan UP EAS program.",
@@ -2743,6 +2891,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 2,
     formerHubs: ["MSP", "TRF"],
+    linkYears: { "MSP": 2012, "TRF": 1991 },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS contract; 50-seat jet service to Minneapolis/St. Paul.",
@@ -2761,6 +2910,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 0,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": null },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS contract for Brainerd Lakes Regional Airport; 50-seat jet service to Minneapolis/St. Paul.",
@@ -2779,6 +2929,7 @@ const seed: Seed[] = [
     lastCarrier: "United Express/SkyWest (ongoing)",
     routesLost: 2,
     formerHubs: ["ORD", "DTW"],
+    linkYears: { "ORD": 2020, "DTW": 2005 },
     restorableBy: "R-75",
     detail:
       "Duluth lost American Airlines Chicago O'Hare service in April 2020 after only 11 months; also lost nonstop Detroit service (Mesaba/Northwest Airlink Avro RJ85 from 1995) in the mid-2000s; United Express now dominant with 5 daily ORD flights as of 2026.",
@@ -2797,6 +2948,7 @@ const seed: Seed[] = [
     lastCarrier: "Northwest Airlink/Mesaba",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 1997 },
     restorableBy: "R-50",
     detail:
       "Fergus Falls lost all scheduled airline service in the 1990s; Northwest Airlink (Mesaba) and briefly United Express both served the airport before withdrawing, leaving it general aviation only.",
@@ -2815,6 +2967,7 @@ const seed: Seed[] = [
     lastCarrier: "Mesaba/Northwest Airlink",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 2004 },
     restorableBy: "R-50",
     detail:
       "Grand Rapids (GPZ) was the birthplace of Mesaba Airlines (1944/1973 scheduled origin); Mesaba served the MSP route for 31 years until Northwest Airlines dropped it in March 2004.",
@@ -2833,6 +2986,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 1,
     formerHubs: ["MSP", "DLH"],
+    linkYears: { "MSP": null, "DLH": 1995 },
     restorableBy: "R-50",
     detail:
       "SkyWest/Delta EAS to Minneapolis/St. Paul at Range Regional Airport (serves Hibbing, Virginia, and Chisholm area).",
@@ -2851,6 +3005,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 0,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": null },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS contract; 50-seat jet service to Minneapolis/St. Paul at Falls International Airport.",
@@ -2869,6 +3024,7 @@ const seed: Seed[] = [
     lastCarrier: "Bemidji Airlines (EAS)",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 1991 },
     restorableBy: "R-50",
     detail:
       "Mankato lost all scheduled service in 1991 when Bemidji Airlines ceased EAS operations; North Central Airlines last served the city in 1969 and helicopter service tried 1969-1970 also failed.",
@@ -2887,6 +3043,7 @@ const seed: Seed[] = [
     lastCarrier: "Lake State Airways",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 1982 },
     restorableBy: "R-50",
     detail:
       "Marshall lost scheduled service in the early 1980s when Lake State Airways ceased operations; prior to that Mississippi Valley Airlines briefly served the MSP route from December 1972.",
@@ -2905,6 +3062,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest / United Express and Delta Connection",
     routesLost: 4,
     formerHubs: ["ATL", "ORD", "DEN", "STL"],
+    linkYears: { "ATL": 2021, "ORD": 1988, "DEN": 2021, "STL": 2001 },
     restorableBy: "R-75",
     detail:
       "Mayo Clinic's home airport lost ORD and DEN (United/SkyWest, Sept–Oct 2021) and ATL (Delta, late 2021). Delta's MSP service continues.",
@@ -2923,6 +3081,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air (ongoing, leisure only)",
     routesLost: 2,
     formerHubs: ["MSP", "ORD"],
+    linkYears: { "MSP": 2009, "ORD": 2015 },
     restorableBy: "R-75",
     detail:
       "St. Cloud lost its MSP hub feed (Mesaba/Delta Connection) on Dec 31 2009 and a short-lived ORD United Express service failed in 2015; today only Allegiant seasonal leisure routes remain.",
@@ -2941,6 +3100,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 2012 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection serves Thief River Falls under EAS to Minneapolis/St. Paul on 50-seat Embraer E145.",
@@ -2959,6 +3119,7 @@ const seed: Seed[] = [
     lastCarrier: "Mississippi Valley Airlines (merged into Air Wisconsin)",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 1985 },
     restorableBy: "R-50",
     detail:
       "Winona lost scheduled service when Mississippi Valley Airlines merged into Air Wisconsin on May 17, 1985; North Central Airlines had served the city since 1951.",
@@ -2977,6 +3138,7 @@ const seed: Seed[] = [
     lastCarrier: "Bemidji Aviation (EAS)",
     routesLost: 1,
     formerHubs: ["MSP"],
+    linkYears: { "MSP": 1992 },
     restorableBy: "R-50",
     detail:
       "Worthington lost scheduled air service in 1992 when EAS subsidies ended; North Central Airlines had served MSP since 1969, followed by Mesaba then Bemidji Aviation under the EAS program.",
@@ -2997,6 +3159,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines (American Eagle)",
     routesLost: 3,
     formerHubs: ["DFW", "ORD", "STL", "MEM", "BNA"],
+    linkYears: { "DFW": null, "ORD": null, "STL": 2017, "MEM": 1986, "BNA": 2024 },
     restorableBy: "R-50",
     detail:
       "American Airlines EAS starting Fall 2025; 12 weekly round trips to DFW and ORD. SkyWest terminated 2022 citing pilot shortage.",
@@ -3015,6 +3178,7 @@ const seed: Seed[] = [
     lastCarrier: "Ozark Air Lines",
     routesLost: 2,
     formerHubs: ["STL", "MCI"],
+    linkYears: { "STL": 1968, "MCI": 1986 },
     restorableBy: "R-50",
     detail:
       "Ozark DC-3s and M404s 1954–1968. Service ended when Columbia Regional Airport opened to consolidate mid-Missouri service.",
@@ -3033,6 +3197,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Choice One (EAS)",
     routesLost: 4,
     formerHubs: ["DFW", "STL", "MCI", "MDW"],
+    linkYears: { "DFW": 2021, "STL": 2001, "MCI": 1992, "MDW": 2001 },
     restorableBy: "R-50",
     detail:
       "American Eagle ended May 2021 after a 10-year run; EAS re-entry replaced the profitable commercial connection with subsidized regional service.",
@@ -3051,6 +3216,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 3,
     formerHubs: ["STL", "MCI", "MKC"],
+    linkYears: { "STL": 2023, "MCI": 2008, "MKC": 2001 },
     restorableBy: "R-50",
     detail:
       "Kirksville lost STL service in 2023 when Cape Air ended operations; Contour Airlines began ORD service Aug 1, 2023 under EAS, replacing Cape Air's STL route.",
@@ -3069,6 +3235,7 @@ const seed: Seed[] = [
     lastCarrier: "Unknown commuter",
     routesLost: 1,
     formerHubs: ["STL"],
+    linkYears: { "STL": 1985 },
     restorableBy: "R-50",
     detail:
       "Poplar Bluff Regional Business Airport lost all scheduled commercial service by mid-1980s; currently general aviation only with ~15,000 operations annually and a 5,000 ft runway.",
@@ -3087,6 +3254,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Midwest",
     routesLost: 1,
     formerHubs: ["STL"],
+    linkYears: { "STL": 2002 },
     restorableBy: "R-50",
     detail:
       "Rolla National Airport (VIH) had EAS-subsidized commuter service; no scheduled commercial airline service operates today; general aviation only.",
@@ -3107,6 +3275,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (Endeavor Air) and American Airlines (SkyWest)",
     routesLost: 3,
     formerHubs: ["MEM", "BHM", "TUP"],
+    linkYears: { "MEM": 1985, "BHM": 1980, "TUP": 1993 },
     restorableBy: "R-50",
     detail:
       "Golden Triangle Regional Airport regained its second nonstop destination in May 2025 when American Airlines/SkyWest launched Dallas/Fort Worth service; prior to 2000 it lost hub connections when Republic ended service in 1985 and later gaps in coverage.",
@@ -3125,6 +3294,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection (EAS)",
     routesLost: 3,
     formerHubs: ["MEM", "ATL", "DFW"],
+    linkYears: { "MEM": 2005, "ATL": 2012, "DFW": 2021 },
     restorableBy: "R-50",
     detail:
       "Greenville Mid-Delta Airport is entirely dependent on Essential Air Service subsidy; EAS provider changed from Contour Airlines to Denver Air Connection in June 2025, with service to a hub still subsidized by federal government.",
@@ -3143,6 +3313,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta, American, United, Southwest",
     routesLost: 2,
     formerHubs: ["MEM", "DCA"],
+    linkYears: { "MEM": 2000, "DCA": 2010 },
     restorableBy: "R-75",
     detail:
       "Gulfport-Biloxi actually expanded service after Hurricane Katrina (2005), growing from 6 nonstop destinations on 4 airlines to 10 nonstops on 8 airlines; the airport is categorized as diminished only in the sense it lost its Northwest/Memphis hub link and some legacy connections by 2010.",
@@ -3161,6 +3332,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 3,
     formerHubs: ["ATL", "MSY", "MEM"],
+    linkYears: { "ATL": 2014, "MSY": 1985, "MEM": 1995 },
     restorableBy: "R-50",
     detail:
       "Southern Airways Express connects to Atlanta under active EAS contract.",
@@ -3179,6 +3351,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta, American, United, Southwest",
     routesLost: 5,
     formerHubs: ["CIN", "DFW", "MSY", "MEM", "MDW"],
+    linkYears: { "CIN": 2012, "DFW": 2001, "MSY": 1998, "MEM": 2000, "MDW": 2014 },
     restorableBy: "R-75",
     detail:
       "Jackson lost Southwest Airlines entirely in June 2014 (after 17 years of service) citing insufficient local demand; also lost Delta's Cincinnati, DFW, New Orleans hub connections and Northwest's Memphis service between 1995-2013; Southwest returned in 2021.",
@@ -3197,6 +3370,7 @@ const seed: Seed[] = [
     lastCarrier: "United Express (SkyWest Airlines)",
     routesLost: 4,
     formerHubs: ["ATL", "MEM", "BNA", "DFW"],
+    linkYears: { "ATL": 2012, "MEM": 2002, "BNA": 1992, "DFW": 2020 },
     restorableBy: "R-50",
     detail:
       "Meridian lost Delta Connection Atlanta service around 2012, spent two years on EAS with Silver Airways, then regained American Eagle service to DFW and ORD before those routes also ended; currently United Express serves only Houston IAH.",
@@ -3215,6 +3389,7 @@ const seed: Seed[] = [
     lastCarrier: "Lone Star Airlines",
     routesLost: 4,
     formerHubs: ["DFW", "MSY", "JAN", "AEX"],
+    linkYears: { "DFW": 1996, "MSY": 1986, "JAN": 1986, "AEX": 1994 },
     restorableBy: "R-50",
     detail:
       "Nearly 30-year service gap until Contour announced restoration late 2025.",
@@ -3233,6 +3408,7 @@ const seed: Seed[] = [
     lastCarrier: "Silver Airways (EAS)",
     routesLost: 4,
     formerHubs: ["ATL", "MEM", "BNA", "MSL"],
+    linkYears: { "ATL": 2014, "MEM": 2012, "BNA": 1996, "MSL": 1993 },
     restorableBy: "R-50",
     detail:
       "Elvis Presley's birthplace relies on a single EAS route to Atlanta.",
@@ -3253,6 +3429,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express / Delta)",
     routesLost: 4,
     formerHubs: ["DEN", "SLC", "ORD", "MSP", "SEA", "LAX"],
+    linkYears: { "DEN": null, "SLC": null, "ORD": 1983, "MSP": 1983, "SEA": 1980, "LAX": 1980 },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS contract Jan 2025–Dec 2027 at $6.35M/yr; 13 weekly round trips split between Denver (United Express) and Salt Lake City (Delta).",
@@ -3271,6 +3448,7 @@ const seed: Seed[] = [
     lastCarrier: "Big Sky Airlines",
     routesLost: 2,
     formerHubs: ["BIL", "BTM"],
+    linkYears: { "BIL": 1985, "BTM": 1985 },
     restorableBy: "R-50",
     detail:
       "Dillon Airport (KDLN) is currently general aviation only; scheduled service ended by mid-1980s when Big Sky Airlines contracted its route network; 2019 data shows 83% GA and 16% air taxi operations with no scheduled commercial flights.",
@@ -3289,6 +3467,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 2,
     formerHubs: ["BIL", "DEN", "LWT"],
+    linkYears: { "BIL": null, "DEN": 1980, "LWT": 1980 },
     restorableBy: "R-50",
     detail:
       "Routinely ranked the most isolated town in the lower 48; Cape Air serves Billings under a 4-year DOT contract through December 2027.",
@@ -3307,6 +3486,7 @@ const seed: Seed[] = [
     lastCarrier: "Big Sky Airlines",
     routesLost: 3,
     formerHubs: ["BIL", "SDY", "BIS"],
+    linkYears: { "BIL": 2008, "SDY": 1995, "BIS": 1980 },
     restorableBy: "R-50",
     detail:
       "Big Sky Airlines bankruptcy ended service March 8, 2008; no EAS replacement secured; reclassified as general aviation.",
@@ -3325,6 +3505,7 @@ const seed: Seed[] = [
     lastCarrier: "—",
     routesLost: 2,
     formerHubs: ["DEN", "ORD"],
+    linkYears: { "DEN": 2014, "ORD": 1981 },
     restorableBy: "R-75",
     detail:
       "Great Falls lost Frontier's Denver nonstop in December 2014 when Frontier restructured its Denver hub; earlier lost Northwest DC-10 Chicago/eastbound mainline service circa 1981; currently served by Alaska, Delta, United, and Allegiant with no Chicago or Dallas nonstop.",
@@ -3343,6 +3524,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 2,
     formerHubs: ["BIL", "GGW", "GTF"],
+    linkYears: { "BIL": null, "GGW": 2008, "GTF": 1980 },
     restorableBy: "R-50",
     detail:
       "Big Sky Airlines ended March 8, 2008; Cape Air now provides EAS service to Billings.",
@@ -3361,6 +3543,7 @@ const seed: Seed[] = [
     lastCarrier: "—",
     routesLost: 3,
     formerHubs: ["MSP", "ORD", "PDX"],
+    linkYears: { "MSP": 2015, "ORD": 1985, "PDX": 2000 },
     restorableBy: "R-50",
     detail:
       "Helena lost Minneapolis service (Delta Connection) circa 2015 and now has only 3 nonstop destinations (SLC, DEN, SEA); airport director stated in 2024 they are 'struggling to expand routes' and seeking to restore Minneapolis and add Chicago or Dallas.",
@@ -3379,6 +3562,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 4,
     formerHubs: ["BIL", "DEN", "GGW", "SLC"],
+    linkYears: { "BIL": 2013, "DEN": 2011, "GGW": 1980, "SLC": 1980 },
     restorableBy: "R-50",
     detail:
       "Geographic center of Montana; DOT terminated EAS on July 15, 2013 after the per-passenger subsidy reached ~$1,905 — nearly double the $1,000 congressional cap.",
@@ -3397,6 +3581,7 @@ const seed: Seed[] = [
     lastCarrier: "Silver Airways",
     routesLost: 4,
     formerHubs: ["BIL", "BIS", "DEN", "GLC"],
+    linkYears: { "BIL": 2013, "BIS": 1980, "DEN": 2011, "GLC": 2011 },
     restorableBy: "R-50",
     detail:
       "EAS terminated July 15, 2013 (same DOT order as Lewistown); $2,337/pax vs. $1,000 congressional cap.",
@@ -3415,6 +3600,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 2,
     formerHubs: ["BIL", "GDV", "ISN"],
+    linkYears: { "BIL": null, "GDV": 2008, "ISN": 2008 },
     restorableBy: "R-50",
     detail:
       "Big Sky Airlines ended March 8, 2008; Cape Air provides ~5 daily flights to Billings at ~$3.8M/year EAS subsidy.",
@@ -3433,6 +3619,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express / Delta)",
     routesLost: 4,
     formerHubs: ["DEN", "SLC", "LAX", "SFO", "LAS"],
+    linkYears: { "DEN": 1986, "SLC": null, "LAX": 1980, "SFO": 1980, "LAS": 1980 },
     restorableBy: "R-50",
     detail:
       "Active EAS; 8,750 passengers in 2023 (+19% YoY). SkyWest provides service to Denver and Salt Lake City.",
@@ -3451,6 +3638,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 1,
     formerHubs: ["BIL", "GGW"],
+    linkYears: { "BIL": null, "GGW": 2008 },
     restorableBy: "R-50",
     detail:
       "On the Fort Peck Reservation; air service is a genuine medical-access lifeline. Cape Air serves Billings under the same Montana 5-city contract as Glasgow, through December 2027.",
@@ -3471,6 +3659,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Delta (current)",
     routesLost: 4,
     formerHubs: ["DFW", "IAD", "PHL", "DCA"],
+    linkYears: { "DFW": 2000, "IAD": 2019, "PHL": 2005, "DCA": 2005 },
     restorableBy: "R-100",
     detail:
       "Fayetteville lost United Express (IAD) on March 7, 2019 when United declared the route 'no longer sustainable'; today only American Airlines (CLT) and Delta (ATL) remain, down from five or more hub connections in the 1990s.",
@@ -3489,6 +3678,7 @@ const seed: Seed[] = [
     lastCarrier: "Atlantic Southeast Airlines (Delta Connection)",
     routesLost: 3,
     formerHubs: ["ATL", "CLT", "GSO"],
+    linkYears: { "ATL": 2005, "CLT": 2002, "GSO": 1985 },
     restorableBy: "R-50",
     detail:
       "Delta Connection (Atlantic Southeast Airlines) using CRJ200s inaugurated ATL service in early 2005 but ceased after only nine months, leaving Hickory without any scheduled service.",
@@ -3507,6 +3697,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air",
     routesLost: 8,
     formerHubs: ["ATL", "CLT", "LGA", "DCA", "BWI", "RIC", "ILM", "RDU"],
+    linkYears: { "ATL": 2008, "CLT": 2008, "LGA": 1989, "DCA": 1992, "BWI": 1992, "RIC": 1989, "ILM": 1989, "RDU": 1990 },
     restorableBy: "R-50",
     detail:
       "Hub connections to ATL and CLT ended January 5, 2007; Allegiant leisure service to Orlando continued until April 2008.",
@@ -3525,6 +3716,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Breeze Airways (current)",
     routesLost: 2,
     formerHubs: ["ATL", "DCA"],
+    linkYears: { "ATL": 2005, "DCA": 2000 },
     restorableBy: "R-50",
     detail:
       "New Bern retains American Airlines nonstop to Charlotte and Breeze Airways twice-weekly service to Hartford and Orlando as of 2024, but has lost former connections to Atlanta, Washington, and other hubs served by Piedmont/USAir since the 1980s.",
@@ -3543,6 +3735,7 @@ const seed: Seed[] = [
     lastCarrier: "CCAir (US Airways Express)",
     routesLost: 2,
     formerHubs: ["CLT", "RDU"],
+    linkYears: { "CLT": 2001, "RDU": 1980 },
     restorableBy: "R-50",
     detail:
       "CCAir operating as US Airways Express suspended service in March 2001 after Southwest Airlines' 1999 entry at nearby RDU undercut demand; airport has had no scheduled service since.",
@@ -3561,6 +3754,7 @@ const seed: Seed[] = [
     lastCarrier: "Atlantic Southeast Airlines (Delta Connection)",
     routesLost: 2,
     formerHubs: ["CLT", "ATL"],
+    linkYears: { "CLT": 2002, "ATL": 2007 },
     restorableBy: "R-50",
     detail:
       "CCAir/US Airways Express served Charlotte from October 1991 until April 15, 2002; Delta Connection returned briefly with seasonal ATL CRJ flights in 2006 ending November 2007, since which no scheduled service has operated.",
@@ -3579,6 +3773,7 @@ const seed: Seed[] = [
     lastCarrier: "CCAir (US Airways Express)",
     routesLost: 3,
     formerHubs: ["CLT", "DCA", "PHL"],
+    linkYears: { "CLT": 2000, "DCA": 1991, "PHL": 1991 },
     restorableBy: "R-100",
     detail:
       "Commercial enplanements fell from 23,000 in 1990 to 7,000 in 1999 as service consolidated to Charlotte-only; last flight departed January 2000 when CCAir ended its US Airways Express code-share.",
@@ -3599,6 +3794,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest / United Express",
     routesLost: 2,
     formerHubs: ["DEN", "MSP", "BIS"],
+    linkYears: { "DEN": null, "MSP": 2012, "BIS": 1995 },
     restorableBy: "R-50",
     detail:
       "Connected to Denver via EAS subsidy; SkyWest/United Express operates 12 round trips per week under a contract through June 2027.",
@@ -3617,6 +3813,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 3,
     formerHubs: ["DEN", "MSP", "BIS", "BIL"],
+    linkYears: { "DEN": null, "MSP": 2015, "BIS": 1986, "BIL": 1986 },
     restorableBy: "R-50",
     detail:
       "Active EAS through 2027; 12 weekly round trips to Denver on 50-seat CRJ-200.",
@@ -3635,6 +3832,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection/Allegiant",
     routesLost: 2,
     formerHubs: ["DEN", "ORD", "MSP"],
+    linkYears: { "DEN": 2013, "ORD": 2005, "MSP": null },
     restorableBy: "R-50",
     detail:
       "Grand Forks lost United Express Denver service December 3, 2013 after only 14 months of service due to low load factors; currently retains Delta Connection to Minneapolis and Allegiant leisure routes but lost hub connections to Chicago and Denver.",
@@ -3653,6 +3851,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "MSP", "BIS"],
+    linkYears: { "DEN": null, "MSP": 2013, "BIS": 1991 },
     restorableBy: "R-50",
     detail:
       "SkyWest contract through 2027; 12 weekly round trips to Denver. Boardings up 37% in H1 2025.",
@@ -3671,6 +3870,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection/United Express/Allegiant",
     routesLost: 3,
     formerHubs: ["DEN", "SNA"],
+    linkYears: { "DEN": 2015, "SNA": 1986 },
     restorableBy: "R-50",
     detail:
       "Minot retains Delta Connection to Minneapolis and United Express to Denver, but lost Frontier Airlines Denver service in 2015 (restructuring) and the original Frontier's Canada routes when that airline went bankrupt in 1986.",
@@ -3689,6 +3889,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection/United Express",
     routesLost: 2,
     formerHubs: ["HOU", "DFW"],
+    linkYears: { "HOU": 2016, "DFW": 2016 },
     restorableBy: "R-50",
     detail:
       "Sloulin Field (ISN) closed October 10, 2019 and was replaced by new Williston Basin International (XWA); at oil-boom peak in 2014 the airport served 119,069 passengers with 11 daily flights including Houston nonstop, then service contracted sharply after oil prices fell.",
@@ -3709,6 +3910,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 0,
     formerHubs: ["DEN"],
+    linkYears: { "DEN": null },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection serves Alliance with 9-seat Metroliner; one of 7 Nebraska EAS airports.",
@@ -3727,6 +3929,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 1,
     formerHubs: ["DEN", "RAP"],
+    linkYears: { "DEN": null, "RAP": 2023 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection provides 9-seat Metroliner service under EAS.",
@@ -3745,6 +3948,7 @@ const seed: Seed[] = [
     lastCarrier: "Frontier Airlines",
     routesLost: 2,
     formerHubs: ["DEN", "OMA"],
+    linkYears: { "DEN": 1979, "OMA": 1979 },
     restorableBy: "R-50",
     detail:
       "Frontier Airlines operated Convair 580 turboprops to Columbus from the mid-1960s until 1979; service originated with Mid-West Airlines DC-3s in 1950.",
@@ -3763,6 +3967,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (American Airlines)",
     routesLost: 3,
     formerHubs: ["ORD", "DEN", "OMA", "MSP"],
+    linkYears: { "ORD": null, "DEN": 2003, "OMA": 2001, "MSP": 1986 },
     restorableBy: "R-50",
     detail:
       "American Eagle Essential Air Service to Chicago O'Hare; one of 7 Nebraska EAS airports.",
@@ -3781,6 +3986,7 @@ const seed: Seed[] = [
     lastCarrier: "Frontier Airlines",
     routesLost: 2,
     formerHubs: ["DEN", "OMA"],
+    linkYears: { "DEN": 1979, "OMA": 1979 },
     restorableBy: "R-50",
     detail:
       "Frontier Airlines Convair 580 turboprops served Hastings from 1959 until 1979; Mid-West Airlines had initiated service in 1950 on the city's first scheduled flights.",
@@ -3799,6 +4005,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 0,
     formerHubs: ["DEN"],
+    linkYears: { "DEN": null },
     restorableBy: "R-50",
     detail:
       "DOT selected SkyWest for Kearney EAS in 2024; 12 weekly round trips to Denver.",
@@ -3817,6 +4024,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 2,
     formerHubs: ["DEN", "MCI", "OMA"],
+    linkYears: { "DEN": null, "MCI": 1991, "OMA": 1984 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection took over after Great Lakes Airlines exited; 9-seat Metroliner service to Denver.",
@@ -3835,6 +4043,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 3,
     formerHubs: ["DEN", "OMA", "MCI"],
+    linkYears: { "DEN": 2004, "OMA": 2004, "MCI": 1995 },
     restorableBy: "R-50",
     detail:
       "EAS subsidy terminated ~2004 by proximity rule — within 210 miles of Omaha medium hub. 672 enplanements in final year.",
@@ -3853,6 +4062,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "OMA", "MCI"],
+    linkYears: { "DEN": null, "OMA": 1984, "MCI": 1992 },
     restorableBy: "R-50",
     detail:
       "SkyWest United Express EAS service to Denver; one of 7 Nebraska EAS airports.",
@@ -3871,6 +4081,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 2,
     formerHubs: ["DEN", "RAP", "OMA"],
+    linkYears: { "DEN": null, "RAP": 1980, "OMA": 1984 },
     restorableBy: "R-50",
     detail:
       "SkyWest United Express EAS service to Denver; one of 7 Nebraska EAS airports.",
@@ -3889,6 +4100,7 @@ const seed: Seed[] = [
     lastCarrier: "Frontier Airlines",
     routesLost: 2,
     formerHubs: ["DEN", "CYS"],
+    linkYears: { "DEN": 1980, "CYS": 1980 },
     restorableBy: "R-50",
     detail:
       "Frontier Airlines provided Douglas DC-3 service beginning 1959, upgraded to Twin Otter, with final departure in 1980; no scheduled service since.",
@@ -3909,6 +4121,7 @@ const seed: Seed[] = [
     lastCarrier: "Air New England",
     routesLost: 2,
     formerHubs: ["BOS", "MHT"],
+    linkYears: { "BOS": 1981, "MHT": 1981 },
     restorableBy: "R-50",
     detail:
       "Berlin Regional Airport lost all scheduled airline service when Air New England ceased operations in October 1981; previously served by Northeast Airlines and Air Vermont as well.",
@@ -3927,6 +4140,7 @@ const seed: Seed[] = [
     lastCarrier: "Colgan Air",
     routesLost: 3,
     formerHubs: ["BOS", "LEB", "EWR"],
+    linkYears: { "BOS": 1998, "LEB": 1998, "EWR": 1993 },
     restorableBy: "R-50",
     detail:
       "Dillant-Hopkins Airport in Keene enjoyed over 50 years of scheduled service beginning with Northeast Airlines in 1946; Colgan Air's exit on September 1, 1998 ended all commercial flights permanently.",
@@ -3945,6 +4159,7 @@ const seed: Seed[] = [
     lastCarrier: "Atlantic North Airlines",
     routesLost: 4,
     formerHubs: ["BOS", "EWR", "RUT", "EEN"],
+    linkYears: { "BOS": 1993, "EWR": 1993, "RUT": 1993, "EEN": 1993 },
     restorableBy: "R-50",
     detail:
       "Laconia Municipal Airport lost all scheduled service when Atlantic North Airlines (successor to Skymaster Air Taxi) ceased all operations in August 1993 and filed for bankruptcy in September 1993.",
@@ -3963,6 +4178,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 3,
     formerHubs: ["BTV", "MPV", "HPN"],
+    linkYears: { "BTV": 1981, "MPV": 1981, "HPN": 2010 },
     restorableBy: "R-50",
     detail:
       "Lebanon Municipal Airport retains EAS-subsidized Cape Air service to Boston (6x daily) and White Plains NY; it lost major hub connections including Delta's LaGuardia and NYC JFK service by 1975 and all Vermont connections by 1981.",
@@ -3983,6 +4199,7 @@ const seed: Seed[] = [
     lastCarrier: "Breeze Airways (current, replacing Spirit Airlines May 2026)",
     routesLost: 5,
     formerHubs: ["ORD", "IAH", "YYZ", "PIT", "CLE"],
+    linkYears: { "ORD": 2014, "IAH": 2014, "YYZ": 2015, "PIT": 2005, "CLE": 2005 },
     restorableBy: "R-50",
     detail:
       "After United Airlines ended its Chicago O'Hare and Houston routes on December 3, 2014, and Air Canada dropped its seasonal Toronto service after summer 2015, Spirit Airlines remained the sole scheduled carrier at ACY for roughly a decade, accounting for ~75% of flights at its peak, before filing for bankruptcy and ceasing all operations in May 2026; Breeze Airways has begun restoring routes.",
@@ -4003,6 +4220,7 @@ const seed: Seed[] = [
     lastCarrier: "New Mexico Airlines (Pacific Wings)",
     routesLost: 4,
     formerHubs: ["ABQ", "ELP", "CNM", "DEN"],
+    linkYears: { "ABQ": 2012, "ELP": 2012, "CNM": 2012, "DEN": 1982 },
     restorableBy: "R-50",
     detail:
       "EAS terminated April 1, 2012; traffic fell below minimum-passenger thresholds mandated by the FAA Modernization and Reform Act of 2012.",
@@ -4021,6 +4239,7 @@ const seed: Seed[] = [
     lastCarrier: "Advanced Air",
     routesLost: 4,
     formerHubs: ["ABQ", "PHX", "ELP", "DAL", "DFW", "HOB"],
+    linkYears: { "ABQ": null, "PHX": null, "ELP": 2000, "DAL": 1979, "DFW": 2001, "HOB": 1981 },
     restorableBy: "R-50",
     detail:
       "Advanced Air EAS; 8-seat King Air 350 aircraft; $5.2M/yr subsidy; 3 daily round trips to Albuquerque and Phoenix.",
@@ -4039,6 +4258,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 3,
     formerHubs: ["DEN", "ABQ", "AMA", "SAF"],
+    linkYears: { "DEN": null, "ABQ": 2014, "AMA": 2012, "SAF": 2014 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection EAS contract through Apr 2030; 12 weekly round trips to Denver on 30-seat Dornier 328 Jet.",
@@ -4057,6 +4277,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 4,
     formerHubs: ["DEN", "PHX", "ABQ", "SLC"],
+    linkYears: { "DEN": 2017, "PHX": 2008, "ABQ": 2017, "SLC": 1981 },
     restorableBy: "R-50",
     detail:
       "Four Corners hub city; Great Lakes Airlines served Denver until November 2017 when the national pilot shortage forced it to exit. SkyWest/United Express restored daily DEN service May 2025 under a city-funded risk-sharing agreement.",
@@ -4075,6 +4296,7 @@ const seed: Seed[] = [
     lastCarrier: "Advanced Air",
     routesLost: 2,
     formerHubs: ["PHX", "ABQ"],
+    linkYears: { "PHX": 1999, "ABQ": 2002 },
     restorableBy: "R-50",
     detail:
       "Gallup lost EAS eligibility November 16 2002 due to low passenger traffic; went 14 years without service before Advanced Air launched PHX flights August 1 2022 via New Mexico RASE grant of $3.5M.",
@@ -4093,6 +4315,7 @@ const seed: Seed[] = [
     lastCarrier: "Advanced Air",
     routesLost: 3,
     formerHubs: ["ABQ", "ELP", "SAF"],
+    linkYears: { "ABQ": 2005, "ELP": 1980, "SAF": 1980 },
     restorableBy: "R-75",
     detail:
       "Las Cruces lost all scheduled service in July 2005 and entered an 18-year hiatus before Advanced Air restored subsidized ABQ flights in January 2023 under New Mexico's RASE program.",
@@ -4111,6 +4334,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Airlines",
     routesLost: 3,
     formerHubs: ["LAX", "HOU", "ELP"],
+    linkYears: { "LAX": 1980, "HOU": 1980, "ELP": 1985 },
     restorableBy: "R-50",
     detail:
       "Texas International's DC-9 jet service ended October 1 1979, stripping Roswell of nonstop jet access to LA and Houston; today served only by AA to DFW (EAS) and United to DEN launched Feb 2026.",
@@ -4129,6 +4353,7 @@ const seed: Seed[] = [
     lastCarrier: "Advanced Air",
     routesLost: 1,
     formerHubs: ["PHX"],
+    linkYears: { "PHX": 1979 },
     restorableBy: "R-50",
     detail:
       "Frontier ended mainline jet service in 1979; airport has operated continuously under EAS since 1980, currently served by Advanced Air to ABQ and PHX under subsidy.",
@@ -4149,6 +4374,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 4,
     formerHubs: ["DEN", "SFO", "RNO", "ELY", "BOI"],
+    linkYears: { "DEN": null, "SFO": 1982, "RNO": 2005, "ELY": 1999, "BOI": 1995 },
     restorableBy: "R-50",
     detail:
       "Nevada gold-mining hub; SkyWest EAS service to Denver. Reno route ended 2005.",
@@ -4167,6 +4393,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 5,
     formerHubs: ["LAS", "SFO", "SLC", "RNO", "CNY"],
+    linkYears: { "LAS": 2013, "SFO": 1982, "SLC": 1996, "RNO": 1982, "CNY": 2011 },
     restorableBy: "R-50",
     detail:
       "EAS terminated March 2013; per-passenger subsidy reached $3,720 — highest in the nation at the time and well above the $1,000 congressional cap.",
@@ -4187,6 +4414,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Air Lines",
     routesLost: 3,
     formerHubs: ["PHL", "EWR", "PIT"],
+    linkYears: { "PHL": 2017, "EWR": 2016, "PIT": 1997 },
     restorableBy: "R-50",
     detail:
       "Binghamton was abandoned by United (2016), American (2017), leaving only Delta's Detroit route; Delta itself threatened to exit Feb 2025 but reversed course and restored service May 2026 after a $52M terminal renovation.",
@@ -4205,6 +4433,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection / Allegiant",
     routesLost: 7,
     formerHubs: ["DTW", "CLT", "ORD", "EWR", "IAD", "PHL", "PIT"],
+    linkYears: { "DTW": 2021, "CLT": 2021, "ORD": 2016, "EWR": 2019, "IAD": 2020, "PHL": 2001, "PIT": 1997 },
     restorableBy: "R-75",
     detail:
       "Lost connections to EWR, CLT, and PHL through 2010s–2020s; now only Delta Connection (DTW) and Allegiant seasonal leisure routes.",
@@ -4223,6 +4452,7 @@ const seed: Seed[] = [
     lastCarrier: "Air North / Allegheny era",
     routesLost: 3,
     formerHubs: ["BOS", "PHL", "ALB"],
+    linkYears: { "BOS": 1983, "PHL": 1979, "ALB": 1985 },
     restorableBy: "R-50",
     detail:
       "Colonial/Eastern/Mohawk/Allegheny served 1940s–1970s; service ended as the Adirondack Northway improved road access to Albany.",
@@ -4241,6 +4471,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Air Lines / United Airlines",
     routesLost: 3,
     formerHubs: ["PHL", "DTW", "CLT"],
+    linkYears: { "PHL": 2022, "DTW": 2019, "CLT": 2022 },
     restorableBy: "R-50",
     detail:
       "Ithaca Tompkins lost American Airlines Philadelphia service (Sep 2022) and Delta Detroit service; Cornell University drives remaining demand; airport now served by Delta to JFK and United to IAD only.",
@@ -4259,6 +4490,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 1,
     formerHubs: ["PIT"],
+    linkYears: { "PIT": 2018 },
     restorableBy: "R-50",
     detail:
       "Per-passenger subsidy hit $460, more than double the $200 federal cap, and DOT pulled it.",
@@ -4277,6 +4509,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 4,
     formerHubs: ["BOS", "PIT", "BUF", "SYR", "ALB"],
+    linkYears: { "BOS": null, "PIT": 2007, "BUF": 1982, "SYR": 1991, "ALB": 2017 },
     restorableBy: "R-50",
     detail:
       "EAS service to Boston; one of 5 upstate NY EAS airports sharing ~$15.5M federal subsidy.",
@@ -4295,6 +4528,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air",
     routesLost: 4,
     formerHubs: ["EWR", "FLL", "LGA", "MCO"],
+    linkYears: { "EWR": 2014, "FLL": 2014, "LGA": 1984, "MCO": 2020 },
     restorableBy: "R-50",
     detail:
       "Niagara Falls International once hosted Air Niagara jet service (1982-84), Empire Airlines (mid-1980s), and Spirit Airlines (2011-2020); now only Allegiant serves seasonal leisure markets; proximity to Buffalo and Toronto airports severely constrains demand.",
@@ -4313,6 +4547,7 @@ const seed: Seed[] = [
     lastCarrier: "Breeze Airways",
     routesLost: 3,
     formerHubs: ["IAD", "PIT", "BOS"],
+    linkYears: { "IAD": 2024, "PIT": 2007, "BOS": 2008 },
     restorableBy: "R-50",
     detail:
       "Breeze replaced Contour as EAS carrier Sep 2024; 7 weekly round trips to Washington Dulles; $8.0M annual subsidy.",
@@ -4331,6 +4566,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 2,
     formerHubs: ["IAD", "BOS", "PHL"],
+    linkYears: { "IAD": null, "BOS": 2022, "PHL": 2025 },
     restorableBy: "R-50",
     detail:
       "Contour Airlines EAS to Washington Dulles; ~$6.5M annual subsidy over 3-year term.",
@@ -4349,6 +4585,7 @@ const seed: Seed[] = [
     lastCarrier: "CommutAir (Continental Connection)",
     routesLost: 3,
     formerHubs: ["BTV", "ORD", "BUF"],
+    linkYears: { "BTV": 2001, "ORD": 1993, "BUF": 1995 },
     restorableBy: "R-50",
     detail:
       "Poughkeepsie lost its last scheduled service Aug 12 2001 when CommutAir discontinued Burlington flights; service had already collapsed after Stewart International Airport opened across the Hudson in 1990 and captured most commercial traffic.",
@@ -4367,6 +4604,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 1,
     formerHubs: ["BOS", "ALB"],
+    linkYears: { "BOS": null, "ALB": 2008 },
     restorableBy: "R-50",
     detail:
       "Adirondack Regional Airport (SLK) is fully EAS-dependent; Cape Air retained as operator in Feb 2026 DOT contract decision over competing bids from SkyWest and Contour; serves BOS and JFK daily with Cessna 402 aircraft.",
@@ -4385,6 +4623,7 @@ const seed: Seed[] = [
     lastCarrier: "CommutAir (Continental Connection)",
     routesLost: 4,
     formerHubs: ["PIT", "BOS", "EWR", "LGA"],
+    linkYears: { "PIT": 1985, "BOS": 1986, "EWR": 1992, "LGA": 2002 },
     restorableBy: "R-50",
     detail:
       "CommutAir/Continental Connection ended June 30, 2002. USAir had jet service until ~1995. Oneida County Airport closed 2007.",
@@ -4403,6 +4642,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (American Airlines)",
     routesLost: 3,
     formerHubs: ["PHL", "ORD", "PIT", "BOS"],
+    linkYears: { "PHL": null, "ORD": 2015, "PIT": 2007, "BOS": 2008 },
     restorableBy: "R-50",
     detail:
       "American Eagle twice daily to Philadelphia via ERJ-145.",
@@ -4423,6 +4663,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Airlines",
     routesLost: 6,
     formerHubs: ["ATL", "MDW", "DCA", "HOU", "FLL", "MCO"],
+    linkYears: { "ATL": 2020, "MDW": 2017, "DCA": 2017, "HOU": 2017, "FLL": 2017, "MCO": 2022 },
     restorableBy: "R-75",
     detail:
       "CAK lost Southwest Airlines (25 flights/day to 9 destinations) and Allegiant Air in 2017, reducing traffic to its lowest since 2004; Delta ended its long-running Atlanta service in 2020; as of May 2018 CAK had the 2nd-fastest declining passenger count of any US airport; now served by American and United only.",
@@ -4441,6 +4682,7 @@ const seed: Seed[] = [
     lastCarrier: "USAir Express / Allegheny Commuter",
     routesLost: 1,
     formerHubs: ["PIT"],
+    linkYears: { "PIT": 1993 },
     restorableBy: "R-50",
     detail:
       "TWA DC-3s from 1947; Lake Central, Allegheny, USAir Commuter. 22 enplanements in all of 2023 — strictly general aviation.",
@@ -4459,6 +4701,7 @@ const seed: Seed[] = [
     lastCarrier: "Envoy Air (American Eagle)",
     routesLost: 8,
     formerHubs: ["ORD", "CLT", "ATL", "MSP", "CVG", "DTW", "IND", "PIT"],
+    linkYears: { "ORD": 2022, "CLT": 2022, "ATL": 2011, "MSP": 2011, "CVG": 2000, "DTW": 2002, "IND": 1998, "PIT": 1993 },
     restorableBy: "R-75",
     detail:
       "Envoy Air ended Charlotte service November 2021 and Chicago–ORD in September 2022, leaving Allegiant as the sole carrier with leisure routes only.",
@@ -4477,6 +4720,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air",
     routesLost: 6,
     formerHubs: ["PIT", "DTW", "CLE", "MCO", "PIE", "MYR"],
+    linkYears: { "PIT": 2001, "DTW": 2002, "CLE": 2002, "MCO": 2018, "PIE": 2018, "MYR": 2018 },
     restorableBy: "R-75",
     detail:
       "Allegiant last flight Jan 4, 2018. Never EAS. Previously had USAir/Northwest network service to Pittsburgh through the early 2000s.",
@@ -4497,6 +4741,7 @@ const seed: Seed[] = [
     lastCarrier: "Central Airlines",
     routesLost: 2,
     formerHubs: ["DFW", "TUL"],
+    linkYears: { "DFW": 1963, "TUL": 2005 },
     restorableBy: "R-50",
     detail:
       "Central Airlines served 1951–1963. Now a general aviation industrial airpark.",
@@ -4515,6 +4760,7 @@ const seed: Seed[] = [
     lastCarrier: "Frontier Airlines",
     routesLost: 2,
     formerHubs: ["MCI", "DFW"],
+    linkYears: { "MCI": 1974, "DFW": 1974 },
     restorableBy: "R-50",
     detail:
       "Continental DC-3s 1949–1961; Central/Frontier Convair 580s 1961–1974.",
@@ -4533,6 +4779,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 5,
     formerHubs: ["DEN", "OKC", "TUL", "MCI", "ABQ"],
+    linkYears: { "DEN": 2006, "OKC": 2006, "TUL": 1998, "MCI": 1979, "ABQ": 2002 },
     restorableBy: "R-50",
     detail:
       "Woodring Regional Airport; EAS ended August 2006, concurrent with the Ponca City exit.",
@@ -4551,6 +4798,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 2,
     formerHubs: ["OKC", "IAH"],
+    linkYears: { "OKC": 1981, "IAH": 1981 },
     restorableBy: "R-75",
     detail:
       "Lawton once had jet service from Continental (DC-9s 1967-1975) and commuter service from Frontier and Metro Airlines; today only American Eagle DFW remains, making it significantly diminished from peak multi-carrier, multi-hub era.",
@@ -4569,6 +4817,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 4,
     formerHubs: ["DEN", "DFW", "OKC", "ICT"],
+    linkYears: { "DEN": 2006, "DFW": 2006, "OKC": 2006, "ICT": 1981 },
     restorableBy: "R-50",
     detail:
       "Service ended August 2006; prior Mesa Airlines served DFW 2002–2005.",
@@ -4587,6 +4836,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 3,
     formerHubs: ["OKC", "TUL", "MCI"],
+    linkYears: { "OKC": 1985, "TUL": 1986, "MCI": 1979 },
     restorableBy: "R-50",
     detail:
       "After 30 years without airline service (1986-2016), Stillwater regained commercial service in August 2016 when American Eagle/Envoy Air began EMB-145 flights to DFW; prior service included Central Airlines DC-3s from 1953 and Frontier jets.",
@@ -4607,6 +4857,7 @@ const seed: Seed[] = [
     lastCarrier: "SeaPort Airlines",
     routesLost: 1,
     formerHubs: ["PDX"],
+    linkYears: { "PDX": 2010 },
     restorableBy: "R-50",
     detail:
       "West Coast Airlines and successor Hughes Airwest served Astoria until 1974-75; SeaPort Airlines briefly restored PDX service March 2008-Spring 2010; no commercial airline service since; Coast Guard Air Station Astoria still operates at the field.",
@@ -4625,6 +4876,7 @@ const seed: Seed[] = [
     lastCarrier: "PenAir",
     routesLost: 3,
     formerHubs: ["PDX", "SFO", "SEA"],
+    linkYears: { "PDX": 2017, "SFO": 2014, "SEA": 2000 },
     restorableBy: "R-50",
     detail:
       "SkyWest/United Express ended service to PDX and SFO on June 5 2014; PenAir briefly restored Saab 340B service to PDX starting Oct 2016 before ceasing service Aug 7 2017 following bankruptcy; airport has had no commercial service since.",
@@ -4643,6 +4895,7 @@ const seed: Seed[] = [
     lastCarrier: "United Express (SkyWest)",
     routesLost: 2,
     formerHubs: ["PDX", "SFO"],
+    linkYears: { "PDX": 2012, "SFO": 2008 },
     restorableBy: "R-50",
     detail:
       "Hughes Airwest ended OTH service in 1979; United Express/SkyWest added SFO nonstops ~2008 and dropped PDX service Feb 2012; SeaPort Airlines and PenAir provided brief EAS PDX service 2012-2017; currently United Express (SkyWest) serves SFO only.",
@@ -4661,6 +4914,7 @@ const seed: Seed[] = [
     lastCarrier: "Boutique Air",
     routesLost: 5,
     formerHubs: ["PDX", "SFO", "SLC", "ORD", "SEA", "BOI"],
+    linkYears: { "PDX": null, "SFO": 1981, "SLC": 1981, "ORD": 1981, "SEA": 2008, "BOI": 1981 },
     restorableBy: "R-50",
     detail:
       "Horizon Air ended December 1, 2008; only EAS-designated community in Oregon; Boutique Air serves Portland.",
@@ -4681,6 +4935,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines (Alternate EAS)",
     routesLost: 4,
     formerHubs: ["PIT", "IAD", "PHL", "BWI"],
+    linkYears: { "PIT": 2007, "IAD": 2014, "PHL": 2000, "BWI": 2022 },
     restorableBy: "R-50",
     detail:
       "Altoona lost nonstop Pittsburgh service July 2007 and Washington-Dulles September 2014; the DOT approved a nearly $28 million four-year Alternate EAS funding agreement for Contour Airlines service to Charlotte (CLT) beginning October 1, 2024.",
@@ -4699,6 +4954,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 5,
     formerHubs: ["PIT", "EWR", "DCA", "BUF", "ERI", "HAR"],
+    linkYears: { "PIT": null, "EWR": 1979, "DCA": 1979, "BUF": 1985, "ERI": 1979, "HAR": 1979 },
     restorableBy: "R-50",
     detail:
       "Held a subsidy-cap waiver to stay in the EAS program despite proximity to Pittsburgh; Southern Airways Express serves PIT and IAD through September 2028.",
@@ -4717,6 +4973,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 3,
     formerHubs: ["PIT", "BWI", "CLE", "ERI"],
+    linkYears: { "PIT": null, "BWI": 2021, "CLE": 1990, "ERI": 1985 },
     restorableBy: "R-50",
     detail:
       "DuBois has been continuously EAS-dependent since deregulation; Southern Airways Express holds a four-year DOT contract renewed 2024 for 19 weekly flights each to PIT and IAD; first flight was Allegheny Airlines June 1, 1960.",
@@ -4735,6 +4992,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Airlines / Breeze Airways",
     routesLost: 6,
     formerHubs: ["PIT", "ATL", "CVG", "DTW", "CLT", "YYZ"],
+    linkYears: { "PIT": 2008, "ATL": 2007, "CVG": 2006, "DTW": 2015, "CLT": 2006, "YYZ": 2001 },
     restorableBy: "R-75",
     detail:
       "Erie lost US Airways mainline jets post-9/11 and Pittsburgh hub connection in 2008; now served only by American (CLT/ORD), United (ORD), and Breeze (Tampa/Orlando), down from 32 daily departures in 1957.",
@@ -4753,6 +5011,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express",
     routesLost: 4,
     formerHubs: ["PIT", "IAD", "BWI", "CLE"],
+    linkYears: { "PIT": 2019, "IAD": 2019, "BWI": 2017, "CLE": 1980 },
     restorableBy: "R-50",
     detail:
       "Last service was a 19x-weekly 9-seat Cessna Caravan to Pittsburgh before EAS was withdrawn.",
@@ -4771,6 +5030,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegheny Commuter",
     routesLost: 2,
     formerHubs: ["PHL", "PIT"],
+    linkYears: { "PHL": 1980, "PIT": 1982 },
     restorableBy: "R-50",
     detail:
       "Hazleton had Allegheny Airlines service from 1957 and Allegheny Commuter from 1968; Air Pennsylvania flew to Philadelphia in the early 1980s; the airport lost all scheduled service by approximately 1982 and now operates as a general aviation facility.",
@@ -4789,6 +5049,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 4,
     formerHubs: ["PIT", "PHL", "IAD", "DUJ", "ORD"],
+    linkYears: { "PIT": null, "PHL": 2000, "IAD": 2015, "DUJ": 2014, "ORD": 2022 },
     restorableBy: "R-50",
     detail:
       "US Airways ended 2009 (recession); EAS-dependent since, with service from Colgan, Silver, Southern, Boutique, and SkyWest in succession.",
@@ -4807,6 +5068,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express / Breeze Airways",
     routesLost: 2,
     formerHubs: ["PHL", "PIT", "BWI"],
+    linkYears: { "PHL": 2004, "PIT": null, "BWI": 1980 },
     restorableBy: "R-50",
     detail:
       "Lancaster traffic peaked mid-1970s with 15 commercial flights daily to Pittsburgh, Philadelphia and Baltimore; the airport lost scheduled service multiple times and relies on federal EAS subsidy; categorized as general aviation airport by NPIAS based on 2008 enplanements under 2,500.",
@@ -4825,6 +5087,7 @@ const seed: Seed[] = [
     lastCarrier: "Spirit Airlines",
     routesLost: 4,
     formerHubs: ["PIT", "FLL", "MCO", "MYR"],
+    linkYears: { "PIT": 2010, "FLL": 2026, "MCO": 2026, "MYR": 2026 },
     restorableBy: "R-50",
     detail:
       "Spirit Airlines last flight May 2, 2026 as the carrier wound down; never EAS. Arnold Palmer Regional Airport in active discussions with replacements.",
@@ -4843,6 +5106,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Midwest/Mesa Air (US Airways Express)",
     routesLost: 3,
     formerHubs: ["PIT", "PHL", "BOS"],
+    linkYears: { "PIT": 2004, "PHL": 2001, "BOS": 2001 },
     restorableBy: "R-75",
     detail:
       "Reading had up to 15 daily departures connecting PHL, PIT, and BOS before 9/11; Air Midwest (Mesa) canceled the final three daily Pittsburgh flights on September 3, 2004, ending all scheduled commercial service.",
@@ -4861,6 +5125,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Airlines",
     routesLost: 4,
     formerHubs: ["PIT", "CVG", "DTW", "ATL"],
+    linkYears: { "PIT": 2003, "CVG": 2005, "DTW": 2010, "ATL": 2012 },
     restorableBy: "R-50",
     detail:
       "AVP had 32 daily departures in April 1957 (14 Allegheny, 12 Eastern, 4 TWA, 2 American); now significantly diminished, retaining service only to Philadelphia, Charlotte, and occasionally other hubs via American and United.",
@@ -4879,6 +5144,7 @@ const seed: Seed[] = [
     lastCarrier: "Southern Airways Express (EAS to IAD)",
     routesLost: 5,
     formerHubs: ["PHL", "PIT", "CLT", "ERI", "LGA"],
+    linkYears: { "PHL": 2021, "PIT": 2021, "CLT": 2021, "ERI": 1979, "LGA": 1979 },
     restorableBy: "R-50",
     detail:
       "American Airlines dropped for good in 2020–2021; Southern Airways Express partial EAS to IAD began May 2024.",
@@ -4899,6 +5165,7 @@ const seed: Seed[] = [
     lastCarrier: "CCAir (US Airways Express)",
     routesLost: 2,
     formerHubs: ["CLT", "CAE"],
+    linkYears: { "CLT": 1993, "CAE": 1984 },
     restorableBy: "R-50",
     detail:
       "CCAir operating as US Airways Express provided the last scheduled service in 1992–1993 with commuter flights to Charlotte; Anderson has had no airline service since 1993.",
@@ -4917,6 +5184,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines (current, CLT only)",
     routesLost: 2,
     formerHubs: ["CLT", "DCA"],
+    linkYears: { "CLT": 1981, "DCA": 2000 },
     restorableBy: "R-50",
     detail:
       "Florence lost Piedmont Airlines mainline service (Boeing 737s) in 1981 and by the early 2000s had consolidated to only Charlotte connections; today served solely by American Airlines three daily CLT departures.",
@@ -4935,6 +5203,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Delta (current)",
     routesLost: 3,
     formerHubs: ["ATL", "ORD", "EWR"],
+    linkYears: { "ATL": 2010, "ORD": 2020, "EWR": 2020 },
     restorableBy: "R-50",
     detail:
       "Hilton Head saw its first jet service only in 2018 (Republic E175) but lost United's seasonal Chicago, Newark, and Dulles routes after COVID-19; currently served by American Airlines (CLT) and Delta (ATL) year-round.",
@@ -4955,6 +5224,7 @@ const seed: Seed[] = [
     lastCarrier: "Delta Connection (SkyWest)",
     routesLost: 3,
     formerHubs: ["DEN", "ORD", "RAP"],
+    linkYears: { "DEN": 2002, "ORD": 2002, "RAP": 1985 },
     restorableBy: "R-50",
     detail:
       "Aberdeen retains Delta Connection to Minneapolis (sole current service) but lost Denver and Chicago connections when Great Lakes Airlines ended United Express operations in 2002; Republic Airlines served Aberdeen on the classic Minneapolis-Aberdeen-Pierre-Rapid City DC-9 route until 1985.",
@@ -4973,6 +5243,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 2,
     formerHubs: ["MSP", "OMA"],
+    linkYears: { "MSP": 2004, "OMA": 2009 },
     restorableBy: "R-50",
     detail:
       "SDSU college town of 23,000 lost its Minneapolis connection when DOT terminated EAS in September 2009 due to low ridership — the airport has operated as a GA facility ever since.",
@@ -4991,6 +5262,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 6,
     formerHubs: ["MSP", "RAP", "FSD", "PIR", "STC", "OMA"],
+    linkYears: { "MSP": 2016, "RAP": 1982, "FSD": 1990, "PIR": 1984, "STC": 2008, "OMA": 2009 },
     restorableBy: "R-50",
     detail:
       "Great Lakes Aviation final EAS service to Minneapolis; DOT terminated subsidy after sustained low ridership.",
@@ -5009,6 +5281,7 @@ const seed: Seed[] = [
     lastCarrier: "Northwest Airlink (Mesaba Airlines)",
     routesLost: 3,
     formerHubs: ["MSP", "OMA", "FSD"],
+    linkYears: { "MSP": 1991, "OMA": 1982, "FSD": 1991 },
     restorableBy: "R-50",
     detail:
       "Mitchell Municipal Airport lost all scheduled commercial service in 1991 when Northwest Airlink (Mesaba) withdrew; airline service began ~1951 with Midwest Airlines and Braniff, then North Central arrived 1959, with Republic leaving ~1982 and Northwest Airlink departing 1991.",
@@ -5027,6 +5300,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 7,
     formerHubs: ["DEN", "MSP", "RAP", "FSD", "SLC", "BIS", "LAX"],
+    linkYears: { "DEN": 2015, "MSP": 2015, "RAP": 1995, "FSD": 1984, "SLC": 1984, "BIS": 1994, "LAX": 1984 },
     restorableBy: "R-50",
     detail:
       "SkyWest took over from Denver Air Connection Aug 2025; 4-year contract through May 2029; 12 weekly round trips to Denver on CRJ-200.",
@@ -5045,6 +5319,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 4,
     formerHubs: ["ORD", "DEN", "MSP", "ABR", "PIR", "RAP"],
+    linkYears: { "ORD": null, "DEN": null, "MSP": 1985, "ABR": 1985, "PIR": 1995, "RAP": 1985 },
     restorableBy: "R-50",
     detail:
       "SkyWest contract Jun 2025–May 2029; 12 weekly round trips split between Chicago O'Hare and Denver on CRJ-200.",
@@ -5063,6 +5338,7 @@ const seed: Seed[] = [
     lastCarrier: "United Express",
     routesLost: 3,
     formerHubs: ["DEN", "MSP", "FSD"],
+    linkYears: { "DEN": 2001, "MSP": 1989, "FSD": 1989 },
     restorableBy: "R-50",
     detail:
       "Chan Gurney Municipal Airport lost its final scheduled service in April 2001 when United Express dropped the Denver flight; North Central began service in 1957-58, Republic left ~1982, and the airport dropped from OAG ~1989-90 before United Express briefly restored Denver service.",
@@ -5083,6 +5359,7 @@ const seed: Seed[] = [
     lastCarrier: "Multiple (American, Delta, United, Allegiant, Breeze)",
     routesLost: 3,
     formerHubs: ["LGA", "CVG", "PHL"],
+    linkYears: { "LGA": 2003, "CVG": 2000, "PHL": 2002 },
     restorableBy: "R-50",
     detail:
       "Tri-Cities lost most major hub connections through the 2000s as airlines shifted to smaller regional jets; nonstop passenger count declined from over 200,000 annual boardings in 2008-2010 to a reduced network of 8 nonstop destinations today.",
@@ -5101,6 +5378,7 @@ const seed: Seed[] = [
     lastCarrier: "Multiple (Delta, American, United, Allegiant)",
     routesLost: 4,
     formerHubs: ["MEM", "CVG", "BNA", "CLT"],
+    linkYears: { "MEM": 1995, "CVG": 1998, "BNA": 1990, "CLT": 2001 },
     restorableBy: "R-75",
     detail:
       "Delta mainline left Chattanooga in 1995 after serving since 1947, replaced by regional jets; by 2000 all service was regional-jet codeshares; Delta did not return with mainline until 2012.",
@@ -5119,6 +5397,7 @@ const seed: Seed[] = [
     lastCarrier: "Prime Air",
     routesLost: 4,
     formerHubs: ["BNA", "MEM", "SDF", "STL"],
+    linkYears: { "BNA": 1989, "MEM": 1989, "SDF": 1985, "STL": 1989 },
     restorableBy: "R-75",
     detail:
       "Tennessee's 5th-largest city; Prime Air ended ~1988–1989. No commercial airport serving 166,000 residents — the largest unserved city in the state.",
@@ -5137,6 +5416,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 3,
     formerHubs: ["ORD", "ATL", "MEM", "BNA", "STL"],
+    linkYears: { "ORD": null, "ATL": null, "MEM": 2016, "BNA": 2016, "STL": 2016 },
     restorableBy: "R-50",
     detail:
       "Denver Air Connection selected as EAS provider; service began Dec 1, 2024; 12 weekly round trips to Chicago O'Hare and Atlanta on 30-seat Dornier 328 Jet.",
@@ -5157,6 +5437,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air) / United Express (SkyWest)",
     routesLost: 3,
     formerHubs: ["IAH", "SAT", "DAL"],
+    linkYears: { "IAH": 2008, "SAT": 1982, "DAL": 1982 },
     restorableBy: "R-75",
     detail:
       "Texas International Airlines operated up to 4 nonstop DC-9s/day from San Antonio to Abilene in the late 1970s; Continental Connection Colgan Air ran IAH service until 2008; today ABI retains DFW nonstops via American Eagle and United Express.",
@@ -5175,6 +5456,7 @@ const seed: Seed[] = [
     lastCarrier: "Mesa Airlines (Air Midwest)",
     routesLost: 3,
     formerHubs: ["DFW", "AUS", "SAT"],
+    linkYears: { "DFW": 2005, "AUS": 1986, "SAT": 1986 },
     restorableBy: "R-50",
     detail:
       "EAS subsidy was terminated March 13, 2005 because Brownwood is only 145 miles from Austin, violating the $200/passenger cap rule for cities within 210 miles of a medium hub; last carrier was Mesa/Air Midwest; no service since 2005.",
@@ -5193,6 +5475,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (SkyWest Airlines)",
     routesLost: 2,
     formerHubs: ["DFW", "DAL"],
+    linkYears: { "DFW": 2023, "DAL": 1998 },
     restorableBy: "R-50",
     detail:
       "Del Rio lost all commercial service on April 3, 2023, when American Eagle/SkyWest ended twice-daily DFW ERJ-145 flights citing soft demand and a nationwide pilot shortage; the city had also lost brief Contour Aviation service in 2017.",
@@ -5211,6 +5494,7 @@ const seed: Seed[] = [
     lastCarrier: "Texas Airlines (commuter)",
     routesLost: 2,
     formerHubs: ["IAH", "HOU"],
+    linkYears: { "IAH": 1990, "HOU": 1979 },
     restorableBy: "R-50",
     detail:
       "Galveston had mainline jet service from Delta until 1979 and Braniff service to Houston from the 1930s-1953; final commercial service by small commuter carriers ended around 1990; the island city's proximity to Houston IAH/HOU made service economics impossible.",
@@ -5229,6 +5513,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 2,
     formerHubs: ["IAH", "SHV"],
+    linkYears: { "IAH": 2001, "SHV": 1985 },
     restorableBy: "R-75",
     detail:
       "East Texas Regional Airport once served as a Delta Connection hub for Rio Airways with multi-city East Texas service; commercial traffic fell to less than 1% of operations by 2023; today only American Eagle DFW remains.",
@@ -5247,6 +5532,7 @@ const seed: Seed[] = [
     lastCarrier: "Lone Star Airlines",
     routesLost: 1,
     formerHubs: ["DFW"],
+    linkYears: { "DFW": 1997 },
     restorableBy: "R-50",
     detail:
       "Cox Field last had commercial service in 1997 when Lone Star Airlines ceased DFW Metroliner flights; service began in 1987 under Exec Express before it renamed to Lone Star; the city of Paris confirms no airline service currently exists at Cox Field.",
@@ -5265,6 +5551,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 4,
     formerHubs: ["IAH", "SAT", "ELP", "DFW"],
+    linkYears: { "IAH": 2008, "SAT": 1982, "ELP": 1982, "DFW": 1999 },
     restorableBy: "R-75",
     detail:
       "San Angelo had extensive multi-destination service from Texas International (DC-9 jets to AUS, ABI, MAF, DFW, IAH, SAT, ELP in 1970), then Delta Connection ASA through ~1999 and Continental Connection until 2008; today only American Eagle DFW remains.",
@@ -5283,6 +5570,7 @@ const seed: Seed[] = [
     lastCarrier: "Rio Airways (Delta Connection)",
     routesLost: 1,
     formerHubs: ["DFW"],
+    linkYears: { "DFW": 1987 },
     restorableBy: "R-75",
     detail:
       "Temple's airport had 9 daily Convair 600 flights from Trans-Texas in 1968 including nonstops to SAT and HOU, and five daily DFW Delta Connection Beech 1900 flights in 1985; Rio Airways ceased operations in 1987 ending all service.",
@@ -5301,6 +5589,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 2,
     formerHubs: ["IAH", "DEN"],
+    linkYears: { "IAH": 2016, "DEN": 2020 },
     restorableBy: "R-75",
     detail:
       "Tyler lost United Express IAH service in April 2016 and briefly had Frontier DEN nonstops (2019-2020 COVID casualty); previously Delta served TYR on DAL-ATL route until 1956 and Trans-Texas/TI served TYR until 1977; now only American Eagle DFW.",
@@ -5319,6 +5608,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 4,
     formerHubs: ["IAH", "SAT", "DAL", "AUS", "HOU"],
+    linkYears: { "IAH": null, "SAT": 1980, "DAL": 1980, "AUS": 2018, "HOU": 2014 },
     restorableBy: "R-50",
     detail:
       "EAS to Houston George Bush; city paying $100/passenger bonuses to locals on top of ~$7M federal subsidy.",
@@ -5337,6 +5627,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle (Envoy Air)",
     routesLost: 3,
     formerHubs: ["HOU", "IAH", "DFW"],
+    linkYears: { "HOU": 1984, "IAH": 1984, "DFW": 2001 },
     restorableBy: "R-75",
     detail:
       "Braniff served Wichita Falls from 1930 to 1969 when CAB allowed discontinuation; Continental served 1946-1977; Metro Airlines rebranded as American Eagle from 1985; Delta Connection ASA served DFW until 2001; today only American Eagle DFW remains.",
@@ -5357,6 +5648,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines",
     routesLost: 2,
     formerHubs: ["PHX", "SLC", "LAS"],
+    linkYears: { "PHX": 1982, "SLC": null, "LAS": 1980 },
     restorableBy: "R-50",
     detail:
       "SkyWest Airlines receives $2,564,371 annual EAS subsidy (DOT Order 2024-12-6) for 12 weekly round trips to Salt Lake City on CRJ-200; airport lost unsubsidized jet service and multiple destinations by the 1980s.",
@@ -5375,6 +5667,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 7,
     formerHubs: ["DEN", "SLC", "PHX", "PGA", "VEL", "ELY", "ABQ"],
+    linkYears: { "DEN": 2024, "SLC": 2024, "PHX": 2004, "PGA": 2004, "VEL": 2014, "ELY": 2014, "ABQ": 1980 },
     restorableBy: "R-75",
     detail:
       "SkyWest disqualified in 2024 after labor dispute; Contour replaced with 40% fewer seats and initially lost the Denver and Salt Lake City connections.",
@@ -5393,6 +5686,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 3,
     formerHubs: ["DEN", "SLC", "RKS"],
+    linkYears: { "DEN": 2012, "SLC": 2006, "RKS": 1982 },
     restorableBy: "R-50",
     detail:
       "Frontier served Vernal for over 30 years (1950-1982) with DC-3 service to SLC and Rock Springs; airport now fully EAS-dependent with Contour Airlines subsidized service.",
@@ -5413,6 +5707,7 @@ const seed: Seed[] = [
     lastCarrier: "USAir Express / Piedmont Commuter",
     routesLost: 3,
     formerHubs: ["CLT", "GSO", "EWN"],
+    linkYears: { "CLT": 1995, "GSO": 1995, "EWN": 1995 },
     restorableBy: "R-50",
     detail:
       "Piedmont 1948–1979; Henson/Piedmont Commuter/USAir Express through 1995. Last Virginia city to lose commercial service.",
@@ -5431,6 +5726,7 @@ const seed: Seed[] = [
     lastCarrier: "Scheduled commuter (EAS-subsidized)",
     routesLost: 3,
     formerHubs: ["SHD", "LYH", "DCA"],
+    linkYears: { "SHD": 1993, "LYH": 1993, "DCA": 1993 },
     restorableBy: "R-50",
     detail:
       "Piedmont Airlines granted CAB authority to serve HSP in 1964 targeting Homestead Resort travelers; shifted to seasonal service by 1975; EAS subsidy eliminated by DOT because HSP was within 210 miles of a medium/large hub and per-passenger cost exceeded $200 — same determination that ended Danville EAS per virginiaplaces.org.",
@@ -5449,6 +5745,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / United Express",
     routesLost: 4,
     formerHubs: ["ATL", "PIT", "IAD", "DCA"],
+    linkYears: { "ATL": 2011, "PIT": 2001, "IAD": 2002, "DCA": 1996 },
     restorableBy: "R-75",
     detail:
       "Lynchburg peaked at 185,000 annual passengers in 2010; Delta's 2011 exit left only American (CLT) for years; by June 2023 passenger traffic had recovered to ~85% of 2019 pre-pandemic levels; United Express restored ORD/IAD service by 2025.",
@@ -5467,6 +5764,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines (Charlotte only)",
     routesLost: 4,
     formerHubs: ["ATL", "MCO", "BWI", "PHL"],
+    linkYears: { "ATL": 2012, "MCO": 2014, "BWI": 2002, "PHL": 2002 },
     restorableBy: "R-75",
     detail:
       "AirTran was the dominant carrier at PHF carrying ~50% of passengers; its March 2012 exit (due to Southwest merger) caused an 85%+ drop in annual passengers from over 1 million (2005-2011) to under 650,000 in 2012, and down to 144,966 by 2023; as of April 2026 only American Airlines CLT route remains.",
@@ -5485,6 +5783,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Delta / United",
     routesLost: 6,
     formerHubs: ["DCA", "PIT", "BWI", "EWR", "DAY", "RDU"],
+    linkYears: { "DCA": 1993, "PIT": 1995, "BWI": 1994, "EWR": 1997, "DAY": 1993, "RDU": 1994 },
     restorableBy: "R-75",
     detail:
       "Roanoke was a Piedmont Airlines hub in the 1970s with 45 daily flights; after the Piedmont-USAir merger (final Piedmont ROA flight August 4, 1989) the airport steadily lost nonstop spoke connections; today ROA retains service from American, Delta, and United but to far fewer destinations than its hub-era peak.",
@@ -5503,6 +5802,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines (ORD)",
     routesLost: 6,
     formerHubs: ["IAD", "ORD", "DCA", "PIT", "CLT", "SFB", "ROA"],
+    linkYears: { "IAD": 2016, "ORD": null, "DCA": 1996, "PIT": 2004, "CLT": 2017, "SFB": 2017, "ROA": 1981 },
     restorableBy: "R-50",
     detail:
       "Atlantic Coast/United Express ended December 2001; entirely EAS-dependent since; Contour Airlines current EAS carrier to ORD and IAD.",
@@ -5523,6 +5823,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 2,
     formerHubs: ["BOS", "BTV"],
+    linkYears: { "BOS": 1989, "BTV": 1981 },
     restorableBy: "R-50",
     detail:
       "Vermont's state capital; Cape Air Cessna Caravan sole air link to Boston ended 2022.",
@@ -5541,6 +5842,7 @@ const seed: Seed[] = [
     lastCarrier: "Cape Air",
     routesLost: 3,
     formerHubs: ["BOS", "EWR", "LCI", "EEN"],
+    linkYears: { "BOS": null, "EWR": 1993, "LCI": 1993, "EEN": 1993 },
     restorableBy: "R-50",
     detail:
       "Cape Air provides EAS service to Boston under active DOT contract.",
@@ -5561,6 +5863,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines (United Express)",
     routesLost: 3,
     formerHubs: ["PDX", "BOI", "SEA"],
+    linkYears: { "PDX": 2006, "BOI": 2006, "SEA": 2010 },
     restorableBy: "R-50",
     detail:
       "Big Sky Airlines provided EAS-subsidized service to Portland and Boise until September 1 2006; SkyWest/United Express briefly added SEA service June 2009-June 2010; no commercial passenger service since 2010.",
@@ -5579,6 +5882,7 @@ const seed: Seed[] = [
     lastCarrier: "Big Sky Airlines",
     routesLost: 2,
     formerHubs: ["GEG", "SEA"],
+    linkYears: { "GEG": 2006, "SEA": 1990 },
     restorableBy: "R-50",
     detail:
       "Olympia is the state capital of Washington yet has no scheduled air service; Big Sky Airlines was the last carrier, flying to Spokane in the early 2000s before ceasing service; the airport is a general aviation facility 16 miles south of downtown.",
@@ -5599,6 +5903,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 3,
     formerHubs: ["ORD", "MSP", "MKE", "DTW", "MCI"],
+    linkYears: { "ORD": null, "MSP": null, "MKE": 1986, "DTW": 2001, "MCI": 1986 },
     restorableBy: "R-50",
     detail:
       "SkyWest/United EAS since Dec 2024; lost Delta/MSP 2010, lost United/ORD Nov 2022, Sun Country gap 2022–2024. Peaked 48,000 pax on Mesaba/MSP in 2004.",
@@ -5617,6 +5922,7 @@ const seed: Seed[] = [
     lastCarrier: "American Central Airlines",
     routesLost: 3,
     formerHubs: ["ORD", "MSP", "MKE"],
+    linkYears: { "ORD": 1985, "MSP": 1981, "MKE": 1981 },
     restorableBy: "R-75",
     detail:
       "Wisconsin Central Airlines began service May 14, 1950; service ended July 25, 1985 when American Central Airlines (formerly Mid-Continent) ceased operations; no service since.",
@@ -5635,6 +5941,7 @@ const seed: Seed[] = [
     lastCarrier: "American Airlines / Allegiant",
     routesLost: 5,
     formerHubs: ["MSP", "ORD", "MKE", "DTW", "ATL"],
+    linkYears: { "MSP": 2023, "ORD": 2023, "MKE": 1986, "DTW": 2023, "ATL": 2023 },
     restorableBy: "R-75",
     detail:
       "Delta Connection (MSP) ended ~June 2023; American Airlines (ORD/CLT) and Allegiant seasonal continue, but the Minneapolis hub link is gone.",
@@ -5653,6 +5960,7 @@ const seed: Seed[] = [
     lastCarrier: "Republic Airlines",
     routesLost: 3,
     formerHubs: ["MSP", "MKE", "ORD"],
+    linkYears: { "MSP": 1983, "MKE": 1983, "ORD": 1983 },
     restorableBy: "R-50",
     detail:
       "North Central DC-3 service commenced 1953-54; successor Republic Airlines withdrew 1981-1983; airport has had no scheduled commercial service since.",
@@ -5671,6 +5979,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Airlines",
     routesLost: 3,
     formerHubs: ["ORD", "MSP", "MKE"],
+    linkYears: { "ORD": 2003, "MSP": 2003, "MKE": 1995 },
     restorableBy: "R-75",
     detail:
       "EAS subsidy terminated March 1, 2003 under DOT Order 2003-2-20 because required subsidy exceeded $200/passenger, the statutory cap for communities within 210 miles of a medium hub (Milwaukee).",
@@ -5689,6 +5998,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (Delta)",
     routesLost: 2,
     formerHubs: ["MSP", "DTW", "MKE"],
+    linkYears: { "MSP": null, "DTW": 2010, "MKE": 1995 },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS part of 5-airport Upper Midwest group; 50-seat jet to Minneapolis/St. Paul.",
@@ -5707,6 +6017,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 4,
     formerHubs: ["ORD", "MSP", "MKE", "DTW"],
+    linkYears: { "ORD": 2022, "MSP": 2022, "MKE": 1985, "DTW": 2020 },
     restorableBy: "R-50",
     detail:
       "United/SkyWest suspended service 2022 due to pilot shortage; United announced return for Oct 2026. Previously connected to both O'Hare (United Express) and MSP (Northwest/Mesaba).",
@@ -5727,6 +6038,7 @@ const seed: Seed[] = [
     lastCarrier: "Contour Airlines",
     routesLost: 3,
     formerHubs: ["CLT", "PIT", "DCA", "CRW"],
+    linkYears: { "CLT": null, "PIT": 1985, "DCA": 1995, "CRW": 1988 },
     restorableBy: "R-50",
     detail:
       "Contour Airlines EAS to Charlotte; passenger traffic tripled since Contour began service in 2018.",
@@ -5745,6 +6057,7 @@ const seed: Seed[] = [
     lastCarrier: "US Airways Express (Colgan Air)",
     routesLost: 3,
     formerHubs: ["CLT", "PIT", "IAD"],
+    linkYears: { "CLT": 2007, "PIT": 1980, "IAD": 2006 },
     restorableBy: "R-50",
     detail:
       "Mercer County Airport; EAS subsidy triggered the $200/pax cap — Charlotte is only 173 miles away. Final flight 2007.",
@@ -5763,6 +6076,7 @@ const seed: Seed[] = [
     lastCarrier: "American / Delta / United",
     routesLost: 3,
     formerHubs: ["PIT", "CVG", "FLL"],
+    linkYears: { "PIT": 2005, "CVG": 2010, "FLL": 2012 },
     restorableBy: "R-50",
     detail:
       "Charleston Yeager once received Eastern Airlines 727 service on a SDF-LEX-HTS-CRW-DCA routing in 1970; now retains service only to Atlanta, Charlotte, Chicago, and Washington, losing Pittsburgh, Cincinnati, and low-cost carrier routes since 2005.",
@@ -5781,6 +6095,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (American Eagle)",
     routesLost: 3,
     formerHubs: ["CLT", "PIT", "CMH", "DCA"],
+    linkYears: { "CLT": null, "PIT": 1990, "CMH": 1988, "DCA": 2005 },
     restorableBy: "R-50",
     detail:
       "SkyWest EAS to Charlotte; US Airways Express service before EAS transition.",
@@ -5799,6 +6114,7 @@ const seed: Seed[] = [
     lastCarrier: "USAir Express",
     routesLost: 2,
     formerHubs: ["PIT", "DCA"],
+    linkYears: { "PIT": 1994, "DCA": 1990 },
     restorableBy: "R-50",
     detail:
       "Lake Central Airways started DC-3 service; passed to Allegheny then USAir/USAir Express; all commercial service ended in 1994 and airport reverted to general aviation use.",
@@ -5817,6 +6133,7 @@ const seed: Seed[] = [
     lastCarrier: "Allegiant Air / American Airlines",
     routesLost: 3,
     formerHubs: ["CVG", "PIT", "ATL"],
+    linkYears: { "CVG": 2007, "PIT": 2003, "ATL": 2012 },
     restorableBy: "R-50",
     detail:
       "After Delta's June 2012 withdrawal, Huntington was left with only two carriers; the airport once had direct Eastern Airlines service to Newark in 1968 and Delta service to Atlanta, now relying on leisure carriers Allegiant and American.",
@@ -5835,6 +6152,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (American Eagle)",
     routesLost: 4,
     formerHubs: ["ORD", "CLT", "LGA", "DCA", "PIT", "ATL"],
+    linkYears: { "ORD": null, "CLT": null, "LGA": 1996, "DCA": 2000, "PIT": 1995, "ATL": 1989 },
     restorableBy: "R-50",
     detail:
       "Greenbrier Valley Airport had mainline 727/737 service to New York and Atlanta in the 1970s–90s; now EAS-only with SkyWest to Chicago and Charlotte.",
@@ -5853,6 +6171,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest Airlines / United Express",
     routesLost: 4,
     formerHubs: ["PIT", "DCA", "IAD", "CVG"],
+    linkYears: { "PIT": 2024, "DCA": 2012, "IAD": 2016, "CVG": 1990 },
     restorableBy: "R-50",
     detail:
       "Morgantown is currently EAS-dependent; SkyWest/United Express (50-seat CRJ200) began Dec 2024 flying to Dulles and Chicago-O'Hare — first jet service in airport history — after losing Pittsburgh and Washington National connections over prior decades.",
@@ -5871,6 +6190,7 @@ const seed: Seed[] = [
     lastCarrier: "Air Wisconsin (American Eagle)",
     routesLost: 3,
     formerHubs: ["CLT", "PIT", "CMH", "DCA"],
+    linkYears: { "CLT": null, "PIT": 1980, "CMH": 1985, "DCA": 1995 },
     restorableBy: "R-50",
     detail:
       "Air Wisconsin awarded EAS contract Oct 2025–Sep 2027; 12 weekly round trips to Charlotte on CRJ-200LR at $5.2M/yr.",
@@ -5891,6 +6211,7 @@ const seed: Seed[] = [
     lastCarrier: "United Express (SkyWest)",
     routesLost: 4,
     formerHubs: ["SLC", "BIL", "MSO", "BZN"],
+    linkYears: { "SLC": 2024, "BIL": 1986, "MSO": 1986, "BZN": 1986 },
     restorableBy: "R-50",
     detail:
       "Delta (SkyWest CRJ-200) ended CPR-SLC December 3, 2024 after Natrona County withdrew $1.3M minimum revenue guarantee; CPR now served only by United Express DEN.",
@@ -5909,6 +6230,7 @@ const seed: Seed[] = [
     lastCarrier: "American Eagle",
     routesLost: 3,
     formerHubs: ["DEN", "BIL", "SLC"],
+    linkYears: { "DEN": 1995, "BIL": 1982, "SLC": 1982 },
     restorableBy: "R-50",
     detail:
       "Ninety years of air service, taken for granted, then removed.",
@@ -5927,6 +6249,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 3,
     formerHubs: ["DEN", "SLC", "BIL", "ORD"],
+    linkYears: { "DEN": null, "SLC": 2019, "BIL": 1986, "ORD": 2025 },
     restorableBy: "R-50",
     detail:
       "Gateway to Yellowstone; Denver Air Connection serves under EAS after SkyWest 2022 exit.",
@@ -5945,6 +6268,7 @@ const seed: Seed[] = [
     lastCarrier: "Denver Air Connection",
     routesLost: 3,
     formerHubs: ["DEN", "BIL", "SLC"],
+    linkYears: { "DEN": 2025, "BIL": 1986, "SLC": 1986 },
     restorableBy: "R-50",
     detail:
       "Wyoming coal hub; Denver Air Connection took over after SkyWest's 2022 exit.",
@@ -5963,6 +6287,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 1,
     formerHubs: ["DEN", "SLC"],
+    linkYears: { "DEN": null, "SLC": 1986 },
     restorableBy: "R-50",
     detail:
       "Active EAS; 12 flights/week to Denver on 50-seat CRJ-200; subsidy ~$2.18M/yr.",
@@ -5981,6 +6306,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest (United Express)",
     routesLost: 3,
     formerHubs: ["DEN", "BIL", "SLC", "ABQ"],
+    linkYears: { "DEN": null, "BIL": 1985, "SLC": 1985, "ABQ": 1985 },
     restorableBy: "R-50",
     detail:
       "SkyWest/United Express; 21,000+ enplanements in 2024 — highest in 25 years.",
@@ -5999,6 +6325,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest/United Express",
     routesLost: 2,
     formerHubs: ["DEN", "SLC", "BIL"],
+    linkYears: { "DEN": null, "SLC": 1986, "BIL": 1986 },
     restorableBy: "R-50",
     detail:
       "Rock Springs retains twice-daily United Express DEN service; formerly received multiple regional connections including SLC and BIL under Frontier until 1986 collapse; state capacity purchase agreement helped stabilize service.",
@@ -6017,6 +6344,7 @@ const seed: Seed[] = [
     lastCarrier: "SkyWest/United Express (EAS)",
     routesLost: 1,
     formerHubs: ["DEN", "BIL"],
+    linkYears: { "DEN": null, "BIL": 1980 },
     restorableBy: "R-50",
     detail:
       "Western Airlines (mainline jets) dropped Sheridan in 1980; EAS-subsidized DEN service restored May 2007 under Great Lakes after Big Sky folded Jan 2008; Denver Air Connection ended Jan 2020 replaced by SkyWest United Express.",
@@ -6035,6 +6363,7 @@ const seed: Seed[] = [
     lastCarrier: "Great Lakes Aviation",
     routesLost: 3,
     formerHubs: ["DEN", "BIL", "SLC"],
+    linkYears: { "DEN": 2016, "BIL": 1985, "SLC": 1985 },
     restorableBy: "R-50",
     detail:
       "DOT Order 2016-5-16; FY2015 subsidy exceeded $1,000/pax cap. Final flight September 30, 2016.",

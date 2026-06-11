@@ -15,7 +15,9 @@ import { MapFilters } from "./MapFilters";
 import { HeadlineCounter } from "./HeadlineCounter";
 import {
   defaultFilters,
+  firstLossYear,
   regionOf,
+  TIMELINE_MAX,
   type MapFilterState,
 } from "./filters";
 
@@ -30,8 +32,15 @@ const variantColor: Record<ReviaVariant, string> = {
 function matches(c: Community, f: MapFilterState): boolean {
   if (f.status !== "all" && c.status !== f.status) return false;
   if (f.restorableBy !== "all" && c.restorableBy !== f.restorableBy) return false;
-  // EAS-only towns (no "ended" year) are ongoing — always shown regardless of year slider.
-  if (c.lastYearServed != null && c.lastYearServed > f.throughYear) return false;
+  // Date each community by its first documented severed link, so the
+  // timeline builds up loss by loss. Towns with no dated loss (purely
+  // subsidy-dependent) only appear at "today".
+  const firstLoss = firstLossYear(c);
+  if (firstLoss == null) {
+    if (f.throughYear < TIMELINE_MAX) return false;
+  } else if (firstLoss > f.throughYear) {
+    return false;
+  }
   if (f.region !== "all" && regionOf(c.coordinates[0], c.coordinates[1]) !== f.region)
     return false;
   return true;
@@ -86,8 +95,16 @@ export function RouteMap({
   );
 
   const visibleRoutes = useMemo(
-    () => routes.filter((r) => visibleIds.has(r.fromId)),
-    [routes, visibleIds],
+    () =>
+      routes.filter((r) => {
+        if (!visibleIds.has(r.fromId)) return false;
+        // Each arc carries its own end year: only draw links already severed
+        // by the slider year. Ongoing (subsidized) links draw only at "today".
+        if (r.lastYearServed == null)
+          return activeFilters.throughYear >= TIMELINE_MAX;
+        return r.lastYearServed <= activeFilters.throughYear;
+      }),
+    [routes, visibleIds, activeFilters.throughYear],
   );
 
   // The integrated hubs that surviving routes merge into — one white dot per
