@@ -1,6 +1,5 @@
 import { clsx } from "clsx";
 import type { Community } from "@/lib/types";
-import { DataFlag } from "@/components/ui/DataFlag";
 import { hubs } from "@/data/hubs";
 
 const statusLabel: Record<Community["status"], string> = {
@@ -104,28 +103,14 @@ export function CommunityPanel({
 
       <div className="mt-auto pt-6">
         <div className="rounded-xl border border-amber/40 bg-amber/10 p-4">
-          <p className="text-sm text-cream">
-            <span className="font-medium text-amber">
-              {community.restorableBy}
-            </span>{" "}
+          <p className="text-sm font-medium text-amber">{community.restorableBy}</p>
+          <p className="mt-1 text-sm text-cream">
             {easOnly ? (
-              <>flies this link without the subsidy: service that pays its own way.</>
+              <>Flies this link without subsidy · connecting {community.population.toLocaleString()} people</>
             ) : (
-              <>
-                closes this gap: {community.routesLost} hub link
-                {community.routesLost === 1 ? "" : "s"} back on.
-              </>
+              <>Restores {community.routesLost} route{community.routesLost === 1 ? "" : "s"} · connecting {community.population.toLocaleString()} people</>
             )}
           </p>
-        </div>
-
-        <div className="mt-3 flex items-start gap-2 text-xs text-cream/45">
-          {community.verified && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-amber/40 bg-amber/10 px-2 py-0.5 font-medium uppercase tracking-wide text-amber">
-              ✓ Confirmed
-            </span>
-          )}
-          <span className="leading-relaxed">{community.source}</span>
         </div>
       </div>
     </div>
