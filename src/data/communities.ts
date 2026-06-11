@@ -296,6 +296,45 @@ const seed: Seed[] = [
     verification: "needs-check",
   },
 
+  // ── EAS terminated — lost all service ───────────────────────────────────
+
+  {
+    city: "Brookings",
+    state: "SD",
+    iata: "BKX",
+    coordinates: [-96.8169, 44.3047],
+    population: 23377,
+    populationSource: "US Census 2020",
+    status: "lost-all-service",
+    lastYearServed: 2009,
+    lastCarrier: "Great Lakes Airlines",
+    routesLost: 1,
+    formerHubs: ["MSP"],
+    restorableBy: "R-50",
+    detail:
+      "SDSU college town of 23,000 lost its Minneapolis connection when DOT terminated EAS in September 2009 due to low ridership — the airport has operated as a GA facility ever since.",
+    source: "DOT EAS termination Sept 2009; FAA airport records",
+    verification: "needs-check",
+  },
+  {
+    city: "Lewistown",
+    state: "MT",
+    iata: "LWT",
+    coordinates: [-109.467, 47.0493],
+    population: 5924,
+    populationSource: "US Census 2020",
+    status: "lost-all-service",
+    lastYearServed: 2013,
+    lastCarrier: "Cape Air",
+    routesLost: 1,
+    formerHubs: ["BIL"],
+    restorableBy: "R-50",
+    detail:
+      "Geographic center of Montana; DOT terminated EAS on July 15, 2013 after the per-passenger subsidy reached ~$1,905 — nearly double the $1,000 congressional cap.",
+    source: "DOT EAS termination July 15, 2013; Billings Gazette; Cape Air contract records",
+    verification: "needs-check",
+  },
+
   // ── EAS-dependent (active subsidized service) ────────────────────────────
 
   {
