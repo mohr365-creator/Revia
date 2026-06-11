@@ -42,7 +42,12 @@ curves = [
 img = Image.new("RGB", (W, H), NAVY)
 draw = ImageDraw.Draw(img)
 
-LINE_WIDTH = 2
+def draw_city(draw, cx, cy, r_outer, r_inner, line_color, navy):
+    """Filled outer circle + navy inner dot to make a hollow city marker."""
+    draw.ellipse([cx - r_outer, cy - r_outer, cx + r_outer, cy + r_outer], fill=line_color)
+    draw.ellipse([cx - r_inner, cy - r_inner, cx + r_inner, cy + r_inner], fill=navy)
+
+
 for opacity, suffix, lw in [(0.18, "subtle", 2), (0.45, "vivid", 3)]:
     img = Image.new("RGB", (W, H), NAVY)
     draw = ImageDraw.Draw(img)
@@ -51,9 +56,19 @@ for opacity, suffix, lw in [(0.18, "subtle", 2), (0.45, "vivid", 3)]:
         int(NAVY[c] + (AMBER[c] - NAVY[c]) * opacity) for c in range(3)
     )
 
+    # City dot sizes scale with line weight
+    r_outer = lw * 4
+    r_inner = lw * 2
+
     for p0, ctrl, p2 in curves:
-        pts = bezier_points(scale(p0, sx, sy), scale(ctrl, sx, sy), scale(p2, sx, sy))
+        sp0  = scale(p0,  sx, sy)
+        sctrl = scale(ctrl, sx, sy)
+        sp2  = scale(p2,  sx, sy)
+        pts = bezier_points(sp0, sctrl, sp2)
         draw.line(pts, fill=line_color, width=lw)
+        # City circles at both endpoints
+        for cx, cy in (sp0, sp2):
+            draw_city(draw, cx, cy, r_outer, r_inner, line_color, NAVY)
 
     out_path = f"/home/user/Revia/revia-background-{suffix}.png"
     img.save(out_path, "PNG", optimize=True)
