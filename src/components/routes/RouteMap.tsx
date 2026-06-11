@@ -5,12 +5,11 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Line,
   Marker,
 } from "react-simple-maps";
 import { clsx } from "clsx";
 import type { Community, LngLat, LostRoute, ReviaVariant } from "@/lib/types";
-import { greatCircle } from "@/lib/geo";
+import { FlightArc } from "./FlightArc";
 import { CommunityPanel } from "./CommunityPanel";
 import { MapFilters } from "./MapFilters";
 import { HeadlineCounter } from "./HeadlineCounter";
@@ -134,9 +133,10 @@ export function RouteMap({
         const stroke = lit || isFocused ? variantColor[r.restorableBy] : "#FFF4E1";
         const opacity = lit ? 0.55 : isFocused ? 0.85 : 0.14;
         return (
-          <Line
+          <FlightArc
             key={r.id}
-            coordinates={greatCircle(r.from, r.to)}
+            from={r.from}
+            to={r.to}
             stroke={stroke}
             strokeWidth={isFocused ? 1.4 : 0.8}
             strokeLinecap="round"
