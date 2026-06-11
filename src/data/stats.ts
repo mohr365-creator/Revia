@@ -48,14 +48,14 @@ export const supportingStats: Stat[] = [
   {
     value: "14",
     label: "airports lost all commercial service since 2019",
-    source: "Regional Airline Association",
-    verified: false,
+    source: "Regional Airline Association (as of Nov 2022)",
+    verified: true,
   },
   {
     value: "161",
     label: "airports lost >25% of flights, 2019–2022",
     source: "Regional Airline Association",
-    verified: false,
+    verified: true,
   },
   {
     value: "68",

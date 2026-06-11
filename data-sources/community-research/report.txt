@@ -1,0 +1,481 @@
+Parsed 137 existing communities, 24 hubs
+WARN ak-hi:11 new JHM: population None
+NOTE nd-sd:13 new HON already exists -> folded destinations in
+NOTE nd-sd:14 new PIR already exists -> folded destinations in
+NOTE nd-sd:16 new BKX already exists -> folded destinations in
+NOTE ne-ks:22 new GBD already exists -> folded destinations in
+NOTE ne-ks:23 new SLN already exists -> folded destinations in
+NOTE wi-il:20 new DNV already exists -> folded destinations in
+NOTE wy-co:12 new WRL already exists -> folded destinations in
+Collected 415 destination updates, 213 new communities, 5 stats
+UPDATE FKL: +3 hubs -> PIT,IAD,BWI,CLE (routesLost=4)
+UPDATE HGR: +5 hubs -> BWI,PIT,DCA,PHL,IAD,FLL,MYR (routesLost=7)
+UPDATE CYS: +2 hubs -> DEN,BIL,SLC (routesLost=3)
+UPDATE DBQ: +2 hubs -> ORD,MSP,MDW (routesLost=3)
+UPDATE AHN: +2 hubs -> BNA,CLT,CVG (routesLost=3)
+UPDATE CBE: +2 hubs -> BWI,PIT,DCA,LAT (routesLost=4)
+UPDATE PAH: +6 hubs -> ORD,MEM,SDF,EVV,STL,BNA,CLT (routesLost=7)
+UPDATE MQT: +3 hubs -> MSP,DTW,ORD,MKE (routesLost=4)
+UPDATE TOL: +6 hubs -> ORD,CLT,ATL,MSP,CVG,DTW,IND,PIT (routesLost=8)
+UPDATE RST: +1 hubs -> ATL,ORD,DEN,STL (routesLost=4)
+UPDATE FMN: +3 hubs -> DEN,PHX,ABQ,SLC (routesLost=4)
+UPDATE BKX: +1 hubs -> MSP,OMA (routesLost=2)
+UPDATE LWT: +3 hubs -> BIL,DEN,GGW,SLC (routesLost=4)
+UPDATE ELY: +4 hubs -> LAS,SFO,SLC,RNO,CNY (routesLost=5)
+UPDATE WRL: +2 hubs -> DEN,BIL,SLC (routesLost=3)
+UPDATE ALM: +3 hubs -> ABQ,ELP,CNM,DEN (routesLost=4)
+UPDATE HON: +5 hubs -> MSP,RAP,FSD,PIR,STC,OMA (routesLost=6)
+UPDATE GBD: +2 hubs -> MCI,DEN,ICT (routesLost=3)
+UPDATE MLS: +3 hubs -> BIL,BIS,DEN,GLC (routesLost=4)
+UPDATE PNC: +2 hubs -> DEN,DFW,OKC,ICT (routesLost=4)
+UPDATE WDG: +4 hubs -> DEN,OKC,TUL,MCI,ABQ (routesLost=5)
+UPDATE BLF: +2 hubs -> CLT,PIT,IAD (routesLost=3)
+UPDATE ISO: +6 hubs -> ATL,CLT,LGA,DCA,BWI,RIC,ILM,RDU (routesLost=8)
+UPDATE GAD: +3 hubs -> ATL,MEM,MSL,BHM (routesLost=4)
+UPDATE HEZ: +3 hubs -> DFW,MSY,JAN,AEX (routesLost=4)
+UPDATE HUF: +2 hubs -> ORD,IND,STL (routesLost=3)
+UPDATE MTO: +2 hubs -> ORD,STL,CMI (routesLost=3)
+UPDATE GDV: +2 hubs -> BIL,SDY,BIS (routesLost=3)
+UPDATE VIS: +3 hubs -> LAX,BUR,SMF,SFO (routesLost=4)
+UPDATE OXR: +3 hubs -> LAX,PHX,SFO,SAN,SBA (routesLost=5)
+UPDATE FNL: +4 hubs -> LAS,DEN,PHX,BUR,RFD (routesLost=5)
+UPDATE DNV: +1 hubs -> ORD,IND (routesLost=2)
+UPDATE MPV: +1 hubs -> BOS,BTV (routesLost=2)
+UPDATE CKV: +2 hubs -> BNA,MEM,SDF,STL (routesLost=4)
+UPDATE MIE: +2 hubs -> ORD,IND,FWA (routesLost=3)
+UPDATE GGW: +2 hubs -> BIL,DEN,LWT (routesLost=2)
+UPDATE DVL: +2 hubs -> DEN,MSP,BIS (routesLost=2)
+UPDATE OLF: +1 hubs -> BIL,GGW (routesLost=1)
+UPDATE BFD: +5 hubs -> PIT,EWR,DCA,BUF,ERI,HAR (routesLost=5)
+UPDATE IPT: +4 hubs -> PHL,PIT,CLT,ERI,LGA (routesLost=5)
+UPDATE OWB: +4 hubs -> BNA,STL,CVG,SDF,EVV (routesLost=4)
+UPDATE RUT: +3 hubs -> BOS,EWR,LCI,EEN (routesLost=3)
+UPDATE EKO: +4 hubs -> DEN,SFO,RNO,ELY,BOI (routesLost=4)
+UPDATE GCC: +2 hubs -> DEN,BIL,SLC (routesLost=3)
+UPDATE COD: +3 hubs -> DEN,SLC,BIL,ORD (routesLost=3)
+UPDATE PIB: +2 hubs -> ATL,MSY,MEM (routesLost=3)
+UPDATE TUP: +3 hubs -> ATL,MEM,BNA,MSL (routesLost=4)
+UPDATE JLN: +3 hubs -> DFW,STL,MCI,MDW (routesLost=4)
+UPDATE FOD: +1 hubs -> ORD,MSP (routesLost=1)
+UPDATE MCW: +2 hubs -> ORD,MSP,OMH (routesLost=2)
+UPDATE HVR: +2 hubs -> BIL,GGW,GTF (routesLost=2)
+UPDATE SDY: +2 hubs -> BIL,GDV,ISN (routesLost=2)
+UPDATE PUB: +2 hubs -> DEN,DFW,STL (routesLost=2)
+UPDATE PDT: +5 hubs -> PDX,SFO,SLC,ORD,SEA,BOI (routesLost=5)
+UPDATE ALS: +1 hubs -> DEN,ABQ (routesLost=1)
+UPDATE JST: +4 hubs -> PIT,PHL,IAD,DUJ,ORD (routesLost=4)
+UPDATE SHD: +5 hubs -> IAD,ORD,DCA,PIT,CLT,SFB,ROA (routesLost=6)
+UPDATE PQI: +1 hubs -> BOS,EWR (routesLost=1)
+UPDATE BTM: +4 hubs -> DEN,SLC,ORD,MSP,SEA,LAX (routesLost=4)
+UPDATE WYS: +3 hubs -> DEN,SLC,LAX,SFO,LAS (routesLost=4)
+UPDATE JMS: +2 hubs -> DEN,MSP,BIS (routesLost=2)
+UPDATE DIK: +3 hubs -> DEN,MSP,BIS,BIL (routesLost=3)
+UPDATE PIR: +6 hubs -> DEN,MSP,RAP,FSD,SLC,BIS,LAX (routesLost=7)
+UPDATE ATY: +4 hubs -> ORD,DEN,MSP,ABR,PIR,RAP (routesLost=4)
+UPDATE LAR: +1 hubs -> DEN,SLC (routesLost=1)
+UPDATE RIW: +3 hubs -> DEN,BIL,SLC,ABQ (routesLost=3)
+UPDATE HYS: +2 hubs -> DEN,ICT,MCI (routesLost=2)
+UPDATE LBL: +2 hubs -> DEN,ICT,DDC (routesLost=2)
+UPDATE DDC: +2 hubs -> DEN,ICT,MCI (routesLost=2)
+UPDATE GCK: +3 hubs -> DFW,ICT,DEN,MCI (routesLost=3)
+UPDATE SLN: +3 hubs -> ORD,DEN,ICT,STL,MCI (routesLost=3)
+UPDATE MCK: +2 hubs -> DEN,MCI,OMA (routesLost=2)
+UPDATE CDR: +1 hubs -> DEN,RAP (routesLost=1)
+UPDATE LBF: +2 hubs -> DEN,OMA,MCI (routesLost=2)
+UPDATE BFF: +2 hubs -> DEN,RAP,OMA (routesLost=2)
+UPDATE GRI: +3 hubs -> ORD,DEN,OMA,MSP (routesLost=3)
+UPDATE CEZ: +4 hubs -> DEN,ABQ,FMN,GJT,PHX (routesLost=4)
+UPDATE CNY: +5 hubs -> DEN,SLC,PHX,PGA,VEL,ELY,ABQ (routesLost=7)
+UPDATE SUX: +1 hubs -> DEN,ORD,MSP (routesLost=1)
+UPDATE CVN: +3 hubs -> DEN,ABQ,AMA,SAF (routesLost=3)
+UPDATE CNM: +4 hubs -> ABQ,PHX,ELP,DAL,DFW,HOB (routesLost=4)
+UPDATE VCT: +4 hubs -> IAH,SAT,DAL,AUS,HOU (routesLost=4)
+UPDATE AEX: +3 hubs -> ATL,DFW,MEM,IAH,MSY,BHM (routesLost=6)
+UPDATE MSL: +3 hubs -> CLT,ATL,MEM,BNA (routesLost=3)
+UPDATE HRO: +4 hubs -> MEM,DFW,FYV,OKC,TUL,LIT (routesLost=4)
+UPDATE HOT: +3 hubs -> MEM,DFW,LIT,BNA,ATL (routesLost=3)
+UPDATE JBR: +2 hubs -> BNA,STL,MEM,LIT (routesLost=2)
+UPDATE MKL: +3 hubs -> ORD,ATL,MEM,BNA,STL (routesLost=3)
+UPDATE PKB: +3 hubs -> CLT,PIT,CMH,DCA (routesLost=3)
+UPDATE LWB: +4 hubs -> ORD,CLT,LGA,DCA,PIT,ATL (routesLost=4)
+UPDATE CKB: +3 hubs -> CLT,PIT,CMH,DCA (routesLost=3)
+UPDATE BKW: +3 hubs -> CLT,PIT,DCA,CRW (routesLost=3)
+UPDATE MKG: +5 hubs -> ORD,DTW,MKE,MIA,ATL,MSP (routesLost=5)
+UPDATE IWD: +2 hubs -> ORD,MSP,MKE,RHI (routesLost=2)
+UPDATE IMT: +1 hubs -> MSP,DTW,ORD (routesLost=1)
+UPDATE ESC: +2 hubs -> DTW,MSP,ORD,MKE (routesLost=2)
+UPDATE APN: +2 hubs -> DTW,ORD,MSP (routesLost=2)
+UPDATE PLN: +2 hubs -> DTW,ORD,MSP (routesLost=2)
+UPDATE CIU: +2 hubs -> DTW,ORD,MKE,MKG (routesLost=2)
+UPDATE BJI: +1 hubs -> MSP,TRF (routesLost=2)
+UPDATE HIB: +1 hubs -> MSP,DLH (routesLost=1)
+UPDATE RHI: +2 hubs -> MSP,DTW,MKE (routesLost=2)
+UPDATE CWA: +2 hubs -> ORD,MSP,MKE,DTW (routesLost=4)
+UPDATE EAU: +3 hubs -> ORD,MSP,MKE,DTW,MCI (routesLost=3)
+UPDATE LSE: +3 hubs -> MSP,ORD,MKE,DTW,ATL (routesLost=5)
+UPDATE DEC: +2 hubs -> ORD,STL,CMI,MKE (routesLost=3)
+UPDATE UIN: +3 hubs -> ORD,STL,DSM,BMI,GBG (routesLost=3)
+UPDATE CGI: +3 hubs -> DFW,ORD,STL,MEM,BNA (routesLost=3)
+UPDATE OGS: +2 hubs -> IAD,PIT,BOS (routesLost=3)
+UPDATE MSS: +4 hubs -> BOS,PIT,BUF,SYR,ALB (routesLost=4)
+UPDATE ART: +3 hubs -> PHL,ORD,PIT,BOS (routesLost=3)
+UPDATE ELM: +5 hubs -> DTW,CLT,ORD,EWR,IAD,PHL,PIT (routesLost=7)
+UPDATE PBG: +2 hubs -> IAD,BOS,PHL (routesLost=2)
+UPDATE YNG: +5 hubs -> PIT,DTW,CLE,MCO,PIE,MYR (routesLost=6)
+UPDATE LBE: +3 hubs -> PIT,FLL,MCO,MYR (routesLost=4)
+UPDATE UCA: +3 hubs -> PIT,BOS,EWR,LGA (routesLost=4)
+UPDATE DAN: +2 hubs -> CLT,GSO,EWN (routesLost=3)
+UPDATE GFL: +2 hubs -> BOS,PHL,ALB (routesLost=3)
+UPDATE ANB: +2 hubs -> ATL,MEM,BHM (routesLost=3)
+UPDATE OFK: +2 hubs -> DEN,OMA,MCI (routesLost=3)
+UPDATE JEF: +1 hubs -> STL,MCI (routesLost=2)
+UPDATE ADM: +1 hubs -> DFW,TUL (routesLost=2)
+UPDATE IKK: +2 hubs -> ORD,MDW,IND (routesLost=3)
+NEW ABI Abilene, TX [diminished] hubs=IAH,SAT,DAL (confirmed)
+NEW ABR Aberdeen, SD [diminished] hubs=DEN,ORD,RAP (needs-check)
+NEW ABY Albany, GA [diminished] hubs=ATL,VLD,MGM (confirmed)
+NEW ACY Atlantic City, NJ [diminished] hubs=ORD,IAH,YYZ,PIT,CLE (confirmed)
+NEW ADK Adak, AK [diminished] hubs=ANC (confirmed)
+NEW AKN King Salmon, AK [diminished] hubs=ANC (confirmed)
+NEW ALO Waterloo, IA [diminished] hubs=MDW,STL,MCI,MSP (confirmed)
+NEW AND Anderson, SC [lost-all-service] hubs=CLT,CAE (confirmed)
+SKIP AOH Lima: lost service 1972 (pre-deregulation)
+NEW AOO Altoona, PA [diminished] hubs=PIT,IAD,PHL,BWI (confirmed)
+NEW APF Naples, FL [lost-all-service] hubs=MIA,TPA,ATL,EWR,PWM (confirmed)
+NEW ARA New Iberia, LA [lost-all-service] hubs=MSY,IAH (needs-check)
+NEW AST Astoria, OR [lost-all-service] hubs=PDX (confirmed)
+NEW AUG Augusta, ME [diminished] hubs=BGR,BOS (confirmed)
+NEW AUO Auburn, AL [lost-all-service] hubs= (needs-check)
+NEW AVP Wilkes-Barre/Scranton, PA [diminished] hubs=PIT,CVG,DTW,ATL (confirmed)
+NEW AZO Kalamazoo, MI [diminished] hubs=IAD,EWR,MCO,ORD (confirmed)
+NEW BDR Bridgeport, CT [lost-all-service] hubs=PHL,EWR,IAD,BOS (confirmed)
+NEW BEH Benton Harbor, MI [lost-all-service] hubs=DTW (confirmed)
+NEW BGM Binghamton, NY [diminished] hubs=PHL,EWR,PIT (confirmed)
+NEW BHB Bar Harbor, ME [diminished] hubs=BGR,PWM,BOS (confirmed)
+NEW BMG Bloomington, IN [lost-all-service] hubs=IND,ORD (confirmed)
+NEW BMI Bloomington, IL [diminished] hubs=MDW,MKE,DTW (confirmed)
+NEW BML Berlin, NH [lost-all-service] hubs=BOS,MHT (needs-check)
+NEW BQK Brunswick, GA [diminished] hubs=ATL (confirmed)
+NEW BRL Burlington, IA [diminished] hubs=MDW,MCI (confirmed)
+SKIP BTL Battle Creek: lost service 1970 (pre-deregulation)
+NEW BWD Brownwood, TX [lost-all-service] hubs=DFW,AUS,SAT (confirmed)
+NEW BWG Bowling Green, KY [lost-all-service] hubs=ATL,DSM (confirmed)
+NEW CAG Craig, CO [lost-all-service] hubs=DEN (needs-check)
+NEW CAK Akron, OH [diminished] hubs=ATL,MDW,DCA,HOU,FLL,MCO (confirmed)
+NEW CDC Cedar City, UT [diminished] hubs=PHX,SLC,LAS (confirmed)
+NEW CDV Cordova, AK [diminished] hubs=ANC (confirmed)
+NEW CEC Crescent City, CA [diminished] hubs=SFO,PDX (confirmed)
+SKIP CFV Coffeyville: lost service 1954 (pre-deregulation)
+NEW CHA Chattanooga, TN [diminished] hubs=MEM,CVG,BNA,CLT (confirmed)
+NEW CIC Chico, CA [lost-all-service] hubs=SFO (confirmed)
+NEW CLD Carlsbad, CA [lost-all-service] hubs=LAX,LAS,SJC (confirmed)
+NEW CMI Champaign, IL [diminished] hubs=MSP,DTW,STL,DEN (confirmed)
+NEW CMX Hancock/Houghton, MI [diminished] hubs=DTW,MSP (confirmed)
+NEW CPR Casper, WY [diminished] hubs=SLC,BIL,MSO,BZN (confirmed)
+NEW CRW Charleston, WV [diminished] hubs=PIT,CVG,FLL (confirmed)
+NEW CSG Columbus, GA [diminished] hubs=CLT,MEM,BNA,DFW,ATL (confirmed)
+SKIP CTB Cut Bank: lost service 1969 (pre-deregulation)
+SKIP CVG: major-airport dehubbing, out of scope
+SKIP CVO Corvallis: lost service 1973 (pre-deregulation)
+NEW CWI Clinton, IA [lost-all-service] hubs=ORD (confirmed)
+NEW DAB Daytona Beach, FL [diminished] hubs=LGA,RDU,MIA,ORD (confirmed)
+SKIP DAY: major-airport dehubbing, out of scope
+NEW DCU Decatur, AL [lost-all-service] hubs=ATL,MEM (needs-check)
+NEW DHN Dothan, AL [diminished] hubs=ATL,MEM,ORD (needs-check)
+NEW DLG Dillingham, AK [diminished] hubs=ANC (confirmed)
+NEW DLH Duluth, MN [diminished] hubs=ORD,DTW (confirmed)
+NEW DLN Dillon, MT [lost-all-service] hubs=BIL,BTM (needs-check)
+NEW DRT Del Rio, TX [lost-all-service] hubs=DFW,DAL (confirmed)
+NEW DUJ DuBois, PA [diminished] hubs=PIT,BWI,CLE,ERI (confirmed)
+SKIP DYR Dyersburg: lost service 1963 (pre-deregulation)
+NEW EEN Keene, NH [lost-all-service] hubs=BOS,LEB,EWR (confirmed)
+SKIP EFK Newport: lost service 1967 (pre-deregulation)
+NEW EKN Elkins, WV [lost-all-service] hubs=PIT,DCA (confirmed)
+NEW ENA Kenai, AK [diminished] hubs=ANC (confirmed)
+NEW ERI Erie, PA [diminished] hubs=PIT,ATL,CVG,DTW,CLT,YYZ (confirmed)
+NEW EVV Evansville, IN [diminished] hubs=MEM,ORD,DTW,CVG,MDW (confirmed)
+NEW EWB New Bedford, MA [diminished] hubs=LGA,BOS (needs-check)
+NEW EWN New Bern, NC [diminished] hubs=ATL,DCA (needs-check)
+NEW FAY Fayetteville, NC [diminished] hubs=DFW,IAD,PHL,DCA (confirmed)
+NEW FFM Fergus Falls, MN [lost-all-service] hubs=MSP (needs-check)
+NEW FHU Sierra Vista, AZ [lost-all-service] hubs=PHX,TUS (confirmed)
+NEW FLO Florence, SC [diminished] hubs=CLT,DCA (confirmed)
+NEW FOE Topeka, KS [lost-all-service] hubs=ORD,STL,MCI,DEN (confirmed)
+NEW FSM Fort Smith, AR [diminished] hubs=MEM,ATL,OKC,TUL,ORD (confirmed)
+NEW FWA Fort Wayne, IN [diminished] hubs=PIT,PHL,LAS,PHX,DAY (confirmed)
+NEW FYV Fayetteville, AR [lost-all-service] hubs=DFW,BNA,MEM,STL,MCI (confirmed)
+NEW GBG Galesburg, IL [lost-all-service] hubs=ORD,STL,UIN (needs-check)
+NEW GFK Grand Forks, ND [diminished] hubs=DEN,ORD,MSP (confirmed)
+NEW GGG Longview, TX [diminished] hubs=IAH,SHV (needs-check)
+NEW GLD Goodland, KS [lost-all-service] hubs=DEN,MCI (confirmed)
+NEW GLH Greenville, MS [diminished] hubs=MEM,ATL,DFW (confirmed)
+NEW GLS Galveston, TX [lost-all-service] hubs=IAH,HOU (needs-check)
+NEW GNV Gainesville, FL [diminished] hubs=MIA,ATL,TPA (needs-check)
+NEW GON Groton, CT [lost-all-service] hubs=PHL,JFK,BOS,DCA (confirmed)
+NEW GPT Gulfport, MS [diminished] hubs=MEM,DCA (needs-check)
+NEW GPZ Grand Rapids, MN [lost-all-service] hubs=MSP (confirmed)
+NEW GST Gustavus, AK [diminished] hubs=JNU (confirmed)
+NEW GTF Great Falls, MT [diminished] hubs=DEN,ORD (confirmed)
+NEW GTR Columbus, MS [diminished] hubs=MEM,BHM,TUP (confirmed)
+NEW GUC Gunnison, CO [diminished] hubs=ATL,DFW,PHL,MSP (confirmed)
+NEW GUP Gallup, NM [diminished] hubs=PHX,ABQ (confirmed)
+SKIP GWO Greenwood: lost service 1967 (pre-deregulation)
+SKIP GXY Greeley: lost service 1970 (pre-deregulation)
+NEW GYY Gary, IN [lost-all-service] hubs=SFB,PIE,MYR,GSO (confirmed)
+NEW HHH Hilton Head Island, SC [diminished] hubs=ATL,ORD,EWR (confirmed)
+NEW HII Lake Havasu City, AZ [lost-all-service] hubs=PHX,LAS (confirmed)
+NEW HKY Hickory, NC [lost-all-service] hubs=ATL,CLT,GSO (confirmed)
+SKIP HLG Wheeling: lost service 1970 (pre-deregulation)
+NEW HLN Helena, MT [diminished] hubs=MSP,ORD,PDX (confirmed)
+NEW HOM Homer, AK [diminished] hubs=ANC (confirmed)
+NEW HSI Hastings, NE [lost-all-service] hubs=DEN,OMA (confirmed)
+NEW HSP Hot Springs, VA [lost-all-service] hubs=SHD,LYH,DCA (confirmed)
+NEW HTS Huntington, WV [diminished] hubs=CVG,PIT,ATL (confirmed)
+NEW HUL Houlton, ME [lost-all-service] hubs=BOS,BGR (needs-check)
+NEW HUM Houma, LA [lost-all-service] hubs=MSY,HOU (needs-check)
+NEW HUT Hutchinson, KS [lost-all-service] hubs=DEN,MCI,ICT (confirmed)
+NEW HZL Hazleton, PA [lost-all-service] hubs=PHL,PIT (needs-check)
+NEW IAG Niagara Falls, NY [diminished] hubs=EWR,FLL,LGA,MCO (confirmed)
+NEW ILG Wilmington, DE [diminished] hubs=LGA,ATL,BDL,BUF,ORF (confirmed)
+NEW INT Winston-Salem, NC [lost-all-service] hubs=CLT,DCA,PHL (confirmed)
+NEW INW Winslow, AZ [lost-all-service] hubs=PHX,ABQ,LAX (confirmed)
+NEW IPL El Centro, CA [diminished] hubs=LAX,YUM (confirmed)
+NEW IRK Kirksville, MO [diminished] hubs=STL,MCI,MKC (confirmed)
+NEW ITH Ithaca, NY [diminished] hubs=PHL,DTW,CLT (confirmed)
+NEW IYK Inyokern, CA [lost-all-service] hubs=LAX (confirmed)
+NEW JAN Jackson, MS [diminished] hubs=CIN,DFW,MSY,MEM,MDW (confirmed)
+NEW JHM Kapalua (West Maui), HI [lost-all-service] hubs=HNL,OGG (confirmed)
+NEW JVL Janesville, WI [lost-all-service] hubs=ORD,MSP,MKE (confirmed)
+NEW JXN Jackson, MI [lost-all-service] hubs=DTW,ORD (confirmed)
+NEW LAF Lafayette, IN [diminished] hubs=ORD,IND,FWA (confirmed)
+NEW LAN Lansing, MI [diminished] hubs=ORD,MDW,PIT,CLE,MKE (confirmed)
+NEW LAW Lawton, OK [diminished] hubs=OKC,IAH (needs-check)
+NEW LCH Lake Charles, LA [diminished] hubs=BNA (needs-check)
+NEW LCI Laconia, NH [lost-all-service] hubs=BOS,EWR,RUT,EEN (confirmed)
+NEW LEB Lebanon, NH [diminished] hubs=BTV,MPV,HPN (confirmed)
+SKIP LGU Logan: lost service 1976 (pre-deregulation)
+NEW LMT Klamath Falls, OR [lost-all-service] hubs=PDX,SFO,SEA (confirmed)
+NEW LNS Lancaster, PA [diminished] hubs=PHL,PIT,BWI (confirmed)
+NEW LNY Lanai City, HI [diminished] hubs=HNL (confirmed)
+NEW LOZ London, KY [lost-all-service] hubs=LEX,CVG,CLT (confirmed)
+NEW LRU Las Cruces, NM [diminished] hubs=ABQ,ELP,SAF (confirmed)
+NEW LWS Lewiston, ID [diminished] hubs=BUR,SEA,BOI,DEN (confirmed)
+NEW LYH Lynchburg, VA [diminished] hubs=ATL,PIT,IAD,DCA (confirmed)
+NEW MBL Manistee, MI [diminished] hubs=MKE,MDW (confirmed)
+NEW MBS Saginaw/Bay City/Midland, MI [diminished] hubs=PIT,CLE,MKE,LGA,MSP (confirmed)
+NEW MCE Merced, CA [diminished] hubs=LAX (confirmed)
+NEW MCN Macon, GA [diminished] hubs=ATL,CLT,MCO (confirmed)
+NEW MEI Meridian, MS [diminished] hubs=ATL,MEM,BNA,DFW (confirmed)
+SKIP MEM: major-airport dehubbing, out of scope
+NEW MGM Montgomery, AL [diminished] hubs=MEM,CIN,IAH,MSY,JAN (needs-check)
+NEW MGW Morgantown, WV [diminished] hubs=PIT,DCA,IAD,CVG (confirmed)
+NEW MHE Mitchell, SD [lost-all-service] hubs=MSP,OMA,FSD (confirmed)
+NEW MHK Manhattan, KS [diminished] hubs=ICT,MCI,DEN (confirmed)
+NEW MKK Molokai (Ho'olehua), HI [diminished] hubs=HNL (confirmed)
+NEW MKT Mankato, MN [lost-all-service] hubs=MSP (confirmed)
+NEW MLU Monroe, LA [diminished] hubs=IAH,MEM,MSY,BHM,AEX (confirmed)
+NEW MML Marshall, MN [lost-all-service] hubs=MSP (needs-check)
+NEW MOD Modesto, CA [lost-all-service] hubs=SFO,LAX (confirmed)
+NEW MOT Minot, ND [diminished] hubs=DEN,SNA,YXE (confirmed)
+SKIP MRB Martinsburg: lost service 1973 (pre-deregulation)
+NEW MTH Marathon, FL [lost-all-service] hubs=MIA,ATL,RSW,TPA (confirmed)
+NEW MTW Manitowoc, WI [lost-all-service] hubs=MSP,MKE,ORD (confirmed)
+NEW MUE Waimea (Kamuela), HI [diminished] hubs=HNL (needs-check)
+NEW MVN Mount Vernon, IL [lost-all-service] hubs=STL,ORD (confirmed)
+NEW MWA Marion, IL [diminished] hubs=STL,ORD (confirmed)
+NEW MWH Moses Lake, WA [lost-all-service] hubs=PDX,BOI,SEA (confirmed)
+NEW OCF Ocala, FL [lost-all-service] hubs=MCO,MIA,TPA (confirmed)
+SKIP OKK Kokomo: lost service 1970 (pre-deregulation)
+NEW OLM Olympia, WA [lost-all-service] hubs=GEG,SEA (confirmed)
+NEW OLU Columbus, NE [lost-all-service] hubs=DEN,OMA (confirmed)
+NEW ONA Winona, MN [lost-all-service] hubs=MSP (confirmed)
+NEW ORH Worcester, MA [diminished] hubs=BOS,EWR (needs-check)
+NEW OSH Oshkosh, WI [lost-all-service] hubs=ORD,MSP,MKE (confirmed)
+NEW OTG Worthington, MN [lost-all-service] hubs=MSP (confirmed)
+NEW OTH North Bend, OR [diminished] hubs=PDX,SFO (confirmed)
+NEW OTM Ottumwa, IA [lost-all-service] hubs=DSM,ORD (confirmed)
+NEW PGA Page, AZ [diminished] hubs=PHX,SLC,LAS (confirmed)
+NEW PHF Newport News, VA [diminished] hubs=ATL,MCO,BWI,PHL (confirmed)
+NEW POF Poplar Bluff, MO [lost-all-service] hubs=STL (needs-check)
+NEW POU Poughkeepsie, NY [lost-all-service] hubs=BTV,ORD,BUF (confirmed)
+NEW PPF Parsons, KS [lost-all-service] hubs=MCI,TUL,ICT (confirmed)
+NEW PRX Paris, TX [lost-all-service] hubs=DFW (confirmed)
+NEW PSF Pittsfield, MA [lost-all-service] hubs=LGA,RUT (needs-check)
+NEW RDG Reading, PA [lost-all-service] hubs=PIT,PHL,BOS (confirmed)
+NEW RFD Rockford, IL [diminished] hubs=ORD,DTW,DEN,MDW (confirmed)
+NEW RKD Rockland, ME [diminished] hubs=BGR,BOS (confirmed)
+NEW RKS Rock Springs, WY [diminished] hubs=DEN,SLC,BIL (confirmed)
+NEW ROA Roanoke, VA [diminished] hubs=DCA,PIT,BWI,EWR,DAY,RDU (confirmed)
+NEW ROW Roswell, NM [diminished] hubs=LAX,HOU,ELP (confirmed)
+NEW RWI Rocky Mount, NC [lost-all-service] hubs=CLT,RDU (confirmed)
+NEW SBY Salisbury, MD [diminished] hubs=DCA,BWI,PHL (confirmed)
+SKIP SGT Stuttgart: lost service 1959 (pre-deregulation)
+NEW SHR Sheridan, WY [diminished] hubs=DEN,BIL (confirmed)
+NEW SHV Shreveport, LA [diminished] hubs=MSY,MEM,STL,ORD,MCI,IAH (confirmed)
+NEW SJT San Angelo, TX [diminished] hubs=IAH,SAT,ELP,DFW (confirmed)
+NEW SLK Saranac Lake, NY [diminished] hubs=BOS,ALB (confirmed)
+NEW SME Somerset, KY [lost-all-service] hubs=CVG,ORD (confirmed)
+NEW SNS Salinas, CA [lost-all-service] hubs=SFO,OAK (confirmed)
+NEW SNY Sidney, NE [lost-all-service] hubs=DEN,CYS (confirmed)
+NEW SOP Southern Pines, NC [lost-all-service] hubs=CLT,ATL (confirmed)
+NEW SOW Show Low, AZ [diminished] hubs=PHX (confirmed)
+SKIP SPF Spearfish: lost service 1959 (pre-deregulation)
+NEW SPI Springfield, IL [diminished] hubs=ORD,STL,DFW (confirmed)
+NEW SPS Wichita Falls, TX [diminished] hubs=HOU,IAH,DFW (confirmed)
+NEW SPW Spencer, IA [lost-all-service] hubs=DSM,MSP (confirmed)
+NEW STC St. Cloud, MN [diminished] hubs=MSP,ORD (confirmed)
+SKIP STJ St. Joseph: lost service 1969 (pre-deregulation)
+NEW SVC Silver City, NM [diminished] hubs=PHX (confirmed)
+NEW SWO Stillwater, OK [diminished] hubs=OKC,TUL,MCI (confirmed)
+SKIP TAD Trinidad: lost service 1971 (pre-deregulation)
+NEW TCL Tuscaloosa, AL [lost-all-service] hubs=ATL,BNA,DFW (confirmed)
+NEW TEX Telluride, CO [diminished] hubs=ABQ,PHX (confirmed)
+NEW TPL Temple, TX [lost-all-service] hubs=DFW (confirmed)
+NEW TRI Blountville, TN [diminished] hubs=LGA,CVG,PHL (needs-check)
+NEW TWF Twin Falls, ID [diminished] hubs=LAX,SFO,SEA,DEN (confirmed)
+NEW TXK Texarkana, AR [diminished] hubs=MEM,HOU,MSY (needs-check)
+NEW TYR Tyler, TX [diminished] hubs=IAH,DEN (confirmed)
+NEW UST St. Augustine, FL [diminished] hubs=TRE,CLT,CMH (confirmed)
+NEW VDZ Valdez, AK [diminished] hubs=ANC (confirmed)
+NEW VEL Vernal, UT [diminished] hubs=DEN,SLC,RKS (confirmed)
+NEW VIH Rolla/Vichy, MO [lost-all-service] hubs=STL (needs-check)
+NEW VLD Valdosta, GA [diminished] hubs=ATL,ABY (needs-check)
+NEW WVL Waterville, ME [lost-all-service] hubs=BOS,BGR (needs-check)
+NEW XWA Williston, ND [diminished] hubs=HOU,DFW (confirmed)
+NEW YKN Yankton, SD [lost-all-service] hubs=DEN,MSP,FSD (confirmed)
+SKIP ZZV Zanesville: lost service 1970 (pre-deregulation)
+
+CORRECTION NOTES:
+GAD (al-ms): Southern Airways served GAD from 1949; Republic took over until ~1984; ASA/Delta Connection served intermittently until ~1994; airport now general aviation only
+MSL (al-ms): After Delta ended Memphis EAS service in 2010, Silver Airways served Atlanta 2012-2014; SeaPort briefly served Nashville and Memphis Jan-Oct 2015; Contour now serves CLT only
+ANB (al-ms): Southern Airways served Anniston with Martin 4-0-4s to ATL; Republic dropped small AL cities ~1984 after aircraft upgrade; ASA then served ATL as Delta Connection through ~mid-1990s; airport now general aviation only
+SEM (al-ms): Commercial service to Selma was at the former Selma Municipal Airport (not Craig Field/SEM); Southern Airways and Delta served Selma 1952-1963; Craig Field itself never had scheduled commercial airline service
+HEZ (al-ms): Natchez had service 1952-1986 via Southern, Republic, SCAT, Air Illinois, Royale; Lone Star briefly served DFW 1994; no service until SkyWest/United Express begins July 1 2026
+PIB (al-ms): PIB now serves Houston IAH via United Express/SkyWest under EAS; lost ATL, MEM, MSY since 1980s-2014
+TUP (al-ms): Tupelo now served by Contour Airlines to BNA and DFW only; lost ATL and MEM hub connections since 2012-2014
+ELD (ar-la): Airport regained EAS service via Contour Airlines to DFW starting March 2026 after SeaPort Airlines ceased ops Sept 2016; currently active EAS
+PBF (ar-la): Pine Bluff had scheduled service via Trans-Texas milk-run routing 1953-~1958; airport operates as general aviation only since then
+HRO (ar-la): HRO currently served by Southern Airways Express under EAS to DFW and MEM
+HOT (ar-la): HOT is currently EAS-dependent; Southern Airways Express serves DFW and MEM. Airport lost mainline jet service circa 1980 after deregulation.
+JBR (ar-la): JBR is currently EAS-dependent; Southern Airways Express serves STL and BNA
+AEX (ar-la): AEX moved to England Airpark (former England AFB) in 1992 from Esler Field. Currently served by AA to DFW, Delta to ATL; United Express to IAH resumed May 2026.
+AHN (ga-fl): CLT appears twice: first served by Piedmont then CCAir/USAir Express through 2002, then Air Midwest/US Airways Express ended May 23 2008; BNA SeaPort Airlines EAS ended Sep 30 2014; ATL service also lost ~1985 when ASA Delta Connection ended
+DBQ (ia-mo): DBQ lost all service Sep 2022 when American Eagle ended ORD flights; brief Denver Air Connection service Nov 2024-Jan 2026 ended by city council vote
+FOD (ia-mo): FOD currently EAS-subsidized to ORD via SkyWest/United Express through Mar 2027; MSP service ended when Delta wound down regional turboprop connections
+MCW (ia-mo): MCW currently EAS to ORD via SkyWest/United Express since Mar 2021; prior carrier was Air Choice One then Great Lakes
+SUX (ia-mo): SUX lost MSP service Apr 2012 when Delta withdrew; Frontier briefly served DEN 2007-~2010; currently EAS to ORD and DEN via United/SkyWest
+JLN (ia-mo): JLN lost DFW service May 2021 when American Eagle withdrew; now served by United Express to ORD and DEN
+CGI (ia-mo): CGI currently EAS with Contour to ORD and DFW; seasonal PNS service May-Sep
+JEF (ia-mo): JEF lost commercial service ~1986 when Trans-Mo shut down; Ozark had earlier served 1954-1968; airport is now general aviation only
+HGR (md-de-va): HGR lost EAS eligibility Oct 1, 2007 (within 70 miles of larger airports); Allegiant Air sole remaining carrier since May 2012 with leisure Florida/SC routes
+CBE (md-de-va): CBE has had zero scheduled commercial service since July 2003; US Airways Express PIT service ended Sept 8, 2001; final service was state-subsidized stop via HGR to BWI ending 2003
+SHD (md-de-va): SHD currently EAS-dependent; SkyWest/American serves CLT and ORD under DOT EAS contract selected September 2025; SkyWest ended service Nov 2022 then was reselected
+DAN (md-de-va): DAN lost all scheduled service 1995; Piedmont served 1948-1979; Eastern served 1947-1964; EAS subsidy eliminated because DAN was within 210 miles of medium/large hub and cost exceeded $200/passenger per virginiaplaces.org
+PQI (me-nh-vt): EAS since deregulation; United Express/GoJet served EWR 2018-2024; JetBlue BOS began Sep 2024
+MPV (me-nh-vt): Last scheduled service ended ~1989 when Precision Airways ceased; airport has had no commercial service since
+RUT (me-nh-vt): Cape Air EAS service to BOS currently ongoing; lost EWR and multi-stop NH/VT network in 1993
+MQT (mi): MQT moved from K.I. Sawyer AFB site; opened for commercial service 1999; currently serves MSP (Delta), DTW (Delta), ORD (American/United)
+MKG (mi): Currently EAS-dependent served by Denver Air Connection to ORD; lost all jet mainline service after Republic departed 1984
+IWD (mi): Currently EAS-dependent served by Denver Air Connection to ORD and MSP; North Central Airlines served for decades pre-deregulation
+IMT (mi): Currently EAS-dependent; SkyWest/Delta Connection serves DTW and MSP daily; airport opened 1928 as Ford Motor Company facility
+ESC (mi): Currently serves DTW and MSP via SkyWest/Delta Connection; tag-flight operations to Iron Mountain announced Dec 2022
+APN (mi): Currently serves DTW only via SkyWest/Delta Connection; Northwest began service July 1997 replacing Great Lakes
+PLN (mi): Currently serves DTW (primary) and a second destination via SkyWest/Delta Connection; commercial service since 1957
+CIU (mi): Currently serves DTW and MSP (Delta); seasonal United Express ORD service added 2025; inherited Kincheloe AFB runways in 1977
+RST (mn): RST currently served by AA (DFW) and Delta (ATL,MSP,DTW); lost STL service when TWA merged into AA 2001; Ozark served STL until TWA acquisition ~1986
+TVF (mn): TVF currently EAS-subsidized; Boutique Air operates 8-seat aircraft to MSP; lost mainline jet Delta Connection service ~2012
+BJI (mn): BJI is EAS-dependent; currently Delta Connection via SkyWest to MSP; lost multi-stop intrastate service when Bemidji Airlines ceased 1991
+BRD (mn): BRD is EAS-dependent; North Central then Republic then Mesaba/NW Airlink served the route; now SkyWest/Delta Connection; retains MSP service but under EAS subsidy
+INL (mn): INL is EAS-dependent; North Central Airlines began service ~1953; currently SkyWest/Delta Connection to MSP under EAS; retains MSP service
+HIB (mn): HIB currently EAS-dependent via SkyWest/Delta Connection to MSP; Northwest Airlink crash Dec 1993 killed all 18 on board near HIB
+LWT (mt): EAS subsidies terminated July 15 2013 per-passenger cost exceeded $1000 cap; no scheduled service since
+MLS (mt): EAS subsidies terminated July 15 2013; Silver Airways was final carrier to BIL 2011-2013; no scheduled service since
+GDV (mt): Cape Air currently serves GDV-BIL under EAS; Frontier (1950-1986) ended service 1980; Big Sky served until 2008 bankruptcy
+GGW (mt): Cape Air currently serves GGW-BIL under EAS; Frontier (1950-1986) flew DC-3s here from 1959 until 1980; Big Sky served 1978-2008
+OLF (mt): Cape Air currently serves OLF-BIL under EAS; Big Sky ended service March 8 2008 in bankruptcy; Great Lakes then Gulfstream/Silver Airways then Cape Air from 2013
+HVR (mt): Cape Air currently serves HVR-BIL under EAS; Frontier served Havre before 1980; Big Sky served 1978-2008
+SDY (mt): Cape Air currently serves SDY-BIL under EAS; Frontier (1950-1986) began service September 1954; Big Sky served through 2008 bankruptcy
+BTM (mt): Northwest Airlines terminated Butte service in 1983; Western Airlines initiated jet service 1968, acquired by Delta 1987; today only DEN and SLC served
+WYS (mt): West Yellowstone is seasonal summer-only airport; SkyWest/Delta Connection SLC service continues today; Western Airlines ended summer 1980; Frontier (1950-1986) served 1967-1986
+ISO (nc-sc): Delta Connection ATL service 2005–Jan 2007 and Allegiant SFB service Nov 2006–Apr 2008 also lost; existing record shows only ATL and CLT
+DVL (nd-sd): DVL currently serves only Denver via United Express/SkyWest under EAS; Minneapolis service ended ~2012 when Delta Connection/Mesaba withdrew
+JMS (nd-sd): JMS lost Minneapolis service ~2013 when Great Lakes ended service; only Denver (United Express/SkyWest) remains under EAS
+DIK (nd-sd): DIK lost Minneapolis service Nov 30, 2015; original Frontier Airlines ceased 1986; currently serves only Denver under EAS
+BKX (nd-sd): BKX lost all scheduled service September 2009 when DOT ended Essential Air Service subsidy; now general aviation only
+HON (nd-sd): HON lost all commercial service 2016; formerly served by Western, North Central, Republic, Northern, Mesaba, GP Express, Air Midwest, and Great Lakes Airlines
+PIR (nd-sd): PIR lost all commercial service late 2015 when Great Lakes ceased operations; mainline jet service ended 1984 with Western; currently general aviation only
+ATY (nd-sd): ATY lost Chicago (ORD) and Denver service in 2022-2025 transitions; Denver Air Connection served 2021-2025; SkyWest returned August 2025 to Denver
+MCK (ne-ks): Currently EAS-served by Denver Air Connection to DEN only
+CDR (ne-ks): Boutique Air operated CDR-RAP briefly Feb-May 2023 before losing EAS contract; Southern Airways Express took over DEN route June 2023
+LBF (ne-ks): Currently EAS-served by SkyWest/United Express to DEN
+BFF (ne-ks): Western Airlines served 1945-1959, United 1953-1959, Frontier 1959-1984; currently EAS-served by SkyWest/United Express to DEN
+GRI (ne-ks): Currently has Allegiant service (independent) and American Eagle EAS service to ORD
+OFK (ne-ks): EAS subsidies ended 2004 per federal rule barring subsidy >$200/pax within 210 miles of medium/large hub; Omaha ~100 miles away
+GBD (ne-ks): Lost all scheduled service in 2016 when SeaPort Airlines shut down; last served MCI and ICT
+HYS (ne-ks): Currently EAS-served by SkyWest/United Express to DEN; Great Lakes DEN service ended 2014
+LBL (ne-ks): Currently EAS-served by SkyWest/United Express to DEN; Frontier left 1981, large service gap before EAS reinstatement
+DDC (ne-ks): Currently EAS-served to DEN; Continental started 1939, Central/Frontier followed, Air Midwest served until ~2007
+GCK (ne-ks): All pre-2012 service replaced by American Eagle to DFW in 2012; Continental began 1939
+SLN (ne-ks): SeaPort served 2014-2016; Great Lakes returned 2016-2018 to DEN; currently served by Denver Air Connection EAS to DEN; Frontier served with 737s to DEN and ORD 1978-1983
+JHW (ny): Airport lost EAS designation Jan 2018; Southern Airways Express was final EAS carrier flying to PIT; airport now general aviation only
+OGS (ny): OGS now EAS-served by Breeze Airways to RDU; previously had USAir Express PIT and Delta Connection BOS service
+MSS (ny): MSS now EAS-served by Boutique Air to BOS; historical USAir Express served PIT route; Piedmont Commuter linked to SYR/BOS corridor
+ART (ny): ART remains EAS-served by American Eagle to PHL; Chicago service replaced by PHL circa 2015 per DOT EAS contract
+ELM (ny): ELM currently served by Delta to DTW and Allegiant to leisure destinations; Charlotte CLT service existed but was cut ~2022 when AA exited region
+PBG (ny): PBG now EAS-served by Contour to IAD (Dulles) since May 2025; previously to PHL 2022-2025; Breeze Airways also briefly served MCO/TPA 2023-2025
+UCA (ny): UCA airport closed Jan 2007, operations moved to Griffiss Intl (RME) in Rome NY; last commercial service ended 2002 when CommutAir exited due to EAS cost cap
+GFL (ny): GFL lost all commercial service by mid-1980s when Air North folded; now general aviation only; Mohawk/Allegheny/Air North all served before deregulation ended viability
+TOL (oh-in): Peak 1997 with 679,841 enplanements; American Airlines (Envoy Air) last legacy carrier, final flight to ORD on September 6 2022; airport now served only by Allegiant Air leisure routes
+YNG (oh-in): YNG has had no scheduled commercial service since January 4 2018; in 2016 Aerodynamics Inc. briefly served ORD for six weeks; airport seeking $1.4M DOT grant to restore service
+MFD (oh-in): MFD had TWA DC-3 service from 1947; Lake Central took over 1953; Allegheny took over 1968 then Allegheny Commuter until early 1970s; airport now general aviation only with no commercial service
+HUF (oh-in): Last commercial service: Great Lakes Aviation as United Express to ORD, ended July 10 1999; airport now general aviation only; TWA flew HUF to IND and STL 1944-1967
+MIE (oh-in): MIE had Allegheny Commuter service to ORD and IND in early 1980s; Britt Airways continued through ~1985; Great Lakes Aviation operated ORD service in 1990s; airport lost all commercial service by late 1990s
+PNC (ok-tx): PNC last served Aug 2006; Air Midwest 1979-1981 flew Metroliner IIs to Wichita and one-stop OKC; Frontier/Central also served Kansas City and Dallas earlier decades
+WDG (ok-tx): EAS-subsidized service; last service Aug 2006 on Great Lakes to DEN and Liberal KS; prior carriers included Metro Airlines 1981-1986, Lone Star 1986-1998, Big Sky 1999-2002, Mesa 2002-2005
+ADM (ok-tx): Central Airlines served Ardmore from ~1951-1963; later small commuter service continued to DFW before ceasing; airport now general aviation only
+BVO (ok-tx): Commercial service ended ~1974; Continental 1949-1961, Central Airlines 1950-1967, Frontier 1967-1974; now general aviation only
+VCT (ok-tx): Contour Aviation served VCT to AUS/DFW/IAH Dec 2014-Oct 2018; Metro Airlines served as Eastern Express to IAH in 1980s with 7 flights/day; Continental Express/Britt Airways served IAH with EMB-120s
+FKL (pa): FKL lost EAS subsidy October 2019; Boutique Air was final EAS carrier to PIT and IAD/BWI; airport now general aviation only
+BFD (pa): Bradford historically had United DC-3 service 1948-1960s to Cleveland/Chicago and Allegheny jets; now EAS-only to PIT and IAD via Southern Airways Express
+IPT (pa): IPT lost mainline service to PIT/PHL era 2021; American Eagle service phased out 2020-2021; Southern Airways Express re-started EAS service to IAD May 2024
+JST (pa): JST traffic peaked 2004 with US Airways flying 21,000 pax; US Airways dropped service 2009; now EAS-dependent with SkyWest/United Express to IAD and ORD
+LBE (pa): LBE grew from ~10K to 310K pax 2010-2019 under Spirit Airlines; Spirit closure May 2, 2026 left airport without commercial service; historically site of world's first air mail pickup 1939
+VIS (pacific): United served VIS 1946-1979; subsequent EAS carriers (Great Lakes, SkyWest, SeaPort) served LAX/BUR/SMF; airport lost all scheduled service after SeaPort suspension Jan 2016
+OXR (pacific): Airport lost all scheduled service June 8 2010 when SkyWest/United Express ended LAX flights; Southwest Airways DC-3s began service 1946
+PDT (pacific): United mainline jet service ended May 22 1981; Horizon/Alaska served PDT 1982-2008; Boutique Air currently provides EAS service to PDX only
+FMN (sw): Great Lakes ended all Farmington service November 2017 due to pilot shortage; PHX served as America West Express via Mesa 1992-2008
+ALM (sw): Service ended entirely April 1 2012 when EAS subsidy cancelled; Frontier served DEN via Albuquerque and Colorado stops until ~1982
+CVN (sw): Great Lakes ended all service January 31 2014; briefly routed through Santa Fe to Denver in 2012-2014
+CNM (sw): Continental served DEN, ELP, SAT and MID from Carlsbad 1940s-1963 before transferring route to Trans-Texas
+CNY (sw): Frontier Convair 580s served full western network from Moab 1965-1980; Great Lakes ended Jan 2014; SkyWest SLC service ended April 2015
+ELY (sw): Great Lakes ended all ELY service March 2013; airport has had no scheduled service since; EAS eligibility lost
+EKO (sw): United served Elko as part of transcontinental route 1931-1982; current SkyWest SLC service only remaining route
+CKV (tn-ky): All commercial service ended 1989 when Prime Air ceased; airport now general aviation only. Known hubs BNA and MEM were one-stop/connecting, not nonstop.
+MKL (tn-ky): Southern Airways DC-3s served from 1960 (Memphis and Nashville); Ozark served early 1960s; SeaPort Airlines 2012-2016 (Memphis, Nashville); Air Choice One 2016-present via EAS to ORD and ATL. Airport renamed Jackson Regional Airport Dec 2024.
+PAH (tn-ky): Memphis (Northwest Airlink/Mesaba) lost when Delta-Northwest merged 2008-09; Charlotte (Contour Airlines) added 2022 and ended Feb 2026; SkyWest United Express to ORD and IAH began Feb 2026 under new EAS contract.
+OWB (tn-ky): Airport without service Jan 2008-Aug 2009; Cape Air ended STL and BNA service in late 2022; now EAS-dependent with Contour (then SkyWest) to ORD. Allegiant served OWB 2009-2023.
+RHI (wi-il): RHI retains EAS service to MSP (Delta Connection/SkyWest) and seasonal ORD (United Express/SkyWest); lost Detroit when Northwest merged into Delta
+CWA (wi-il): CWA currently served by American Eagle (ORD,DFW) and Delta Connection (DTW,ATL); United Express returning May 2026 to ORD
+EAU (wi-il): EAU today served by United Express (ORD) and Sun Country (seasonal leisure); lost mainline connections after deregulation
+LSE (wi-il): LSE today served by American (ORD,DFW) and United (ORD); delta departed entirely 2023 ending DTW and ATL connections
+MTO (wi-il): MTO has no scheduled commercial service today; Ozark commenced service 1955; last EAS service ended ~mid-1990s
+DNV (wi-il): DNV last had scheduled service in 1986 when Britt Airways ceased; airport now general aviation only
+DEC (wi-il): DEC today is EAS-dependent on Cape Air to STL; library local history confirms deregulation drove decline; subsidy $6.1M/yr
+UIN (wi-il): UIN now served by Contour Aviation to ORD and STL under EAS; formerly served by Ozark with 10 daily departures in 1967 to multiple Midwest cities
+IKK (wi-il): IKK had Air Wisconsin ORD service from 1968; airport now general aviation only; no scheduled service
+BLF (wv): Scheduled passenger service ended 2007 after EAS withdrawn under 210-mile proximity rule to Charlotte hub; airport opened 1954
+PKB (wv): Piedmont pulled out 1979; Allegheny/USAir continued via commuter affiliates; now EAS-subsidized CLT only via Contour
+LWB (wv): LWB is EAS-dependent; currently served CLT and ORD via SkyWest/American Eagle
+CKB (wv): Now EAS-subsidized CLT only via Contour/SkyWest; American Airlines announced 2025
+BKW (wv): Currently EAS-dependent, Contour Airlines 12 weekly roundtrips CLT only; Piedmont first served 1952
+CYS (wy-co): Western Airlines served BIL-CYS-DEN route until 1979; Aspen/Rocky Mountain/Mesa/Air Wisconsin all ran CYS-DEN under United Express 1986-2019+; Continental Express ended 1995
+WRL (wy-co): Great Lakes served WRL-DEN as EAS carrier 1997-2016; all commercial service ended Sept 30 2016 when per-passenger subsidy cap exceeded
+GCC (wy-co): Frontier served GCC with 737-200s to DEN/BIL until shutdown 1986; state capacity purchase agreement with SkyWest ended 2025, United assumed full risk Jan 2026
+COD (wy-co): COD now served by United Express DEN year-round and ORD seasonal; Delta Connection SLC service ended ~2019
+LAR (wy-co): Frontier served LAR until 1986 shutdown; EAS-subsidized DEN service only since then via various United Express carriers
+RIW (wy-co): Challenger/Frontier served ABQ, BIL, SLC, CPR, CHY, COD from 1947-1985; Great Lakes 1997-2018; Key Lime/Denver Air Connection 2018-2020; SkyWest/United Express EAS since Jan 2020
+FNL (wy-co): FNL lost all scheduled service Jun 2022 when Avelo exited citing fuel costs; United Landline bus service to DEN began 2021 (not scheduled air)
+LAA (wy-co): Last scheduled service appears to have ended late 1970s; airport is now general aviation only
+PUB (wy-co): PUB served by EAS Key Lime Air DEN only as of 2025; United Express ended 2002 (Great Lakes last operator); Continental Express ended Jan 9 1995
+ALS (wy-co): Frontier predecessor Monarch served ALS from 1946-47 with DC-3s; airport reached 10,000 enplanements milestone under EAS Boutique Air; seasonal EAS DEN service only
+CEZ (wy-co): CEZ EAS-dependent; Denver Air Connection (Key Lime Air) serves DEN 3x daily and PHX 1x weekly as of Feb 2026; Great Lakes served 2001-2016
