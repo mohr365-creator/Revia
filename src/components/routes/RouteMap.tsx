@@ -72,6 +72,11 @@ export function RouteMap({
     [visibleCommunities],
   );
 
+  const totalPopulation = useMemo(
+    () => visibleCommunities.reduce((sum, c) => sum + c.population, 0),
+    [visibleCommunities],
+  );
+
   const visibleRoutes = useMemo(
     () => routes.filter((r) => visibleIds.has(r.fromId)),
     [routes, visibleIds],
@@ -238,8 +243,13 @@ export function RouteMap({
             <span className="inline-flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-0.5 w-5 bg-amber" /> Restorable by Revia
+          </div>
+          <div className="mx-3 mb-2 mt-1 border-t border-cream/10 pt-3 text-center">
+            <span className="font-serif text-2xl text-amber">
+              {totalPopulation.toLocaleString()}
+            </span>
+            <span className="ml-2 text-sm text-cream/70">
+              people live in the communities shown on this map
             </span>
           </div>
         </div>
