@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { DataFlag } from "@/components/ui/DataFlag";
 
 export const metadata: Metadata = {
   title: "Newsroom",
@@ -28,15 +27,15 @@ export default function NewsroomPage() {
 
       <section className="bg-navy py-16">
         <Container>
+          <div className="mb-10 rounded-xl border border-amber/30 bg-amber/5 p-4 text-sm text-cream/70">
+            <p>This page is coming soon — press releases, media kit assets, and contact details will be available at launch.</p>
+          </div>
+
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <Eyebrow>Press releases</Eyebrow>
               <div className="mt-6 rounded-2xl border border-dashed border-cream/15 p-8 text-cream/60">
-                <DataFlag>None yet</DataFlag>
-                <p className="mt-3">
-                  No releases published. This list is CMS-managed and goes live
-                  post-launch.
-                </p>
+                <p>No releases published yet.</p>
               </div>
             </div>
 
@@ -46,12 +45,9 @@ export default function NewsroomPage() {
                 {mediaKit.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center justify-between rounded-xl border border-cream/10 bg-cream/[0.03] px-5 py-4 text-cream/80"
+                    className="rounded-xl border border-cream/10 bg-cream/[0.03] px-5 py-4 text-cream/80"
                   >
-                    <span>{item}</span>
-                    <DataFlag title="Asset not yet attached to the build.">
-                      Pending asset
-                    </DataFlag>
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -60,10 +56,7 @@ export default function NewsroomPage() {
 
           <div className="mt-12 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8">
             <Eyebrow>Press contact</Eyebrow>
-            <p className="mt-3 text-cream/70">
-              press@{/* domain placeholder */}revia.aero{" "}
-              <DataFlag>Confirm domain</DataFlag>
-            </p>
+            <p className="mt-3 text-cream/70">press@revia.aero</p>
           </div>
         </Container>
       </section>
