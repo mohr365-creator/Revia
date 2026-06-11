@@ -22,7 +22,9 @@ export const hubs: Record<string, Hub> = {
   CLT: { iata: "CLT", name: "Charlotte", coordinates: [-80.9431, 35.214] },
   DEN: { iata: "DEN", name: "Denver", coordinates: [-104.673, 39.8617] },
   DFW: { iata: "DFW", name: "Dallas–Fort Worth", coordinates: [-97.038, 32.8968] },
+  DTW: { iata: "DTW", name: "Detroit", coordinates: [-83.3534, 42.2124] },
   IAD: { iata: "IAD", name: "Washington Dulles", coordinates: [-77.4558, 38.9445] },
+  IAH: { iata: "IAH", name: "Houston Intercontinental", coordinates: [-95.3414, 29.9844] },
   LAX: { iata: "LAX", name: "Los Angeles", coordinates: [-118.408, 33.9425] },
   LAS: { iata: "LAS", name: "Las Vegas", coordinates: [-115.152, 36.0801] },
   MCI: { iata: "MCI", name: "Kansas City", coordinates: [-94.7139, 39.2976] },
@@ -33,5 +35,6 @@ export const hubs: Record<string, Hub> = {
   PHL: { iata: "PHL", name: "Philadelphia", coordinates: [-75.2411, 39.8719] },
   PHX: { iata: "PHX", name: "Phoenix", coordinates: [-112.012, 33.4343] },
   PIT: { iata: "PIT", name: "Pittsburgh", coordinates: [-80.2329, 40.4958] },
+  SLC: { iata: "SLC", name: "Salt Lake City", coordinates: [-111.9776, 40.7884] },
   STL: { iata: "STL", name: "St. Louis", coordinates: [-90.37, 38.7487] },
 };
