@@ -46,7 +46,7 @@ export default function TechnologyPage() {
             {pillars.map((p) => (
               <div
                 key={p.eyebrow}
-                className="grid gap-6 border-t border-cream/10 py-12 md:grid-cols-[1fr_2fr]"
+                className="grid gap-6 border-t border-cream/10 py-12 first:border-t-0 md:grid-cols-[1fr_2fr]"
               >
                 <Eyebrow>{p.eyebrow}</Eyebrow>
                 <div>
