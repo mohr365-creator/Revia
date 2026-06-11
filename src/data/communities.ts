@@ -181,6 +181,7 @@ const seed: Seed[] = [
     lastYearServed: 2020,
     lastCarrier: "Multiple regionals",
     routesLost: 4,
+    formerHubs: ["DTW", "ORD"],
     detail: "A major metro left with a handful of daily departures.",
     restorableBy: "R-75",
     source: "Revia deck; confirm via DOT T-100",
