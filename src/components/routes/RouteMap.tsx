@@ -244,6 +244,7 @@ export function RouteMap({
         <HeadlineCounter
           communities={visibleCommunities.length}
           routes={visibleRoutes.length}
+          restoration={restoration}
         />
         <div className="inline-flex rounded-full border border-cream/15 p-1 text-xs">
           {(["after", "before"] as const).map((m) => (
@@ -256,7 +257,13 @@ export function RouteMap({
                 mode === m ? "bg-amber text-navy" : "text-cream/70 hover:text-amber",
               )}
             >
-              {m === "after" ? "As it is" : "As it was"}
+              {restoration
+                ? m === "after"
+                  ? "Today"
+                  : "Restored"
+                : m === "after"
+                  ? "As it is"
+                  : "As it was"}
             </button>
           ))}
         </div>
@@ -266,6 +273,7 @@ export function RouteMap({
         filters={filters}
         onChange={setFilters}
         showRestorable={restoration}
+        restoration={restoration}
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
