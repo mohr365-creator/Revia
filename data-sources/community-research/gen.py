@@ -14,6 +14,18 @@ def fmt_coord(v):
     return s if s else "0"
 
 def emit_community(c):
+    # Per-link end years: each researched destination carries its own
+    # lastYear (null = the link is still flown, e.g. under EAS); hubs
+    # without a researched destination fall back to the community year.
+    link_years = {}
+    for d in c.get("lostDestinations") or []:
+        to = d["to"].upper()
+        y = d.get("lastYear")
+        if to in link_years:
+            old = link_years[to]
+            link_years[to] = max(old, y) if (old and y) else (old or y)
+        else:
+            link_years[to] = y
     lines = ["  {"]
     lines.append(f'    city: "{esc(c["city"])}",')
     lines.append(f'    state: "{esc(c["state"])}",')
@@ -28,6 +40,11 @@ def emit_community(c):
     lines.append(f'    routesLost: {int(c["routesLost"])},')
     hubs = ", ".join(f'"{h}"' for h in c["formerHubs"])
     lines.append(f'    formerHubs: [{hubs}],')
+    ly_parts = []
+    for h in c["formerHubs"]:
+        y = link_years.get(h, c.get("lastYearServed"))
+        ly_parts.append(f'"{h}": {int(y) if y is not None else "null"}')
+    lines.append(f'    linkYears: {{ {", ".join(ly_parts)} }},')
     lines.append(f'    restorableBy: "{c["restorableBy"]}",')
     if c.get("detail"):
         lines.append(f'    detail:')

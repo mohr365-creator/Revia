@@ -20,7 +20,10 @@ export const lostRoutes: LostRoute[] = communities.flatMap((c) =>
         toId: hub.iata,
         from: c.coordinates,
         to: hub.coordinates,
-        lastYearServed: c.lastYearServed,
+        lastYearServed:
+          c.linkYears && hubCode in c.linkYears
+            ? c.linkYears[hubCode]
+            : c.lastYearServed,
         status: c.status,
         restorableBy: c.restorableBy,
       },
