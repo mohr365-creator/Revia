@@ -2,17 +2,17 @@
 """Generate a 1920x1080 PNG background matching the Revia website design."""
 
 from PIL import Image, ImageDraw
-import math
-
 
 W, H = 1920, 1080
+SCALE = 4          # supersample factor — render 4× then downscale for AA
+RW, RH = W * SCALE, H * SCALE
 
 # Brand colors
 NAVY = (15, 27, 60)     # #0f1b3c
 AMBER = (232, 149, 86)  # #e89556
 
 
-def bezier_points(p0, p1, p2, steps=400):
+def bezier_points(p0, p1, p2, steps=1200):
     """Quadratic Bezier curve from p0 through control p1 to p2."""
     pts = []
     for i in range(steps + 1):
@@ -23,15 +23,12 @@ def bezier_points(p0, p1, p2, steps=400):
     return pts
 
 
-def scale(pt, sx, sy):
-    return (pt[0] * sx, pt[1] * sy)
+def sc(pt):
+    """Scale from SVG 1440×900 space → render canvas space."""
+    return (pt[0] * RW / 1440, pt[1] * RH / 900)
 
 
-# SVG viewBox is 1440x900 — scale to 1920x1080
-sx = W / 1440
-sy = H / 900
-
-# Curves from the website: "M x0 y0 Q cx cy x1 y1"
+# Curves from the website: (start, control, end)
 curves = [
     ((120, 700), (500, 300), (1300, 220)),
     ((200, 820), (700, 500), (1200, 640)),
@@ -39,36 +36,25 @@ curves = [
     ((300, 200), (800, 600), (1320, 760)),
 ]
 
-img = Image.new("RGB", (W, H), NAVY)
-draw = ImageDraw.Draw(img)
-
-def draw_city(draw, cx, cy, r_outer, r_inner, line_color, navy):
-    """Solid filled circle city marker."""
-    draw.ellipse([cx - r_outer, cy - r_outer, cx + r_outer, cy + r_outer], fill=line_color)
-
-
 for opacity, suffix, lw in [(0.18, "subtle", 2), (0.45, "vivid", 3)]:
-    img = Image.new("RGB", (W, H), NAVY)
+    img = Image.new("RGB", (RW, RH), NAVY)
     draw = ImageDraw.Draw(img)
 
-    line_color = tuple(
-        int(NAVY[c] + (AMBER[c] - NAVY[c]) * opacity) for c in range(3)
-    )
+    line_color = tuple(int(NAVY[c] + (AMBER[c] - NAVY[c]) * opacity) for c in range(3))
 
-    # City dot sizes scale with line weight
-    r_outer = lw * 4
-    r_inner = lw * 2
+    # Line width and dot radius in render-space
+    rlw = lw * SCALE
+    r = rlw * 4   # city dot radius
 
     for p0, ctrl, p2 in curves:
-        sp0  = scale(p0,  sx, sy)
-        sctrl = scale(ctrl, sx, sy)
-        sp2  = scale(p2,  sx, sy)
+        sp0, sctrl, sp2 = sc(p0), sc(ctrl), sc(p2)
         pts = bezier_points(sp0, sctrl, sp2)
-        draw.line(pts, fill=line_color, width=lw)
-        # City circles at both endpoints
+        draw.line(pts, fill=line_color, width=rlw)
         for cx, cy in (sp0, sp2):
-            draw_city(draw, cx, cy, r_outer, r_inner, line_color, NAVY)
+            draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=line_color)
 
+    # Downscale with LANCZOS for smooth anti-aliased result
+    out = img.resize((W, H), Image.LANCZOS)
     out_path = f"/home/user/Revia/revia-background-{suffix}.png"
-    img.save(out_path, "PNG", optimize=True)
+    out.save(out_path, "PNG", optimize=True)
     print(f"Saved: {out_path}  ({W}x{H})")
