@@ -1,11 +1,25 @@
 import { clsx } from "clsx";
-import type { MapFilterState } from "./filters";
+import { TIMELINE_MAX, TIMELINE_MIN, type MapFilterState } from "./filters";
 
-const statusOptions: { value: MapFilterState["status"]; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "lost-all-service", label: "Lost all service" },
-  { value: "diminished", label: "Diminished" },
-];
+/**
+ * The lost-connections view names what was severed; the restoration view names
+ * the scope of what Revia brings back over the same status categories.
+ */
+function statusOptions(
+  restoration: boolean,
+): { value: MapFilterState["status"]; label: string }[] {
+  return [
+    { value: "all", label: "All" },
+    {
+      value: "lost-all-service",
+      label: restoration ? "Full restoration" : "Lost all service",
+    },
+    {
+      value: "diminished",
+      label: restoration ? "Partial restoration" : "Diminished",
+    },
+  ];
+}
 
 const regionOptions: { value: MapFilterState["region"]; label: string }[] = [
   { value: "all", label: "All regions" },
@@ -65,16 +79,27 @@ function Group<T extends string>({
 export function MapFilters({
   filters,
   onChange,
+  showRestorable = true,
+  restoration = false,
 }: {
   filters: MapFilterState;
   onChange: (next: MapFilterState) => void;
+  /** The lost-connections view keeps Revia out of frame: no variant filter. */
+  showRestorable?: boolean;
+  /** Forward-looking framing for the restoration view's labels. */
+  restoration?: boolean;
 }) {
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div
+      className={clsx(
+        "grid gap-5 sm:grid-cols-2",
+        showRestorable ? "lg:grid-cols-4" : "lg:grid-cols-3",
+      )}
+    >
       <Group
-        label="Status"
+        label={restoration ? "Restoration scope" : "Status"}
         value={filters.status}
-        options={statusOptions}
+        options={statusOptions(restoration)}
         onChange={(status) => onChange({ ...filters, status })}
       />
       <Group
@@ -83,31 +108,34 @@ export function MapFilters({
         options={regionOptions}
         onChange={(region) => onChange({ ...filters, region })}
       />
-      <Group
-        label="Restorable by"
-        value={filters.restorableBy}
-        options={restorableOptions}
-        onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
-      />
+      {showRestorable && (
+        <Group
+          label="Restorable by"
+          value={filters.restorableBy}
+          options={restorableOptions}
+          onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
+        />
+      )}
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
-          Service ended since {filters.sinceYear}
+          {restoration ? "Restoration backlog through" : "Cumulative losses through"}{" "}
+          {filters.throughYear >= TIMELINE_MAX ? "today" : filters.throughYear}
         </p>
         <input
           type="range"
-          min={1995}
-          max={2024}
+          min={TIMELINE_MIN}
+          max={TIMELINE_MAX}
           step={1}
-          value={filters.sinceYear}
+          value={filters.throughYear}
           onChange={(e) =>
-            onChange({ ...filters, sinceYear: Number(e.target.value) })
+            onChange({ ...filters, throughYear: Number(e.target.value) })
           }
           className="w-full accent-[var(--amber)]"
-          aria-label="Filter by year service ended"
+          aria-label="Show all losses through this year"
         />
         <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">
-          <span>1995</span>
-          <span>2024</span>
+          <span>← deregulation</span>
+          <span>today →</span>
         </div>
       </div>
     </div>

@@ -2,17 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}`),
   title: {
-    default: "Revia — The way, revived.",
-    template: "%s — Revia",
+    default: "Revia | The way, revived.",
+    template: "%s | Revia",
   },
   description: site.thesis,
   openGraph: {
-    title: "Revia — The way, revived.",
+    title: "Revia | The way, revived.",
     description: site.thesis,
     type: "website",
   },
@@ -31,9 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <AnalyticsProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AnalyticsProvider>
+        <Analytics />
       </body>
     </html>
   );

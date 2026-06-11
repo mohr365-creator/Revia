@@ -5,18 +5,19 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Line,
   Marker,
 } from "react-simple-maps";
 import { clsx } from "clsx";
-import type { Community, LostRoute, ReviaVariant } from "@/lib/types";
-import { greatCircle } from "@/lib/geo";
+import type { Community, LngLat, LostRoute, ReviaVariant } from "@/lib/types";
+import { FlightArc } from "./FlightArc";
 import { CommunityPanel } from "./CommunityPanel";
 import { MapFilters } from "./MapFilters";
 import { HeadlineCounter } from "./HeadlineCounter";
 import {
   defaultFilters,
+  firstLossYear,
   regionOf,
+  TIMELINE_MAX,
   type MapFilterState,
 } from "./filters";
 
@@ -31,7 +32,15 @@ const variantColor: Record<ReviaVariant, string> = {
 function matches(c: Community, f: MapFilterState): boolean {
   if (f.status !== "all" && c.status !== f.status) return false;
   if (f.restorableBy !== "all" && c.restorableBy !== f.restorableBy) return false;
-  if (c.lastYearServed < f.sinceYear) return false;
+  // Date each community by its first documented severed link, so the
+  // timeline builds up loss by loss. Towns with no dated loss (purely
+  // subsidy-dependent) only appear at "today".
+  const firstLoss = firstLossYear(c);
+  if (firstLoss == null) {
+    if (f.throughYear < TIMELINE_MAX) return false;
+  } else if (firstLoss > f.throughYear) {
+    return false;
+  }
   if (f.region !== "all" && regionOf(c.coordinates[0], c.coordinates[1]) !== f.region)
     return false;
   return true;
@@ -42,6 +51,12 @@ interface RouteMapProps {
   routes: LostRoute[];
   /** Non-interactive teaser used on the home page. */
   preview?: boolean;
+  /**
+   * "lost" tells the story of the severed network and keeps Revia out of
+   * the frame; "restoration" colors the same data by the variant that
+   * brings each link back.
+   */
+  view?: "lost" | "restoration";
   className?: string;
 }
 
@@ -49,8 +64,10 @@ export function RouteMap({
   communities,
   routes,
   preview = false,
+  view = "lost",
   className,
 }: RouteMapProps) {
+  const restoration = view === "restoration";
   const [filters, setFilters] = useState<MapFilterState>(defaultFilters);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -72,10 +89,33 @@ export function RouteMap({
     [visibleCommunities],
   );
 
-  const visibleRoutes = useMemo(
-    () => routes.filter((r) => visibleIds.has(r.fromId)),
-    [routes, visibleIds],
+  const totalPopulation = useMemo(
+    () => visibleCommunities.reduce((sum, c) => sum + c.population, 0),
+    [visibleCommunities],
   );
+
+  const visibleRoutes = useMemo(
+    () =>
+      routes.filter((r) => {
+        if (!visibleIds.has(r.fromId)) return false;
+        // Each arc carries its own end year: only draw links already severed
+        // by the slider year. Ongoing (subsidized) links draw only at "today".
+        if (r.lastYearServed == null)
+          return activeFilters.throughYear >= TIMELINE_MAX;
+        return r.lastYearServed <= activeFilters.throughYear;
+      }),
+    [routes, visibleIds, activeFilters.throughYear],
+  );
+
+  // The integrated hubs that surviving routes merge into — one white dot per
+  // distinct destination, deduped by hub IATA.
+  const visibleHubs = useMemo(() => {
+    const seen = new Map<string, LngLat>();
+    for (const r of visibleRoutes) {
+      if (!seen.has(r.toId)) seen.set(r.toId, r.to);
+    }
+    return Array.from(seen, ([toId, coordinates]) => ({ toId, coordinates }));
+  }, [visibleRoutes]);
 
   const selected = selectedId
     ? communities.find((c) => c.id === selectedId) ?? null
@@ -120,12 +160,18 @@ export function RouteMap({
 
       {visibleRoutes.map((r) => {
         const isFocused = focusedId === r.fromId;
-        const stroke = lit || isFocused ? variantColor[r.restorableBy] : "#FFF4E1";
+        const litStroke = restoration
+          ? variantColor[r.restorableBy]
+          : r.status === "lost-all-service"
+            ? "#D86F3C"
+            : "#F2C97D";
+        const stroke = lit || isFocused ? litStroke : "#FFF4E1";
         const opacity = lit ? 0.55 : isFocused ? 0.85 : 0.14;
         return (
-          <Line
+          <FlightArc
             key={r.id}
-            coordinates={greatCircle(r.from, r.to)}
+            from={r.from}
+            to={r.to}
             stroke={stroke}
             strokeWidth={isFocused ? 1.4 : 0.8}
             strokeLinecap="round"
@@ -135,11 +181,27 @@ export function RouteMap({
         );
       })}
 
+      {visibleHubs.map((h) => (
+        <Marker key={h.toId} coordinates={h.coordinates}>
+          <circle
+            r={3.2}
+            fill="#FFF4E1"
+            fillOpacity={0.95}
+            stroke="var(--navy)"
+            strokeWidth={0.8}
+          />
+        </Marker>
+      ))}
+
       {visibleCommunities.map((c) => {
         const isFocused = focusedId === c.id;
         const isLostAll = c.status === "lost-all-service";
         const r = Math.max(2.5, Math.min(7, 2.4 + c.routesLost * 0.7));
-        const fill = isLostAll ? "#D86F3C" : "#F2C97D";
+        const fill = restoration
+          ? variantColor[c.restorableBy]
+          : isLostAll
+            ? "#D86F3C"
+            : "#F2C97D";
         return (
           <Marker key={c.id} coordinates={c.coordinates}>
             {isFocused && (
@@ -182,6 +244,7 @@ export function RouteMap({
         <HeadlineCounter
           communities={visibleCommunities.length}
           routes={visibleRoutes.length}
+          restoration={restoration}
         />
         <div className="inline-flex rounded-full border border-cream/15 p-1 text-xs">
           {(["after", "before"] as const).map((m) => (
@@ -194,30 +257,71 @@ export function RouteMap({
                 mode === m ? "bg-amber text-navy" : "text-cream/70 hover:text-amber",
               )}
             >
-              {m === "after" ? "As it is" : "As it was"}
+              {restoration
+                ? m === "after"
+                  ? "Today"
+                  : "Restored"
+                : m === "after"
+                  ? "As it is"
+                  : "As it was"}
             </button>
           ))}
         </div>
       </div>
 
-      <MapFilters filters={filters} onChange={setFilters} />
+      <MapFilters
+        filters={filters}
+        onChange={setFilters}
+        showRestorable={restoration}
+        restoration={restoration}
+      />
 
       <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
         <div className="overflow-hidden rounded-2xl border border-cream/10 bg-navy/40 p-2">
           {map}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-3 pb-2 pt-1 text-xs text-cream/50">
+            {restoration ? (
+              <>
+                {(["R-50", "R-75", "R-100"] as const).map((v) => (
+                  <span key={v} className="inline-flex items-center gap-1.5">
+                    <span
+                      className="h-2.5 w-2.5 rounded-full"
+                      style={{ backgroundColor: variantColor[v] }}
+                    />{" "}
+                    Restorable by {v}
+                  </span>
+                ))}
+              </>
+            ) : (
+              <>
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-ember" /> Lost all service
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-saffron opacity-60" /> Diminished
+                </span>
+              </>
+            )}
             <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-ember" /> Lost all service
+              <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-saffron/60" /> Diminished
+          </div>
+          <div className="mx-3 mb-2 mt-1 border-t border-cream/10 pt-3 text-center">
+            <span className="font-serif text-2xl text-amber">
+              {totalPopulation.toLocaleString()}
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-0.5 w-5 bg-amber" /> Restorable by Revia
+            <span className="ml-2 text-sm text-cream/70">
+              {restoration
+                ? "people Revia could reconnect across the communities shown"
+                : "people live in the communities shown on this map"}
             </span>
           </div>
         </div>
-        <CommunityPanel community={selected} onClose={() => setSelectedId(null)} />
+        <CommunityPanel
+          community={selected}
+          showRestoration={restoration}
+          onClose={() => setSelectedId(null)}
+        />
       </div>
     </div>
   );
