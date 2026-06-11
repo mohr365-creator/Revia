@@ -95,7 +95,7 @@ export function MapFilters({
         </p>
         <input
           type="range"
-          min={1995}
+          min={1978}
           max={2024}
           step={1}
           value={filters.sinceYear}
@@ -106,7 +106,7 @@ export function MapFilters({
           aria-label="Filter by year service ended"
         />
         <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">
-          <span>1995</span>
+          <span>1978</span>
           <span>2024</span>
         </div>
       </div>

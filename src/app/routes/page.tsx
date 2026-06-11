@@ -22,7 +22,7 @@ export default function RoutesPage() {
       <PageHeader
         eyebrow="The severed network"
         title="Every place that lost its way to the rest of the map."
-        intro={`${communitiesLost.value} U.S. communities lost all commercial service since 1995. ${communitiesDocumented} are documented here, route by route. Filter, toggle before and after, and click any community to see what it lost, its source, and which Revia aircraft brings it back.`}
+        intro={`${communitiesLost.value} U.S. communities have lost all commercial air service since deregulation. ${communitiesDocumented} are documented here — traced to DOT orders, EAS records, and news sources. Filter by region, status, and era, then click any community to see what it lost and which Revia aircraft brings it back.`}
       />
 
       <section className="bg-navy py-16">

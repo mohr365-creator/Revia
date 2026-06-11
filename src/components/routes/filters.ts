@@ -14,7 +14,7 @@ export interface MapFilterState {
 export const defaultFilters: MapFilterState = {
   status: "all",
   region: "all",
-  sinceYear: 1995,
+  sinceYear: 1978,
   restorableBy: "all",
 };
 
