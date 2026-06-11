@@ -23,7 +23,7 @@ export function MapTeaser() {
               community.
             </p>
             <div className="mt-8">
-              <ButtonLink href="/routes" variant="primary">
+              <ButtonLink href="/routes/lost-connections" variant="primary">
                 Explore every lost route →
               </ButtonLink>
             </div>
