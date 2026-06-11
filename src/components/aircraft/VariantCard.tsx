@@ -5,7 +5,7 @@ import { DataFlag } from "@/components/ui/DataFlag";
 export function VariantCard({
   variant,
   specStyle = "grid",
-  showDataFlags = true,
+  showDataFlags = false,
 }: {
   variant: AircraftVariant;
   specStyle?: "grid" | "list";
