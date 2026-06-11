@@ -91,7 +91,7 @@ export function MapFilters({
       />
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
-          Losses through {filters.throughYear}
+          Cumulative losses through {filters.throughYear}
         </p>
         <input
           type="range"
@@ -106,8 +106,8 @@ export function MapFilters({
           aria-label="Show all losses through this year"
         />
         <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">
-          <span>1978</span>
-          <span>2024</span>
+          <span>← deregulation</span>
+          <span>today →</span>
         </div>
       </div>
     </div>
