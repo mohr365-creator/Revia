@@ -81,6 +81,7 @@ export function MapFilters({
   filters,
   onChange,
   showRestorable = true,
+  showRegion = true,
   showTimeline = true,
   restoration = false,
 }: {
@@ -88,6 +89,11 @@ export function MapFilters({
   onChange: (next: MapFilterState) => void;
   /** The lost-connections view keeps Revia out of frame: no variant filter. */
   showRestorable?: boolean;
+  /**
+   * The restoration view leans on the total reconnected, not a region-by-region
+   * breakdown, so it drops the region filter.
+   */
+  showRegion?: boolean;
   /**
    * The timeline slider tells the story of routes disappearing over time. The
    * restoration view is about what could come back, so it hides the slider.
@@ -97,7 +103,10 @@ export function MapFilters({
   restoration?: boolean;
 }) {
   const groupCount =
-    2 + (showRestorable ? 1 : 0) + (showTimeline ? 1 : 0);
+    1 +
+    (showRegion ? 1 : 0) +
+    (showRestorable ? 1 : 0) +
+    (showTimeline ? 1 : 0);
   return (
     <div
       className={clsx(
@@ -115,12 +124,14 @@ export function MapFilters({
         options={statusOptions(restoration)}
         onChange={(status) => onChange({ ...filters, status })}
       />
-      <Group
-        label="Region"
-        value={filters.region}
-        options={regionOptions}
-        onChange={(region) => onChange({ ...filters, region })}
-      />
+      {showRegion && (
+        <Group
+          label="Region"
+          value={filters.region}
+          options={regionOptions}
+          onChange={(region) => onChange({ ...filters, region })}
+        />
+      )}
       {showRestorable && (
         <Group
           label="Restorable by"
