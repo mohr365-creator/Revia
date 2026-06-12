@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
-import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -33,12 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen">
-        <AnalyticsProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </AnalyticsProvider>
-        <Analytics />
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
