@@ -9,11 +9,11 @@ const config: Config = {
     extend: {
       colors: {
         // Dawn palette — see src/app/globals.css for the CSS variable source of truth.
-        navy: "var(--navy)",
-        amber: "var(--amber)",
-        ember: "var(--ember)",
-        saffron: "var(--saffron)",
-        cream: "var(--cream)",
+        navy: "rgb(var(--navy) / <alpha-value>)",
+        amber: "rgb(var(--amber) / <alpha-value>)",
+        ember: "rgb(var(--ember) / <alpha-value>)",
+        saffron: "rgb(var(--saffron) / <alpha-value>)",
+        cream: "rgb(var(--cream) / <alpha-value>)",
       },
       fontFamily: {
         wordmark: ["var(--font-wordmark)", "ui-sans-serif", "sans-serif"],

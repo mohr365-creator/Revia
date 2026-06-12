@@ -32,7 +32,7 @@ export function AircraftSilhouette({
         fill="currentColor"
         opacity={0.85}
       />
-      <path d="M292 45 l9 0 c4 1 4 4 0 5 l-9 0 Z" fill="var(--navy)" opacity={0.5} />
+      <path d="M292 45 l9 0 c4 1 4 4 0 5 l-9 0 Z" fill="rgb(var(--navy))" opacity={0.5} />
       <path d="M14 46 L4 18 L24 24 L34 44 Z" fill="currentColor" opacity={0.85} />
       <path d="M16 47 L2 52 L26 50 Z" fill="currentColor" opacity={0.7} />
       <path d="M150 50 L120 70 L172 53 Z" fill="currentColor" opacity={0.6} />

@@ -10,12 +10,15 @@
 @tailwind utilities;
 
 :root {
-  /* Dawn palette — single source of truth for the design tokens. */
-  --navy: #0f1b3c;
-  --amber: #e89556;
-  --ember: #d86f3c;
-  --saffron: #f2c97d;
-  --cream: #fff4e1;
+  /* Dawn palette — single source of truth for the design tokens.
+     Stored as space-separated RGB channels so Tailwind's opacity
+     modifiers (e.g. bg-navy/85, text-cream/80) resolve correctly.
+     Use rgb(var(--navy)) when referencing a token directly in CSS/SVG. */
+  --navy: 15 27 60;
+  --amber: 232 149 86;
+  --ember: 216 111 60;
+  --saffron: 242 201 125;
+  --cream: 255 244 225;
 
   /* Font stacks. Wordmark locked to Antonio (the project's matched geometric face). */
   --font-wordmark: "Antonio", sans-serif;
@@ -29,21 +32,21 @@
   }
 
   body {
-    background-color: var(--navy);
-    color: var(--cream);
+    background-color: rgb(var(--navy));
+    color: rgb(var(--cream));
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background-color: var(--amber);
-    color: var(--navy);
+    background-color: rgb(var(--amber));
+    color: rgb(var(--navy));
   }
 
   /* Visible, on-brand focus ring for keyboard users. */
   :focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid rgb(var(--amber));
     outline-offset: 3px;
     border-radius: 2px;
   }

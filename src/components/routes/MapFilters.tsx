@@ -130,7 +130,7 @@ export function MapFilters({
           onChange={(e) =>
             onChange({ ...filters, throughYear: Number(e.target.value) })
           }
-          className="w-full accent-[var(--amber)]"
+          className="w-full accent-[rgb(var(--amber))]"
           aria-label="Show all losses through this year"
         />
         <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">

@@ -24,7 +24,7 @@ export function Hero() {
             key={d}
             d={d}
             fill="none"
-            stroke="var(--amber)"
+            stroke="rgb(var(--amber))"
             strokeWidth={1}
             strokeDasharray="1"
             pathLength={1}

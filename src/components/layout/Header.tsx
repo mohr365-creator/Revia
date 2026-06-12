@@ -85,7 +85,7 @@ export function Header() {
                   </Link>
                   {isOpen && (
                     <div className="absolute left-0 top-full pt-3">
-                      <div className="min-w-[12rem] rounded-xl border border-cream/10 bg-[#0f1b3c]/95 p-2 shadow-xl backdrop-blur-md">
+                      <div className="min-w-[12rem] rounded-xl border border-cream/10 bg-navy/95 p-2 shadow-xl backdrop-blur-md">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}

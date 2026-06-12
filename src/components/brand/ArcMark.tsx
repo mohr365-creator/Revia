@@ -25,7 +25,7 @@ export function ArcMark({ className, beacon = false, title }: ArcMarkProps) {
       <path
         d="M6 26 Q50 4 94 26"
         fill="none"
-        stroke="var(--amber)"
+        stroke="rgb(var(--amber))"
         strokeWidth={3}
         strokeLinecap="round"
       />
@@ -33,7 +33,7 @@ export function ArcMark({ className, beacon = false, title }: ArcMarkProps) {
         cx={6}
         cy={26}
         r={4.5}
-        fill="var(--amber)"
+        fill="rgb(var(--amber))"
         className={beacon ? "origin-center animate-beacon" : undefined}
         style={beacon ? { transformBox: "fill-box" } : undefined}
       />
@@ -41,7 +41,7 @@ export function ArcMark({ className, beacon = false, title }: ArcMarkProps) {
         cx={94}
         cy={26}
         r={4.5}
-        fill="var(--amber)"
+        fill="rgb(var(--amber))"
         className={beacon ? "origin-center animate-beacon [animation-delay:1.6s]" : undefined}
         style={beacon ? { transformBox: "fill-box" } : undefined}
       />
