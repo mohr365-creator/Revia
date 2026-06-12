@@ -286,6 +286,16 @@ export function RouteMap({
 
       <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
         <div className="overflow-hidden rounded-2xl border border-cream/10 bg-navy/40 p-2">
+          <div className="mx-3 mb-1 mt-2 border-b border-cream/10 pb-3 text-center">
+            <span className="font-serif text-2xl text-amber">
+              {totalPopulation.toLocaleString()}
+            </span>
+            <span className="ml-2 text-sm text-cream/70">
+              {restoration
+                ? "people Revia could reconnect across the communities shown"
+                : "people live in the communities shown on this map"}
+            </span>
+          </div>
           {map}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-3 pb-2 pt-1 text-xs text-cream/50">
             {restoration ? (
@@ -308,16 +318,6 @@ export function RouteMap({
             )}
             <span className="inline-flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-cream" /> Integrated hub
-            </span>
-          </div>
-          <div className="mx-3 mb-2 mt-1 border-t border-cream/10 pt-3 text-center">
-            <span className="font-serif text-2xl text-amber">
-              {totalPopulation.toLocaleString()}
-            </span>
-            <span className="ml-2 text-sm text-cream/70">
-              {restoration
-                ? "people Revia could reconnect across the communities shown"
-                : "people live in the communities shown on this map"}
             </span>
           </div>
         </div>
