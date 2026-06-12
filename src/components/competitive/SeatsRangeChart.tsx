@@ -12,7 +12,7 @@ const COLORS: Record<Exclude<ProgramStatus, "revia">, string> = {
 const NEW_PROP = "#4FA86E";
 
 const LEGEND: { label: string; color: string; revia?: boolean; ring?: boolean }[] = [
-  { label: "Revia family", color: "rgb(var(--amber))", revia: true },
+  { label: "Revia Family", color: "rgb(var(--amber))", revia: true },
   { label: "In development", color: COLORS.dev },
   { label: "On hold", color: COLORS.paused },
   { label: "No longer active", color: COLORS.cancelled },
@@ -101,18 +101,14 @@ export function SeatsRangeChart() {
           const left = p.range >= 1850;
           return (
             <g key={p.name}>
-              {p.newProp && (
-                <circle
-                  cx={x(p.range)}
-                  cy={y(p.seats)}
-                  r={11}
-                  fill="none"
-                  stroke={NEW_PROP}
-                  strokeWidth={2}
-                  strokeOpacity={0.95}
-                />
-              )}
-              <circle cx={x(p.range)} cy={y(p.seats)} r={5.5} fill={COLORS[p.status as keyof typeof COLORS]} stroke="rgb(var(--navy))" strokeWidth={0.5}>
+              <circle
+                cx={x(p.range)}
+                cy={y(p.seats)}
+                r={p.newProp ? 6.5 : 5.5}
+                fill={COLORS[p.status as keyof typeof COLORS]}
+                stroke={p.newProp ? NEW_PROP : "rgb(var(--navy))"}
+                strokeWidth={p.newProp ? 2 : 0.5}
+              >
                 <title>{`${p.name} — ${p.seats} seats, ${fmt(p.range)} nm${p.newProp ? " · electric / hybrid / new propulsion" : ""}`}</title>
               </circle>
               <text
