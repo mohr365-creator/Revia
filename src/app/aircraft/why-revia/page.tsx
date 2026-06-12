@@ -11,7 +11,7 @@ import { capitalBenchmarks, takeaways } from "@/data/competitive";
 export const metadata: Metadata = {
   title: "Why Revia",
   description:
-    "The competitive landscape: a census of everyone who has tried to fix regional aviation — who is alive, who is gone, what it cost them, and the empty 50–100 seat box Revia occupies.",
+    "The competitive landscape: a survey of the field working on regional aviation — who is active, what their programs have cost, and the open 50–100 seat box Revia occupies.",
 };
 
 export default function WhyReviaPage() {
@@ -44,6 +44,7 @@ export default function WhyReviaPage() {
           <p className="mt-4 text-sm italic text-cream/45">
             Baseline seats and design range; estimates included where programs have not
             published figures. Revia shown as a payload/range trade across one shared wing.
+            Green rings mark the electric, hybrid, and new-propulsion programs.
           </p>
         </Container>
       </section>

@@ -24,7 +24,6 @@ export const primaryNav = [
     children: [
       { href: "/aircraft/regional", label: "Commercial" },
       { href: "/aircraft/special-missions", label: "Special Missions" },
-      { href: "/aircraft/why-revia", label: "Why Revia" },
     ],
   },
   { href: "/defense", label: "Defense" },
@@ -35,6 +34,7 @@ export const primaryNav = [
     children: [
       { href: "/company", label: "About" },
       { href: "/company/roadmap", label: "Program Roadmap" },
+      { href: "/aircraft/why-revia", label: "Why Revia" },
     ],
   },
 ] as const;

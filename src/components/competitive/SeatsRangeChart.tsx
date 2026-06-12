@@ -8,12 +8,16 @@ const COLORS: Record<Exclude<ProgramStatus, "revia">, string> = {
   legacy: "#7E8794",
 };
 
-const LEGEND: { label: string; color: string; revia?: boolean }[] = [
+// Green highlight for electric / hybrid / novel-propulsion programs.
+const NEW_PROP = "#4FA86E";
+
+const LEGEND: { label: string; color: string; revia?: boolean; ring?: boolean }[] = [
   { label: "Revia family", color: "rgb(var(--amber))", revia: true },
   { label: "In development", color: COLORS.dev },
   { label: "On hold", color: COLORS.paused },
   { label: "No longer active", color: COLORS.cancelled },
   { label: "Legacy (in service)", color: COLORS.legacy },
+  { label: "Electric / hybrid / new propulsion", color: NEW_PROP, ring: true },
 ];
 
 // Plot geometry (SVG user units; scales responsively via viewBox).
@@ -97,8 +101,19 @@ export function SeatsRangeChart() {
           const left = p.range >= 1850;
           return (
             <g key={p.name}>
+              {p.newProp && (
+                <circle
+                  cx={x(p.range)}
+                  cy={y(p.seats)}
+                  r={11}
+                  fill="none"
+                  stroke={NEW_PROP}
+                  strokeWidth={2}
+                  strokeOpacity={0.95}
+                />
+              )}
               <circle cx={x(p.range)} cy={y(p.seats)} r={5.5} fill={COLORS[p.status as keyof typeof COLORS]} stroke="rgb(var(--navy))" strokeWidth={0.5}>
-                <title>{`${p.name} — ${p.seats} seats, ${fmt(p.range)} nm`}</title>
+                <title>{`${p.name} — ${p.seats} seats, ${fmt(p.range)} nm${p.newProp ? " · electric / hybrid / new propulsion" : ""}`}</title>
               </circle>
               <text
                 x={x(p.range) + (left ? -9 : 9)}
@@ -150,7 +165,8 @@ export function SeatsRangeChart() {
             <span
               className="inline-block h-3 w-3 rounded-full"
               style={{
-                backgroundColor: l.color,
+                backgroundColor: l.ring ? "transparent" : l.color,
+                border: l.ring ? `2px solid ${l.color}` : undefined,
                 boxShadow: l.revia ? "0 0 0 1.5px rgb(var(--cream))" : undefined,
               }}
             />
