@@ -81,20 +81,32 @@ export function MapFilters({
   filters,
   onChange,
   showRestorable = true,
+  showTimeline = true,
   restoration = false,
 }: {
   filters: MapFilterState;
   onChange: (next: MapFilterState) => void;
   /** The lost-connections view keeps Revia out of frame: no variant filter. */
   showRestorable?: boolean;
+  /**
+   * The timeline slider tells the story of routes disappearing over time. The
+   * restoration view is about what could come back, so it hides the slider.
+   */
+  showTimeline?: boolean;
   /** Forward-looking framing for the restoration view's labels. */
   restoration?: boolean;
 }) {
+  const groupCount =
+    2 + (showRestorable ? 1 : 0) + (showTimeline ? 1 : 0);
   return (
     <div
       className={clsx(
         "grid gap-5 sm:grid-cols-2",
-        showRestorable ? "lg:grid-cols-4" : "lg:grid-cols-3",
+        groupCount >= 4
+          ? "lg:grid-cols-4"
+          : groupCount === 3
+            ? "lg:grid-cols-3"
+            : "lg:grid-cols-2",
       )}
     >
       <Group
@@ -117,28 +129,30 @@ export function MapFilters({
           onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
         />
       )}
-      <div>
-        <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
-          {restoration ? "Restoration backlog through" : "Cumulative losses through"}{" "}
-          {filters.throughYear >= TIMELINE_MAX ? "today" : filters.throughYear}
-        </p>
-        <input
-          type="range"
-          min={TIMELINE_MIN}
-          max={TIMELINE_MAX}
-          step={1}
-          value={filters.throughYear}
-          onChange={(e) =>
-            onChange({ ...filters, throughYear: Number(e.target.value) })
-          }
-          className="w-full accent-[var(--amber)]"
-          aria-label="Show all losses through this year"
-        />
-        <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">
-          <span>← deregulation</span>
-          <span>today →</span>
+      {showTimeline && (
+        <div>
+          <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
+            Cumulative losses through{" "}
+            {filters.throughYear >= TIMELINE_MAX ? "today" : filters.throughYear}
+          </p>
+          <input
+            type="range"
+            min={TIMELINE_MIN}
+            max={TIMELINE_MAX}
+            step={1}
+            value={filters.throughYear}
+            onChange={(e) =>
+              onChange({ ...filters, throughYear: Number(e.target.value) })
+            }
+            className="w-full accent-[var(--amber)]"
+            aria-label="Show all losses through this year"
+          />
+          <div className="mt-1 flex justify-between text-[0.625rem] text-cream/40">
+            <span>← deregulation</span>
+            <span>today →</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

@@ -279,6 +279,7 @@ export function RouteMap({
         filters={filters}
         onChange={setFilters}
         showRestorable={restoration}
+        showTimeline={!restoration}
         restoration={restoration}
       />
 
