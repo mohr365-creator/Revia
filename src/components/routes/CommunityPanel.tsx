@@ -28,7 +28,9 @@ export function CommunityPanel({
           Select a community on the map.
         </p>
         <p className="mt-2 text-sm text-cream/40">
-          Each dot is a place that lost connections to the network.
+          {showRestoration
+            ? "Each dot is a community Revia can bring back onto the network."
+            : "Each dot is a place that lost connections to the network."}
         </p>
       </div>
     );

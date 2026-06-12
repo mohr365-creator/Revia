@@ -1,11 +1,25 @@
 import { clsx } from "clsx";
 import { TIMELINE_MAX, TIMELINE_MIN, type MapFilterState } from "./filters";
 
-const statusOptions: { value: MapFilterState["status"]; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "lost-all-service", label: "Lost all service" },
-  { value: "diminished", label: "Diminished" },
-];
+/**
+ * The lost-connections view names what was severed; the restoration view names
+ * the scope of what Revia brings back over the same status categories.
+ */
+function statusOptions(
+  restoration: boolean,
+): { value: MapFilterState["status"]; label: string }[] {
+  return [
+    { value: "all", label: "All" },
+    {
+      value: "lost-all-service",
+      label: restoration ? "Full restoration" : "Lost all service",
+    },
+    {
+      value: "diminished",
+      label: restoration ? "Partial restoration" : "Diminished",
+    },
+  ];
+}
 
 const regionOptions: { value: MapFilterState["region"]; label: string }[] = [
   { value: "all", label: "All regions" },
@@ -15,15 +29,16 @@ const regionOptions: { value: MapFilterState["region"]; label: string }[] = [
   { value: "northeast", label: "Northeast" },
 ];
 
-const restorableOptions: {
-  value: MapFilterState["restorableBy"];
-  label: string;
-}[] = [
-  { value: "all", label: "Any" },
-  { value: "R-50", label: "R-50" },
-  { value: "R-75", label: "R-75" },
-  { value: "R-100", label: "R-100" },
-];
+function restorableOptions(
+  restoration: boolean,
+): { value: MapFilterState["restorableBy"]; label: string }[] {
+  return [
+    { value: "all", label: restoration ? "Best fit" : "Any" },
+    { value: "R-50", label: "R-50" },
+    { value: "R-75", label: "R-75" },
+    { value: "R-100", label: "R-100" },
+  ];
+}
 
 function Group<T extends string>({
   label,
@@ -66,11 +81,14 @@ export function MapFilters({
   filters,
   onChange,
   showRestorable = true,
+  restoration = false,
 }: {
   filters: MapFilterState;
   onChange: (next: MapFilterState) => void;
   /** The lost-connections view keeps Revia out of frame: no variant filter. */
   showRestorable?: boolean;
+  /** Forward-looking framing for the restoration view's labels. */
+  restoration?: boolean;
 }) {
   return (
     <div
@@ -80,9 +98,9 @@ export function MapFilters({
       )}
     >
       <Group
-        label="Status"
+        label={restoration ? "Restoration scope" : "Status"}
         value={filters.status}
-        options={statusOptions}
+        options={statusOptions(restoration)}
         onChange={(status) => onChange({ ...filters, status })}
       />
       <Group
@@ -95,13 +113,13 @@ export function MapFilters({
         <Group
           label="Restorable by"
           value={filters.restorableBy}
-          options={restorableOptions}
+          options={restorableOptions(restoration)}
           onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
         />
       )}
       <div>
         <p className="mb-2 text-xs font-medium uppercase tracking-eyebrow text-cream/50">
-          Cumulative losses through{" "}
+          {restoration ? "Restoration backlog through" : "Cumulative losses through"}{" "}
           {filters.throughYear >= TIMELINE_MAX ? "today" : filters.throughYear}
         </p>
         <input

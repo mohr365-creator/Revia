@@ -8,7 +8,7 @@ import {
   Marker,
 } from "react-simple-maps";
 import { clsx } from "clsx";
-import type { Community, LngLat, LostRoute, ReviaVariant } from "@/lib/types";
+import type { Community, LngLat, LostRoute } from "@/lib/types";
 import { FlightArc } from "./FlightArc";
 import { CommunityPanel } from "./CommunityPanel";
 import { MapFilters } from "./MapFilters";
@@ -23,11 +23,11 @@ import {
 
 const GEO_URL = "/geo/us-states-10m.json";
 
-const variantColor: Record<ReviaVariant, string> = {
-  "R-50": "#E89556",
-  "R-75": "#F2C97D",
-  "R-100": "#D86F3C",
-};
+// The restoration view tells a single story — everything Revia brings back —
+// so the whole network lights up in one warm orange rather than splitting the
+// map into three variant colors. The R-50/R-75/R-100 filter narrows which of
+// those orange links are shown.
+const RESTORATION_ORANGE = "#E89556";
 
 function matches(c: Community, f: MapFilterState): boolean {
   if (f.status !== "all" && c.status !== f.status) return false;
@@ -72,7 +72,11 @@ export function RouteMap({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   // After = the network as it is now (extinguished). Before = as it was (lit).
-  const [mode, setMode] = useState<"before" | "after">("after");
+  // The restoration story opens on the lit "Restored" state, so the map starts
+  // glowing orange; the lost-connections view opens on today's dark network.
+  const [mode, setMode] = useState<"before" | "after">(
+    view === "restoration" ? "before" : "after",
+  );
 
   const activeFilters = preview ? defaultFilters : filters;
 
@@ -161,7 +165,7 @@ export function RouteMap({
       {visibleRoutes.map((r) => {
         const isFocused = focusedId === r.fromId;
         const litStroke = restoration
-          ? variantColor[r.restorableBy]
+          ? RESTORATION_ORANGE
           : r.status === "lost-all-service"
             ? "#D86F3C"
             : "#F2C97D";
@@ -198,7 +202,7 @@ export function RouteMap({
         const isLostAll = c.status === "lost-all-service";
         const r = Math.max(2.5, Math.min(7, 2.4 + c.routesLost * 0.7));
         const fill = restoration
-          ? variantColor[c.restorableBy]
+          ? RESTORATION_ORANGE
           : isLostAll
             ? "#D86F3C"
             : "#F2C97D";
@@ -241,11 +245,14 @@ export function RouteMap({
   return (
     <div className={clsx("space-y-6", className)}>
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <HeadlineCounter
-          communities={visibleCommunities.length}
-          routes={visibleRoutes.length}
-        />
-        <div className="inline-flex rounded-full border border-cream/15 p-1 text-xs">
+        {!restoration && (
+          <HeadlineCounter
+            communities={visibleCommunities.length}
+            routes={visibleRoutes.length}
+            restoration={restoration}
+          />
+        )}
+        <div className="inline-flex rounded-full border border-cream/15 p-1 text-xs lg:ml-auto">
           {(["after", "before"] as const).map((m) => (
             <button
               key={m}
@@ -256,7 +263,13 @@ export function RouteMap({
                 mode === m ? "bg-amber text-navy" : "text-cream/70 hover:text-amber",
               )}
             >
-              {m === "after" ? "As it is" : "As it was"}
+              {restoration
+                ? m === "after"
+                  ? "Today"
+                  : "Restored"
+                : m === "after"
+                  ? "As it is"
+                  : "As it was"}
             </button>
           ))}
         </div>
@@ -266,6 +279,7 @@ export function RouteMap({
         filters={filters}
         onChange={setFilters}
         showRestorable={restoration}
+        restoration={restoration}
       />
 
       <div className="grid gap-6 lg:grid-cols-[1.7fr_1fr]">
@@ -273,17 +287,13 @@ export function RouteMap({
           {map}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 px-3 pb-2 pt-1 text-xs text-cream/50">
             {restoration ? (
-              <>
-                {(["R-50", "R-75", "R-100"] as const).map((v) => (
-                  <span key={v} className="inline-flex items-center gap-1.5">
-                    <span
-                      className="h-2.5 w-2.5 rounded-full"
-                      style={{ backgroundColor: variantColor[v] }}
-                    />{" "}
-                    Restorable by {v}
-                  </span>
-                ))}
-              </>
+              <span className="inline-flex items-center gap-1.5">
+                <span
+                  className="h-2.5 w-2.5 rounded-full"
+                  style={{ backgroundColor: RESTORATION_ORANGE }}
+                />{" "}
+                Community Revia can restore
+              </span>
             ) : (
               <>
                 <span className="inline-flex items-center gap-1.5">
