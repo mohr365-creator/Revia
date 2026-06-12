@@ -93,7 +93,7 @@ export function CommunityPanel({
             {showRestoration
               ? "Restoration opportunity"
               : easOnly
-                ? "Hub link"
+                ? "Diminished connection"
                 : "Severed connections"}
           </dt>
           <dd className="text-cream">
