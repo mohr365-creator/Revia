@@ -90,7 +90,11 @@ export function CommunityPanel({
         </div>
         <div>
           <dt className="text-cream/50">
-            {easOnly ? "Hub link" : "Hub links lost"}
+            {showRestoration
+              ? "Restoration opportunity"
+              : easOnly
+                ? "Diminished connection"
+                : "Severed connections"}
           </dt>
           <dd className="text-cream">
             {community.formerHubs.length > 0
