@@ -35,7 +35,7 @@ export default function RestorationPage() {
       <PageHeader
         eyebrow="Revia Restoration"
         title="The same map, lit back up."
-        intro="Every community on the lost-connections map is matched to the Revia variant that can profitably fly its missing links. Filter by variant to see each aircraft's restoration network."
+        intro="The same severed network, told as a story of restoration and new opportunity. The whole map lights up in the routes Revia can profitably fly again — leave it on best fit to see everything, or choose R-50, R-75, or R-100 to light up the routes best suited to that aircraft."
       />
 
       <section className="bg-navy py-16">

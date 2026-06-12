@@ -29,15 +29,16 @@ const regionOptions: { value: MapFilterState["region"]; label: string }[] = [
   { value: "northeast", label: "Northeast" },
 ];
 
-const restorableOptions: {
-  value: MapFilterState["restorableBy"];
-  label: string;
-}[] = [
-  { value: "all", label: "Any" },
-  { value: "R-50", label: "R-50" },
-  { value: "R-75", label: "R-75" },
-  { value: "R-100", label: "R-100" },
-];
+function restorableOptions(
+  restoration: boolean,
+): { value: MapFilterState["restorableBy"]; label: string }[] {
+  return [
+    { value: "all", label: restoration ? "Best fit" : "Any" },
+    { value: "R-50", label: "R-50" },
+    { value: "R-75", label: "R-75" },
+    { value: "R-100", label: "R-100" },
+  ];
+}
 
 function Group<T extends string>({
   label,
@@ -112,7 +113,7 @@ export function MapFilters({
         <Group
           label="Restorable by"
           value={filters.restorableBy}
-          options={restorableOptions}
+          options={restorableOptions(restoration)}
           onChange={(restorableBy) => onChange({ ...filters, restorableBy })}
         />
       )}
