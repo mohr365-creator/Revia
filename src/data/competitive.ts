@@ -93,6 +93,67 @@ export const capitalBenchmarks: { program: string; detail: string }[] = [
   { program: "JetZero — clean-sheet, in progress", detail: ">$1B raised + committed — buys a demonstrator, not an EIS" },
 ];
 
+/** The incumbents that once served this class — and where they've gone. */
+export type LegacyPlayer = {
+  name: string;
+  product: string;
+  seats: string;
+  /** Short status tag. */
+  status: string;
+  /** How they've moved away from a conventional clean-sheet at 50–100 seats. */
+  moved: string;
+};
+
+export const legacyPlayers: LegacyPlayer[] = [
+  {
+    name: "ATR",
+    product: "ATR 42 / 72",
+    seats: "48–72",
+    status: "In service, no successor",
+    moved: "The airframe dates to the 1980s and tops out at 72 seats. The clean-sheet “EVO” launch decision keeps slipping, and there is no 90–100 seat product on the roadmap.",
+  },
+  {
+    name: "Embraer",
+    product: "E175 / E175-E2",
+    seats: "76–88",
+    status: "Upmarket + scope-constrained",
+    moved: "The re-engined E175-E2 came in too heavy for the US scope clause and has drawn no US orders. Embraer shelved its next-gen turboprop and focuses on the larger 150-seat E2 jets.",
+  },
+  {
+    name: "Bombardier",
+    product: "CRJ family",
+    seats: "50–100",
+    status: "Exited commercial",
+    moved: "Sold the CRJ program to Mitsubishi (2020) and the CSeries to Airbus, where it became the larger 100–150 seat A220. Bombardier left regional aviation for business jets.",
+  },
+  {
+    name: "De Havilland Canada",
+    product: "Dash 8-400",
+    seats: "78–90",
+    status: "Production paused",
+    moved: "Paused Dash 8 production and shifted focus; no active 50–100 seat line, with any restart years out.",
+  },
+];
+
+/** Who is still actively developing in or near the class — context for the timeline. */
+export type ActivePlayer = {
+  name: string;
+  program: string;
+  seats: string;
+  category: "Airframe bet" | "Derivative" | "Clean-sheet, early-stage" | "New propulsion";
+  note: string;
+};
+
+export const activePlayers: ActivePlayer[] = [
+  { name: "JetZero", program: "Z4 blended-wing-body", seats: "~200+", category: "Airframe bet", note: "Demonstrator in build with USAF backing — a large, different-market airframe, not a 50–100 regional." },
+  { name: "Deutsche Aircraft", program: "D328eco", seats: "40", category: "Derivative", note: "A re-engined Do 328 successor: conventional power, but below the 50-seat floor." },
+  { name: "The AirCraft Co.", program: "SY30J / SY50J", seats: "30 / 50", category: "Clean-sheet, early-stage", note: "Conventional regional jets in early, lightly funded development." },
+  { name: "Aura Aero", program: "ERA", seats: "19", category: "New propulsion", note: "Hybrid-electric 19-seater; first flight now targeted for late 2027." },
+  { name: "Electra", program: "EL9", seats: "9", category: "New propulsion", note: "Hybrid-electric STOL aimed at an adjacent short-field market." },
+  { name: "Heart Aerospace", program: "ES-30", seats: "30", category: "New propulsion", note: "Hybrid-electric 30-seater at the ground-demonstrator stage." },
+  { name: "Elysian", program: "E9X", seats: "90", category: "New propulsion", note: "Battery-electric concept from a research-led team; pre-prototype." },
+];
+
 /** Three facts the census points to. */
 export const takeaways: { n: string; head: string; body: string }[] = [
   {

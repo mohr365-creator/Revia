@@ -6,7 +6,20 @@ import { ButtonLink } from "@/components/ui/Button";
 import { SeatsRangeChart } from "@/components/competitive/SeatsRangeChart";
 import { CapitalChart } from "@/components/competitive/CapitalChart";
 import { AttritionTimeline } from "@/components/competitive/AttritionTimeline";
-import { capitalBenchmarks, takeaways } from "@/data/competitive";
+import {
+  activePlayers,
+  capitalBenchmarks,
+  legacyPlayers,
+  takeaways,
+} from "@/data/competitive";
+
+// Category accents for the "still in play" roster (green matches the map rings).
+const CATEGORY_COLOR: Record<string, string> = {
+  "New propulsion": "#4FA86E",
+  "Airframe bet": "#7BA3CC",
+  Derivative: "#7E8794",
+  "Clean-sheet, early-stage": "#E0A832",
+};
 
 export const metadata: Metadata = {
   title: "Why Revia",
@@ -74,6 +87,75 @@ export default function WhyReviaPage() {
               pattern the failure-mode analysis anticipated.
             </p>
           </div>
+
+          {/* Who's still in play */}
+          <div className="mt-14">
+            <h3 className="font-serif text-2xl text-cream">Who&rsquo;s still in play</h3>
+            <p className="mt-3 max-w-3xl text-pretty text-base leading-relaxed text-cream/70">
+              The active field puts the timeline in context. Every program still moving is a
+              different-market airframe, a sub-50-seat derivative, or a new-propulsion bet —
+              none combines conventional power, clean-sheet economics, and 50–100 seats.
+            </p>
+            <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-cream/10 bg-cream/[0.02] sm:grid-cols-2">
+              {activePlayers.map((p) => (
+                <li key={p.name} className="border-cream/10 bg-navy/40 p-5 [&:nth-child(n+2)]:border-t sm:[&:nth-child(2)]:border-t-0 sm:[&:nth-child(odd)]:border-r">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <p className="font-medium text-cream">
+                      {p.name} <span className="text-cream/55">· {p.program}</span>
+                    </p>
+                    <span className="shrink-0 text-sm text-cream/50">{p.seats} seats</span>
+                  </div>
+                  <span
+                    className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-eyebrow"
+                    style={{ color: CATEGORY_COLOR[p.category] }}
+                  >
+                    <span
+                      className="inline-block h-2 w-2 rounded-full"
+                      style={{ backgroundColor: CATEGORY_COLOR[p.category] }}
+                    />
+                    {p.category}
+                  </span>
+                  <p className="mt-2 text-pretty text-sm leading-relaxed text-cream/65">{p.note}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      {/* Legacy incumbents */}
+      <section className="border-t border-cream/10 bg-navy py-16">
+        <Container>
+          <div className="max-w-3xl">
+            <Eyebrow>The incumbents</Eyebrow>
+            <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-cream sm:text-4xl">
+              The players who owned this class have moved away from it.
+            </h2>
+            <p className="mt-6 text-pretty text-lg leading-relaxed text-cream/75">
+              The 50–100 seat box was once well served. One by one, the incumbents that built
+              it have exited, gone upmarket, or let their airframes age without a successor —
+              which is what leaves the band open today.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-cream/10 bg-cream/[0.02]">
+            {legacyPlayers.map((p) => (
+              <li
+                key={p.name}
+                className="grid gap-2 border-t border-cream/10 bg-navy/40 p-6 first:border-t-0 md:grid-cols-[1fr_2fr] md:gap-8"
+              >
+                <div>
+                  <p className="font-serif text-xl text-cream">{p.name}</p>
+                  <p className="mt-1 text-sm text-cream/55">
+                    {p.product} · {p.seats} seats
+                  </p>
+                  <p className="mt-2 text-xs font-medium uppercase tracking-eyebrow text-saffron">
+                    {p.status}
+                  </p>
+                </div>
+                <p className="text-pretty leading-relaxed text-cream/70">{p.moved}</p>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
