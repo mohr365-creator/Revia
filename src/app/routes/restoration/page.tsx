@@ -65,8 +65,9 @@ export default function RestorationPage() {
                 key={v.name}
                 className="rounded-2xl border border-cream/10 bg-navy/40 p-6"
               >
-                <p className="text-sm font-medium text-amber">{v.name}</p>
-                <p className="mt-2 font-serif text-2xl text-cream">{v.mission}</p>
+                <h3 className="font-serif text-2xl text-cream">
+                  <span className="text-amber">{v.name}:</span> {v.mission}
+                </h3>
                 <p className="mt-3 text-sm text-cream/60">{v.blurb}</p>
                 <p className="mt-4 text-xs uppercase tracking-eyebrow text-cream/40">
                   {v.population.toLocaleString()} people to reconnect
