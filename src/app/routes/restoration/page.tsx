@@ -53,7 +53,7 @@ export default function RestorationPage() {
         <Container>
           <div className="mb-12 overflow-hidden rounded-2xl border border-cream/10 bg-cream/[0.03]">
             <AircraftSilhouette
-              src="/images/restoration-family.png"
+              src="/images/restoration-family.webp"
               label="The Revia family — R-50, R-75, and R-100 — in formation"
               className="rounded-none"
             />
