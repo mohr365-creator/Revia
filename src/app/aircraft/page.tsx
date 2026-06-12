@@ -78,6 +78,20 @@ export default function AircraftOverviewPage() {
               demands it.
             </p>
           </div>
+
+          <div className="mt-12 flex flex-col gap-4 rounded-2xl border border-cream/10 bg-cream/[0.02] p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <Eyebrow>Why Revia</Eyebrow>
+              <p className="mt-4 max-w-2xl text-pretty text-lg text-cream/75">
+                Everyone has tried to fix regional aviation. The 50–100 seat box
+                has sat empty since 2002. See the full competitive census — who is
+                alive, who is gone, and what it cost them.
+              </p>
+            </div>
+            <ButtonLink href="/aircraft/why-revia" variant="secondary" className="shrink-0">
+              See the landscape →
+            </ButtonLink>
+          </div>
         </Container>
       </section>
     </>

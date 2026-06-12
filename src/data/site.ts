@@ -24,6 +24,7 @@ export const primaryNav = [
     children: [
       { href: "/aircraft/regional", label: "Commercial" },
       { href: "/aircraft/special-missions", label: "Special Missions" },
+      { href: "/aircraft/why-revia", label: "Why Revia" },
     ],
   },
   { href: "/defense", label: "Defense" },
@@ -47,6 +48,7 @@ export const footerNav = [
       { href: "/routes/restoration", label: "Revia Restoration" },
       { href: "/aircraft", label: "Aircraft" },
       { href: "/aircraft/special-missions", label: "Special Missions" },
+      { href: "/aircraft/why-revia", label: "Why Revia" },
       { href: "/defense", label: "Defense" },
       { href: "/technology", label: "Technology" },
     ],
