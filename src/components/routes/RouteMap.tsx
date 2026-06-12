@@ -191,7 +191,7 @@ export function RouteMap({
             r={3.2}
             fill="#FFF4E1"
             fillOpacity={0.95}
-            stroke="var(--navy)"
+            stroke="rgb(var(--navy))"
             strokeWidth={0.8}
           />
         </Marker>
@@ -212,7 +212,7 @@ export function RouteMap({
               <circle
                 r={r + 4}
                 fill="none"
-                stroke="var(--amber)"
+                stroke="rgb(var(--amber))"
                 strokeWidth={1}
                 opacity={0.7}
               />
@@ -221,7 +221,7 @@ export function RouteMap({
               r={r}
               fill={fill}
               fillOpacity={isLostAll ? 0.9 : 0.6}
-              stroke="var(--navy)"
+              stroke="rgb(var(--navy))"
               strokeWidth={0.6}
               style={{ cursor: preview ? "default" : "pointer" }}
               onMouseEnter={preview ? undefined : () => setHoveredId(c.id)}

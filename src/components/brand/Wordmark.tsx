@@ -38,13 +38,13 @@ export function Wordmark({
         <path
           d="M4 9 Q50 1.5 96 9"
           fill="none"
-          stroke="var(--amber)"
+          stroke="rgb(var(--amber))"
           strokeWidth={2.4}
           strokeLinecap="round"
           vectorEffect="non-scaling-stroke"
         />
-        <circle cx={4} cy={9} r={3.2} fill="var(--amber)" className={beacon ? "animate-beacon" : undefined} />
-        <circle cx={96} cy={9} r={3.2} fill="var(--amber)" className={beacon ? "animate-beacon [animation-delay:1.6s]" : undefined} />
+        <circle cx={4} cy={9} r={3.2} fill="rgb(var(--amber))" className={beacon ? "animate-beacon" : undefined} />
+        <circle cx={96} cy={9} r={3.2} fill="rgb(var(--amber))" className={beacon ? "animate-beacon [animation-delay:1.6s]" : undefined} />
       </svg>
     </span>
   );
