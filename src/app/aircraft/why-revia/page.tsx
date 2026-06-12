@@ -19,8 +19,8 @@ export default function WhyReviaPage() {
     <>
       <PageHeader
         eyebrow="Why Revia"
-        title="Everyone tried to fix regional aviation. The box still sits empty."
-        intro="A census of the field — who is alive, who is gone, what it cost them, and what that prices into the road ahead. The conclusion is the same one the routes keep pointing to: no one is building a conventional, clean-sheet aircraft in the 50–100 seat band. Except Revia."
+        title="Many have worked on regional aviation. The 50–100 seat box is still open."
+        intro="A survey of the field — who is active, what programs have cost, and what that prices into the road ahead. The conclusion is the same one the routes keep pointing to: no one else is building a conventional, clean-sheet aircraft in the 50–100 seat band. That is the opening Revia is built for."
       />
 
       {/* The field — seats vs range */}
@@ -54,14 +54,14 @@ export default function WhyReviaPage() {
           <div className="max-w-3xl">
             <Eyebrow>Attrition</Eyebrow>
             <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-cream sm:text-4xl">
-              Two eras of failure. The second is accelerating.
+              Two eras of attrition — and the lessons repeat.
             </h2>
             <p className="mt-6 text-pretty text-lg leading-relaxed text-cream/75">
-              No conventional clean-sheet in this class has died of demand — they died of
-              capital, certification execution, or geopolitics. The propulsion cohort dies
-              of physics plus funding. The incumbents simply decline to play: ATR&rsquo;s EVO
-              keeps slipping, Embraer shelved its next-gen turboprop, and the E175-E2 sits
-              scope-frozen with zero US orders.
+              In this class, the constraint has rarely been demand — it has been capital,
+              certification execution, or geopolitics. Propulsion-focused programs face
+              physics plus funding. And incumbents have largely stayed out: ATR&rsquo;s EVO
+              decision keeps slipping, Embraer shelved its next-gen turboprop, and the
+              E175-E2 remains scope-constrained in the US.
             </p>
           </div>
           <div className="mt-10">
@@ -69,8 +69,8 @@ export default function WhyReviaPage() {
           </div>
           <div className="mt-8 rounded-2xl border border-amber/40 bg-amber/10 p-6">
             <p className="text-pretty font-serif text-xl italic text-cream">
-              Four propulsion-bet exits in 36 months — the cohort is collapsing on the
-              schedule the failure-mode analysis predicts.
+              Several propulsion-focused programs have exited in just three years — the
+              pattern the failure-mode analysis anticipated.
             </p>
           </div>
         </Container>
@@ -82,13 +82,13 @@ export default function WhyReviaPage() {
           <div className="max-w-3xl">
             <Eyebrow>Capital vs progress</Eyebrow>
             <h2 className="mt-5 text-balance font-serif text-3xl leading-tight text-cream sm:text-4xl">
-              What the field&rsquo;s money actually bought.
+              What the field&rsquo;s capital has produced.
             </h2>
             <p className="mt-6 text-pretty text-lg leading-relaxed text-cream/75">
-              Billions have flowed into this problem. Most of it bought prototypes, pivots,
-              and press — not certified aircraft. A clean-sheet Part 25 family is a
-              multi-billion-dollar, multi-round program, and every plan that pretended
-              otherwise is on the timeline above.
+              Billions have flowed into this problem. Most of it has produced prototypes and
+              demonstrators rather than certified aircraft. A clean-sheet Part 25 family is a
+              multi-billion-dollar, multi-round program — and that reality is what the
+              timeline above reflects.
             </p>
           </div>
 

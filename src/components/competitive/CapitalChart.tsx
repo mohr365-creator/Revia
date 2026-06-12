@@ -2,8 +2,8 @@ import { capital, type Fate } from "@/data/competitive";
 
 const FATE: Record<Fate, { color: string; label: string }> = {
   active: { color: "#7BA3CC", label: "Active — funded" },
-  wounded: { color: "#E0A832", label: "Wounded / pre-institutional" },
-  dead: { color: "#C04040", label: "Dead or paused" },
+  wounded: { color: "#E0A832", label: "Constrained / early-stage" },
+  dead: { color: "#C04040", label: "Exited / on hold" },
 };
 
 // Log scale across the field: $5M → $20B.

@@ -11,8 +11,8 @@ const COLORS: Record<Exclude<ProgramStatus, "revia">, string> = {
 const LEGEND: { label: string; color: string; revia?: boolean }[] = [
   { label: "Revia family", color: "rgb(var(--amber))", revia: true },
   { label: "In development", color: COLORS.dev },
-  { label: "Paused", color: COLORS.paused },
-  { label: "Cancelled", color: COLORS.cancelled },
+  { label: "On hold", color: COLORS.paused },
+  { label: "No longer active", color: COLORS.cancelled },
   { label: "Legacy (in service)", color: COLORS.legacy },
 ];
 

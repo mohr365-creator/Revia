@@ -41,8 +41,8 @@ function Band({
 export function AttritionTimeline() {
   return (
     <div className="grid gap-10 md:grid-cols-2">
-      <Band eyebrow="Conventional era — killed by capital & execution" events={conventionalEra} accent="saffron" />
-      <Band eyebrow="Propulsion-bet era — killed by physics & funding" events={propulsionEra} accent="amber" />
+      <Band eyebrow="Conventional era — constrained by capital & execution" events={conventionalEra} accent="saffron" />
+      <Band eyebrow="Propulsion era — limited by physics & funding" events={propulsionEra} accent="amber" />
     </div>
   );
 }

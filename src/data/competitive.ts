@@ -1,7 +1,8 @@
 /**
  * Competitive landscape — distilled from the internal "The Field" census
  * (competitive analysis, public sources as of June 2026; estimates marked).
- * Used by the /aircraft/why-revia page and its infographics.
+ * Used by the /aircraft/why-revia page and its infographics. Framing is
+ * deliberately neutral: the point is the empty segment, not the scoreboard.
  */
 
 export type ProgramStatus = "revia" | "dev" | "paused" | "cancelled" | "legacy";
@@ -27,9 +28,9 @@ export const seatsRange: SeatRangePoint[] = [
   { name: "TAC SY30J", seats: 30, range: 430, status: "dev" },
   { name: "TAC SY50J", seats: 50, range: 430, status: "dev" },
   { name: "Elysian E9X", seats: 92, range: 470, status: "dev" },
-  // Paused
+  // On hold
   { name: "Eviation Alice", seats: 9, range: 250, status: "paused" },
-  // Cancelled
+  // No longer active
   { name: "Maeve MJ500", seats: 88, range: 800, status: "cancelled" },
   { name: "SpaceJet M90", seats: 88, range: 2040, status: "cancelled" },
   { name: "728JET", seats: 75, range: 1800, status: "cancelled" },
@@ -40,7 +41,7 @@ export const seatsRange: SeatRangePoint[] = [
   { name: "E175", seats: 76, range: 2060, status: "legacy" },
 ];
 
-/** Where money arrived and what it bought. */
+/** Where capital arrived and what it produced. */
 export type Fate = "active" | "wounded" | "dead";
 
 export type CapitalEntry = {
@@ -53,58 +54,58 @@ export type CapitalEntry = {
 };
 
 export const capital: CapitalEntry[] = [
-  { name: "Mitsubishi SpaceJet", capitalM: 10000, label: "~$10B", fate: "dead", note: "Six flying prototypes — cancelled 2023, never certified" },
-  { name: "JetZero", capitalM: 1000, label: ">$1B", fate: "active", note: "Demonstrator in build, first flight 2027 (incl. $235M USAF + commitments)" },
-  { name: "Aura Aero (ERA)", capitalM: 393, label: "€340M", fate: "active", note: "First flight slipped to late 2027 (incl. ≈€290M subsidies / state)" },
-  { name: "Electra (EL9)", capitalM: 235, label: "~$235M", fate: "active", note: "Part 23 application filed; 2,200 pre-orders — adjacent market" },
-  { name: "Eviation (Alice)", capitalM: 200, label: "~$200M", fate: "dead", note: "One 8-minute flight (2022) — paused, staff laid off Feb 2025" },
-  { name: "Heart (ES-30)", capitalM: 145, label: "~$145M", fate: "wounded", note: "Ground demonstrator only — relocated, two layoff rounds" },
-  { name: "Universal Hydrogen", capitalM: 100, label: "~$100M", fate: "dead", note: "Testbed flew 2023 — shut down June 2024" },
-  { name: "Maeve (MJ500)", capitalM: 30, label: "~€30M", fate: "dead", note: "Concept + four redesigns — bankrupt May 2026 (est.)" },
+  { name: "Mitsubishi SpaceJet", capitalM: 10000, label: "~$10B", fate: "dead", note: "Six flying prototypes; program ended in 2023 without reaching certification" },
+  { name: "JetZero", capitalM: 1000, label: ">$1B", fate: "active", note: "Demonstrator in build, first flight targeted 2027 (incl. $235M USAF + commitments)" },
+  { name: "Aura Aero (ERA)", capitalM: 393, label: "€340M", fate: "active", note: "First flight now targeted for late 2027 (incl. ≈€290M subsidies / state)" },
+  { name: "Electra (EL9)", capitalM: 235, label: "~$235M", fate: "active", note: "Part 23 application filed; 2,200 pre-orders — an adjacent market" },
+  { name: "Eviation (Alice)", capitalM: 200, label: "~$200M", fate: "dead", note: "One flight in 2022; development on hold since early 2025" },
+  { name: "Heart (ES-30)", capitalM: 145, label: "~$145M", fate: "wounded", note: "Ground-demonstrator stage; restructured and relocated" },
+  { name: "Universal Hydrogen", capitalM: 100, label: "~$100M", fate: "dead", note: "Testbed flew in 2023; operations wound down in 2024" },
+  { name: "Maeve (MJ500)", capitalM: 30, label: "~€30M", fate: "dead", note: "Concept through several redesigns; wound down in 2026 (est.)" },
   { name: "The AirCraft Co.", capitalM: 8, label: "~$8M", fate: "wounded", note: "Simulator + sub-scale prep (self / angel funded, est.)" },
 ];
 
-/** Two eras of failure. */
+/** Two eras of attrition. */
 export type AttritionEvent = { year: string; name: string; why: string };
 
 export const conventionalEra: AttritionEvent[] = [
-  { year: "1996", name: "Fokker", why: "Bankrupt in production" },
-  { year: "2001", name: "BAe Avro RJX", why: "Cancelled weeks after first flight" },
-  { year: "2002", name: "Fairchild Dornier 728", why: "Bankrupt mid-program" },
-  { year: "2023", name: "Mitsubishi SpaceJet", why: "~$10B, cancelled pre-certification" },
+  { year: "1996", name: "Fokker", why: "Ended during production" },
+  { year: "2001", name: "BAe Avro RJX", why: "Wound down shortly after first flight" },
+  { year: "2002", name: "Fairchild Dornier 728", why: "Ended mid-program" },
+  { year: "2023", name: "Mitsubishi SpaceJet", why: "≈$10B invested; ended before certification" },
 ];
 
 export const propulsionEra: AttritionEvent[] = [
-  { year: "2019", name: "Zunum Aero", why: "Boeing-backed hybrid, collapsed" },
-  { year: "2023", name: "Tecnam P-Volt", why: "OEM suspends — battery economics" },
-  { year: "2024", name: "Universal Hydrogen", why: "~$100M, shut down" },
-  { year: "2025", name: "Eviation Alice", why: "~$200M, paused after one flight" },
-  { year: "2026", name: "Maeve", why: "Bankrupt 28 May — our segment" },
+  { year: "2019", name: "Zunum Aero", why: "Boeing-backed hybrid; wound down" },
+  { year: "2023", name: "Tecnam P-Volt", why: "Suspended — battery economics" },
+  { year: "2024", name: "Universal Hydrogen", why: "≈$100M; operations wound down" },
+  { year: "2025", name: "Eviation Alice", why: "≈$200M; on hold after first flight" },
+  { year: "2026", name: "Maeve", why: "Wound down in 2026" },
 ];
 
 /** What getting to entry-into-service has actually cost. */
 export const capitalBenchmarks: { program: string; detail: string }[] = [
-  { program: "Bombardier CSeries — clean-sheet, certified", detail: "≈ $6B to EIS — nearly broke the company" },
+  { program: "Bombardier CSeries — clean-sheet, certified", detail: "≈ $6B to EIS — a company-defining investment" },
   { program: "Embraer E2 — derivative, certified", detail: "≈ $1.7B — the derivative discount is real" },
-  { program: "Mitsubishi SpaceJet — clean-sheet, failed", detail: "≈ $10B — and never certified" },
+  { program: "Mitsubishi SpaceJet — clean-sheet", detail: "≈ $10B — and did not reach certification" },
   { program: "JetZero — clean-sheet, in progress", detail: ">$1B raised + committed — buys a demonstrator, not an EIS" },
 ];
 
-/** Three facts the census hands us. */
+/** Three facts the census points to. */
 export const takeaways: { n: string; head: string; body: string }[] = [
   {
     n: "01",
-    head: "The box has been empty since 2002.",
-    body: "No conventional clean-sheet has occupied the 50–100 seat band since Fairchild Dornier's bankruptcy — and Maeve's collapse in May 2026 emptied the band again above us.",
+    head: "The 50–100 seat box has been open since 2002.",
+    body: "No conventional clean-sheet has occupied that band since Fairchild Dornier wound down — and the most recent exit in 2026 left the band open again above us.",
   },
   {
     n: "02",
-    head: "Capital follows propulsion stories in. Physics carries it out.",
-    body: "Four propulsion-bet exits in 36 months. The survivors are derivatives, sub-19-seaters, or airframe bets with conventional engines — quietly conceding the propulsion thesis.",
+    head: "Capital follows propulsion stories in. Physics tends to carry it back out.",
+    body: "Several propulsion-focused programs have exited in the past three years. The programs still moving are derivatives, sub-19-seaters, or airframe bets with conventional engines — which points back toward a conventional-power thesis.",
   },
   {
     n: "03",
-    head: "The demand signal is proven — and now orphaned.",
-    body: "SkyWest took equity and launch rights in this segment. Delta partnered on it. United funds adjacent clean-sheets. That money is still looking for an aircraft that closes.",
+    head: "The demand signal is proven — and currently unmet.",
+    body: "SkyWest took equity and launch rights in this segment. Delta partnered on it. United funds adjacent clean-sheets. That demand is still looking for an aircraft that closes the business case.",
   },
 ];
