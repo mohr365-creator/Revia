@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { ButtonLink } from "@/components/ui/Button";
-import { useTrackEvent } from "@/components/analytics/AnalyticsProvider";
 import { primaryNav } from "@/data/site";
 
 export function Header() {
@@ -14,7 +13,6 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const track = useTrackEvent();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -120,7 +118,6 @@ export function Header() {
             href="/contact"
             variant="primary"
             className="px-5 py-2"
-            onClick={() => track("cta_click", { label: "Get in touch", location: "header_desktop" })}
           >
             Get in touch
           </ButtonLink>
@@ -193,7 +190,6 @@ export function Header() {
               href="/contact"
               variant="primary"
               className="mt-2 self-start"
-              onClick={() => track("cta_click", { label: "Get in touch", location: "header_mobile" })}
             >
               Get in touch
             </ButtonLink>
