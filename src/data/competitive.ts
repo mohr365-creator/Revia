@@ -13,6 +13,8 @@ export type SeatRangePoint = {
   seats: number;
   range: number;
   status: ProgramStatus;
+  /** Electric, hybrid-electric, or other novel-propulsion program. */
+  newProp?: boolean;
 };
 
 export const seatsRange: SeatRangePoint[] = [
@@ -22,16 +24,16 @@ export const seatsRange: SeatRangePoint[] = [
   { name: "R-100", seats: 100, range: 700, status: "revia" },
   // In development
   { name: "D328eco", seats: 40, range: 655, status: "dev" },
-  { name: "Aura ERA", seats: 19, range: 900, status: "dev" },
-  { name: "Electra EL9", seats: 9, range: 1100, status: "dev" },
-  { name: "Heart ES-30", seats: 30, range: 215, status: "dev" },
+  { name: "Aura ERA", seats: 19, range: 900, status: "dev", newProp: true },
+  { name: "Electra EL9", seats: 9, range: 1100, status: "dev", newProp: true },
+  { name: "Heart ES-30", seats: 30, range: 215, status: "dev", newProp: true },
   { name: "TAC SY30J", seats: 30, range: 430, status: "dev" },
   { name: "TAC SY50J", seats: 50, range: 430, status: "dev" },
-  { name: "Elysian E9X", seats: 92, range: 470, status: "dev" },
+  { name: "Elysian E9X", seats: 92, range: 470, status: "dev", newProp: true },
   // On hold
-  { name: "Eviation Alice", seats: 9, range: 250, status: "paused" },
+  { name: "Eviation Alice", seats: 9, range: 250, status: "paused", newProp: true },
   // No longer active
-  { name: "Maeve MJ500", seats: 88, range: 800, status: "cancelled" },
+  { name: "Maeve MJ500", seats: 88, range: 800, status: "cancelled", newProp: true },
   { name: "SpaceJet M90", seats: 88, range: 2040, status: "cancelled" },
   { name: "728JET", seats: 75, range: 1800, status: "cancelled" },
   // Legacy (in service, no clean-sheet successor)
